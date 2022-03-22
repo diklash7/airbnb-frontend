@@ -1,6 +1,7 @@
 <template>
   <div class="about">
     <h1>This is us about page</h1>
+    <h2>Team Ein Od Milvado!!</h2>
   </div>
 </template>
 
