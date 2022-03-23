@@ -1,16 +1,22 @@
 <template>
   <!-- <button @click="$router.push('/stay/edit')" class="btn btn-secondary">add a new stay</button> -->
-  <ul class="home-cities">
+  <button class="explore-btn">Price</button>
+  <button class="explore-btn">Type of place</button> |
+  <button class="explore-btn">Wifi</button>
+  <button class="explore-btn">TV</button>
+  <button class="explore-btn">Kitchen</button>
+  <button class="explore-btn">AC</button>
+  <button class="explore-btn">Smoking Allowed</button>
+
+  <section class="home-cities">
     <stay-preview v-for="stay in stays" :key="stay._id" :stay="stay">
-      <li @click="$router.push(`/explore/${stay._id}`)">
+      <article @click="$router.push(`/explore/${stay._id}`)">
         <div>
           <img :src="`src/assets/Images/${stay.imgUrls[0]}`" />
-             <span>
-                {{ stay.capacity }} guests •
-                {{ stay.bedrooms }} bedroom •
-                {{ stay.beds }} bed •
-                {{ stay.bathrooms }} bath
-           </span>
+          <span>
+            {{ stay.capacity }} guests • {{ stay.bedrooms }} bedroom •
+            {{ stay.beds }} bed • {{ stay.bathrooms }} bath
+          </span>
           <!-- <h3 class="uppercase">{{ stay.address.city }}</h3>
           <h3 class="uppercase">{{ stay.roomType }}</h3> -->
           <h3 class="uppercase">${{ stay.price }}/ night</h3>
@@ -24,9 +30,9 @@
             :label="label"
           />
         </div>
-      </li>
+      </article>
     </stay-preview>
-  </ul>
+  </section>
 </template>
 
 <script>
@@ -60,4 +66,24 @@ img {
   grid-template-columns: repeat(auto-fill, minmax(326px, 1fr));
   gap: 25px;
 }
+
+.explore-btn {
+    height: 38px;
+    cursor: pointer!important;
+    border: 1px solid #ddd!important;
+    background-color: #fff!important;
+    outline: none!important;
+    margin: 0!important;
+    border-radius: 30px!important;
+    color: #222!important;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif!important;
+    padding: 10px 16px!important;
+    font-size: 14px!important;
+    font-weight: 400!important;
+    line-height: 18px!important;
+    margin-right: 8px!important;
+    margin-top: 4px!important;
+    margin-bottom: 4px!important;
+}
+
 </style>
