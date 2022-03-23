@@ -2,7 +2,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-
+import ElementPlus from 'element-plus'
 // Styles
 import './styles/style.scss'
 
@@ -15,7 +15,7 @@ app.config.globalProperties.$filters = {
      return '$' + amount
    },
  }
-
+app.use(ElementPlus)
 app.use(router)
 app.use(store)
 
