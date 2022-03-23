@@ -1,6 +1,6 @@
 <template>
   <section class="home-page main-layout">
-    <section class="main-hero">
+    <section class="main-hero main-layout full">
       <h1>Not sure where to go? Perfect.</h1>
     </section>
 
