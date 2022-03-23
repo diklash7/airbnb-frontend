@@ -15,7 +15,26 @@
  .main-hero h1 {
    color: #ffffff;
    font-size: 32px;
+   font-weight: 700;
    text-shadow: 1px 1px 2px #000;
+   margin: 32px 0px;
+ }
+
+ .main-hero button {
+  margin-bottom: 100px;
+  background-color: #fff;
+  border-radius: 50px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  height: 55px;
+  text-align: center;
+  width: 10rem;
+ }
+
+ .main-hero button h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
  }
  
  .home-cities {
