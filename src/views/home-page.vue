@@ -1,5 +1,5 @@
 <template>
-  <section class="home-page">
+  <section class="home-page main-layout">
     <section class="main-hero">
       <h1>Not sure where to go? Perfect.</h1>
     </section>
@@ -74,45 +74,4 @@ export default {
 </script>
 
 <style>
-.main-hero {
-  background-image: url(../assets/Images/hero.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 750px;
-  text-align: center;
-  background-position: 50%;
-  margin-bottom: 96px;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  flex-direction: column;
-}
-
-.main-hero h1 {
-  color: #ffffff;
-  font-size: 32px;
-  text-shadow: 1px 1px 2px #000;
-}
-
-.home-cities {
-  display: grid;
-  border-radius: 10px;
-  grid-template-columns: repeat(auto-fill, minmax(326px, 1fr));
-  gap: 25px;
-}
-
-img {
-  margin: 0;
-  height: 200px;
-  border-radius: 10px;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(326px, 1fr));
-}
-
-.top-rated {
-  display: grid;
-  border-radius: 10px;
-  grid-template-columns: repeat(auto-fill, minmax(326px, 1fr));
-  gap: 25px;
-}
 </style>

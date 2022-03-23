@@ -1,0 +1,22 @@
+.app-header {
+   background: linear-gradient(
+     180deg,
+     rgba(0, 0, 0, 0.5) 50%,
+     rgba(0, 0, 0, 0.05) 85%,
+     transparent 90%
+   );
+   height: 160px;
+   background-color: transparent;
+   box-shadow: none;
+   grid-template-rows: 1fr 1fr;
+   position: fixed;
+   top: 0;
+   display: grid;
+   grid-template-columns: 80px 1fr 80px;
+   width: 100%;
+   z-index: 8000;
+ }
+
+ .logo-svg {
+    display: block;
+ }
