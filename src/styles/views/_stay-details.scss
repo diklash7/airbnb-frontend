@@ -34,6 +34,39 @@
             object-fit: cover;
         }
     }
+    .host-details {
+        .host-title {
+            display: inline-block;
+        }
+        h2 {
+            margin-bottom: 10px;
+            font-size: 25px;
+        }
+        img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-left: 200px;
+            border: 1px rgb(172, 168, 168) solid;
+        }
+    }
+    hr {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    .info-check {
+        h3 {
+            margin-bottom: 8px;
+            font-size: 22px;
+        }
+        p {
+            margin-bottom: 20px;
+        }
+    }
+    .stay-disc {
+        max-width: 600px;
+    }
     .title-reviews {
         display: inline-block;
     }
@@ -42,14 +75,30 @@
         flex-direction: column;
     }
     .list-reviews {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        margin-top: 40px;
         .img-user-review {
-            height: 100px;
-            width: 100px;
+            height: 70px;
+            width: 70px;
             border-radius: 50%;
             display: inline-block;
+            margin-right: 10px;
+            border: 1px rgb(172, 168, 168) solid;
         }
         div {
             display: inline-block;
         }
+        p {
+            max-width: 400px;
+            margin-bottom: 20px;
+        }
+    }
+    button {
+        padding: 10px;
+        font-weight: bold;
+        font-size: 15px;
+        border-radius: 10px;
     }
 }

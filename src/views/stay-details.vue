@@ -25,7 +25,8 @@
                   </div>
               </div>
           </div>
-          <div>
+          <div class="host-details">
+              <div class="host-title">
            <h2> {{ stay.roomType }} by {{ stay.host.fullname }}</h2>  
            <span>
                 {{ stay.capacity }} guests •
@@ -33,21 +34,28 @@
                 {{ stay.beds }} bed •
                 {{ stay.bathrooms }} bath
            </span>
+              </div>
+            <img class="img-host" :src="`${stay.host.pictureUrl}`" />
           </div>
           <hr>
-              <div>
+          <!-- <form>
+
+          </form> -->
+          <div class="info-check">
               <h3>Great location</h3>
               <p>100% of recent guests gave the location a 5-star rating</p>
               <h3>Great check-in experience</h3>
               <p>90% of recent guests gave the check-in process a 5-star rating</p>
               <h3>Pool</h3>
               <p>Guests often search for this popular amenity</p>
-        </div>
+          </div>
           <hr>
+          <div class="stay-disc">
                <h3> Disc:</h3>
              <p> 
               {{ stay.summary }}
              </p>
+          </div>
           <hr>
              <h2> What this place offers</h2>
             <pre> {{stay.amenities.slice(0,10)}}</pre>
@@ -76,7 +84,7 @@
            <h2> {{review.by.fullname}}</h2>
            <p>{{review.at.slice(0,10)}}</p>
           </div>
-           <p>{{review.txt}}</p>
+           <p>{{review.txt.slice(0,150)}}</p>
          </article>
           <button>show all <span> {{stay.reviews.length}}</span> reviews</button>
        </section>
