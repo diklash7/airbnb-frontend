@@ -1,5 +1,20 @@
-
 <template>
-<h1>stay preview</h1>
-
+  <section>
+    <slot></slot>
+  </section>
 </template>
+
+<script>
+import customLabel from './custom-label.vue'
+
+export default {
+  name: 'stay-preview',
+  props: {
+    stay: Object,
+  },
+  components: {
+    customLabel,
+  },
+}
+</script>
+
