@@ -5,7 +5,9 @@
         <section class="main-details">
           <div class="titles-details">
              <h1>{{ stay.name }}</h1>
+             <div>
              <span>{{ stay.numOfReviews }} reviews </span> • <span>{{ stay.address.street }}</span>
+             </div>
           </div>
           <div class="gallery-details">
               <div class="central-img">
@@ -13,10 +15,14 @@
               </div>
               <!-- <div v-for="img in imgs" :key="img" class="side-imgs" > -->
               <div class="side-imgs" >
+                  <div>
                  <img :src="`src/assets/Images/${stay.imgUrls[1]}`" />
                  <img :src="`src/assets/Images/${stay.imgUrls[2]}`" />
+                  </div>
+                  <div>
                  <img :src="`src/assets/Images/${stay.imgUrls[3]}`" />
                  <img :src="`src/assets/Images/${stay.imgUrls[4]}`" />
+                  </div>
               </div>
           </div>
           <div>
@@ -44,12 +50,12 @@
              </p>
           <hr>
              <h2> What this place offers</h2>
-            <pre> {{stay.amenities}}</pre>
+            <pre> {{stay.amenities.slice(0,10)}}</pre>
             <button>show all <span> {{stay.amenities.length}}</span> amenities</button>
           <hr>
           <div class="title-reviews">
            <h2 class="title-reviews">⭐ {{ stay.reviewScores.rating }}  •
-         {{ stay.numOfReviews }} reviews </h2>
+         {{ stay.numOfReviews}} reviews </h2>
           </div>
          
            <div class="left-side-rating">
@@ -63,13 +69,16 @@
             Value             {{stay.reviewScores.value}}
            </div>
         <!-- <stay-review></stay-review> -->
-        <section class="list-revies">
-           <h1>All Review</h1>
-          <article v-for="review in stay.reviews" :key="review._id">
+        <section class="list-reviews">
+          <article v-for="review in stay.reviews.slice(0,6)" :key="review._id">
+          <img class="img-user-review" :src="`${review.by.imgUrl}`" />
+          <div>
            <h2> {{review.by.fullname}}</h2>
-           <p>{{review.at}}</p>
+           <p>{{review.at.slice(0,10)}}</p>
+          </div>
            <p>{{review.txt}}</p>
          </article>
+          <button>show all <span> {{stay.reviews.length}}</span> reviews</button>
        </section>
      </section>
         </stay-preview>
@@ -131,29 +140,5 @@ export default {
 
 </script>
 <style>
-.flex {
-    display: flex;
-}
 
-.gallery-details {
-    display: flex;
-}
-
-.central-img img{
-width: 400px;
-height: 400px;
-}
-.side-imgs {
- display: flex;
- flex-wrap: wrap;
- gap: 15px
-}
-
-.side-imgs img {
-width: 150px;
-height: 150px;
-}
-.title-reviews {
-    display: inline-block;
-}
 </style>

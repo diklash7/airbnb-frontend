@@ -1,3 +1,20 @@
-body {
-    background-color: #e4e4e4;
-}
+// SETUP
+@import 'setup/functions';
+@import 'setup/variables';
+// BASIC
+@import 'basic/base';
+@import 'basic/helpers';
+@import 'basic/layout';
+@import 'basic/mq';
+// VIEWS
+@import 'views/app';
+@import 'views/home-page';
+@import 'views/explore-page';
+@import 'views/about-page';
+@import 'views/stay-details';
+// COMPONENTS
+@import 'components/app-header';
+@import 'components/app-footer';
+@import 'components/stay-list';
+@import 'components/stay-preview';
+@import 'components/stay-filter';
