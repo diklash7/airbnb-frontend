@@ -4,7 +4,7 @@ export default {
   state: {
     stays: [],
     filterBy: { name: '', inStock: '', labels: [], sortBy: '' },
-    labels: stayService.getlabels(),
+    // labels: stayService.getlabels(),
   },
   getters: {
     stays({ stays }) {
