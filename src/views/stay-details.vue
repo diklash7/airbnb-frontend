@@ -4,13 +4,14 @@
          <stay-preview :stay="stay">
         <section class="main-details">
           <div class="titles-details">
-             <h2>{{ stay.name }}</h2>
+             <h1>{{ stay.name }}</h1>
              <span>{{ stay.numOfReviews }} reviews </span> • <span>{{ stay.address.street }}</span>
           </div>
           <div class="gallery-details">
               <div class="central-img">
                  <img :src="`src/assets/Images/${stay.imgUrls[0]}`" />
               </div>
+              <!-- <div v-for="img in imgs" :key="img" class="side-imgs" > -->
               <div class="side-imgs" >
                  <img :src="`src/assets/Images/${stay.imgUrls[1]}`" />
                  <img :src="`src/assets/Images/${stay.imgUrls[2]}`" />
@@ -19,7 +20,7 @@
               </div>
           </div>
           <div>
-           <h3> {{ stay.roomType }}</h3>  
+           <h2> {{ stay.roomType }} by {{ stay.host.fullname }}</h2>  
            <span>
                 {{ stay.capacity }} guests •
                 {{ stay.bedrooms }} bedroom •
@@ -27,9 +28,50 @@
                 {{ stay.bathrooms }} bath
            </span>
           </div>
-          
-
-        </section>
+          <hr>
+              <div>
+              <h3>Great location</h3>
+              <p>100% of recent guests gave the location a 5-star rating</p>
+              <h3>Great check-in experience</h3>
+              <p>90% of recent guests gave the check-in process a 5-star rating</p>
+              <h3>Pool</h3>
+              <p>Guests often search for this popular amenity</p>
+        </div>
+          <hr>
+               <h3> Disc:</h3>
+             <p> 
+              {{ stay.summary }}
+             </p>
+          <hr>
+             <h2> What this place offers</h2>
+            <pre> {{stay.amenities}}</pre>
+            <button>show all <span> {{stay.amenities.length}}</span> amenities</button>
+          <hr>
+          <div class="title-reviews">
+           <h2 class="title-reviews">⭐ {{ stay.reviewScores.rating }}  •
+         {{ stay.numOfReviews }} reviews </h2>
+          </div>
+         
+           <div class="left-side-rating">
+            Cleanliness       {{stay.reviewScores.cleanliness}}
+            Communication     {{stay.reviewScores.communication}}
+            Check-in          {{stay.reviewScores.checkin}}
+           </div>
+           <div class="right-side-rating"> 
+            Accuracy          {{stay.reviewScores.accuracy}}
+            Location          {{stay.reviewScores.location}}
+            Value             {{stay.reviewScores.value}}
+           </div>
+        <!-- <stay-review></stay-review> -->
+        <section class="list-revies">
+           <h1>All Review</h1>
+          <article v-for="review in stay.reviews" :key="review._id">
+           <h2> {{review.by.fullname}}</h2>
+           <p>{{review.at}}</p>
+           <p>{{review.txt}}</p>
+         </article>
+       </section>
+     </section>
         </stay-preview>
      </section>
 
@@ -39,8 +81,12 @@
 import { stayService } from '../services/stay-service'
 import { reviewService } from '../services/review-service'
 import stayPreview from '../components/stay-preview.vue'
+// import stayReview from './stay-review.vue'
 export default {
-  components: { stayPreview },
+  components: { 
+      stayPreview ,
+    //   stayReview 
+  },
   name: 'stay-details',
   data() {
     return {
@@ -85,6 +131,10 @@ export default {
 
 </script>
 <style>
+.flex {
+    display: flex;
+}
+
 .gallery-details {
     display: flex;
 }
@@ -102,5 +152,8 @@ height: 400px;
 .side-imgs img {
 width: 150px;
 height: 150px;
+}
+.title-reviews {
+    display: inline-block;
 }
 </style>
