@@ -1,21 +1,13 @@
 <template>
   <section class="home-page">
+    <section class="main-hero">
+      <h1>Not sure where to go? Perfect.</h1>
+    </section>
+
     <section class="home-cities">
-      <div>
-        <img src="../assets/Images/barcelona.jpg" />
-        <h3>Barcelona</h3>
-      </div>
-      <div>
-        <img src="../assets/Images/newyork.jpg" />
-        <h3>New York</h3>
-      </div>
-      <div>
-        <img src="../assets/Images/hongkong.jpg" />
-        <h3>Hong Kong</h3>
-      </div>
-      <div>
-        <img src="../assets/Images/sydney.jpg" />
-        <h3>Sydney</h3>
+      <div v-for="city in cities" :key="city">
+        <img :src="`../assets/Images/${city}.jpg`" @click="goToExplore(city)"/>
+        <h3>{{city}}</h3>
       </div>
     </section>
 
@@ -43,6 +35,11 @@ import customCard from "../components/custom-card.vue";
 
 export default {
   name: "home-page",
+  data() {
+    return {
+      cities: ['barcelona', 'newyork', 'hongkong', 'sydney']
+    };
+  },
   created() {
     this.$store.dispatch({ type: "loadStays" });
   },
@@ -51,12 +48,11 @@ export default {
       return this.$store.getters.staysToShow;
     },
     topStays() {
-      const topStays = this.stays.sort((s1, s2) => s1.reviewScores.rating - s2.reviewScores.rating);
+      const topStays = this.stays.sort(
+        (s1, s2) => s1.reviewScores.rating - s2.reviewScores.rating
+      );
       return topStays.slice(0, 4);
     },
-    // stayName() {
-    //   return this.stay.split(' ').slice(0,2).join('+')
-    // },
   },
   methods: {
     setFilter(filterBy) {
@@ -65,7 +61,10 @@ export default {
     },
     goToStay(stayId) {
       console.log("stay:", this.stayId);
-      this.$router.push(`/explore/${stayId}`)
+      this.$router.push(`/explore/${stayId}`);
+    },
+    goToExplore() {
+      this.$router.push(`/explore/${stayId}`);
     },
   },
   components: {
@@ -75,12 +74,24 @@ export default {
 </script>
 
 <style>
-img {
-  margin: 0;
-  height: 200px;
-  border-radius: 10px;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(326px, 1fr));
+.main-hero {
+  background-image: url(../assets/Images/hero.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 750px;
+  text-align: center;
+  background-position: 50%;
+  margin-bottom: 96px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+}
+
+.main-hero h1 {
+  color: #ffffff;
+  font-size: 32px;
+  text-shadow: 1px 1px 2px #000;
 }
 
 .home-cities {
@@ -88,6 +99,14 @@ img {
   border-radius: 10px;
   grid-template-columns: repeat(auto-fill, minmax(326px, 1fr));
   gap: 25px;
+}
+
+img {
+  margin: 0;
+  height: 200px;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(326px, 1fr));
 }
 
 .top-rated {
