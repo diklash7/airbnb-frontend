@@ -13,15 +13,16 @@
       <article @click="$router.push(`/explore/${stay._id}`)">
         <div>
           <img :src="`src/assets/Images/${stay.imgUrls[0]}`" />
-          <span>
+          <!-- <span>
             {{ stay.capacity }} guests • {{ stay.bedrooms }} bedroom •
             {{ stay.beds }} bed • {{ stay.bathrooms }} bath
+          </span> -->
+          <span>{{ stay.roomType }} • {{ stay.address.city }}
+
           </span>
-          <!-- <h3 class="uppercase">{{ stay.address.city }}</h3>
-          <h3 class="uppercase">{{ stay.roomType }}</h3> -->
-          <h3 class="uppercase">${{ stay.price }}/ night</h3>
-          •
-          <h2 class="uppercase">{{ stay.name }}</h2>
+         
+          <h2>{{ stay.name }}</h2>
+          <h3>${{ stay.price }}/ night</h3>
         </div>
         <div>
           <custom-label
