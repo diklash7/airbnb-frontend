@@ -3,6 +3,7 @@
   <section class="stay-app">
     <!-- <stay-filter @setFilter="setFilter" /> -->
     <stay-list :stays="stays" />
+      <app-swiper/>
   </section>
 </template>
 
