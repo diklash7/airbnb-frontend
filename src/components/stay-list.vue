@@ -1,18 +1,28 @@
 <template>
   <!-- <button @click="$router.push('/stay/edit')" class="btn btn-secondary">add a new stay</button> -->
-  <ul class="stay-list py-1 clean-list grid gap-2">
+  <ul class="home-cities">
     <stay-preview v-for="stay in stays" :key="stay._id" :stay="stay">
-      <li @click="$router.push(`/explore/${stay._id}`)" class="stay-preview p-2 flex flex-col gap-1">
-        <div class="flex items-center justify-between gap-2">
-          <h3 class="uppercase">{{ stay.imgUrls[0] }}</h3>
-          <!-- <img :src="../assets/Images/stay.imgUrls"></img> -->
-          <h3 class="uppercase">{{ stay.propertyType }}</h3>• 
-          <h2 class="uppercase">{{ stay.name }}</h2>
+      <li @click="$router.push(`/explore/${stay._id}`)">
+        <div>
+          <img :src="`src/assets/Images/${stay.imgUrls[0]}`" />
+             <span>
+                {{ stay.capacity }} guests •
+                {{ stay.bedrooms }} bedroom •
+                {{ stay.beds }} bed •
+                {{ stay.bathrooms }} bath
+           </span>
+          <!-- <h3 class="uppercase">{{ stay.address.city }}</h3>
+          <h3 class="uppercase">{{ stay.roomType }}</h3> -->
           <h3 class="uppercase">${{ stay.price }}/ night</h3>
-          <!-- <p class="clr-teal fw-bold">${{ stay.price }}</p> -->
+          •
+          <h2 class="uppercase">{{ stay.name }}</h2>
         </div>
-        <div class="labels flex flex-wrap items-center gap-1">
-          <custom-label v-for="label in stay.labels" :key="label" :label="label" />
+        <div>
+          <custom-label
+            v-for="label in stay.labels"
+            :key="label"
+            :label="label"
+          />
         </div>
       </li>
     </stay-preview>
@@ -20,11 +30,11 @@
 </template>
 
 <script>
-import CustomLabel from './custom-label.vue'
-import stayPreview from './stay-preview.vue'
+import CustomLabel from "./custom-label.vue";
+import stayPreview from "./stay-preview.vue";
 
 export default {
-  name: 'stay-list',
+  name: "stay-list",
   props: {
     stays: Array,
   },
@@ -32,7 +42,22 @@ export default {
     stayPreview,
     CustomLabel,
   },
-}
+};
 </script>
 
-<style></style>
+<style>
+img {
+  margin: 0;
+  height: 200px;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(326px, 1fr));
+}
+
+.home-cities {
+  display: grid;
+  border-radius: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(326px, 1fr));
+  gap: 25px;
+}
+</style>
