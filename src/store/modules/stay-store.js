@@ -2,7 +2,7 @@ import { stayService } from '@/services/stay-service.js'
 
 export default {
   state: {
-    stays: [],
+    stays: null,
     filterBy: { name: '', inStock: '', labels: [], sortBy: '' },
     // labels: stayService.getlabels(),
   },
@@ -14,9 +14,9 @@ export default {
       const copyStays = JSON.parse(JSON.stringify(stays))
       return copyStays
     },
-    labels({ labels }) {
-      return labels
-    },
+    // labels({ labels }) {
+    //   return labels
+    // },
   },
   mutations: {
     setStays(state, { stays }) {
