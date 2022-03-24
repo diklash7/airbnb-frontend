@@ -1,33 +1,29 @@
 <template>
-  <footer class="app-footer-container full flex ">
-    <div class="app-footer"></div>
-    <div>
-      <p>
-        <span>&copy; 2022 ein od milvado</span>
-      </p>
-      <span>.</span>
+  <section class="app-footer main-layout flex align-center space-between">
+    <div class="footer-nav flex align-center">
+      <p>&copy; 2022 ein od milvado</p>
+
       <a href="#/about">About</a>
-      <span>.</span>
+      <span>•</span>
       <a href="#/login">Login</a>
-      <span>.</span>
+      <span>•</span>
       <a href="#/host">Become a host</a>
     </div>
-    <div>
+
+    <div class="footer-info">
+      <div class="footer-lang">
         <span>language</span>
         <span>English (US)</span>
-        <span>$ US</span>
-    </div>
-    <div>
+        <span>$US</span>
+      </div>
+      <div class="social-icons">
         <!-- <i class="fa fa-facebook-f">::before</i>
         <i class="fa fa-twitter">::before</i>
         <i class="fa fa-instagram">::before</i> -->
+      </div>
     </div>
-  </footer>
+  </section>
 </template>
 
 <style>
 </style>
-
-
-
-

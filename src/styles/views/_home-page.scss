@@ -59,16 +59,17 @@
   gap: 25px;
   margin-bottom: 95px;
 
-  img {
-    margin: 0;
-    object-fit: cover;
-    aspect-ratio: 1/1;
-  }
-
   h3 {
     font-family: "Cereal-Bold", sans-serif;
     margin: 19px 0px;
   }
+}
+
+.home-page-gallery img {
+  margin: 0;
+  border-radius: 12px;
+  object-fit: cover;
+  aspect-ratio: 3/2;
 }
 
 /* HOST */
@@ -80,12 +81,12 @@
   height: 90vh;
 
   h1 {
-    font-family: "Circular-Bold", sans-serif;
+    font-family: "Cereal-Bold", sans-serif;
   }
 
   .host-cta {
     color: $clr5;
-    font-family: "Circular-Bold", sans-serif;
+    font-family: "Cereal-Bold", sans-serif;
     font-size: 48px;
     margin: 50px 0px 0px 80px;
 

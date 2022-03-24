@@ -1,13 +1,20 @@
-// .app-footer-column {
-//    padding: 1.2rem 1.2rem 1.2rem 0;
-//  }
- 
- .app-footer-container {
-   font-family: 'Circular-Medium', sans-serif;
+.app-footer {
+   padding: 1.2rem 1.2rem 1.2rem 0;
+   font-family: 'Cereal-Medium', sans-serif;
    align-items: center;
    background-color: #f8f8f8;
    color: #464646;
-   display: flex;
-   flex-direction: column;
    width: 100%;
  }
+ 
+.app-footer span {
+  margin-right: 5px;
+}
+
+.footer-info {
+  display: inline-block;
+}
+
+.footer-lang {
+  margin-right: 100px;
+}
