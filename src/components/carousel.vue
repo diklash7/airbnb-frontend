@@ -2,7 +2,7 @@
 <section class="carousel">
   <div class="block">
     <span class="demonstration"></span>
-    <el-carousel trigger="click" autoplay="false" indicator-position="none" interval="600000" height="150px">
+    <el-carousel trigger="click" autoplay="false" indicator-position="none" interval="600000" height="250px">
       <el-carousel-item v-for="item in stay.imgUrls" :key="item">
         <img class="stay-img" :src="`src/assets/Images/${item}`" />
       </el-carousel-item>

@@ -20,13 +20,17 @@
                 />
               </svg>
             </span>
-            <span
-              > {{ stay.reviewScores.rating }} • {{ stay.numOfReviews }} reviews
-            </span>
+            <span> {{ stay.reviewScores.rating }} </span>
+
+            <span class="num-rew"> ({{ stay.numOfReviews }} reviews)</span>
           </div>
           <span>{{ stay.propertyType }} • {{ stay.address.city }} </span>
-          <h3>{{ stay.name }}</h3>
-          <span>${{ stay.price }}/ night</span>
+
+          <div>{{ stay.name }}</div>
+          <div class="stay-price">
+            <span class="bold">${{ stay.price }}</span
+            >/ night
+          </div>
         </div>
         <div>
           <custom-label
@@ -44,6 +48,8 @@
 import customLabel from "./custom-label.vue";
 import stayPreview from "./stay-preview.vue";
 import carousel from "./carousel.vue";
+import { computed } from "@vue/runtime-core";
+import { rateEmits } from "element-plus";
 
 export default {
   name: "stay-list",
@@ -53,7 +59,13 @@ export default {
   components: {
     stayPreview,
     customLabel,
-    carousel
+    carousel,
+  },
+
+  computed: {
+    rate() {
+      return this.stay.reviewScores.rating / 20;
+    },
   },
 };
 </script>
@@ -68,7 +80,9 @@ export default {
   grid-template-columns: repeat(auto-fill, minmax(326px, 1fr));
   cursor: pointer;
 }
-
+.stay-price {
+  padding-top: 4px;
+}
 .home-cities {
   display: grid;
   border-radius: 10px;
@@ -77,6 +91,17 @@ export default {
   gap: 25px;
 }
 .star {
+  padding: 5px;
   color: blue;
+  margin-bottom: 18px;
+}
+
+.num-rew {
+  /* padding: 10px; */
+  color: #717171;
+}
+
+.bold {
+  font-weight: bold;
 }
 </style>
