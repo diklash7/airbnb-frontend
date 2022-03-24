@@ -11,10 +11,10 @@ import './styles/style.scss'
 const app = createApp(App)
 
 app.config.globalProperties.$filters = {
-   currencyUSD(amount) {
-     return '$' + amount
-   },
- }
+  currencyUSD(amount) {
+    return '$' + amount
+  },
+}
 app.use(ElementPlus)
 app.use(router)
 app.use(store)
