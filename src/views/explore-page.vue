@@ -3,12 +3,14 @@
   <section class="stay-app">
     <stay-filter @setFilter="setFilter" />
     <stay-list :stays="stays" />
+    <carousel/>
   </section>
 </template>
 
 <script>
 import stayList from "../components/stay-list.vue";
 import stayFilter from "../components/stay-filter.vue";
+import carousel from "../components/carousel.vue";
 export default {
   name: "stay-app",
   created() {
@@ -28,6 +30,7 @@ export default {
   components: {
     stayList,
     stayFilter,
+    carousel
   },
 };
 </script>

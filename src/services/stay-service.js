@@ -28,11 +28,15 @@ async function query(filterBy) {
         const regex = new RegExp(filterBy.city, 'i')
         filteredStays = stays.filter(stay => regex.test(stay.address.city))
     }
-
-    if (filterBy.min && filterBy.max) {
-        // todo: check if stay in range of price
+    if (filterBy.min < filterBy.price && filterBy.price < filterBy.max) {
+        console.log('filterBy.price:', filterBy.price);
+        const regex = new RegExp(filterBy.price, 'i')
+        filteredStays = stays.filter(stay => regex.test(stay.price))
     }
-
+    if (filterBy.propertyType) {
+        const regex = new RegExp(filterBy.propertyType, 'i')
+        filteredStays = stays.filter(stay => regex.test(stay.propertyType))
+    }
     return Promise.resolve(filteredStays)
 }
 
