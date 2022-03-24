@@ -1,6 +1,6 @@
 
 <template>
-  <section class="stay-app">
+  <section class="stay-app main-layout">
     <stay-filter @setFilter="setFilter" />
     <stay-list :stays="stays" />
   </section>

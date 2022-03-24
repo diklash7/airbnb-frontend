@@ -21,7 +21,7 @@
               </svg>
             </span>
             <span
-              >{{ stay.reviewScores.rating }} • {{ stay.numOfReviews }} reviews
+              > {{ stay.reviewScores.rating }} • {{ stay.numOfReviews }} reviews
             </span>
           </div>
           <span>{{ stay.propertyType }} • {{ stay.address.city }} </span>
@@ -61,16 +61,19 @@ export default {
 <style>
 .stay-img {
   margin: 0;
-  height: 200px;
-  border-radius: 10px;
+  height: 250px;
+  border-radius: 12px;
+  position: absolute;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(326px, 1fr));
+  cursor: pointer;
 }
 
 .home-cities {
   display: grid;
   border-radius: 10px;
-  grid-template-columns: repeat(auto-fill, minmax(326px, 1fr));
+  /* grid-template-columns: repeat(auto-fill, minmax(326px, 1fr)); */
+  grid-template-columns: repeat(4, 1fr);
   gap: 25px;
 }
 .star {
