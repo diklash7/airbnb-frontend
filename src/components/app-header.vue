@@ -79,6 +79,7 @@
       </div>
     </div>
   </section>
+  <app-filter />
   <!-- <section class="app-header full-header home-page main-layout"></section>
     <div class="app-header-container flex space-between">
 
@@ -100,5 +101,12 @@
     
   </section> -->
 </template>
-
+<script>
+import appFilter from "./app-filter.vue";
+export default {
+  components: {
+    appFilter,
+  },
+};
+</script>
 <style></style>

@@ -6,6 +6,21 @@
           <div class="titles-details">
              <h1>{{ stay.name }}</h1>
              <div>
+               <span class="star">
+               <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="#E01661"
+                class="bi bi-star-fill"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                />
+              </svg>
+              </span>
+                {{ stay.reviewScores.rating }} • 
              <span>{{ stay.numOfReviews }} reviews </span> • <span>{{ stay.address.street }}</span>
              </div>
           </div>
@@ -84,10 +99,25 @@
             </div>
             </div>
               </section>
-            <button class="btn-show-more">show all <span> {{stay.amenities.length}}</span> amenities</button>
           <hr>
           <div class="title-reviews">
-           <h2 class="title-reviews">⭐ {{ stay.reviewScores.rating }}  •
+           <h2 class="title-reviews">
+               <span class="star">
+               <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="#E01661"
+                class="bi bi-star-fill"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                />
+              </svg>
+            </span>
+             
+              {{ stay.reviewScores.rating }}  •
          {{ stay.numOfReviews}} reviews </h2>
           </div>
          
@@ -103,7 +133,7 @@
            </div>
         <!-- <stay-review></stay-review> -->
         <section class="list-reviews">
-          <article v-for="review in stay.reviews.slice(0,6)" :key="review._id">
+          <article v-for="review in stay.reviews.slice(0,8)" :key="review._id">
           <img class="img-user-review" :src="`${review.by.imgUrl}`" />
           <div>
            <h2> {{review.by.fullname}}</h2>

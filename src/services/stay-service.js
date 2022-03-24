@@ -111,13 +111,13 @@ function _createStays() {
                     "Wifi",
                     "Air conditioning",
                     "Kitchen",
-                    "Buzzer-wireless intercom",
                     "Heating",
-                    "Family-kid friendly",
                     "Smoke detector",
                     "Carbon monoxide detector",
+                    "Buzzer-wireless intercom",
                     "Washer",
                     "First aid kit",
+                    "Family-kid friendly",
                     "Safety card",
                     "Fire extinguisher",
                     "Essentials",
@@ -435,7 +435,7 @@ function _createStays() {
                     "about": "Raised in the west, I decided to travel and work abroad for a few years. Working and backpacking away from home has helped me gain so much experience and insight from living away from home, I think everyone should try it! \r\n\r\nI love hosting! And I put my heart into it and always think about how I can make my place enjoyable and comfy.\r\nif you have any feedback I'd love to hear and learn how to grow from it.\r\n\r\nI can speak English and hope to make your stay as pleasant as possible :) We can definitely give you suggestions for eating, shopping, art and museums and also night life. Just ask!",
                     "responseTime": "within a few hours",
                     "thumbnailUrl": "https://a0.muscache.com/im/pictures/5db18be8-88b0-40d8-9960-46275d99ac3b.jpg?aki_policy=profile_small",
-                    "pictureUrl": "https://a0.muscache.com/im/pictures/5db18be8-88b0-40d8-9960-46275d99ac3b.jpg?aki_policy=profile_x_medium",
+                    "pictureUrl": "https://a0.muscache.com/im/users/6107595/profile_pic/1442432675/original.jpg?aki_policy=profile_x_medium",
                     "isSuperhost": false,
                     "id": "930612"
                 },
@@ -980,7 +980,7 @@ function _createStays() {
                     "Heating",
                     "Shampoo",
                     "Smoke detector",
-                     "Fire-extinguisher",
+                    "Fire-extinguisher",
                     "Family-kid friendly",
                     "Hair dryer",
                     "Smoke detector",
@@ -1005,7 +1005,7 @@ function _createStays() {
                     "about": "I am a Executive Producer based in Sydney that works in advertising and cross-media entertainment.\r\n",
                     "responseTime": "within an hour",
                     "thumbnailUrl": "https://a0.muscache.com/im/users/118676/profile_pic/1417000371/original.jpg?aki_policy=profile_small",
-                    "pictureUrl": "https://a0.muscache.com/im/users/118676/profile_pic/1417000371/original.jpg?aki_policy=profile_x_medium",
+                    "pictureUrl": "https://a0.muscache.com/im/pictures/c9b876fc-b30e-4951-8f88-af9add00939e.jpg?aki_policy=profile_x_medium",
                     "isSuperhost": true,
                     "id": "118676"
                 },
@@ -1263,10 +1263,11 @@ function _createStays() {
                     "Internet",
                     "Wifi",
                     "Air conditioning",
-                    "Wheelchair accessible",
                     "Pool",
                     "Kitchen",
-                    "Free parking on premises",
+                    "Hair dryer",
+                    "Smoke detector",
+                    "Carbon monoxide detector",
                     "Doorman",
                     "Gym",
                     "Elevator",
@@ -1275,7 +1276,6 @@ function _createStays() {
                     "Family/kid friendly",
                     "Suitable for events",
                     "Washer",
-                    "Dryer",
                     "Smoke detector",
                     "Carbon monoxide detector",
                     "First aid kit",
@@ -1322,7 +1322,7 @@ function _createStays() {
                     "about": "Adventurous couple loves to travel :)",
                     "responseTime": "within an hour",
                     "thumbnailUrl": "https://a0.muscache.com/im/pictures/542dba0c-eb1b-4ab3-85f3-94d3cc8f87a4.jpg?aki_policy=profile_small",
-                    "pictureUrl": "https://a0.muscache.com/im/pictures/542dba0c-eb1b-4ab3-85f3-94d3cc8f87a4.jpg?aki_policy=profile_x_medium",
+                    "pictureUrl": "https://a0.muscache.com/im/users/6334250/profile_pic/1368287493/original.jpg?aki_policy=profile_x_medium",
                     "isSuperhost": true,
                     "id": "36133410"
                 },
@@ -1351,8 +1351,7 @@ function _createStays() {
                     "value": 10,
                     "rating": 98
                 },
-                "reviews": [
-                    {
+                "reviews": [{
                         "at": "2016-06-12T04:00:00.000Z",
                         "by": {
                             "_id": "622f3407e36c59e6164fc004",
@@ -1470,15 +1469,15 @@ function _createStays() {
                     "Wifi",
                     "Air conditioning",
                     "Kitchen",
-                    "Elevator",
-                    "Buzzer/wireless intercom",
                     "Heating",
-                    "Family/kid friendly",
-                    "Washer",
-                    "Dryer",
+                    "Family-kid friendly",
+                    "Buzzer-wireless intercom",
+                    "Hair dryer",
                     "Smoke detector",
                     "Carbon monoxide detector",
                     "Essentials",
+                    "Elevator",
+                    "Washer",
                     "Iron",
                     "translation missing: en.hosting_amenity_50"
                 ],
@@ -1488,7 +1487,7 @@ function _createStays() {
                     "location": "Montreal, Québec, Canada",
                     "about": "",
                     "thumbnailUrl": "https://a0.muscache.com/im/pictures/12be1141-74de-4f04-bf28-82c3ed589d11.jpg?aki_policy=profile_small",
-                    "pictureUrl": "https://a0.muscache.com/im/pictures/12be1141-74de-4f04-bf28-82c3ed589d11.jpg?aki_policy=profile_x_medium",
+                    "pictureUrl": "https://a0.muscache.com/im/users/6107595/profile_pic/1442432675/original.jpg?aki_policy=profile_x_medium",
                     "isSuperhost": false,
                     "id": "80344827"
                 },
@@ -1517,8 +1516,7 @@ function _createStays() {
                     "value": 10,
                     "rating": 100
                 },
-                "reviews": [
-                    {
+                "reviews": [{
                         "at": "2016-07-07T04:00:00.000Z",
                         "by": {
                             "_id": "622f3407e36c59e6164fc058",
@@ -1588,14 +1586,12 @@ function _createStays() {
                     "Wifi",
                     "Air conditioning",
                     "Kitchen",
-                    "Paid parking off premises",
-                    "Free street parking",
-                    "Buzzer/wireless intercom",
-                    "Family/kid friendly",
-                    "Washer",
                     "Smoke detector",
                     "First aid kit",
-                    "Fire extinguisher",
+                    "Fire-extinguisher",
+                    "Buzzer-wireless intercom",
+                    "Family-kid friendly",
+                    "Washer",
                     "Essentials",
                     "Shampoo",
                     "Lock on bedroom door",
@@ -1672,8 +1668,7 @@ function _createStays() {
                     "value": 10,
                     "rating": 96
                 },
-                "reviews": [
-                    {
+                "reviews": [{
                         "at": "2016-07-18T04:00:00.000Z",
                         "by": {
                             "_id": "622f3403e36c59e6164fb090",
@@ -1882,10 +1877,10 @@ function _createStays() {
                     "Air conditioning",
                     "Kitchen",
                     "Heating",
-                    "Family/kid friendly",
+                    "Family-kid friendly",
                     "Smoke detector",
                     "Carbon monoxide detector",
-                    "Fire extinguisher",
+                    "Fire-extinguisher",
                     "Essentials",
                     "Shampoo",
                     "24-hour check-in",
@@ -1933,8 +1928,7 @@ function _createStays() {
                     "value": 10,
                     "rating": 93
                 },
-                "reviews": [
-                    {
+                "reviews": [{
                         "at": "2013-05-27T04:00:00.000Z",
                         "by": {
                             "_id": "622f3407e36c59e6164fbfd2",
@@ -2160,13 +2154,16 @@ function _createStays() {
                 "amenities": [
                     "Wifi",
                     "Kitchen",
-                    "Doorman",
-                    "Elevator",
-                    "Buzzer/wireless intercom",
+                    "Buzzer-wireless intercom",
                     "Heating",
                     "Essentials",
                     "Hangers",
                     "Hair dryer",
+                    "Fire-extinguisher",
+                    "Shampoo",
+                    "Iron",
+                    "Doorman",
+                    "Elevator",
                     "translation missing: en.hosting_amenity_49",
                     "translation missing: en.hosting_amenity_50"
                 ],
@@ -2205,8 +2202,7 @@ function _createStays() {
                     "value": 9,
                     "rating": 90
                 },
-                "reviews": [
-                    {
+                "reviews": [{
                         "at": "2016-07-12T04:00:00.000Z",
                         "by": {
                             "_id": "622f3407e36c59e6164fbebb",
@@ -2252,16 +2248,17 @@ function _createStays() {
                 "amenities": [
                     "Wifi",
                     "Kitchen",
-                    "Paid parking off premises",
-                    "Smoking allowed",
+                    "Hair dryer",
+                    "Smoke detector",
                     "Heating",
-                    "Washer",
                     "Essentials",
                     "Shampoo",
-                    "Lock on bedroom door",
                     "Hangers",
-                    "Hair dryer",
                     "Iron",
+                    "Essentials",
+                    "Lock on bedroom door",
+                    "Hair dryer",
+                    "Washer",
                     "translation missing: en.hosting_amenity_49",
                     "translation missing: en.hosting_amenity_50",
                     "Hot water",
@@ -2275,7 +2272,7 @@ function _createStays() {
                     "about": "Mi nombre es Isabel, pero me llamo Isa. Nací en Vigo (Galicia). Con 20 años me fuí a vivir a Madrid con intención de ser actriz; ahora resido en Barcelona desde los 28. Soy una joven de 43 años, cantante de Jazz. Me gusta salir, pero también quedarme en casa a leer o ver alguna buena película.\r\nHe compartido piso muchos años, pero estas serán mis primeras experiencias como anfitriona.\r\n\r\n¡Sed bienvenidos!\r\n",
                     "responseTime": "within an hour",
                     "thumbnailUrl": "https://a0.muscache.com/im/pictures/72a579ce-37d7-466e-9c25-9876ee8de037.jpg?aki_policy=profile_small",
-                    "pictureUrl": "https://a0.muscache.com/im/pictures/72a579ce-37d7-466e-9c25-9876ee8de037.jpg?aki_policy=profile_x_medium",
+                    "pictureUrl": "https://a0.muscache.com/im/users/6107595/profile_pic/1442432675/original.jpg?aki_policy=profile_x_medium",
                     "isSuperhost": false,
                     "id": "35858044"
                 },
@@ -2304,8 +2301,7 @@ function _createStays() {
                     "value": 9,
                     "rating": 90
                 },
-                "reviews": [
-                    {
+                "reviews": [{
                         "at": "2016-02-24T05:00:00.000Z",
                         "by": {
                             "_id": "622f3405e36c59e6164fb95e",
@@ -2533,7 +2529,7 @@ function _createStays() {
                     "Wifi",
                     "Air conditioning",
                     "Kitchen",
-                    "Free street parking",
+                    "Iron",
                     "Heating",
                     "Smoke detector",
                     "Carbon monoxide detector",
@@ -2563,7 +2559,7 @@ function _createStays() {
                     "about": "Welcome Everyone! Thank you for stopping by. \r\n\r\nI was born and raised in Manhattan and I am here to help  share the New York City Experience with others through Airbnb!  I am easy to connect with and very reachable and always willing to interact with people. \r\n\r\nI am big on cleanliness and hospitality. I strive on making Guests feel as comfortable as possible. \r\n\r\nI hope you would like to get a chance to visit my location and enjoy the hosting I provide. If you have any questions/ comments, feel free to contact me. \r\n",
                     "responseTime": "within a few hours",
                     "thumbnailUrl": "https://a0.muscache.com/im/pictures/61b62b90-e38b-4609-a3c4-ff5ff06b5c08.jpg?aki_policy=profile_small",
-                    "pictureUrl": "https://a0.muscache.com/im/pictures/61b62b90-e38b-4609-a3c4-ff5ff06b5c08.jpg?aki_policy=profile_x_medium",
+                    "pictureUrl": "https://a0.muscache.com/im/pictures/87b9ccba-154a-4546-8cbe-8bdb25ddb36c.jpg?aki_policy=profile_x_medium",
                     "isSuperhost": false,
                     "id": "24800102"
                 },
@@ -2592,8 +2588,7 @@ function _createStays() {
                     "value": 9,
                     "rating": 90
                 },
-                "reviews": [
-                    {
+                "reviews": [{
                         "at": "2016-03-26T04:00:00.000Z",
                         "by": {
                             "_id": "622f3405e36c59e6164fb8b4",
@@ -2822,11 +2817,11 @@ function _createStays() {
                     "Internet",
                     "Wifi",
                     "Kitchen",
-                    "Free street parking",
+                    "Shampoo",
                     "Heating",
                     "First aid kit",
                     "Safety card",
-                    "Fire extinguisher",
+                    "Fire-extinguisher",
                     "Essentials",
                     "Shampoo",
                     "24-hour check-in",
@@ -2855,7 +2850,7 @@ function _createStays() {
                     "about": "Welcome!\r\nThe apartments has all the things to provide you a perfect days in Porto. It is located in a very central area, inside a typical oporto building. \r\nI will give you lots of informations about Porto, my personal tips, and I'll always be available to help you with anything. All I want is for you to go home knowing Porto and inevitably loving the city! :)\r\n\r\n",
                     "responseTime": "within a day",
                     "thumbnailUrl": "https://a0.muscache.com/im/pictures/f3e85f0c-e28d-4698-9da9-2f203aea1f3d.jpg?aki_policy=profile_small",
-                    "pictureUrl": "https://a0.muscache.com/im/pictures/f3e85f0c-e28d-4698-9da9-2f203aea1f3d.jpg?aki_policy=profile_x_medium",
+                    "pictureUrl": "https://a0.muscache.com/im/pictures/user/6bf03261-e7ac-4e0e-8121-3828612bbb6a.jpg?aki_policy=profile_x_medium",
                     "isSuperhost": true,
                     "id": "9320470"
                 },
@@ -2884,8 +2879,7 @@ function _createStays() {
                     "value": 9,
                     "rating": 89
                 },
-                "reviews": [
-                    {
+                "reviews": [{
                         "at": "2016-02-06T05:00:00.000Z",
                         "by": {
                             "_id": "622f3404e36c59e6164fb449",
@@ -3111,19 +3105,16 @@ function _createStays() {
                 "amenities": [
                     "Wifi",
                     "Kitchen",
-                    "Free parking on premises",
-                    "Pets live on this property",
-                    "Cat(s)",
-                    "Washer",
-                    "Dryer",
-                    "First aid kit",
-                    "Fire extinguisher",
-                    "Essentials",
-                    "Shampoo",
-                    "Lock on bedroom door",
                     "Hangers",
                     "Hair dryer",
                     "Iron",
+                    "Internet",
+                    "Hair dryer",
+                    "First aid kit",
+                    "Fire-extinguisher",
+                    "Essentials",
+                    "Shampoo",
+                    "Lock on bedroom door",
                     "Laptop friendly workspace",
                     "translation missing: en.hosting_amenity_49",
                     "translation missing: en.hosting_amenity_50"
@@ -3164,8 +3155,7 @@ function _createStays() {
                     "value": 10,
                     "rating": 96
                 },
-                "reviews": [
-                    {
+                "reviews": [{
                         "at": "2016-08-11T04:00:00.000Z",
                         "by": {
                             "_id": "622f3402e36c59e6164fad68",
@@ -3246,7 +3236,7 @@ function _createStays() {
                     "Air conditioning",
                     "Kitchen",
                     "Heating",
-                    "Washer",
+                    "Pool",
                     "Essentials",
                     "Shampoo"
                 ],
@@ -3286,8 +3276,7 @@ function _createStays() {
                     "value": 9,
                     "rating": 96
                 },
-                "reviews": [
-                    {
+                "reviews": [{
                         "at": "2014-04-06T04:00:00.000Z",
                         "by": {
                             "_id": "622f3406e36c59e6164fbcc7",
@@ -3512,23 +3501,22 @@ function _createStays() {
                 "numOfReviews": 17,
                 "amenities": [
                     "TV",
-                    "Cable TV",
+                    "Safety card",
                     "Internet",
                     "Wifi",
                     "Air conditioning",
                     "Pool",
                     "Kitchen",
+                    "Smoke detector",
+                    "Carbon monoxide detector",
+                    "First aid kit",
                     "Free parking on premises",
                     "Gym",
                     "Elevator",
                     "Hot tub",
                     "Family/kid friendly",
                     "Washer",
-                    "Dryer",
-                    "Smoke detector",
-                    "Carbon monoxide detector",
-                    "First aid kit",
-                    "Safety card",
+                    "Hair dryer",
                     "Fire extinguisher",
                     "Essentials",
                     "Shampoo",
@@ -3577,7 +3565,7 @@ function _createStays() {
                     "about": "My husband and I are Real Estate Investors.  We enjoy traveling and no matter where we go, we always find ourselves looking at properties.  Since we still have school age children I have found that a beach vacation is usually the most enjoyable for everyone.  Living on the West Coast, Hawaii continued to be a place that we would return to time and time again.",
                     "responseTime": "within an hour",
                     "thumbnailUrl": "https://a0.muscache.com/im/pictures/07c98f2f-9ffe-4ed8-82ca-1e9cd00c673f.jpg?aki_policy=profile_small",
-                    "pictureUrl": "https://a0.muscache.com/im/pictures/07c98f2f-9ffe-4ed8-82ca-1e9cd00c673f.jpg?aki_policy=profile_x_medium",
+                    "pictureUrl": "https://a0.muscache.com/im/users/6334250/profile_pic/1368287493/original.jpg?aki_policy=profile_x_medium",
                     "isSuperhost": true,
                     "id": "82827178"
                 },
@@ -3606,8 +3594,7 @@ function _createStays() {
                     "value": 10,
                     "rating": 100
                 },
-                "reviews": [
-                    {
+                "reviews": [{
                         "at": "2016-12-08T05:00:00.000Z",
                         "by": {
                             "_id": "622f3407e36c59e6164fbfd3",
@@ -3805,15 +3792,14 @@ function _createStays() {
                     "Wifi",
                     "Air conditioning",
                     "Kitchen",
-                    "Paid parking off premises",
+                    "Hair dryer",
+                    "Iron",
                     "Heating",
-                    "Family/kid friendly",
-                    "Fire extinguisher",
+                    "Family-kid friendly",
+                    "Fire-extinguisher",
                     "Essentials",
                     "Shampoo",
                     "Hangers",
-                    "Hair dryer",
-                    "Iron",
                     "Hot water",
                     "Microwave",
                     "Refrigerator",
@@ -3855,8 +3841,7 @@ function _createStays() {
                     "value": 9,
                     "rating": 78
                 },
-                "reviews": [
-                    {
+                "reviews": [{
                         "at": "2016-11-06T04:00:00.000Z",
                         "by": {
                             "_id": "622f3404e36c59e6164fb5a5",

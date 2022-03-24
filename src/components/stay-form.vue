@@ -40,8 +40,6 @@
 <script>
 import { ref } from 'vue'
 
-// props: ['stay']
-
 const value1 = ref('')
 const defaultTime = ref([
   new Date(2000, 1, 1, 0, 0, 0),
