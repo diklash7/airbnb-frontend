@@ -15,12 +15,12 @@
               </div>
               <div class="side-imgs" >
                   <div>
-                 <img :src="`src/assets/Images/${stay.imgUrls[1]}`" />
-                 <img :src="`src/assets/Images/${stay.imgUrls[2]}`" />
+                 <img class="side-img1" :src="`src/assets/Images/${stay.imgUrls[1]}`" />
+                 <img class="side-img2" :src="`src/assets/Images/${stay.imgUrls[2]}`" />
                   </div>
                   <div>
                  <img :src="`src/assets/Images/${stay.imgUrls[3]}`" />
-                 <img :src="`src/assets/Images/${stay.imgUrls[4]}`" />
+                 <img class="side-img4" :src="`src/assets/Images/${stay.imgUrls[4]}`" />
                   </div>
               </div>
           </div>
