@@ -111,8 +111,8 @@
           </div>
            <p>{{review.txt.slice(0,150)}}</p>
          </article>
-          <button class="btn-show-more">show all <span> {{stay.reviews.length}}</span> reviews</button>
        </section>
+          <button class="btn-show-more">show all <span> {{stay.reviews.length}}</span> reviews</button>
      </section>
         </stay-preview>
      </section>
