@@ -1,34 +1,44 @@
-.app-header {
-   grid-template-rows: 1fr 1fr;
-   height: 160px;
-   position: fixed;
-   top: 0;
-   width: 100%;
-   z-index: 8000;
 
-  .full-header {
-    height: 160px;
+.app-header .explore-page {
+  position: fixed;
+  background-color: $clr3;
+  top: 0;
+  display: grid;
+  grid-template-columns: 80px 1fr 80px;
+  width: 100%;
+  z-index: 8000;
+}
 
-    .home-page {
-      background: linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0.5) 50%,
-        rgba(0, 0, 0, 0.05) 85%,
-        transparent 90%
-      );
-      background-color: transparent;
-      box-shadow: none;
-    }
-  }
+.app-header .home-page {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0.05) 85%,
+    transparent 90%
+  );
+  background-color: transparent;
+  box-shadow: none;
+}
+
+// .app-header .fullheader {
+//   height: 160px;
+// }
+
+.app-header:not(.fullheader) {
+  grid-template-rows: 1fr;
+  box-shadow: 0 1px 12px rgba(0, 0, 0, 0.08) ;
+}
+
+.logo-container {
+  width: 130px;
 }
 
 .main-nav {
-   flex-wrap: nowrap;
+  flex-wrap: nowrap;
 }
 
 a {
   text-decoration: none;
-  font-weight: 700;
   align-items: center;
   display: inline-flex;
   height: 80px;
@@ -36,29 +46,37 @@ a {
   vertical-align: middle;
   z-index: 1;
   transition: color 250ms ease;
-  color: #ffffff;
+  color: $clr5;
   padding: 0px 15px;
 }
 
-.main-nav .user-menu {
-   color: #484848;
-   padding: 5px 5px 5px 15px;
-   border-radius: 200px;
-   background-color: #fff;
-   font-size: 16px;
-   border: 1px solid #ddd;
-   line-height: 20px;
+.notification-icon {
+  padding-right: 15px;
 }
 
-.logo-container {
-  width: 175px;
+.main-nav .user-menu {
+  border-radius: 200px;
+  background-color: $clr3;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  line-height: 20px;
+
+  svg:nth-child(2) {
+    margin-left: 10px;
+  }
+}
+
+.btn-svg {
+  padding: 5px 5px 5px 10px;
 }
 
 .mini-filter {
+  font-family: "Cereal-Regular", sans-serif;
   position: absolute;
-  top: 50%;
+  margin-top: 0;
+  top: 5%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   line-height: 20px;
   box-shadow: 0 1px 2px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 5%);
   background-color: #fff;
@@ -70,13 +88,23 @@ a {
   font-size: 14px;
   text-indent: 5px;
 
-  span:before {
+  span {
     // font-family: fas;
     // content: "";
-    // color: #fff;
-    background-color: #ff385c;
+    color: #fff;
+    background-color: $clr1;
     border-radius: 50%;
     height: 32px;
     padding: 10px;
+  }
+
+  svg {
+    display: block;
+    fill: $clr3;
+    height: 13px;
+    width: 13px;
+    stroke: currentColor;
+    stroke-width: 2;
+    overflow: visible;
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <footer class="app-footer-container full flex align-center space-between">
+  <footer class="app-footer-container full flex ">
     <div class="app-footer"></div>
     <div>
       <p>
@@ -26,20 +26,6 @@
 </template>
 
 <style>
-.app-footer-column {
-  padding: 1.2rem 1.2rem 1.2rem 0;
-}
-
-.app-footer-container {
-  align-items: center;
-  background-color: #f8f8f8;
-  color: #464646;
-  display: flex;
-  flex-direction: column;
-  font-weight: 400;
-  margin-top: 4rem;
-  width: 100%;
-}
 </style>
 
 

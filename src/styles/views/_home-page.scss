@@ -16,8 +16,8 @@
 
 .main-hero h1 {
   color: #ffffff;
+  font-family: "Cereal-Bold", sans-serif;
   font-size: 32px;
-  font-weight: 700;
   text-shadow: 1px 1px 2px #000;
   margin: 32px 0px;
 }
@@ -27,23 +27,29 @@
   background-color: #fff;
   border-radius: 50px;
   font-size: 1.5rem;
-  font-weight: 600;
   height: 55px;
   text-align: center;
   width: 10rem;
 }
 
 .main-hero button h3 {
+  font-family: "Cereal-Bold", sans-serif;
   margin: 0;
   font-size: 18px;
-  font-weight: 700;
+  background-color: $clr2;
+  background-image: linear-gradient(45deg, $clr2 , $clr1);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-text-fill-color: transparent;
 }
 
 /* GALLERIES */
 
 .gallery-title {
+  font-family: "Cereal-Bold", sans-serif;
   font-size: 33px;
-  font-weight: 700;
   margin-bottom: 48px;
 }
 
@@ -60,7 +66,7 @@
   }
 
   h3 {
-    font-weight: 700;
+    font-family: "Cereal-Bold", sans-serif;
     margin: 19px 0px;
   }
 }
@@ -68,19 +74,23 @@
 /* HOST */
 
 .home-page .host-container {
-  background-image: url(../../assets/Images/become-host.jpg);
-  background-position: 50%;
+  background-image: url("@/assets/Images/become-host.jpg");
+  background-position: 30%;
   background-size: cover;
   height: 90vh;
 
+  h1 {
+    font-family: "Circular-Bold", sans-serif;
+  }
+
   .host-cta {
     color: $clr5;
+    font-family: "Circular-Bold", sans-serif;
     font-size: 48px;
-    font-weight: 700;
     margin: 50px 0px 0px 80px;
 
     button {
-      margin-top: 50px;
+      margin-top: 10px;
       justify-self: flex-end;
       font-family: inherit;
       border: none;
