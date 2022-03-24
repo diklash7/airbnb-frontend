@@ -1,5 +1,5 @@
     .stay-detalis {
-        padding: 30px;
+        // padding: 10px;
         margin-top: 50px;
         margin-left: 10%;
         .titles-details {
@@ -19,22 +19,32 @@
             display: flex;
             .central-img img {
                 display: flex;
-                width: 560px;
-                height: 370px;
+                width: 520px;
+                height: 400px;
             }
             .side-imgs {
                 display: flex;
-                gap: 10px;
-                margin-left: 10px;
+                flex-wrap: wrap;
             }
             .side-imgs img {
-                width: 270px;
-                height: 180px;
-                margin-bottom: 10px;
+                width: 240px;
+                height: 196px;
+                margin-left: 10px;
                 object-fit: cover;
+            }
+            .center-img {
+                border-top-left-radius: 10px;
+                border-bottom-left-radius: 10px;
+            }
+            .side-img2 {
+                border-top-right-radius: 10px;
+            }
+            .side-img4 {
+                border-bottom-right-radius: 10px;
             }
         }
         .host-details {
+            margin-top: 30px;
             .host-title {
                 display: inline-block;
             }
@@ -58,6 +68,8 @@
         hr {
             margin-top: 30px;
             margin-bottom: 30px;
+            width: 50%;
+            opacity: 50%;
         }
         .info-check {
             h3 {
@@ -159,7 +171,7 @@
             border: 1px rgb(129, 121, 121) solid;
             border-radius: 10px;
             display: inline-block;
-            right: 400px;
+            right: 300px;
             // top: 700px;
             position: absolute;
             .form-options {

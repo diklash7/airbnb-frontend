@@ -1,6 +1,6 @@
 .app-footer {
    padding: 1.2rem 1.2rem 1.2rem 0;
-   font-family: 'Cereal-Medium', sans-serif;
+   font-family: 'Cereal-Regular', sans-serif;
    align-items: center;
    background-color: #f8f8f8;
    color: #464646;
@@ -12,7 +12,9 @@
 }
 
 .footer-info {
-  display: inline-block;
+  font-family: 'Cereal-Bold', sans-serif;
+  width: 500px;
+  margin: 0;
 }
 
 .footer-lang {

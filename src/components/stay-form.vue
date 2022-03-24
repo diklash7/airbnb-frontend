@@ -37,8 +37,10 @@
 
 </template>
 
-<script lang="ts" setup>
+<script>
 import { ref } from 'vue'
+
+// props: ['stay']
 
 const value1 = ref('')
 const defaultTime = ref([
@@ -65,6 +67,7 @@ const options =[
     label: 'Pets',
   },
 ]
+
 </script>
 <style>
 .demo-date-picker {

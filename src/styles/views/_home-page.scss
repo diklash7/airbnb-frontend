@@ -91,9 +91,10 @@
     margin: 50px 0px 0px 80px;
 
     button {
+      font-family: "Cereal-Bold", sans-serif;
       margin-top: 10px;
       justify-self: flex-end;
-      font-family: inherit;
+      font-size: 16px;
       border: none;
       color: $clr3;
       background-color: $clr5;

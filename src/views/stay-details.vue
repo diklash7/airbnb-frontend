@@ -11,16 +11,16 @@
           </div>
           <div class="gallery-details">
               <div class="central-img">
-                 <img :src="`src/assets/Images/${stay.imgUrls[0]}`" />
+                 <img class="center-img" :src="`src/assets/Images/${stay.imgUrls[0]}`" />
               </div>
               <div class="side-imgs" >
                   <div>
                  <img :src="`src/assets/Images/${stay.imgUrls[1]}`" />
-                 <img :src="`src/assets/Images/${stay.imgUrls[2]}`" />
+                 <img class="side-img2" :src="`src/assets/Images/${stay.imgUrls[2]}`" />
                   </div>
                   <div>
                  <img :src="`src/assets/Images/${stay.imgUrls[3]}`" />
-                 <img :src="`src/assets/Images/${stay.imgUrls[4]}`" />
+                 <img class="side-img4" :src="`src/assets/Images/${stay.imgUrls[4]}`" />
                   </div>
               </div>
           </div>
@@ -111,8 +111,8 @@
           </div>
            <p>{{review.txt.slice(0,150)}}</p>
          </article>
-          <button class="btn-show-more">show all <span> {{stay.reviews.length}}</span> reviews</button>
        </section>
+          <button class="btn-show-more">show all <span> {{stay.reviews.length}}</span> reviews</button>
      </section>
         </stay-preview>
      </section>
