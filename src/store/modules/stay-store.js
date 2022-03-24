@@ -3,7 +3,7 @@ import { stayService } from '@/services/stay-service.js'
 export default {
     state: {
         stays: null,
-        filterBy: { name: '', inStock: '', labels: [], sortBy: '' },
+        filterBy: { propertyType: ''},
         // labels: stayService.getlabels(),
     },
     getters: {

@@ -1,16 +1,16 @@
-// .main-layout {
-//     width: 90vh;
-// }
+.details-layout {
+    width: 150vh;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 .main-layout {
     display: grid;
     grid-template-columns: $layoutPadding 1fr $layoutPadding;
-
-    > * {
+    >* {
         grid-column: 2;
     }
-
-    > *.full {
+    >*.full {
         grid-column: 1 / -1;
     }
 }
