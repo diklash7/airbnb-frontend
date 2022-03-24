@@ -1,11 +1,15 @@
 <template>
   <section class="stay-filter">
-    <select @click="setFilter" multiple v-model="filterBy.propertyType">
-      <option value="House">House</option>
+    <select @change="setFilter" multiple v-model="filterBy.city">
+      <option value="">All</option>
+      <option value="Barcelona">Barcelona</option>
+      <option value="Hong Kong">Hong Kong</option>
+      <option value="New York">New York</option>
+      <!-- <option value="House">House</option>
       <option value="Apartment">Apartment</option>
       <option value="Serviced apartment">Serviced apartment</option>
       <option value="Bungalow">Bungalow</option>
-      <option value="Condominium">Condominium</option>
+      <option value="Condominium">Condominium</option> -->
     </select>
   </section>
 </template>
@@ -18,7 +22,8 @@ export default {
   data() {
     return {
       filterBy: {
-        // name: "",
+        city: "",
+        // amenities: [] 
         propertyType: [],
       },
       isOpen: true,
@@ -28,8 +33,8 @@ export default {
     this.setFilter = utilService.debounce(this.setFilter, 500);
   },
   computed: {
-    labels() {
-      return this.$store.getters.labels;
+    city() {
+      return this.$store.getters.city;
     },
   },
   methods: {
