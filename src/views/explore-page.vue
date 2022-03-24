@@ -3,7 +3,7 @@
   <section class="stay-app">
     <stay-filter @setFilter="setFilter" />
     <stay-list :stays="stays" />
-    <carousel/>
+    <!-- <carousel/> -->
   </section>
 </template>
 

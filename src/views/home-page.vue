@@ -36,7 +36,7 @@
     <section class="host-container full">
       <div class="host-cta">
       <h1>Become a host!</h1>
-      <button>Learn more</button>
+      <button @click="goToHost()">Learn more</button>
       </div>
     </section>
   </section>
@@ -78,6 +78,9 @@ export default {
     },
     goToExplore() {
       this.$router.push("/explore");
+    },
+    goToHost() {
+      this.$router.push("/host");
     },
   },
   components: {

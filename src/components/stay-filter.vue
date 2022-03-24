@@ -66,7 +66,7 @@ export default {
 </script>
 <style>
 .stay-filter {
-  margin-top: 300px;
+  margin-top: 20px;
 }
 .explore-btn {
     
@@ -84,7 +84,7 @@ export default {
     font-weight: 400!important;
     line-height: 18px!important;
     margin-right: 8px!important;
-    margin-top: 100px!important;
+    margin-top: 20px!important;
     margin-bottom: 4px!important;
 }
 
