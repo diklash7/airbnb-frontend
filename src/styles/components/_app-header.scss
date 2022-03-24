@@ -1,22 +1,55 @@
 .app-header {
-   background: linear-gradient(
-     180deg,
-     rgba(0, 0, 0, 0.5) 50%,
-     rgba(0, 0, 0, 0.05) 85%,
-     transparent 90%
-   );
-   height: 160px;
-   background-color: transparent;
-   box-shadow: none;
    grid-template-rows: 1fr 1fr;
+   height: 160px;
    position: fixed;
    top: 0;
-   display: grid;
-   grid-template-columns: 80px 1fr 80px;
    width: 100%;
    z-index: 8000;
- }
 
- .logo-svg {
-    display: block;
- }
+  .full-header {
+    height: 160px;
+
+    .home-page {
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.5) 50%,
+        rgba(0, 0, 0, 0.05) 85%,
+        transparent 90%
+      );
+      background-color: transparent;
+      box-shadow: none;
+    }
+  }
+}
+
+.main-nav {
+   flex-wrap: nowrap;
+}
+
+a {
+  text-decoration: none;
+  font-weight: 700;
+  align-items: center;
+  display: inline-flex;
+  height: 80px;
+  position: relative;
+  vertical-align: middle;
+  z-index: 1;
+  transition: color 250ms ease;
+  color: #ffffff;
+  padding: 0px 15px;
+}
+
+.main-nav .user-menu {
+   color: #484848;
+   padding: 5px 5px 5px 15px;
+   border-radius: 200px;
+   background-color: #fff;
+   font-size: 16px;
+   border: 1px solid #ddd;
+   line-height: 20px;
+}
+
+.logo-container {
+  width: 175px;
+}

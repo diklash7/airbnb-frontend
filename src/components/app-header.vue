@@ -1,14 +1,25 @@
 <template>
-  <section class="app-header">
-    <img class="logo-svg" src="../assets/airbnb.svg" >
+  <section class="app-header full-header home-page main-layout">
+    <div class="main-header flex space-between">
 
-    <nav class="main-nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
-      <router-link to="/explore">Explore</router-link>
-    </nav>
+      <div class="logo-container">
+        <router-link to="/">
+          <img class="logo-svg" src="../assets/airbnb-white.svg" />
+        </router-link>
+      </div>
+
+      <button class="mini-filter" hidden></button>
+
+      <div class="main-nav-container">
+        <nav class="main-nav flex align-center">
+          <router-link to="/explore">Explore</router-link>
+          <router-link to="/host">Become a Host</router-link>
+          <button class="user-menu">BUTTON</button>
+        </nav>
+      </div>
+
+    </div>
   </section>
 </template>
 
-<style>
-</style>
+<style></style>

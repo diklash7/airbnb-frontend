@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: #e4e4e4;
+    background-color: #ffffff;
 }
 
 html { 
@@ -25,9 +25,21 @@ html {
     line-height: lh(40px, 29px);
 }
 
-// h1 {
-//     font-size: rem(60px);
-// }
+button {
+    cursor: pointer;
+}
+
+a {
+    cursor: pointer;
+}
+
+img {
+    width: 100%;
+}
+
+h1 {
+    font-size: rem(60px);
+}
 
 // h2 {
 //     font-size: em(16px);
@@ -41,16 +53,3 @@ html {
 // h3 {
 //     font-size: em(29px);
 // }
-
-img {
-    width: 100%;
-}
-
-a {
-    color: $clr3;
-
-    &.active {
-        background-color: $clr1;
-        color: $clr2;
-    }
-}

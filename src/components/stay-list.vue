@@ -10,7 +10,7 @@
 
   <section class="home-cities">
     <stay-preview v-for="stay in stays" :key="stay._id" :stay="stay">
-      <article @click="$router.push(`/explore/${stay._id}`)">
+      <article @click="$router.push(`/stay/${stay._id}`)">
         <div>
           <img :src="`src/assets/Images/${stay.imgUrls[0]}`" />
           <!-- <span>

@@ -22,7 +22,7 @@ const router = createRouter({
             component: explorePage
         },
         {
-            path: '/explore/:id',
+            path: '/stay/:id',
             name: 'stay-details',
             component: stayDetails,
         },

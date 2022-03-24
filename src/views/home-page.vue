@@ -1,7 +1,8 @@
 <template>
   <section class="home-page main-layout">
-    <section class="main-hero">
+    <section class="main-hero main-layout full">
       <h1>Not sure where to go? Perfect.</h1>
+      <button><h3>Explore</h3></button>
     </section>
 
     <section class="home-cities">
@@ -37,7 +38,7 @@ export default {
   name: "home-page",
   data() {
     return {
-      cities: ['barcelona', 'newyork', 'hongkong', 'sydney']
+      cities: ['barcelona', 'new york', 'hong kong', 'sydney']
     };
   },
   created() {
@@ -61,7 +62,7 @@ export default {
     },
     goToStay(stayId) {
       console.log("stay:", this.stayId);
-      this.$router.push(`/explore/${stayId}`);
+      this.$router.push(`/stay/${stayId}`);
     },
     goToExplore() {
       this.$router.push(`/explore/${stayId}`);
