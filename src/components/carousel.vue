@@ -1,25 +1,38 @@
 <template>
-  <el-carousel :interval="5000" arrow="always">
-    <el-carousel-item v-for="item in 4" :key="item">
-      <img :src="`src/assets/Images/${stay.imgUrls[1]}`">
-    </el-carousel-item>
-  </el-carousel>
+<section class="carousel">
+  <div class="block">
+    <span class="demonstration">Switch when indicator is clicked</span>
+    <el-carousel trigger="click" height="150px">
+      <el-carousel-item v-for="item in stay.imgUrls" :key="item">
+        <img class="stay-img" :src="`src/assets/Images/${item}`" />
+      </el-carousel-item>
+    </el-carousel>
+  </div>
+  </section>
 </template>
 
 <script>
 export default {
- name: "carousel",
+  name: "carousel",
+  props: {
+    stay: Object,
+  },
+  created() {
+    console.log(this.stay.imgUrls);
+  },
 };
 </script>
 
 <style scoped>
-.el-carousel__item h3 {
+.el-carousel__item img {
   color: #475669;
-  font-size: 18px;
+  font-size: 14px;
   opacity: 0.75;
-  line-height: 300px;
+  line-height: 150px;
   margin: 0;
   text-align: center;
+  height: 100px;
+  width: 150;
 }
 
 .el-carousel__item:nth-child(2n) {
