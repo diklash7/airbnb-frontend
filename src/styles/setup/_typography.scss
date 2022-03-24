@@ -1,4 +1,14 @@
 @font-face {
-    font-family: Circular, sans-serif;
-    src: url(../../assets/fonts/Circular/CircularStd-Book.otf);
+    font-family: 'Circular-Book';
+    src: url('@/assets/fonts/Circular/circular-book.otf');
+}
+
+@font-face {
+    font-family: 'Circular-Bold';
+    src: url('@/assets/fonts/Circular/circular-bold.otf');
+}
+
+@font-face {
+    font-family: 'Circular-Medium';
+    src: url('@/assets/fonts/Circular/circular-medium.otf');
 }

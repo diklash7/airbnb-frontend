@@ -8,7 +8,10 @@
         </router-link>
       </div>
 
-      <button class="mini-filter" hidden></button>
+      <button class="mini-filter flex space-between">
+        Start Search
+        <span>?</span>
+      </button>
 
       <div class="main-nav-container">
         <nav class="main-nav flex align-center">
@@ -19,6 +22,7 @@
       </div>
 
     </div>
+    
   </section>
 </template>
 

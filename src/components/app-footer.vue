@@ -1,5 +1,5 @@
 <template>
-  <footer class="app-footer-container full main-root">
+  <footer class="app-footer-container full flex align-center space-between">
     <div class="app-footer"></div>
     <div>
       <p>
@@ -18,9 +18,9 @@
         <span>$ US</span>
     </div>
     <div>
-        <i class="fa fa-facebook-f">::before</i>
+        <!-- <i class="fa fa-facebook-f">::before</i>
         <i class="fa fa-twitter">::before</i>
-        <i class="fa fa-instagram">::before</i>
+        <i class="fa fa-instagram">::before</i> -->
     </div>
   </footer>
 </template>

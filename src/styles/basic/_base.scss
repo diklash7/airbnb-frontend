@@ -9,7 +9,7 @@ body {
 }
 
 html { 
-    font-family: Circular, sans-serif; 
+    font-family: 'Circular-Book', sans-serif;
     color: $clr5;
     line-height: 1.8;
     line-height: lh(26px);
@@ -38,6 +38,7 @@ img {
 }
 
 h1 {
+    font-family: 'Circular-Bold', sans-serif;
     font-size: rem(60px);
 }
 
