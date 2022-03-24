@@ -1,16 +1,36 @@
 <template>
   <section class="stay-filter">
-    <select @change="setFilter" multiple v-model="filterBy.city">
+  <button class="explore-btn">Price</button>
+  <select class="explore-btn" @change="setFilter" v-model="filterBy.propertyType">
+      <option value="">Type of place</option>
+      <option value="House">House</option>
+      <option value="Apartment">Apartment</option>
+      <option value="Serviced apartment">Serviced apartment</option>
+      <option value="Bungalow">Bungalow</option>
+      <option value="Condominium">Condominium</option>
+    </select> |
+  <button class="explore-btn">Wifi</button>
+  <button class="explore-btn">TV</button>
+  <button class="explore-btn">Kitchen</button>
+  <button class="explore-btn">AC</button>
+  <button class="explore-btn">Smoking Allowed</button>
+
+    <!-- <select @change="setFilter"  v-model="filterBy.city">
       <option value="">All</option>
       <option value="Barcelona">Barcelona</option>
       <option value="Hong Kong">Hong Kong</option>
-      <option value="New York">New York</option>
+      <option value="New York">New York</option> -->
       <!-- <option value="House">House</option>
       <option value="Apartment">Apartment</option>
       <option value="Serviced apartment">Serviced apartment</option>
       <option value="Bungalow">Bungalow</option>
       <option value="Condominium">Condominium</option> -->
-    </select>
+    <!-- </select> -->
+    
+    <div>
+    <span class="price-range"> <b>Price:</b> 50
+            <input @change="setFilter" type="range" v-model="filterBy.price" min="50" max="1000" alt="value"> 1000 </span>
+    </div>
   </section>
 </template>
 
@@ -22,9 +42,9 @@ export default {
   data() {
     return {
       filterBy: {
-        city: "",
-        // amenities: [] 
-        propertyType: [],
+        // city: '',
+        propertyType: '',
+        price:300
       },
       isOpen: true,
     };
@@ -33,9 +53,9 @@ export default {
     this.setFilter = utilService.debounce(this.setFilter, 500);
   },
   computed: {
-    city() {
-      return this.$store.getters.city;
-    },
+    // city() {
+    //   return this.$store.getters.city;
+    // },
   },
   methods: {
     setFilter() {
@@ -47,5 +67,28 @@ export default {
 <style>
 .stay-filter {
   margin-top: 300px;
+}
+.explore-btn {
+    
+    height: 38px;
+    cursor: pointer!important;
+    border: 1px solid #ddd!important;
+    background-color: #fff!important;
+    outline: none!important;
+    margin: 0!important;
+    border-radius: 30px!important;
+    color: #222!important;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif!important;
+    padding: 10px 16px!important;
+    font-size: 14px!important;
+    font-weight: 400!important;
+    line-height: 18px!important;
+    margin-right: 8px!important;
+    margin-top: 100px!important;
+    margin-bottom: 4px!important;
+}
+
+.star{
+    color: pink;
 }
 </style>
