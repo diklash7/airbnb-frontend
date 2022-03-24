@@ -4,10 +4,10 @@ import { utilService } from './util-service'
 import { storageService } from './async-storage-service'
 
 const KEY = 'stay_db'
-// const labels = ['On wheels', 'Box game', 'Art', 'Baby', 'Doll', 'Puzzle', 'Outdoor']
-// const ENDPOINT = 'stay'
-// const BASE_URL =
-//   process.env.NODE_ENV !== 'development' ? '/api/stay' : '//localhost:3030/api/stay/'
+    // const labels = ['On wheels', 'Box game', 'Art', 'Baby', 'Doll', 'Puzzle', 'Outdoor']
+    // const ENDPOINT = 'stay'
+    // const BASE_URL =
+    //   process.env.NODE_ENV !== 'development' ? '/api/stay' : '//localhost:3030/api/stay/'
 
 export const stayService = {
     query,
@@ -32,7 +32,7 @@ async function query(filterBy) {
     if (filterBy.min && filterBy.max) {
         // todo: check if stay in range of price
     }
-    
+
     return Promise.resolve(filteredStays)
 }
 
@@ -87,8 +87,7 @@ function save(stay) {
 function _createStays() {
     let stays = utilService.loadFromStorage(KEY)
     if (!stays || !stays.length) {
-        stays = [
-            {
+        stays = [{
                 "name": "Spacious and quiet duplex apartment in Poble Sec",
                 "summary": "Spacious apartment in a peculiar building in the central neighbourhood of Poble Sec, with patio and terrace, ideal for families with children or groups. Walking distance from center, Montjuïc, Plaza España, Fira Montjuïc/Gran Vía, Sant Antoni, Raval.",
                 "interaction": "Yamila lives in the neighborhood. Should you need it she will be near! Before your arrival, you might interact by e-mail either with Yamila or with me (Cristina, the apartment's owner).",
@@ -108,13 +107,12 @@ function _createStays() {
                     "Wifi",
                     "Air conditioning",
                     "Kitchen",
-                    "Paid parking off premises",
-                    "Buzzer/wireless intercom",
+                    "Buzzer-wireless intercom",
                     "Heating",
-                    "Family/kid friendly",
-                    "Washer",
+                    "Family-kid friendly",
                     "Smoke detector",
                     "Carbon monoxide detector",
+                    "Washer",
                     "First aid kit",
                     "Safety card",
                     "Fire extinguisher",
@@ -190,8 +188,7 @@ function _createStays() {
                     "value": 10,
                     "rating": 95
                 },
-                "reviews": [
-                    {
+                "reviews": [{
                         "at": "2013-05-12T04:00:00.000Z",
                         "by": {
                             "_id": "622f3403e36c59e6164fb132",
@@ -422,7 +419,6 @@ function _createStays() {
                     "Kitchen",
                     "Heating",
                     "Shampoo",
-                    "24-hour check-in",
                     "Hangers",
                     "Hair dryer",
                     "Iron",
@@ -464,8 +460,7 @@ function _createStays() {
                     "value": 9,
                     "rating": 87
                 },
-                "reviews": [
-                    {
+                "reviews": [{
                         "at": "2016-02-01T05:00:00.000Z",
                         "by": {
                             "_id": "622f3407e36c59e6164fbd26",
@@ -695,9 +690,9 @@ function _createStays() {
                     "Wifi",
                     "Air conditioning",
                     "Kitchen",
-                    "Buzzer/wireless intercom",
+                    "Buzzer-wireless intercom",
                     "Heating",
-                    "Family/kid friendly",
+                    "Family-kid friendly",
                     "Smoke detector",
                     "Carbon monoxide detector",
                     "First aid kit",
@@ -748,8 +743,7 @@ function _createStays() {
                     "value": 10,
                     "rating": 96
                 },
-                "reviews": [
-                    {
+                "reviews": [{
                         "at": "2013-08-17T04:00:00.000Z",
                         "by": {
                             "_id": "622f3403e36c59e6164fb0d4",
@@ -978,14 +972,14 @@ function _createStays() {
                     "Wifi",
                     "Air conditioning",
                     "Kitchen",
-                    "Free parking on premises",
                     "Heating",
-                    "Family/kid friendly",
-                    "Washer",
-                    "Dryer",
+                    "Family-kid friendly",
+                    "Hair dryer",
                     "Smoke detector",
-                    "Fire extinguisher",
+                    "Fire-extinguisher",
+                    "Free parking on premises",
                     "Essentials",
+                    "Washer",
                     "Shampoo",
                     "24-hour check-in",
                     "Hangers",
@@ -1032,8 +1026,7 @@ function _createStays() {
                     "value": 10,
                     "rating": 99
                 },
-                "reviews": [
-                    {
+                "reviews": [{
                         "at": "2016-12-07T05:00:00.000Z",
                         "by": {
                             "_id": "622f3402e36c59e6164faefe",
@@ -1245,7 +1238,7 @@ function _createStays() {
             }
         ]
         utilService.saveToStorage(KEY, stays)
-        // 'On wheels', 'Box game', 'Art', 'Baby', 'Doll', 'Puzzle', 'Outdoor'
+            // 'On wheels', 'Box game', 'Art', 'Baby', 'Doll', 'Puzzle', 'Outdoor'
     }
     return stays
 }

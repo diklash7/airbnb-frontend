@@ -1,6 +1,6 @@
 
 <template>
-     <section v-if="stay" class="stay-detalis details-layout">
+     <section v-if="stay" class="stay-detalis main-layout">
          <stay-preview :stay="stay">
         <section class="main-details">
           <div class="titles-details">
@@ -13,7 +13,6 @@
               <div class="central-img">
                  <img :src="`src/assets/Images/${stay.imgUrls[0]}`" />
               </div>
-              <!-- <div v-for="img in imgs" :key="img" class="side-imgs" > -->
               <div class="side-imgs" >
                   <div>
                  <img :src="`src/assets/Images/${stay.imgUrls[1]}`" />
@@ -40,26 +39,51 @@
           <stay-form></stay-form>
           <hr>
           <div class="info-check">
+            <section>
+              <img src="../assets/Icons/Location.png">
+            <div>
               <h3>Great location</h3>
               <p>100% of recent guests gave the location a 5-star rating</p>
+            </div>
+            </section>
+              <section>
+              <img src="../assets/Icons/House-key.png">
+             <div>
               <h3>Great check-in experience</h3>
               <p>90% of recent guests gave the check-in process a 5-star rating</p>
+            </div>
+            </section>
+              <section>
+              <img src="../assets/Icons/Pool.png">
+              <div>
               <h3>Pool</h3>
               <p>Guests often search for this popular amenity</p>
+            </div>
+            </section>
           </div>
           <hr>
           <div class="stay-disc">
-               <h3> Disc:</h3>
+               <h3> Info:</h3>
              <p> 
               {{ stay.summary }}
              </p>
           </div>
           <hr>
              <h2> What this place offers</h2>
-            <div v-for="a in stay.amenities.slice(0,10)" :key="a">
-              <img :src="getImage(a)" alt="">
-              {{a}}
+            <section class="amenities-details">
+              <div class="amenities-side">
+            <div class="amenities-details-left" v-for="amenitie in stay.amenities.slice(0,5)" :key="amenitie">
+              <img :src="getImage(amenitie)" alt="">
+              <span> {{amenitie}}</span>
+              </div>
             </div>
+             <div class="amenities-side">
+            <div class="amenities-details-right" v-for="amenitie in stay.amenities.slice(5,10)" :key="amenitie">
+              <img :src="getImage(amenitie)" alt="">
+              <span> {{amenitie}}</span>
+            </div>
+            </div>
+              </section>
             <button class="btn-show-more">show all <span> {{stay.amenities.length}}</span> amenities</button>
           <hr>
           <div class="title-reviews">
@@ -136,7 +160,7 @@ export default {
       return this.$store.getters.reviews
     },
     getImage() {
-      return (img) => new URL(`../assets/${img}.png`, import.meta.url)
+      return (amenitie) => new URL(`../assets/Icons/${amenitie}.png`, import.meta.url)
     }
   },
   methods: {
