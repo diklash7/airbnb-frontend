@@ -39,6 +39,7 @@
                   </div>
               </div>
           </div>
+          <section class="a">
           <div class="host-details">
               <div class="host-title">
            <h2> {{ stay.roomType }} by {{ stay.host.fullname }}</h2>  
@@ -52,7 +53,8 @@
             <img class="img-host" :src="`${stay.host.pictureUrl}`" />
           </div>
           <stay-form></stay-form>
-          <hr>
+           </section>
+          <hr class="hr-1">
           <div class="info-check">
             <section>
               <img src="../assets/Icons/Location.png">

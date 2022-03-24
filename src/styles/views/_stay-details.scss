@@ -43,8 +43,14 @@
                 border-bottom-right-radius: 10px;
             }
         }
+        .a {
+            display: flex;
+        }
         .host-details {
+            // display: inline-block;
             margin-top: 30px;
+            margin-right: 150px;
+            // flex-direction: column;
             .host-title {
                 display: inline-block;
             }
@@ -60,9 +66,12 @@
                 width: 70px;
                 height: 70px;
                 border-radius: 50%;
-                display: inline-block;
                 margin-left: 200px;
                 border: 1px rgb(172, 168, 168) solid;
+            }
+            .hr-1 {
+                width: 50%;
+                opacity: 50%;
             }
         }
         hr {
@@ -139,6 +148,7 @@
             flex-direction: column;
         }
         .list-reviews {
+            max-width: 1100px;
             display: flex;
             flex-wrap: wrap;
             gap: 40px;
@@ -166,14 +176,15 @@
             border-radius: 10px;
         }
         .stay-form {
+            box-shadow: 0 6px 16px rgb(0 0 0 / 12%);
             width: 300px;
-            padding: 20px;
-            border: 1px rgb(129, 121, 121) solid;
-            border-radius: 10px;
+            margin-top: 40px;
+            padding: 24px;
+            border-radius: 12px;
+            border: 1px solid #ddd;
             display: inline-block;
-            right: 300px;
-            // top: 700px;
-            position: absolute;
+            position: sticky;
+            top: 20px;
             .form-options {
                 // border: 1px rgb(129, 121, 121) solid;
                 // border-radius: 50px;
@@ -199,14 +210,19 @@
                 }
             }
             .btn-form-reserve {
-                background-color: #FF385C;
-                color: white;
-                font-weight: bolder;
-                font-size: 15px;
-                width: 240px;
-                height: 45px;
-                margin-top: 20px;
-                border-radius: 10px;
+                background-color: #ff385c;
+                border: none;
+                color: #fff;
+                text-align: center;
+                letter-spacing: .05rem;
+                width: 100%;
+                height: 48px;
+                min-width: 200px;
+                font-family: inherit;
+                font-size: 16px;
+                font-weight: 600;
+                border-radius: 8px;
+                transition: opacity 1.25s ease 0s!important;
             }
         }
     }
