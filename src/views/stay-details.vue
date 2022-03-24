@@ -56,7 +56,10 @@
           </div>
           <hr>
              <h2> What this place offers</h2>
-            <pre> {{stay.amenities.slice(0,10)}}</pre>
+            <div v-for="a in stay.amenities.slice(0,10)" :key="a">
+              <img :src="getImage(a)" alt="">
+              {{a}}
+            </div>
             <button class="btn-show-more">show all <span> {{stay.amenities.length}}</span> amenities</button>
           <hr>
           <div class="title-reviews">
@@ -132,6 +135,9 @@ export default {
      reviews() {
       return this.$store.getters.reviews
     },
+    getImage() {
+      return (img) => new URL(`../assets/${img}.png`, import.meta.url)
+    }
   },
   methods: {
     async addReview() {
