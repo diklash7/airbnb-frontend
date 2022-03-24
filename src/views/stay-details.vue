@@ -11,11 +11,11 @@
           </div>
           <div class="gallery-details">
               <div class="central-img">
-                 <img :src="`src/assets/Images/${stay.imgUrls[0]}`" />
+                 <img class="center-img" :src="`src/assets/Images/${stay.imgUrls[0]}`" />
               </div>
               <div class="side-imgs" >
                   <div>
-                 <img class="side-img1" :src="`src/assets/Images/${stay.imgUrls[1]}`" />
+                 <img :src="`src/assets/Images/${stay.imgUrls[1]}`" />
                  <img class="side-img2" :src="`src/assets/Images/${stay.imgUrls[2]}`" />
                   </div>
                   <div>
