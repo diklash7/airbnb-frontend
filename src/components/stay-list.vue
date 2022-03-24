@@ -13,16 +13,15 @@
       <article @click="$router.push(`/stay/${stay._id}`)">
         <div>
           <img :src="`src/assets/Images/${stay.imgUrls[0]}`" />
-          <!-- <span>
-            {{ stay.capacity }} guests • {{ stay.bedrooms }} bedroom •
-            {{ stay.beds }} bed • {{ stay.bathrooms }} bath
-          </span> -->
-          <span>{{ stay.roomType }} • {{ stay.address.city }}
-
+            <div>
+           <span class="star">⭐</span> 
+           <span>{{ stay.reviewScores.rating }}  •
+         {{ stay.numOfReviews}} reviews </span>
+          </div>
+          <span>{{ stay.propertyType }} • {{ stay.address.city }}
           </span>
-         
-          <h2>{{ stay.name }}</h2>
-          <h3>${{ stay.price }}/ night</h3>
+           <h3>{{ stay.name }}</h3>
+          <span>${{ stay.price }}/ night</span>
         </div>
         <div>
           <custom-label
@@ -69,6 +68,7 @@ img {
 }
 
 .explore-btn {
+    
     height: 38px;
     cursor: pointer!important;
     border: 1px solid #ddd!important;
@@ -83,8 +83,11 @@ img {
     font-weight: 400!important;
     line-height: 18px!important;
     margin-right: 8px!important;
-    margin-top: 4px!important;
+    margin-top: 100px!important;
     margin-bottom: 4px!important;
 }
 
+.star{
+    color: pink;
+}
 </style>

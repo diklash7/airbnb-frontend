@@ -1,36 +1,35 @@
 
 <template>
   <section class="stay-app">
-    <!-- <stay-filter @setFilter="setFilter" /> -->
+    <stay-filter @setFilter="setFilter" />
     <stay-list :stays="stays" />
-      <app-swiper/>
   </section>
 </template>
 
 <script>
-import stayList from '../components/stay-list.vue'
-// import stayFilter from '../components/stay-filter.vue'
+import stayList from "../components/stay-list.vue";
+import stayFilter from "../components/stay-filter.vue";
 export default {
-  name: 'stay-app',
+  name: "stay-app",
   created() {
-    this.$store.dispatch({ type: 'loadStays' })
+    this.$store.dispatch({ type: "loadStays" });
   },
   computed: {
     stays() {
-      return this.$store.getters.staysToShow
+      return this.$store.getters.staysToShow;
     },
   },
   methods: {
-    // setFilter(filterBy) {
-    //   const copyfilter = JSON.parse(JSON.stringify(filterBy))
-    //   this.$store.dispatch({ type: 'setFilter', filterBy: copyfilter })
-    // },
+    setFilter(filterBy) {
+      const copyfilter = JSON.parse(JSON.stringify(filterBy))
+      this.$store.dispatch({ type: 'setFilter', filterBy: copyfilter })
+    },
   },
   components: {
     stayList,
-    // stayFilter,
+    stayFilter,
   },
-}
+};
 </script>
 
 <style></style>
