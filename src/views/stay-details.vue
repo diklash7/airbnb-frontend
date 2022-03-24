@@ -1,6 +1,6 @@
 
 <template>
-     <section v-if="stay" class="stay-detalis">
+     <section v-if="stay" class="stay-detalis details-layout">
          <stay-preview :stay="stay">
         <section class="main-details">
           <div class="titles-details">
@@ -37,10 +37,8 @@
               </div>
             <img class="img-host" :src="`${stay.host.pictureUrl}`" />
           </div>
+          <stay-form></stay-form>
           <hr>
-          <!-- <form>
-
-          </form> -->
           <div class="info-check">
               <h3>Great location</h3>
               <p>100% of recent guests gave the location a 5-star rating</p>
@@ -59,7 +57,7 @@
           <hr>
              <h2> What this place offers</h2>
             <pre> {{stay.amenities.slice(0,10)}}</pre>
-            <button>show all <span> {{stay.amenities.length}}</span> amenities</button>
+            <button class="btn-show-more">show all <span> {{stay.amenities.length}}</span> amenities</button>
           <hr>
           <div class="title-reviews">
            <h2 class="title-reviews">⭐ {{ stay.reviewScores.rating }}  •
@@ -86,7 +84,7 @@
           </div>
            <p>{{review.txt.slice(0,150)}}</p>
          </article>
-          <button>show all <span> {{stay.reviews.length}}</span> reviews</button>
+          <button class="btn-show-more">show all <span> {{stay.reviews.length}}</span> reviews</button>
        </section>
      </section>
         </stay-preview>
@@ -98,10 +96,12 @@
 import { stayService } from '../services/stay-service'
 import { reviewService } from '../services/review-service'
 import stayPreview from '../components/stay-preview.vue'
+import stayForm from '../components/stay-form.vue'
 // import stayReview from './stay-review.vue'
 export default {
   components: { 
       stayPreview ,
+      stayForm,
     //   stayReview 
   },
   name: 'stay-details',
