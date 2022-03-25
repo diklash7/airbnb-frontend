@@ -1,24 +1,21 @@
 <template>
   <section class="stay-form">
+    
       <section class="form-options" >
-      <section class="form-date">
-     <div>
-      <input
-        v-model="value1"
-        type="date"
-        placeholder="check-in"
-        :default-time="defaultTime"
-      />
-     </div>
-     <div>
-      <input
-        v-model="value1"
-        type="date"
-        placeholder="check-out"
-        :default-time="defaultTime"
-      />
-     </div>
-    </section>
+
+      <div class="form-date">
+        <label>
+          <el-date-picker
+          class="input-date"
+            v-model="value1"
+            type="daterange"
+            start-placeholder="check-in"
+            end-placeholder= "check-out"
+            :default-value="[new Date(2010, 9, 1), new Date(2010, 10, 1)]"
+          />
+        </label>
+         
+        </div>
 
    <section class="form-guests">
     <select v-model="value2" placeholder="Guests">
@@ -33,11 +30,16 @@
     </section>
 
     <button class="btn-form-reserve">Reserve</button>
+   
+   <div class="info-reserve">
+   {{value2}}
+   </div>
   </section>
+
 
 </template>
 
-<script>
+<script lang="ts" setup>
 import { ref } from 'vue'
 
 const value1 = ref('')
@@ -65,22 +67,7 @@ const options =[
     label: 'Pets',
   },
 ]
-
 </script>
 <style>
-.demo-date-picker {
-  display: flex;
-  width: 100%;
-  padding: 0;
-  flex-wrap: wrap;
-}
-.demo-date-picker .block {
-  padding: 30px 0;
-  text-align: center;
-  border-right: solid 1px var(--el-border-color);
-  flex: 1;
-}
-.demo-date-picker .block:last-child {
-  border-right: none;
-}
+  
 </style>

@@ -1,7 +1,12 @@
 .details-layout {
-    width: 150vh;
-    margin-left: auto;
-    margin-right: auto;
+    display: grid;
+    grid-template-columns: $detailsPadding 1fr $detailsPadding;
+    >* {
+        grid-column: 2;
+    }
+    >*.full {
+        grid-column: 1 / -1;
+    }
 }
 
 .main-layout {
