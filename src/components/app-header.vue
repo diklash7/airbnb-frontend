@@ -3,13 +3,17 @@
     <div class="app-header-container flex space-between">
       <div class="logo-container">
         <router-link to="/">
-          <img v-if="this.isScroll" class="logo-svg" src="../assets/airbnb.svg" />
+          <img
+            v-if="pagePos"
+            class="logo-svg"
+            src="../assets/airbnb.svg"
+          />
           <img v-else class="logo-svg" src="../assets/airbnb-white.svg" />
         </router-link>
       </div>
 
       <button
-        v-if="isScroll"
+        v-if="pagePos"
         @click="isFull"
         class="mini-filter flex space-between align-center"
       >
@@ -35,11 +39,23 @@
           <router-link to="/explore">Explore</router-link>
           <router-link to="/host">Become a Host</router-link>
           <div class="notification-icon">
-            <svg
+            <svg v-if="pagePos"
               xmlns="http://www.w3.org/2000/svg"
               width="16"
               height="16"
               fill="#222222"
+              class="bi bi-bell-fill"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z"
+              />
+            </svg>
+            <svg v-else
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="#ffffff"
               class="bi bi-bell-fill"
               viewBox="0 0 16 16"
             >
@@ -84,7 +100,7 @@
       </div>
     </div>
   </section>
-  <app-filter v-if="!isScroll" />
+  <app-filter v-if="!pagePos" />
   <!-- <section class="app-header full-header home-page main-layout"></section>
     <div class="app-header-container flex space-between">
 
@@ -112,8 +128,9 @@ export default {
   data() {
     return {
       isScroll: false,
-      homePage: true,
+      page: 'home',
       isFull: false,
+      pagePos: null,
     };
   },
   created() {
@@ -125,25 +142,29 @@ export default {
   },
   methods: {
     scrollToggle() {
-      // console.log("scrolling...");
       this.isScroll = true;
-      const header = document.querySelector('.app-header');
-      // console.log('header scroll:', header.scrollTop);
-    
+this.pagePos = window.scrollY
+}
     },
-  },
   computed: {
     headerStyles() {
       return {
-        "home-page": this.homePage && !this.isScroll,
-        "explore-page": !this.homePage,
-        'full-header': this.isFull,
+        'home-page': (this.page === 'home'),
+        'top': !this.pagePos,
+        'explore-page': (this.page === 'explore'),
+        'full-header': !this.pagePos,
       };
     },
   },
   destroyed() {
     window.removeEventListener("scroll", this.scrollToggle);
   },
+  // watch: {
+  //       '$route.params.explore'(id) {
+  //           console.log('Changed to', id);
+  //           this.loadCar();
+  //       }
+  //   }
 };
 </script>
 <style></style>
