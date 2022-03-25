@@ -1,6 +1,6 @@
 <template>
-  <section class="home-page main-layout">
-    <section class="main-hero main-layout full" ref="hero">
+  <section contenteditable="true" class="home-page main-layout" @scroll="checkScroll" ref="home">
+    <section class="main-hero main-layout full">
       <h1>Not sure where to go? Perfect.</h1>
       <button @click="goToExplore()"><h3>Explore</h3></button>
     </section>
@@ -50,14 +50,10 @@ export default {
   data() {
     return {
       cities: ["Barcelona", "New York", "Hong Kong", "Sydney"],
-      pagePos: null,
     };
   },
   created() {
     this.$store.dispatch({ type: "loadStays" });
-  },
-  test(){
-console.log(this.$refs.hero.scrollHeight);
   },
   computed: {
     stays() {
@@ -90,11 +86,6 @@ console.log(this.$refs.hero.scrollHeight);
   components: {
     customCard,
   },
-  watch: {
-        '$ref.hero.scrollHeight' () {
-      console.log('sdsdsd');
-    }
-    }
 };
 </script>
 
