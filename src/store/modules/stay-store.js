@@ -55,6 +55,7 @@ export default {
             })
         },
         setFilter({ dispatch, commit }, { filterBy }) {
+            console.log('filterBy:', filterBy);
             commit({ type: 'setFilter', filterBy })
             dispatch({ type: 'loadStays' })
         },
