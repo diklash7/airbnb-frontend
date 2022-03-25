@@ -3,6 +3,7 @@ import homePage from '../views/home-page.vue'
 import aboutPage from '../views/about-page.vue'
 import explorePage from '../views/explore-page.vue'
 import stayDetails from '../views/stay-details.vue'
+// import orderDetails from '../views/order-details.vue'
 
 const router = createRouter({
     history: createWebHashHistory(),
@@ -26,6 +27,12 @@ const router = createRouter({
             name: 'stay-details',
             component: stayDetails,
         },
+        // {
+        //     path: '/order/',
+        //     name: 'orfer-details',
+        //     component: orderDetails,
+        // },
+
     ]
 })
 

@@ -96,6 +96,7 @@
      </select>
      </section>
     </section>
+       <!-- <router-link class="btn-form-reserve" to="/order">Reserve</router-link> -->
 
     <button class="btn-form-reserve">Reserve</button>
    
