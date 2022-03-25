@@ -1,13 +1,18 @@
 <template>
-  <section class="app-header explore-page main-layout">
+  <section class="app-header main-layout" :class="headerStyles">
     <div class="app-header-container flex space-between">
       <div class="logo-container">
         <router-link to="/">
-          <img class="logo-svg" src="../assets/airbnb.svg" />
+          <img v-if="this.isScroll" class="logo-svg" src="../assets/airbnb.svg" />
+          <img v-else class="logo-svg" src="../assets/airbnb-white.svg" />
         </router-link>
       </div>
 
-      <button class="mini-filter flex space-between align-center">
+      <button
+        v-if="isScroll"
+        @click="isFull"
+        class="mini-filter flex space-between align-center"
+      >
         Start your search
         <span>
           <svg
@@ -79,7 +84,7 @@
       </div>
     </div>
   </section>
-  <app-filter />
+  <app-filter v-if="!isScroll" />
   <!-- <section class="app-header full-header home-page main-layout"></section>
     <div class="app-header-container flex space-between">
 
@@ -104,8 +109,40 @@
 <script>
 import appFilter from "./app-filter.vue";
 export default {
+  data() {
+    return {
+      isScroll: false,
+      homePage: true,
+      isFull: false,
+    };
+  },
+  created() {
+    this.isScroll = false;
+    window.addEventListener("scroll", this.scrollToggle);
+  },
   components: {
     appFilter,
+  },
+  methods: {
+    scrollToggle() {
+      // console.log("scrolling...");
+      this.isScroll = true;
+      const header = document.querySelector('.app-header');
+      // console.log('header scroll:', header.scrollTop);
+    
+    },
+  },
+  computed: {
+    headerStyles() {
+      return {
+        "home-page": this.homePage && !this.isScroll,
+        "explore-page": !this.homePage,
+        'full-header': this.isFull,
+      };
+    },
+  },
+  destroyed() {
+    window.removeEventListener("scroll", this.scrollToggle);
   },
 };
 </script>
