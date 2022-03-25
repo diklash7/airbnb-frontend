@@ -17,9 +17,6 @@ export default {
   props: {
     stay: Object,
   },
-  // created() {
-  //   // console.log(this.stay.imgUrls);
-  // },
 };
 </script>
 
@@ -49,14 +46,16 @@ export default {
   background-color: #d3dce6;
 } */
 
-el-carousel__container {
+/* el-carousel__container {
     position: relative;
     height: 260px;
-
+ .el-carousel__arrow{
+  color: none;
+    background-color: none;
 }
+} */
 
-
- .el-carousel__item{
+.el-carousel__item{
     overflow: hidden;
     top: 0;
     left: 0;
@@ -70,6 +69,14 @@ el-carousel__container {
     width: 0.4em  !important;
     height: 0.4rem !important;
     border-radius: 40%;
+    background-color: white;
 
 }
+
+
+
+/* .el-carousel__arrow-background{
+
+
+} */
 </style>
