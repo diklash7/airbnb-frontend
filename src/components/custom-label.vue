@@ -17,12 +17,4 @@ export default {
 }
 </script>
 
-<style>
-.label {
-  border: 2px solid #333;
-  border-radius: 2em;
-  color: #fff;
-  border-color: v-bind(color);
-  background-color: v-bind(color);
-}
-</style>
+

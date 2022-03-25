@@ -6,13 +6,15 @@
         :model="form"
         label-width="120px"
       >
-        <el-form-item class="location-input" label="Location">
-          <el-input
-            type="search"
-            v-model="form.city"
-            placeholder="Where are you going?"
-          />
-        </el-form-item>
+        <div class="search-container flex flex-wrap">
+          <el-form-item label="Location">
+            <el-input
+              type="search"
+              v-model="form.city"
+              placeholder="Where are you going?"
+            />
+          </el-form-item>
+        </div>
 
         <!-- <el-cascader :options="options">
           <template #default="{ node, data }">
@@ -22,14 +24,19 @@
         </el-cascader> -->
 
         <div class="block">
+          <span class="date-picker-title flex space-between">
+            <el-form-item label="Check in"> </el-form-item>
+            <el-form-item label="Check out"> </el-form-item>
+          </span>
           <el-date-picker
-            v-model="value2"
+            v-model="dates"
             type="daterange"
-            start-placeholder="Start Date"
-            end-placeholder="End Date"
-            :default-value="[new Date(2010, 9, 1), new Date(2010, 10, 1)]"
+            start-placeholder="Add dates"
+            end-placeholder="Add dates"
+            :default-value="[new Date(2022, 2, 1), new Date(2022, 3, 1)]"
           />
         </div>
+
 
         <el-form-item>
           <el-button class="submit-btn" type="primary" @click="onSubmit">
@@ -60,8 +67,7 @@ export default {
     return {
       form: {
         city: "",
-        date1: "",
-        date2: "",
+        dates: [],
       },
     };
   },

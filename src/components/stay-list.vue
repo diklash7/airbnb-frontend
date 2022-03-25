@@ -3,7 +3,6 @@
     <stay-preview v-for="stay in stays" :key="stay._id" :stay="stay">
       <article @click="$router.push(`/stay/${stay._id}`)">
         <div>
-          <!-- <img class="stay-img" :src="`src/assets/Images/${stay.imgUrls[0]}`" /> -->
           <carousel :stay="stay" />
           <div>
             <span class="star"
@@ -69,39 +68,3 @@ export default {
   },
 };
 </script>
-
-<style>
-.stay-img {
-  margin: 0;
-  height: 250px;
-  border-radius: 12px;
-  position: absolute;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(326px, 1fr));
-  cursor: pointer;
-}
-.stay-price {
-  padding-top: 4px;
-}
-.home-cities {
-  display: grid;
-  border-radius: 10px;
-  /* grid-template-columns: repeat(auto-fill, minmax(326px, 1fr)); */
-  grid-template-columns: repeat(4, 1fr);
-  gap: 25px;
-}
-.star {
-  padding: 5px;
-  color: blue;
-  margin-bottom: 18px;
-}
-
-.num-rew {
-  /* padding: 10px; */
-  color: #717171;
-}
-
-.bold {
-  font-weight: bold;
-}
-</style>

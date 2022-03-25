@@ -1,30 +1,31 @@
 
-.app-header .explore-page {
+.app-header {
+  grid-template-rows: 1fr 1fr;
+  height: 80px;
   position: fixed;
-  background-color: $clr3;
   top: 0;
   display: grid;
   grid-template-columns: 80px 1fr 80px;
   width: 100%;
   z-index: 8000;
+  background-color: #fff;
 }
 
-.app-header .home-page {
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.5) 50%,
-    rgba(0, 0, 0, 0.05) 85%,
-    transparent 90%
-  );
+.home-page {
+  // background: linear-gradient(180deg,rgba(0,0,0,.5) 50%,rgba(0,0,0,.05) 85%,transparent 90%);
   background-color: transparent;
   box-shadow: none;
+ 
+  a{
+    color: $clr3;
+  }
 }
 
-// .app-header .fullheader {
-//   height: 160px;
-// }
+.full-header {
+  height: 160px;
+}
 
-.app-header:not(.fullheader) {
+.app-header:not(.full-header) {
   grid-template-rows: 1fr;
   box-shadow: 0 1px 12px rgba(0, 0, 0, 0.08) ;
 }
@@ -74,7 +75,7 @@ a {
   font-family: "Cereal-Regular", sans-serif;
   position: absolute;
   margin-top: 0;
-  top: 5%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   line-height: 20px;

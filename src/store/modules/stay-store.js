@@ -3,7 +3,7 @@ import { stayService } from '@/services/stay-service.js'
 export default {
     state: {
         stays: null,
-        filterBy: { propertyType:'',city:'',price:''},
+        filterBy: { propertyType:'',city:'',price:'',amenities:[],WiFi:''},
         // labels: stayService.getlabels(),
     },
     getters: {
@@ -55,6 +55,7 @@ export default {
             })
         },
         setFilter({ dispatch, commit }, { filterBy }) {
+            console.log('filterBy:', filterBy);
             commit({ type: 'setFilter', filterBy })
             dispatch({ type: 'loadStays' })
         },

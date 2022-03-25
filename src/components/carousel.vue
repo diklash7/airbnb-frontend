@@ -17,14 +17,16 @@ export default {
   props: {
     stay: Object,
   },
-  created() {
-    console.log(this.stay.imgUrls);
-  },
 };
 </script>
 
 <style scoped>
-.el-carousel__item img {
+.el-carousel__item {
+   /* z-index: 10;
+   border-radius: 30%;
+    width: 0.4em  !important;
+    height: 0.4rem !important; */
+     /* border-radius: 40%;  */
   border-radius: 12px;
   /* color: white; */
   /* font-size: 14px; */
@@ -42,5 +44,39 @@ export default {
 
 /* .el-carousel__item:nth-child(2n + 1) {
   background-color: #d3dce6;
+} */
+
+/* el-carousel__container {
+    position: relative;
+    height: 260px;
+ .el-carousel__arrow{
+  color: none;
+    background-color: none;
+}
+} */
+
+.el-carousel__item{
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    position: absolute;
+     aspect-ratio: 3 / 2;
+
+} 
+ .el-carousel__button{
+  z-index: 10;
+   border-radius: 30%;
+    width: 0.4em  !important;
+    height: 0.4rem !important;
+    border-radius: 40%;
+    background-color: white;
+
+}
+
+
+
+/* .el-carousel__arrow-background{
+
+
 } */
 </style>
