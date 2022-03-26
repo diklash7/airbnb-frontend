@@ -19,7 +19,7 @@
                 />
               </svg>
             </span>
-            <span> {{ stay.reviewScores.rating }} </span>
+            <span>{{ stay.reviewScores.rating }} </span>
 
             <span class="num-rew"> ({{ stay.numOfReviews }} reviews)</span>
           </div>
@@ -28,7 +28,7 @@
           <div>{{ stay.name }}</div>
           <div class="stay-price">
             <span class="bold">${{ stay.price }}</span
-            >/ night
+            > / night
           </div>
         </div>
         <div>

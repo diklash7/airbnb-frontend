@@ -1,6 +1,7 @@
 
 <template>
-  <section class="stay-app main-layout">
+  <section class="explore-page stay-app main-layout">
+    <h4 class="num-stays">16 stays in Israel</h4>
     <stay-filter @setFilter="setFilter" />
     <stay-list :stays="stays" />
   </section>

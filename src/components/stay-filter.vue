@@ -13,7 +13,7 @@
       <option value="Bungalow">Bungalow</option>
       <option value="Condominium">Condominium</option>
     </select>
-    |
+    <span class="buffer">|</span>
     <button
       class="explore-btn"
       @click="setFilter"
