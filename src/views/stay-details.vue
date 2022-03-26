@@ -1,5 +1,6 @@
 
 <template>
+<app-header :stay="stay"/>
      <section v-if="stay" class="stay-details details-layout">
          <stay-preview :stay="stay">
         <section class="main-details">
@@ -203,6 +204,7 @@
 </template>
 
 <script>
+import appHeader from "../components/app-header.vue";
 import { stayService } from '../services/stay-service'
 import { reviewService } from '../services/review-service'
 import stayPreview from '../components/stay-preview.vue'
@@ -211,6 +213,7 @@ import { ref } from 'vue'
 // import stayReview from './stay-review.vue'
 export default {
   components: { 
+    appHeader,
       stayPreview ,
       // stayForm,
     //   stayReview 

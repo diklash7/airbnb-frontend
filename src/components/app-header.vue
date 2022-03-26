@@ -3,18 +3,14 @@
     <div class="app-header-container flex space-between">
       <div class="logo-container">
         <router-link to="/">
-          <img
-            v-if="pagePos"
-            class="logo-svg"
-            src="../assets/airbnb.svg"
-          />
+          <img v-if="pagePos || stays || stay" class="logo-svg" src="../assets/airbnb.svg" />
           <img v-else class="logo-svg" src="../assets/airbnb-white.svg" />
         </router-link>
       </div>
 
       <button
-        v-if="pagePos"
-        @click="isFull"
+        v-if="stay && !isFullHeader || pagePos && !isFullHeader"
+        @click="openFilter"
         class="mini-filter flex space-between align-center"
       >
         Start your search
@@ -39,7 +35,8 @@
           <router-link to="/explore">Explore</router-link>
           <router-link to="/host">Become a Host</router-link>
           <div class="notification-icon">
-            <svg v-if="pagePos"
+            <svg
+              v-if="pagePos || stays || stay"
               xmlns="http://www.w3.org/2000/svg"
               width="16"
               height="16"
@@ -51,7 +48,8 @@
                 d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z"
               />
             </svg>
-            <svg v-else
+            <svg
+              v-else
               xmlns="http://www.w3.org/2000/svg"
               width="16"
               height="16"
@@ -99,37 +97,20 @@
         </nav>
       </div>
     </div>
+  <app-filter v-if="!pagePos && !stay || isFullHeader" />
   </section>
-  <app-filter v-if="!pagePos" />
-  <!-- <section class="app-header full-header home-page main-layout"></section>
-    <div class="app-header-container flex space-between">
-
-      <div class="logo-container">
-        <router-link to="/">
-          <img class="logo-svg" src="../assets/airbnb-white.svg" />
-        </router-link>
-      </div>
-
-      <div class="main-nav-container">
-        <nav class="main-nav flex align-center">
-          <router-link to="/explore">Explore</router-link>
-          <router-link to="/host">Become a Host</router-link>
-          <button class="user-menu">BUTTON</button>
-        </nav>
-      </div>
-
-    </div>
-    
-  </section> -->
 </template>
 <script>
 import appFilter from "./app-filter.vue";
 export default {
+  props: {
+    stays: Array,
+    stay: Object,
+  },
   data() {
     return {
       isScroll: false,
-      page: 'home',
-      isFull: false,
+      isFullHeader: false,
       pagePos: null,
     };
   },
@@ -143,16 +124,20 @@ export default {
   methods: {
     scrollToggle() {
       this.isScroll = true;
-this.pagePos = window.scrollY
-}
+      this.pagePos = window.scrollY;
+      this.isFullHeader = false;
     },
+    openFilter() {
+      this.isFullHeader = true      
+    },
+  },
   computed: {
     headerStyles() {
       return {
-        'home-page': (this.page === 'home'),
-        'top': !this.pagePos,
-        'explore-page': (this.page === 'explore'),
-        'full-header': !this.pagePos,
+        'full-header': this.isFullHeader || !this.pagePos,
+        top: !this.pagePos,
+        'explore-page': this.stays,
+        details: this.stay,
       };
     },
   },

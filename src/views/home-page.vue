@@ -1,5 +1,6 @@
 <template>
-  <section contenteditable="true" class="home-page main-layout" @scroll="checkScroll" ref="home">
+  <app-header />
+  <section class="home-page main-layout" @scroll="checkScroll">
     <section class="main-hero main-layout full">
       <h1>Not sure where to go? Perfect.</h1>
       <button @click="goToExplore()"><h3>Explore</h3></button>
@@ -44,6 +45,7 @@
 
 <script>
 import customCard from "../components/custom-card.vue";
+import appHeader from "../components/app-header.vue";
 
 export default {
   name: "home-page",
@@ -85,6 +87,7 @@ export default {
   },
   components: {
     customCard,
+    appHeader,
   },
 };
 </script>

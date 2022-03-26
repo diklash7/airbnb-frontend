@@ -1,5 +1,6 @@
 
 <template>
+<app-header :stays="stays"/>
   <section class="stay-app main-layout">
     <stay-filter @setFilter="setFilter" />
     <stay-list :stays="stays" />
@@ -7,6 +8,7 @@
 </template>
 
 <script>
+import appHeader from "../components/app-header.vue";
 import stayList from "../components/stay-list.vue";
 import stayFilter from "../components/stay-filter.vue";
 import carousel from "../components/carousel.vue";
@@ -27,6 +29,7 @@ export default {
     },
   },
   components: {
+    appHeader,
     stayList,
     stayFilter,
     carousel

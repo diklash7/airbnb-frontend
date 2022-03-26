@@ -7,13 +7,23 @@
         label-width="120px"
       >
         <div class="search-container flex flex-wrap">
-          <el-form-item label="Location">
-            <el-input
+          <label>Location
+            <input
+            class="search-location"
               type="search"
+              list="location"
               v-model="form.city"
               placeholder="Where are you going?"
             />
-          </el-form-item>
+            <datalist id="location">
+              <option value="Tel Aviv"></option>
+              <option value="Barcelona"></option>
+              <option value="Paris"></option>
+              <option value="Santorini"></option>
+              <option value="New York"></option>
+              <option value="Bali"></option>
+            </datalist>
+          </label>
         </div>
 
         <!-- <el-cascader :options="options">
