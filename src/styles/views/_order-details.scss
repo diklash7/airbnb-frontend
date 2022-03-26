@@ -1,0 +1,25 @@
+.order-details {
+    margin-top: 200px;
+    margin-left: 100px;
+    .order-details-container {
+        min-height: 600px;
+        width: 500px;
+        background-color: rgb(159, 212, 245);
+        border-radius: 10px;
+    }
+    .order-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 500px;
+    }
+    button {
+        padding: 5px;
+        width: 70px;
+        height: 30px;
+        background-color: rgb(24, 64, 241);
+        color: white;
+        font-weight: bold;
+        border-radius: 10px;
+    }
+}

@@ -6,17 +6,23 @@ import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 // Styles
 import './styles/style.scss'
-
+import VueGoogleMaps from '@fawmi/vue-google-maps'
 
 const app = createApp(App)
 
 app.config.globalProperties.$filters = {
-  currencyUSD(amount) {
-    return '$' + amount
-  },
+    currencyUSD(amount) {
+        return '$' + amount
+    },
 }
 app.use(ElementPlus)
 app.use(router)
 app.use(store)
+
+app.use(VueGoogleMaps, {
+    load: {
+        key: 'AIzaSyBywa1co0r0B4Etra4c-McqtPtIuNNICgU',
+    }
+})
 
 app.mount('#app')

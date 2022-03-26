@@ -31,80 +31,21 @@
                  <img  class="side-img3" :src="`src/assets/Images/${stay.imgUrls[3]}`" />
                  <img class="side-img4" :src="`src/assets/Images/${stay.imgUrls[4]}`" />
           </div>
-          <!-- <section class="a"> -->
-          <section class="host-details">
+                <stay-form :stay="stay"/>
+             <section class="details-layout-for-form">
+               <section class="host-form">
+                   <div class="host-details">
               <div class="host-title">
-           <h2> {{ stay.roomType }} by {{ stay.host.fullname }}</h2>  
-           <span>
+               <h2> {{ stay.roomType }} by {{ stay.host.fullname }}</h2>  
+                <span>
                 {{ stay.capacity }} guests •
                 {{ stay.bedrooms }} bedroom •
                 {{ stay.beds }} bed •
                 {{ stay.bathrooms }} bath
-           </span>
-              </div>
-            <img class="img-host" :src="`${stay.host.pictureUrl}`" />
-          </section>
-          <!-- <stay-form :stay="stay"></stay-form> -->
-          <!-- STAY-FORM -->
-          <section class="stay-form">
-            <div class="form-header">
-                <div class="form-price">
-              <h2>${{ stay.price}}</h2> 
-               <span class="word-night"> / night</span> 
-               </div>
-              <nav class="form-header-rate">
-                   <span class="star">
-               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="#E01661"
-                class="bi bi-star-fill"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
-                />
-              </svg>
               </span>
-              {{ stay.reviewScores.rating }} • 
-               <span>{{ stay.numOfReviews }} reviews </span>
-            </nav>
-            </div>
-              <section class="form-options" >
-                 <div class="form-date">
-            <label>
-          <el-date-picker
-          class="input-date"
-            v-model="value1"
-            type="daterange"
-            start-placeholder="check-in"
-            end-placeholder= "check-out"
-            :default-value="[new Date(2010, 9, 1), new Date(2010, 10, 1)]"
-          />
-        </label>
-        </div>
-
-   <section class="form-guests">
-    <select v-model="value2" placeholder="Guests">
-     <option
-      v-for="item in options"
-      :key="item.value2"
-      :label="item.label"
-      :value="item.value2"
-     />
-     </select>
-     </section>
-    </section>
-       <!-- <router-link class="btn-form-reserve" to="/order">Reserve</router-link> -->
-
-    <button class="btn-form-reserve">Reserve</button>
-   
-   <div class="info-reserve">
-   {{value2}}
-   </div>
-  </section>
-           <!-- </section> -->
+              </div>
+                <img class="img-host" :src="`${stay.host.pictureUrl}`" />
+             </div>
           <hr class="hr-1">
           <div class="info-check">
             <section>
@@ -129,6 +70,9 @@
             </div>
             </section>
           </div>
+          </section>
+         
+           </section>
           <hr>
           <div class="stay-disc">
                <h3> Info:</h3>
@@ -136,6 +80,7 @@
               {{ stay.summary }}
              </p>
           </div>
+         
           <hr>
              <h2> What this place offers</h2>
             <section class="amenities-details">
@@ -152,6 +97,7 @@
             </div>
             </div>
               </section>
+           
           <hr>
           <div class="title-reviews">
            <h2 class="title-reviews">
@@ -198,6 +144,8 @@
           <button class="btn-show-more">show all <span> {{stay.reviews.length}}</span> reviews</button>
      </section>
         </stay-preview>
+      <hr>
+      <stay-maps :stay="stay"/>
      </section>
 
 </template>
@@ -206,25 +154,24 @@
 import { stayService } from '../services/stay-service'
 import { reviewService } from '../services/review-service'
 import stayPreview from '../components/stay-preview.vue'
-import { ref } from 'vue'
-// import stayForm from '../components/stay-form.vue'
+import stayForm from '../components/stay-form.vue'
+import stayMaps from '../components/stay-maps.vue'
 // import stayReview from './stay-review.vue'
 export default {
   components: { 
       stayPreview ,
-      // stayForm,
+      stayForm,
+      stayMaps,
     //   stayReview 
   },
   name: 'stay-details',
+     props: {
+       stay: Object
+    },
   data() {
     return {
       stay: null,
       reviewToAdd: null,
-     value1: ref(''),
-    defaultTime: ref([
-     new Date(2000, 1, 1, 0, 0, 0),
-     new Date(2000, 2, 1, 23, 59, 59),
-])
     }
   },
   async created() {
@@ -250,7 +197,7 @@ export default {
     },
     getImage() {
       return (amenitie) => new URL(`../assets/Icons/${amenitie}.png`, import.meta.url)
-    }
+    },
   },
   methods: {
     async addReview() {
