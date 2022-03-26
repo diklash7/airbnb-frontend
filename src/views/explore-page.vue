@@ -15,7 +15,7 @@ import carousel from "../components/carousel.vue";
 export default {
   name: "stay-app",
   created() {
-    this.$store.dispatch({ type: "loadStays" });
+    this.$store.dispatch({ type: "loadStays" });  
   },
   computed: {
     stays() {
