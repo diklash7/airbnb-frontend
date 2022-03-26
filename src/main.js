@@ -21,7 +21,7 @@ app.use(ElementPlus)
 
 app.use(VueGoogleMaps, {
     load: {
-        key: 'AIzaSyBywa1co0r0B4Etra4c-McqtPtIuNNICgU',
+        key: '',
     }
 })
 
