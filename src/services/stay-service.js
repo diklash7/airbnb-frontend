@@ -44,7 +44,7 @@ async function query(filterBy) {
     }
     console.log('filterBy.amenities.WiFi:', filterBy.amenities['WiFi']);
     if (filterBy.amenities.WiFi) {
-        const regex = new RegExp(filterBy.amenities.WiFi, 'i')
+        const regex = new RegExp(filterBy.amenities.WiFi[0], 'i')
         filteredStays = stays.filter(stay => regex.test(stay.amenities.WiFi))
     }
     return Promise.resolve(filteredStays)
