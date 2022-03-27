@@ -34,7 +34,7 @@
             <el-form-item label="Check out"> </el-form-item>
           </span>
           <el-date-picker
-            v-model="dates"
+            v-model="form.dates"
             type="daterange"
             start-placeholder="Add dates"
             end-placeholder="Add dates"
@@ -119,5 +119,10 @@ export default {
       },
     };
   },
+  methods: {
+    onSubmit(){
+      this.$router.push('/explore')
+    }
+  }
 };
 </script>

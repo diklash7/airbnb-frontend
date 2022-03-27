@@ -70,21 +70,14 @@ export default {
     },
   },
   methods: {
-    // setFilter(filterBy) {
-    //   const copyfilter = JSON.parse(JSON.stringify(filterBy));
-    //   this.$store.dispatch({ type: "setFilter", filterBy: copyfilter });
-    // },
     goToStay(stayId) {
-      console.log("stay:", this.stayId);
       this.$router.push(`/stay/${stayId}`);
     },
     goToExploreCity(city) {
-      console.log('city:', city);
       this.$router.push(`/explore?${(new URLSearchParams({destination:city})).toString()}`);
-    // let searchParams = new URLSearchParams(window.location.search);
-    // searchParams.get('destination')
-        // console.log(this.$router.query('destination')); 
- 
+    },
+    goToExplore() {
+      this.$router.push(`/explore`);
     },
     goToHost() {
       this.$router.push("/host");

@@ -144,12 +144,6 @@ export default {
   destroyed() {
     window.removeEventListener("scroll", this.scrollToggle);
   },
-  // watch: {
-  //       '$route.params.explore'(id) {
-  //           console.log('Changed to', id);
-  //           this.loadCar();
-  //       }
-  //   }
 };
 </script>
 <style></style>

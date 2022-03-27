@@ -1,6 +1,6 @@
 <template>
-  <app-header :stays="stays" />
-  <section class="explore-page stay-app main-layout">
+  <app-header v-if="stays" :stays="stays" />
+  <section v-if="stays" class="explore-page stay-app main-layout">
     <h4 class="num-stays">16 stays in Israel</h4>
     <stay-filter @setFilter="setFilter" />
     <stay-list :stays="stays" />
@@ -14,8 +14,23 @@ import stayFilter from "../components/stay-filter.vue";
 import carousel from "../components/carousel.vue";
 export default {
   name: "stay-app",
+  data() {
+    return {
+      city: null,
+    };
+  },
   created() {
-    this.$store.dispatch({ type: "loadStays" });  
+    if (this.$route.query.destination) {
+      const { destination } = this.$route.query;
+
+      // this.setFilter({ city: destination });
+      this.$store.commit({
+        type: "setFilterByKey",
+        filterBy: ["city", destination],
+      });
+    }
+
+    this.$store.dispatch({ type: "loadStays" });
   },
   computed: {
     stays() {

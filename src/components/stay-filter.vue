@@ -39,20 +39,13 @@
     <!-- </select> -->
 
     <div class="slider-demo-block">
-      <el-slider
-        @change="setFilter"
-        v-model="filterBy.price"
-        range
-        max="2000"
-      />
+      <el-slider @change="setFilter" v-model="filterBy.price" range max="200" />
     </div>
   </section>
 </template>
 
 <script>
 import { utilService } from "../services/util-service";
-import { ref, reactive } from "vue";
-// import type { CSSProperties } from 'vue';
 
 export default {
   name: "stay-filter",
@@ -61,7 +54,7 @@ export default {
       filterBy: {
         // city: '',
         propertyType: "",
-        price: ref([100, 1000]),
+        price: { min: 0, max: Infinity },
         amenities: ["WiFi"],
       },
       isOpen: true,
