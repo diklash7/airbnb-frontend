@@ -11,7 +11,7 @@
 }
 
 .full-header {
-  // background: linear-gradient(180deg,rgba(0,0,0,.5) 50%,rgba(0,0,0,.05) 85%,transparent 90%);
+  background: linear-gradient(180deg,rgba(0,0,0,.5) 50%,rgba(0,0,0,.05) 85%,transparent 90%);
   height: 160px;
 }
 
@@ -28,6 +28,7 @@
 
 .explore-page {
   background-color: white;
+  background:white;
 
   a {
     color: $clr5;
@@ -38,6 +39,7 @@
 .details {
   position: static;
   background-color: white;
+  background:white;
   height: 80px;
 
   a {

@@ -6,10 +6,11 @@
         :model="form"
         label-width="120px"
       >
-        <div class="search-container flex flex-wrap">
-          <label>Location
+        <div class="search-container">
+          <label class="search-label flex flex-column"
+            >Location
             <input
-            class="search-location"
+              class="search-location"
               type="search"
               list="location"
               v-model="form.city"
@@ -26,12 +27,6 @@
           </label>
         </div>
 
-        <!-- <el-cascader :options="options">
-          <template #default="{ node, data }">
-            <span>{{ data.label }}</span>
-            <span v-if="!node.isLeaf"> ({{ data.children.length }}) </span>
-          </template>
-        </el-cascader> -->
 
         <div class="block">
           <span class="date-picker-title flex space-between">
@@ -47,6 +42,49 @@
           />
         </div>
 
+        <div class="guest-container">
+          <label class="guest-label flex flex-column"
+            >Guests
+            <input
+              type="text"
+              v-model="form.city"
+              placeholder="Add guests"
+              disabled
+            />
+          </label>
+        </div>
+
+        <!-- <div class="guests-modal flex column" >
+          <div class="guest-type-label flex space-between align-center">
+            <div class="guest-label flex column">
+              <span>Adults</span>
+              <span>Ages 13 or above</span>
+            </div>
+            <div class="guest-btns flex align-center space-between">
+              <button type="button">
+                <span class="material-icons-sharp"> remove </span>
+              </button>
+              <span class="guests-num">0</span>
+              <button type="button">
+                <span class="material-icons-sharp"> add </span>
+              </button>
+            </div>
+          </div>
+
+          <div class="guest-type-label flex space-between align-center">
+            <div class="guest-label flex column">
+              <span>Children</span><span>Ages 2-12</span>
+            </div>
+            <div class="guest-btns flex align-center space-between">
+              <button type="button">
+                <span class="material-icons-sharp"> remove </span></button
+              ><span class="guests-num">0</span
+              ><button type="button">
+                <span class="material-icons-sharp"> add </span>
+              </button>
+            </div>
+          </div>
+        </div> -->
 
         <el-form-item>
           <el-button class="submit-btn" type="primary" @click="onSubmit">

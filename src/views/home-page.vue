@@ -11,7 +11,7 @@
       <article class="dest-card" v-for="(city, idx) in cities" :key="city">
         <img
           :src="`src/assets/Images/${idx + 1}.jpg`"
-          @click="goToExploreCity()"
+          @click="goToExploreCity(city)"
         />
         <h3>{{ city }}</h3>
       </article>
@@ -78,8 +78,13 @@ export default {
       console.log("stay:", this.stayId);
       this.$router.push(`/stay/${stayId}`);
     },
-    goToExplore() {
-      this.$router.push("/explore");
+    goToExploreCity(city) {
+      console.log('city:', city);
+      this.$router.push(`/explore?${(new URLSearchParams({destination:city})).toString()}`);
+    // let searchParams = new URLSearchParams(window.location.search);
+    // searchParams.get('destination')
+        // console.log(this.$router.query('destination')); 
+ 
     },
     goToHost() {
       this.$router.push("/host");

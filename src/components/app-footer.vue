@@ -1,5 +1,5 @@
 <template>
-  <section class="app-footer main-layout flex align-center space-between">
+  <section class="app-footer main-layout flex">
     <div class="footer-nav flex align-center">
       <p>&copy; 2022 ein od milvado</p>
 
@@ -9,7 +9,6 @@
       <span>•</span>
       <a href="#/host">Become a host</a>
     </div>
-
     <div class="footer-info">
       <div class="footer-lang">
         <span
@@ -34,6 +33,7 @@
         <i class="fa fa-instagram">::before</i> -->
       </div>
     </div>
+
   </section>
 </template>
 
