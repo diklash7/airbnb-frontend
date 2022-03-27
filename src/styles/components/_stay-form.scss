@@ -1,0 +1,73 @@
+.stay-form {
+    box-shadow: 0 6px 16px rgb(0 0 0 / 12%);
+    margin-top: 30px;
+    width: 45vh;
+    padding: 24px;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    position: sticky;
+    top: 1px;
+    left: 850px;
+    display: inline-block;
+    .form-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h2 {
+            display: inline-block;
+        }
+        .star {
+            font-size: 15px;
+        }
+        svg {
+            width: 12px;
+            height: 12px;
+        }
+        .word-night {
+            font-size: 17px;
+            opacity: 70%;
+        }
+        .reviews-form {
+            text-decoration: underline;
+        }
+    }
+    .form-container {
+        .form-add-dates {
+            border: 1px rgb(175, 165, 165) solid;
+            width: 40vh;
+            label {
+                font-size: 13px;
+                font-weight: bold;
+            }
+        }
+        .btn-form-reserve {
+            background-color: #ff385c;
+            width: 40vh;
+            border: none;
+            color: #fff;
+            text-align: center;
+            letter-spacing: .05rem;
+            height: 48px;
+            min-width: 200px;
+            font-family: inherit;
+            font-size: 16px;
+            border-radius: 8px;
+            transition: opacity 1.25s ease 0s!important;
+        }
+    }
+    .guest-container {
+        width: 40vh;
+        input {
+            height: 45px;
+        }
+        // border: 1px black solid;
+    }
+}
+
+.el-date-editor--daterange.el-input,
+.el-date-editor--daterange.el-input__inner,
+.el-date-editor--timerange.el-input,
+.el-date-editor--timerange.el-input__inner {
+    width: 40vh;
+    margin-top: -60px;
+}

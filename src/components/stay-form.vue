@@ -1,5 +1,5 @@
 <template>
-   <section class="stay-form">
+       <section class="stay-form">
             <div class="form-header">
                 <div class="form-price">
               <h2>${{ stay.price}}</h2> 
@@ -24,154 +24,157 @@
                <span class="reviews-form">{{ stay.numOfReviews }} reviews </span>
             </nav>
             </div>
-           <section class="form-options" >
-            <form class="bg-white shadow-md rounded px-8 pt-6 pb-8" @submit.prevent>
-    <div class="mb-4">
-      <v-date-picker
-        v-model="range"
-        mode="dateTime"
-        :masks="masks"
-        is-range
+
+
+       <section class="form-container">
+          <el-form
+        :model="form"
+        label-width="80px"
       >
-        <template v-slot="{ inputValue, inputEvents, isDragging }">
-          <div class="flex flex-col sm:flex-row justify-start items-center">
-            <div class="relative flex-grow">
-              <svg
-                class="text-gray-600 w-4 h-full mx-2 absolute pointer-events-none"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                ></path>
-              </svg>
+     
+        <div class="form-add-dates">
+          <span class="date-picker-title flex space-between">
+            <el-form-item label="Check in"> </el-form-item>
+            <el-form-item label="Check out"> </el-form-item>
+          </span>
+          <el-date-picker
+            v-model="form.dates"
+            type="daterange"
+            start-placeholder="Add dates"
+            end-placeholder="Add dates"
+            :default-value="[new Date(2022, 2, 1), new Date(2022, 3, 1)]"
+          />
+        </div>
+      </el-form>
+
+        <Popper>
+          <div class="guest-container">
+            <label class="guest-label flex flex-column">
               <input
-                class="flex-grow pl-8 pr-2 py-1 bg-gray-100 border rounded w-full"
-                :class="isDragging ? 'text-gray-600' : 'text-gray-900'"
-                :value="inputValue.start"
-                v-on="inputEvents.start"
+                type="text"
+                v-model="form.city"
+                placeholder="Add guests"
+                disabled
               />
-            </div>
-            <span class="flex-shrink-0 m-2">
-              <svg
-                class="w-4 h-4 stroke-current text-gray-600"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                />
-              </svg>
-            </span>
-            <div class="relative flex-grow">
-              <svg
-                class="text-gray-600 w-4 h-full mx-2 absolute pointer-events-none"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                ></path>
-              </svg>
-              <input
-                class="flex-grow pl-8 pr-2 py-1 bg-gray-100 border rounded w-full"
-                :class="isDragging ? 'text-gray-600' : 'text-gray-900'"
-                :value="inputValue.end"
-                v-on="inputEvents.end"
-              />
-            </div>
+            </label>
           </div>
-        </template>
-      </v-date-picker>
-    </div>
-  </form>
+          <template #content>
+            <div class="guests-modal flex flex-column">
+              <div class="guest-type-label flex space-between align-center">
+                <div class="guest-label flex flex-column">
+                  <h3>Adults</h3>
+                  <p>Ages 13 or above</p>
+                </div>
+                <div class="guest-btns flex align-center space-between">
+                  <button type="button">
+                    <span class="material-icons-sharp"
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-dash"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"
+                        /></svg
+                    ></span>
+                  </button>
+                  <span class="guests-num">0</span>
+                  <button type="button">
+                    <span class="material-icons-sharp">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="#222222"
+                        class="bi bi-plus"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                </div>
+              </div>
 
-   <section class="form-guests">
-    <select v-model="value2" placeholder="Guests">
-     <option
-      v-for="item in options"
-      :key="item.value2"
-      :label="item.label"
-      :value="item.value2"
-     />
-     </select>
-     </section>
-    </section>
+              <hr />
 
-    <button class="btn-form-reserve" @click="goToOrder()">Reserve</button>
-   
-   <div class="info-form" :aaa="aaa">
-    {{aaa}}
-   <!-- {{value1.slice(0,6)}} -->
+              <div class="guest-type-label flex space-between align-center">
+                <div class="guest-label flex flex-column">
+                  <h3>Children</h3>
+                  <p>Ages 2-12</p>
+                </div>
+                <div class="guest-btns flex align-center space-between">
+                  <button type="button">
+                    <span class="material-icons-sharp">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-dash"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"
+                        /></svg
+                    ></span></button
+                  ><span class="guests-num">0</span
+                  ><button type="button">
+                    <span class="material-icons-sharp">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="#222222"
+                        class="bi bi-plus"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </template>
+        </Popper>
 
-   <!-- {{value1.splice(20,26)}} -->
-
-   </div>
-  </section>
-
+      
+          <div class="input3">
+          <button class="btn-form-reserve" @click="goToOrder()">Reserve</button>
+          </div>
+      </section>
+      </section>
 </template>
 
+
 <script>
-import { ref } from 'vue'
+import Popper from "vue3-popper";
+  
 
 export default {
 
  props: {
     stay: {}
   },
-
+   components: {
+    Popper,
+  },
 data() {
     return {
-          value1: ref(''),
-      value2: ref(''),
-      defaultTime: new Date(2000, 1, 1,),
-      shortcuts: [
-  {
-    text: 'Today',
-    value: new Date(),
-  },
-  {
-    text: 'Yesterday',
-    value: () => {
-      const date = new Date()
-      date.setTime(date.getTime() - 3600 * 1000 * 24)
-      return date
-    },
-  },
-  {
-    text: 'A week ago',
-    value: () => {
-      const date = new Date()
-      date.setTime(date.getTime() - 3600 * 1000 * 24 * 7)
-      return date
-    },
-  },
-]
-    }
-  }, data() {
-    return {
-      range: {
-        start: new Date(2020, 0, 6),
-        end: new Date(2020, 0, 23),
-      },
-      masks: {
-        input: 'YYYY-MM-DD h:mm A',
+      form: {
+        city: "",
+        dates: [],
       },
     };
-  },
-   mounted() {
-    // console.log(this.stay)
-  },
+},
   computed: {
      goToOrder() {
       this.$router.push("/order");
@@ -183,4 +186,5 @@ data() {
 }
 </script>
 <style>
+
 </style>
