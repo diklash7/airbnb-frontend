@@ -3,8 +3,8 @@
     <div class="app-header-container flex space-between">
       <div class="logo-container">
         <router-link to="/">
-          <img v-if="pagePos || stays || stay" class="logo-svg" src="../assets/airbnb.svg" />
-          <img v-else class="logo-svg" src="../assets/airbnb-white.svg" />
+          <img v-if="pagePos || stays || stay" class="logo-svg" src="../assets/guesta_pink.png" />
+          <img v-else class="logo-svg" src="../assets/guesta_white.png" />
         </router-link>
       </div>
 
