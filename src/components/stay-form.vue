@@ -20,8 +20,8 @@
                 />
               </svg>
               </span>
-              {{ stay.reviewScores.rating }} • 
-               <span>{{ stay.numOfReviews }} reviews </span>
+              {{rating}} • 
+               <span class="reviews-form">{{ stay.numOfReviews }} reviews </span>
             </nav>
             </div>
               <section class="form-options" >
@@ -33,7 +33,7 @@
             type="daterange"
             start-placeholder="check-in"
             end-placeholder= "check-out"
-            :default-value="[new Date(2010, 9, 1), new Date(2010, 10, 1)]"
+            :default-value="[new Date(), new Date()]"
           />
         </label>
         </div>
@@ -52,8 +52,12 @@
 
     <button class="btn-form-reserve" @click="goToOrder()">Reserve</button>
    
-   <div class="info-reserve">
-   {{value2}}
+   <div class="info-form" :aaa="aaa">
+    {{aaa}}
+   <!-- {{value1.slice(0,6)}} -->
+
+   <!-- {{value1.splice(20,26)}} -->
+
    </div>
   </section>
 
@@ -69,21 +73,26 @@ export default {
 
 data() {
     return {
-   
-     value1: ref(''),
+     value1: [],
     defaultTime: ref([
-     new Date(2000, 1, 1, 0, 0, 0),
-     new Date(2000, 2, 1, 23, 59, 59),
+     new Date().getDay(),
+     new Date().getDay()
 ])
     }
   },
    mounted() {
-    console.log(this.stay)
+    // console.log(this.stay)
   },
   computed: {
      goToOrder() {
       this.$router.push("/order");
     },
+     rating() {
+      return (this.stay.reviewScores.rating)/20
+    },
+    aaa() {
+      return this.value1.join()
+    }
   }
 }
 </script>
