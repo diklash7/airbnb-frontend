@@ -1,10 +1,10 @@
 <template>
-  <section class="app-header main-layout" :class="headerStyles">
+  <section class="app-header" :class="headerStyles">
     <div class="app-header-container flex space-between">
       <div class="logo-container">
         <router-link to="/">
-          <img v-if="pagePos || stays || stay" class="logo-svg" src="../assets/airbnb.svg" />
-          <img v-else class="logo-svg" src="../assets/airbnb-white.svg" />
+          <img v-if="pagePos || stays || stay" class="logo-svg" src="../assets/guesta_pink.png" />
+          <img v-else class="logo-svg" src="../assets/guesta_white.png" />
         </router-link>
       </div>
 
@@ -138,6 +138,8 @@ export default {
         top: !this.pagePos,
         'explore-page': this.stays,
         details: this.stay,
+        'main-layout': !this.stay,
+        'details-layout': this.stay,
       };
     },
   },

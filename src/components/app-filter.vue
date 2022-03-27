@@ -27,12 +27,11 @@
           </label>
         </div>
 
-
-        <div class="block">
-          <span class="date-picker-title flex space-between">
+        <div class="check-in-out">
+          <div class="date-picker-title flex">
             <el-form-item label="Check in"> </el-form-item>
             <el-form-item label="Check out"> </el-form-item>
-          </span>
+          </div>
           <el-date-picker
             v-model="form.dates"
             type="daterange"
@@ -42,49 +41,105 @@
           />
         </div>
 
-        <div class="guest-container">
-          <label class="guest-label flex flex-column"
-            >Guests
-            <input
-              type="text"
-              v-model="form.city"
-              placeholder="Add guests"
-              disabled
-            />
-          </label>
-        </div>
-
-        <!-- <div class="guests-modal flex column" >
-          <div class="guest-type-label flex space-between align-center">
-            <div class="guest-label flex column">
-              <span>Adults</span>
-              <span>Ages 13 or above</span>
-            </div>
-            <div class="guest-btns flex align-center space-between">
-              <button type="button">
-                <span class="material-icons-sharp"> remove </span>
-              </button>
-              <span class="guests-num">0</span>
-              <button type="button">
-                <span class="material-icons-sharp"> add </span>
-              </button>
-            </div>
+        <Popper>
+          <div class="guest-container">
+            <label class="guest-label flex flex-column"
+              >Guests
+              <input
+                type="text"
+                v-model="form.city"
+                placeholder="Add guests"
+                disabled
+              />
+            </label>
           </div>
+          <template #content>
+            <div class="guests-modal flex flex-column">
+              <div class="guest-type-label flex space-between align-center">
+                <div class="guest-label flex flex-column">
+                  <h3>Adults</h3>
+                  <p>Ages 13 or above</p>
+                </div>
+                <div class="guest-btns flex align-center space-between">
+                  <button type="button">
+                    <span class="material-icons-sharp"
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-dash"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"
+                        /></svg
+                    ></span>
+                  </button>
+                  <span class="guests-num">0</span>
+                  <button type="button">
+                    <span class="material-icons-sharp">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="#222222"
+                        class="bi bi-plus"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                </div>
+              </div>
 
-          <div class="guest-type-label flex space-between align-center">
-            <div class="guest-label flex column">
-              <span>Children</span><span>Ages 2-12</span>
+              <hr />
+
+              <div class="guest-type-label flex space-between align-center">
+                <div class="guest-label flex flex-column">
+                  <h3>Children</h3>
+                  <p>Ages 2-12</p>
+                </div>
+                <div class="guest-btns flex align-center space-between">
+                  <button type="button">
+                    <span class="material-icons-sharp">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-dash"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"
+                        /></svg
+                    ></span></button
+                  ><span class="guests-num">0</span
+                  ><button type="button">
+                    <span class="material-icons-sharp">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="#222222"
+                        class="bi bi-plus"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                </div>
+              </div>
             </div>
-            <div class="guest-btns flex align-center space-between">
-              <button type="button">
-                <span class="material-icons-sharp"> remove </span></button
-              ><span class="guests-num">0</span
-              ><button type="button">
-                <span class="material-icons-sharp"> add </span>
-              </button>
-            </div>
-          </div>
-        </div> -->
+          </template>
+        </Popper>
 
         <el-form-item>
           <el-button class="submit-btn" type="primary" @click="onSubmit">
@@ -110,6 +165,7 @@
 </template>
 
 <script>
+import Popper from "vue3-popper";
 export default {
   data() {
     return {
@@ -120,9 +176,12 @@ export default {
     };
   },
   methods: {
-    onSubmit(){
-      this.$router.push('/explore')
-    }
-  }
+    onSubmit() {
+      this.$router.push("/explore");
+    },
+  },
+  components: {
+    Popper,
+  },
 };
 </script>

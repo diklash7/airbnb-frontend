@@ -24,19 +24,77 @@
                <span class="reviews-form">{{ stay.numOfReviews }} reviews </span>
             </nav>
             </div>
-              <section class="form-options" >
-                 <div class="form-date">
-            <label>
-          <el-date-picker
-          class="input-date"
-            v-model="value1"
-            type="daterange"
-            start-placeholder="check-in"
-            end-placeholder= "check-out"
-            :default-value="[new Date(), new Date()]"
-          />
-        </label>
-        </div>
+           <section class="form-options" >
+            <form class="bg-white shadow-md rounded px-8 pt-6 pb-8" @submit.prevent>
+    <div class="mb-4">
+      <v-date-picker
+        v-model="range"
+        mode="dateTime"
+        :masks="masks"
+        is-range
+      >
+        <template v-slot="{ inputValue, inputEvents, isDragging }">
+          <div class="flex flex-col sm:flex-row justify-start items-center">
+            <div class="relative flex-grow">
+              <svg
+                class="text-gray-600 w-4 h-full mx-2 absolute pointer-events-none"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                ></path>
+              </svg>
+              <input
+                class="flex-grow pl-8 pr-2 py-1 bg-gray-100 border rounded w-full"
+                :class="isDragging ? 'text-gray-600' : 'text-gray-900'"
+                :value="inputValue.start"
+                v-on="inputEvents.start"
+              />
+            </div>
+            <span class="flex-shrink-0 m-2">
+              <svg
+                class="w-4 h-4 stroke-current text-gray-600"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                />
+              </svg>
+            </span>
+            <div class="relative flex-grow">
+              <svg
+                class="text-gray-600 w-4 h-full mx-2 absolute pointer-events-none"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                ></path>
+              </svg>
+              <input
+                class="flex-grow pl-8 pr-2 py-1 bg-gray-100 border rounded w-full"
+                :class="isDragging ? 'text-gray-600' : 'text-gray-900'"
+                :value="inputValue.end"
+                v-on="inputEvents.end"
+              />
+            </div>
+          </div>
+        </template>
+      </v-date-picker>
+    </div>
+  </form>
 
    <section class="form-guests">
     <select v-model="value2" placeholder="Guests">
@@ -65,6 +123,7 @@
 
 <script>
 import { ref } from 'vue'
+
 export default {
 
  props: {
@@ -73,12 +132,42 @@ export default {
 
 data() {
     return {
-     value1: [],
-    defaultTime: ref([
-     new Date().getDay(),
-     new Date().getDay()
-])
+          value1: ref(''),
+      value2: ref(''),
+      defaultTime: new Date(2000, 1, 1,),
+      shortcuts: [
+  {
+    text: 'Today',
+    value: new Date(),
+  },
+  {
+    text: 'Yesterday',
+    value: () => {
+      const date = new Date()
+      date.setTime(date.getTime() - 3600 * 1000 * 24)
+      return date
+    },
+  },
+  {
+    text: 'A week ago',
+    value: () => {
+      const date = new Date()
+      date.setTime(date.getTime() - 3600 * 1000 * 24 * 7)
+      return date
+    },
+  },
+]
     }
+  }, data() {
+    return {
+      range: {
+        start: new Date(2020, 0, 6),
+        end: new Date(2020, 0, 23),
+      },
+      masks: {
+        input: 'YYYY-MM-DD h:mm A',
+      },
+    };
   },
    mounted() {
     // console.log(this.stay)
@@ -90,12 +179,8 @@ data() {
      rating() {
       return (this.stay.reviewScores.rating)/20
     },
-    aaa() {
-      return this.value1.join()
-    }
   }
 }
 </script>
 <style>
-  
 </style>

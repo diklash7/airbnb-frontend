@@ -62,6 +62,8 @@ export default {
       return this.$store.getters.staysToShow;
     },
     topStays() {
+      console.log('this.stays:', this.stays);
+      
       if (!this.stays) return;
       const topStays = this.stays.sort((s1, s2) => {
         return s2.reviewScores.rating - s1.reviewScores.rating;
@@ -74,10 +76,13 @@ export default {
       this.$router.push(`/stay/${stayId}`);
     },
     goToExploreCity(city) {
-      this.$router.push(`/explore?${(new URLSearchParams({destination:city})).toString()}`);
+      this.$router.push(`/explore?${new URLSearchParams({ destination: city }).toString()}`)
     },
     goToExplore() {
-      this.$router.push(`/explore`);
+      let copyFilter = JSON.parse(JSON.stringify(this.$store.getters.getFilterBy))
+      copyFilter = { propertyType: '', city: '', price: [0, 3000], amenities: [], WiFi: '' }
+      this.$store.commit({ type: 'setFilter', filterBy: copyFilter })
+      this.$router.push(`/explore`)
     },
     goToHost() {
       this.$router.push("/host");

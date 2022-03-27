@@ -18,8 +18,14 @@
   max-width: 850px;
   align-self: center;
 
+  label {
+    font-family: Cereal-Bold;
+    font-size: 12px;
+  }
+
   input {
     background-color: transparent;
+    color: #606266;
     border: none;
     box-shadow: none;
     margin: 0;
@@ -42,8 +48,14 @@
 
   //search input
   .search-container {
-    padding-left: 30px;
-     
+    cursor: pointer;
+    padding: 15px 15px 15px 25px;
+
+    &:hover {
+      background-color: #ebebeb;
+      border-radius: 40px;
+    }
+
     input {
       min-width: 200px;
     }
@@ -62,47 +74,145 @@
     // }
   }
 
-
   //labels
   .el-form-item__label {
     text-align: left;
+    font-size: 12px;
+    margin-right:10px;
   }
 
   //date-picker
-  .date-picker-title {
-    height: 20px;
-    width: 270px;
-    text-indent: 10px;
-  }
+  .check-in-out {
+    .date-picker-title {
+      height: 20px;
+      text-indent: 10px;
+      
+    }
 
-  .el-range-input {
-    text-align: left;
-    width: 150px;
-    padding: 0px;
-    justify-content: space-between;
-  }
+    .el-range-input {
+      text-align: left;
+      width: 130px;
+      padding: 0px;
+      justify-content: space-between;
+    }
 
-  .el-icon {
-    display: none;
-  }
+    .el-icon {
+      display: none;
+    }
 
-  .el-range-separator {
-    display: none;
-  }
+    .el-range-separator {
+      display: none;
+    }
 
-  .el-date-editor {
-    background-color: transparent;
-    border: none;
-    box-shadow: none;
-    margin: 0;
-    width: 300px;
+    .el-date-editor {
+      background-color: transparent;
+      border: none;
+      box-shadow: none;
+      margin: 0;
+      width: 260px;
+    }
   }
 
   //guest
-  .guest-btn {
+  .guest-btns {
     width: 100px;
     border: none;
     background-color: transparent;
     text-align: left;
+  }
+
+  .guest-container {
+    padding: 15px 15px 15px 25px;
+
+    &:hover {
+      background-color: #ebebeb;
+      border-radius: 40px;
+    }
+    label {
+      width: 154px;
+      cursor: pointer;
+    }
+    input {
+      cursor: pointer;
+    }
+  }
+}
+
+:root {
+  --popper-theme-background-color: #ffffff;
+  --popper-theme-background-color-hover: #ffffff;
+  --popper-theme-text-color: #222222;
+  --popper-theme-border-width: 0px;
+  --popper-theme-border-style: solid;
+  --popper-theme-border-hover: solid #222222;
+  --popper-theme-border-radius: 20px;
+  --popper-theme-padding: 32px;
+  --popper-theme-box-shadow: 0 6px 30px -6px rgba(0, 0, 0, 0.25);
+
+  --el-date-editor-width: 220px;
+  --el-date-editor-monthrange-width: 300px;
+  --el-date-editor-daterange-width: 350px;
+  --el-date-editor-datetimerange-width: 400px;
+  --el-date-editor-placeholder-color: #606266;
+  --el-input-text-color: #606266;
+  --el-input-border: none;
+  --el-input-hover-border: none;
+  --el-input-focus-border: var(--el-color-primary);
+  --el-input-transparent-border: 0 0 0 1px transparent inset;
+  --el-input-border-color: none;
+  --el-input-bg-color: var(--el-fill-color-blank);
+  --el-input-placeholder-color: #606266;
+  --el-input-hover-border-color: none;
+  --el-input-clear-hover-color: none;
+  --el-input-focus-border-color: none;
+}
+
+.guests-modal {
+  min-width: 300px;
+
+  h3 {
+    margin: 0;
+  }
+
+  .guest-type-label {
+    padding: 16px 4px 16px 0;
+  }
+  .material-icons-sharp {
+    height: 22px;
+    width: 22px;
+    padding: 3px;
+
+    svg {
+      display: block;
+      fill: none;
+      height: 16px;
+      width: 16px;
+      stroke: #222222;
+      overflow: visible;
+    }
+  }
+
+  button {
+    width: 32px;
+    height: 32px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    cursor: pointer;
+    display: inline-flex;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    text-decoration: none;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(176, 176, 176);
+    color: rgb(113, 113, 113);
+    font-family: inherit;
+    outline: none;
+    touch-action: manipulation;
+    align-items: center;
+    justify-content: center;
+    background: rgb(255, 255, 255);
+    border-radius: 50%;
   }
 }
