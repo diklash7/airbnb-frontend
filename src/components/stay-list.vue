@@ -1,7 +1,8 @@
 <template>
   <section class="home-cities">
     <stay-preview v-for="stay in stays" :key="stay._id" :stay="stay">
-      <article @click="$router.push(`/stay/${stay._id}`)">
+          
+      <article @click="$router.push(`/stay/${stay._id}`)" >
         <div>
           <carousel :stay="stay" />
           <div>
@@ -19,8 +20,8 @@
                 />
               </svg>
             </span>
-            <span class="space-star">{{ stay.reviewScores.rating }} </span>
-
+            <span class="space-star">{{stay.reviewScores.rating}} </span>
+              <!-- {{rating}}  -->
             <span class="num-rew"> ({{ stay.numOfReviews }} reviews)</span>
           </div>
           <span>{{ stay.propertyType }} • {{ stay.address.city }} </span>
@@ -62,7 +63,8 @@ export default {
 
   computed: {
     rating(){
-      return (this.stay.reviewScores.rating) / 20;
+      console.log(this.stay.reviewScores.rating);
+      return (this.stay.reviewScores.rating)/20;
     },
   },
 };

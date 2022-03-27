@@ -36,14 +36,20 @@ async function query(filterBy) {
     // const min = filterBy.price[0] || 0;
     // const max = filterBy.price[1] || Infinity;
 
-    // // console.log(min, max);
-    if (filterBy.price) {
-        // console.log('filterBy.price2:', filterBy.price);
-        // const regex = new RegExp(filterBy.price)
-        filteredStays = filteredStays.filter(stay =>
-            (filterBy.price[0] < stay.price) && (stay.price < filterBy.price[1]))
+    // // // console.log(min, max);
+    // if (filterBy.price) {
+    //     // console.log('filterBy.price2:', filterBy.price);
+    //     // const regex = new RegExp(filterBy.price)
+    //     filteredStays = filteredStays.filter(stay =>
+    //         (filterBy.price[0] < stay.price) && (stay.price < filterBy.price[1]))
 
-    }
+    // }
+
+    if (filterBy.price) {
+        filteredStays = filteredStays.filter(
+          (stay) => filterBy.price[0] < stay.price && stay.price < filterBy.price[1]
+        )
+      }
 
     if (filterBy.propertyType) {
         const regex = new RegExp(filterBy.propertyType, 'i')

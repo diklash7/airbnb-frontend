@@ -3,21 +3,21 @@ import { stayService } from '@/services/stay-service.js'
 export default {
     state: {
         stays: null,
-        filterBy: { propertyType: '', city: '', price: [], amenities: [], WiFi: '' },
+        filterBy: { propertyType: '', city: '', price: [0,3000], amenities: [], WiFi: '' },
         // labels: stayService.getlabels(),
     },
     getters: {
         stays({ stays }) {
-            return stays
+          return stays
         },
-        staysToShow({ stays, filterBy }) {
-            const copyStays = JSON.parse(JSON.stringify(stays))
-            return copyStays
+        staysToShow({ stays }) {
+          const copyStays = JSON.parse(JSON.stringify(stays))
+          return copyStays
         },
-        // labels({ labels }) {
-        //   return labels
-        // },
-    },
+        getFilterBy({ filterBy }) {
+          return filterBy
+        },
+      },
     mutations: {
         setStays(state, { stays }) {
             state.stays = stays
@@ -34,9 +34,9 @@ export default {
         setFilter(state, { filterBy }) {
             state.filterBy = filterBy
         },
-        setFilterByKey(state, { filterBy }) {
-            state.filterBy[filterBy[0]] = filterBy[1]
-        },
+        // setFilterByKey(state, { filterBy }) {
+        //     state.filterBy[filterBy[0]] = filterBy[1]
+        // },
         setSort(state, { sortBy }) {
             state.sortBy = sortBy
         },
@@ -49,6 +49,7 @@ export default {
                 commit({ type: 'setStays', stays })
             })
         },
+      
         saveStay({ commit }, { stay }) {
             stayService.save(stay).then((savedStay) => {
                 commit({ type: 'saveStay', stay: savedStay })
