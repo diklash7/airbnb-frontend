@@ -63,8 +63,8 @@ export default {
   },
 
   computed: {
-    rate() {
-      return this.stay.reviewScores.rating / 20;
+    rating(){
+      return (this.stay.reviewScores.rating) / 20;
     },
   },
 };
