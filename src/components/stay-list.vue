@@ -20,7 +20,7 @@
                 />
               </svg>
             </span>
-            <span class="space-star">{{stay.reviewScores.rating}} </span>
+            <span class="space-star">{{rating(stay)}} </span>
               <!-- {{rating}}  -->
             <span class="num-rew"> ({{ stay.numOfReviews }} reviews)</span>
           </div>
@@ -62,9 +62,10 @@ export default {
   },
 
   computed: {
-    rating(){
-      console.log(this.stay.reviewScores.rating);
-      return (this.stay.reviewScores.rating)/20;
+    rating() {
+      return (stay) => ((stay.reviewScores.rating) / 20).toFixed(2)
+      // console.log(this.stay.reviewScores.rating);
+      // return (this.)/20;
     },
   },
 };
