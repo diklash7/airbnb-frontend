@@ -62,6 +62,8 @@ export default {
       return this.$store.getters.staysToShow;
     },
     topStays() {
+      console.log('this.stays:', this.stays);
+      
       if (!this.stays) return;
       const topStays = this.stays.sort((s1, s2) => {
         return s2.reviewScores.rating - s1.reviewScores.rating;

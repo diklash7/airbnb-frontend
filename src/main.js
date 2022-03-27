@@ -8,6 +8,7 @@ import 'element-plus/dist/index.css'
 import './styles/style.scss'
 import VueGoogleMaps from '@fawmi/vue-google-maps'
 import VCalendar from 'v-calendar';
+import Popper from "vue3-popper";
 
 const app = createApp(App)
 
@@ -20,6 +21,7 @@ app.use(router)
 app.use(store)
 app.use(ElementPlus)
 app.use(VCalendar, {})
+app.component("Popper", Popper);
 
 app.use(VueGoogleMaps, {
     load: {
