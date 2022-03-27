@@ -6,6 +6,9 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(326px, 1fr));
   cursor: pointer;
+  object-fit: cover;
+  aspect-ratio: 3/2;
+
 }
 .stay-price {
   padding-top: 4px;

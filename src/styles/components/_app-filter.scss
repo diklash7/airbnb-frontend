@@ -20,7 +20,7 @@
 
   label {
     font-family: Cereal-Bold;
-    font-size: 12px;;
+    font-size: 12px;
   }
 
   input {
@@ -78,6 +78,7 @@
   .el-form-item__label {
     text-align: left;
     font-size: 12px;
+    margin-right:10px;
   }
 
   //date-picker
@@ -85,33 +86,32 @@
     .date-picker-title {
       height: 20px;
       text-indent: 10px;
+      
     }
-  
+
     .el-range-input {
       text-align: left;
       width: 130px;
       padding: 0px;
       justify-content: space-between;
     }
-  
+
     .el-icon {
       display: none;
     }
-  
+
     .el-range-separator {
       display: none;
     }
-  
+
     .el-date-editor {
       background-color: transparent;
       border: none;
       box-shadow: none;
       margin: 0;
-      width: 300px;
+      width: 260px;
     }
   }
-
-
 
   //guest
   .guest-btns {

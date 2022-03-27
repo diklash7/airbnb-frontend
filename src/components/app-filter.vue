@@ -28,10 +28,10 @@
         </div>
 
         <div class="check-in-out">
-          <span class="date-picker-title flex space-between">
+          <div class="date-picker-title flex">
             <el-form-item label="Check in"> </el-form-item>
             <el-form-item label="Check out"> </el-form-item>
-          </span>
+          </div>
           <el-date-picker
             v-model="form.dates"
             type="daterange"

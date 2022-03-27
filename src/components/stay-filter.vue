@@ -1,8 +1,8 @@
 <template>
-  <section class="stay-filter">
-    <button class="explore-btn">Price</button>
-    <select
-      class="explore-btn"
+<section v-if="filterBy" class="stay-filter">
+    <button @click="isOpen = !isOpen" class="explore-btn">Price</button>
+    <select class="explore-btn" @change="setFilter" v-model="filterBy.propertyType">
+        class="explore-btn"
       @change="setFilter"
       v-model="filterBy.propertyType"
     >
@@ -37,9 +37,15 @@
       <option value="Bungalow">Bungalow</option>
       <option value="Condominium">Condominium</option> -->
     <!-- </select> -->
-
-    <div class="slider-demo-block">
-      <el-slider @change="setFilter" v-model="filterBy.price" range max="200" />
+    <div v-if="isOpen" class="slider-demo-block">
+      <!-- <el-slider @change="setFilter" v-model="filterBy.price" range :max="3000" /> -->
+      <HistogramSlider
+        v-model="filterBy.price"
+        @change="setFilter"
+        :width="400"
+        :bar-height="100"
+        :data="prices"
+      />
     </div>
   </section>
 </template>
@@ -49,22 +55,23 @@ import { utilService } from "../services/util-service";
 
 export default {
   name: "stay-filter",
+  props: {
+    prices: Array,
+  },
   data() {
     return {
-      filterBy: {
-        // city: '',
-        propertyType: "",
-        price: { min: 0, max: Infinity },
-        amenities: ["WiFi"],
-      },
-      isOpen: true,
+      filterBy: null,
+      isOpen: false,
     };
   },
   created() {
     this.setFilter = utilService.debounce(this.setFilter, 500);
+    this.filterBy = JSON.parse(JSON.stringify(this.$store.getters.getFilterBy));
   },
   methods: {
-    setFilter() {
+    setFilter(ev) {
+      this.filterBy.price[0] = ev.from;
+      this.filterBy.price[1] = ev.to;
       this.$emit("set-filter", { ...this.filterBy });
     },
   },

@@ -1,8 +1,8 @@
 <template>
   <app-header v-if="stays" :stays="stays" />
   <section v-if="stays" class="explore-page stay-app main-layout">
-    <h4 class="num-stays">16 stays in Israel</h4>
-    <stay-filter @setFilter="setFilter" />
+    <h4 class="num-stays">{{ stays.length }} stays in world</h4>
+    <stay-filter @setFilter="setFilter" :prices="prices" />
     <stay-list :stays="stays" />
   </section>
 </template>
@@ -12,30 +12,34 @@ import appHeader from "../components/app-header.vue";
 import stayList from "../components/stay-list.vue";
 import stayFilter from "../components/stay-filter.vue";
 import carousel from "../components/carousel.vue";
+
 export default {
   name: "stay-app",
   data() {
-    return {
-      city: null,
-    };
+    return {};
   },
-  created() {
+   created() {
     if (this.$route.query.destination) {
-      const { destination } = this.$route.query;
-
-      // this.setFilter({ city: destination });
-      this.$store.commit({
-        type: "setFilterByKey",
-        filterBy: ["city", destination],
-      });
+      const { destination } = this.$route.query
+      const copyFilter = JSON.parse(JSON.stringify(this.$store.getters.getFilterBy))
+      copyFilter.city = destination
+      this.$store.commit({ type: 'setFilter', filterBy: copyFilter })
     }
-
-    this.$store.dispatch({ type: "loadStays" });
+    this.$store.dispatch({ type: 'loadStays' })
   },
   computed: {
     stays() {
-      return this.$store.getters.staysToShow;
+      return this.$store.getters.stays;
     },
+    prices() {
+      const prices = this.stays.reduce((acc, stay) => {
+        acc.push(stay.price)
+        return acc
+      }, [])
+      console.log('prices :>> ', prices)
+      return prices
+    },
+  
   },
   methods: {
     setFilter(filterBy) {
