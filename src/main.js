@@ -7,6 +7,7 @@ import 'element-plus/dist/index.css'
 // Styles
 import './styles/style.scss'
 import VueGoogleMaps from '@fawmi/vue-google-maps'
+import VCalendar from 'v-calendar';
 
 const app = createApp(App)
 
@@ -18,6 +19,7 @@ app.config.globalProperties.$filters = {
 app.use(router)
 app.use(store)
 app.use(ElementPlus)
+app.use(VCalendar, {})
 
 app.use(VueGoogleMaps, {
     load: {

@@ -230,15 +230,24 @@
         }
         .form-options {
             .form-date {
-                .input-date {
-                    border: 1px rgb(129, 121, 121) solid;
+                display: flex;
+                .el-date-editor.el-input,
+                .el-date-editor.el-input__inner {
+                    width: 152px;
+                }
+                .el-input--prefix .el-input__inner {
+                    height: 50px;
+                    margin: 0;
+                    width: 152px;
                     opacity: 80%;
                     border-bottom-style: hidden;
-                    height: 50px;
-                    padding: 5px;
-                    width: 100%;
+                    border: 1px rgb(100, 93, 93) solid;
+                }
+                .block:first-child {
                     border-top-left-radius: 10px;
-                    border-top-right-radius: 10px;
+                }
+                .block:last-child {
+                    border-top-right-radius: 20px;
                 }
             }
         }
