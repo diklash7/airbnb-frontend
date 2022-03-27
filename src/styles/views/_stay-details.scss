@@ -58,7 +58,7 @@
                 display: inline-block;
             }
             .host-details {
-                margin-top: 40px;
+                margin-top: 30px;
                 display: inline-block;
                 .host-title {
                     display: inline-block;
@@ -73,21 +73,21 @@
                     font-size: 16px;
                 }
                 h2 {
-                    margin-bottom: 10px;
+                    margin-bottom: 5px;
                     font-size: 1.4em;
                 }
                 img {
-                    width: 70px;
-                    height: 70px;
+                    width: 60px;
+                    height: 60px;
                     border-radius: 50%;
-                    margin-left: 120px;
+                    margin-left: 35vh;
                     border: 1px rgb(172, 168, 168) solid;
                 }
             }
             hr {
                 margin-top: 30px;
                 margin-bottom: 30px;
-                width: 50%;
+                width: 100%;
                 opacity: 50%;
             }
             .info-check {
