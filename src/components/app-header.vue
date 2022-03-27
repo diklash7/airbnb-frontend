@@ -1,5 +1,5 @@
 <template>
-  <section class="app-header main-layout" :class="headerStyles">
+  <section class="app-header" :class="headerStyles">
     <div class="app-header-container flex space-between">
       <div class="logo-container">
         <router-link to="/">
@@ -138,6 +138,8 @@ export default {
         top: !this.pagePos,
         'explore-page': this.stays,
         details: this.stay,
+        'main-layout': !this.stay,
+        'details-layout': this.stay,
       };
     },
   },
