@@ -61,7 +61,7 @@ export default {
   data() {
     return {
       filterBy: null,
-      isOpen: true,
+      isOpen: false,
     };
   },
   created() {
