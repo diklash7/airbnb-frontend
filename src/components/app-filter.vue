@@ -82,7 +82,6 @@
                 >Guests
                 <input
                   type="text"
-                  v-model="form.guests"
                   :placeholder="addGuest"
                   disabled
                 />
