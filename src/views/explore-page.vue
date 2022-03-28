@@ -18,14 +18,18 @@ export default {
   data() {
     return {};
   },
-   created() {
-    if (this.$route.query.destination) {
-      const { destination } = this.$route.query
-      const copyFilter = JSON.parse(JSON.stringify(this.$store.getters.getFilterBy))
-      copyFilter.city = destination
-      this.$store.commit({ type: 'setFilter', filterBy: copyFilter })
+  created() {
+    if (this.$route.query.destination || this.$route.query.capacity) {
+      const { destination } = this.$route.query;
+      const { capacity } = this.$route.query;
+      const copyFilter = JSON.parse(
+        JSON.stringify(this.$store.getters.getFilterBy)
+      );
+      copyFilter.city = destination;
+      copyFilter.capacity = capacity;
+      this.$store.commit({ type: "setFilter", filterBy: copyFilter });
     }
-    this.$store.dispatch({ type: 'loadStays' })
+    this.$store.dispatch({ type: "loadStays" });
   },
   computed: {
     stays() {
@@ -33,18 +37,43 @@ export default {
     },
     prices() {
       const prices = this.stays.reduce((acc, stay) => {
-        acc.push(stay.price)
-        return acc
-      }, [])
-      console.log('prices :>> ', prices)
-      return prices
+        acc.push(stay.price);
+        return acc;
+      }, []);
+      console.log("prices :>> ", prices);
+      return prices;
     },
-  
   },
   methods: {
     setFilter(filterBy) {
       const copyfilter = JSON.parse(JSON.stringify(filterBy));
       this.$store.dispatch({ type: "setFilter", filterBy: copyfilter });
+    },
+  },
+  watch: {
+    "$route.params"() {
+      if (this.$route.query) {
+        const filterBy = {
+          propertyType: "",
+          city: "",
+          price: [0, 3000],
+          amenities: [],
+          WiFi: "",
+          capacity: 0,
+        };
+        this.$store.dispatch({ type: "setFilter", filterBy: filterBy });
+      }
+      if (this.$route.query.destination || this.$route.query.capacity) {
+        const { destination } = this.$route.query;
+        const { capacity } = this.$route.query;
+        const copyFilter = JSON.parse(
+          JSON.stringify(this.$store.getters.getFilterBy)
+        );
+        copyFilter.city = destination;
+        copyFilter.capacity = capacity;
+        this.$store.commit({ type: "setFilter", filterBy: copyFilter });
+      }
+      this.$store.dispatch({ type: "loadStays" });
     },
   },
   components: {

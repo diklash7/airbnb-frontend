@@ -2,6 +2,7 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import homePage from '../views/home-page.vue'
 import aboutPage from '../views/about-page.vue'
 import hostPage from '../views/host-page.vue'
+import loginPage from '../views/login-page.vue'
 import explorePage from '../views/explore-page.vue'
 import stayDetails from '../views/stay-details.vue'
 import orderDetails from '../views/order-details.vue'
@@ -37,6 +38,11 @@ const router = createRouter({
             path: '/host',
             name: 'hostPage',
             component: hostPage,
+        },
+        {
+            path: '/login',
+            name: 'loginPage',
+            component: loginPage,
         },
 
     ]

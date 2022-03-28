@@ -12,7 +12,7 @@
               >Location
               <input
                 class="search-location"
-                type="search"
+                type="text"
                 list="location"
                 v-model="form.city"
                 placeholder="Where are you going?"
@@ -39,20 +39,34 @@
                     <input
                       :value="inputValue.start"
                       v-on="inputEvents.start"
-                      class="input1 border px-2 py-1 w-32 rounded focus:outline-none focus:border-indigo-300"
+                      class="
+                        input1
+                        border
+                        px-2
+                        py-1
+                        w-32
+                        rounded
+                        focus:outline-none focus:border-indigo-300
+                      "
                       placeholder="Add date"
-                      disabled
                     />
                   </label>
-                  
+
                   <label>
                     Check out
                     <input
                       :value="inputValue.end"
                       v-on="inputEvents.end"
-                      class="input2 border px-2 py-1 w-32 rounded focus:outline-none focus:border-indigo-300"
+                      class="
+                        input2
+                        border
+                        px-2
+                        py-1
+                        w-32
+                        rounded
+                        focus:outline-none focus:border-indigo-300
+                      "
                       placeholder="Add date"
-                      disabled
                     />
                   </label>
                 </div>
@@ -64,11 +78,12 @@
         <section class="input-container">
           <Popper>
             <div class="guest-container flex align-center">
-              <label>Guests
+              <label
+                >Guests
                 <input
                   type="text"
                   v-model="form.guests"
-                  placeholder="Add guests"
+                  :placeholder="addGuest"
                   disabled
                 />
               </label>
@@ -87,8 +102,9 @@
                       <path
                         d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
                       />
-                    </svg> </span
-                ></button>
+                    </svg>
+                  </span>
+                </button>
               </el-form-item>
             </div>
             <template #content>
@@ -99,7 +115,7 @@
                     <p>Ages 13 or above</p>
                   </div>
                   <div class="guest-btns flex align-center space-between">
-                    <button type="button">
+                    <button :class="disableAdultBtn" @click="countAdults(-1)">
                       <span class="material-icons-sharp"
                         ><svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -114,8 +130,8 @@
                           /></svg
                       ></span>
                     </button>
-                    <span class="guests-num">0</span>
-                    <button type="button">
+                    <span class="guests-num">{{ adultCount }}</span>
+                    <button class="guest-btn" @click="countAdults(1)">
                       <span class="material-icons-sharp">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -142,7 +158,7 @@
                     <p>Ages 2-12</p>
                   </div>
                   <div class="guest-btns flex align-center space-between">
-                    <button type="button">
+                    <button :class="disableKidBtn" @click="countKids(-1)">
                       <span class="material-icons-sharp">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -156,8 +172,8 @@
                             d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"
                           /></svg
                       ></span></button
-                    ><span class="guests-num">0</span
-                    ><button type="button">
+                    ><span class="guests-num">{{ kidCount }}</span
+                    ><button class="guest-btn" @click="countKids(1)">
                       <span class="material-icons-sharp">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -192,14 +208,49 @@ export default {
       form: {
         city: "",
         dates: [],
-        guests: "",
+        guests: 0,
       },
+      adults: 0,
+      kids: 0,
+      placeholder: "Add guests",
     };
   },
   methods: {
     onSubmit() {
-      this.$router.push(`/explore?${new URLSearchParams({ destination: this.form.city }).toString()}`)
+      if (!this.form.guests) this.form.guests = '';
+      this.$router.push(
+        `/explore?${new URLSearchParams({destination: this.form.city, capacity: this.form.guests}).toString()}`);
     },
+    countAdults(diff) {
+      this.placeholder = (this.form.guests) ? `${this.form.guests} Guests` : 'Add guests'
+      if (!this.adults && diff < 0) return;
+      this.form.guests += diff;
+      this.adults += diff;
+    },
+    countKids(diff) {
+      this.placeholder = (this.form.guests) ? `${this.form.guests} Guests` : 'Add guests'
+      if (!this.kids && diff < 0) return;
+      this.form.guests += diff;
+      this.kids += diff;
+    },
+  },
+  computed: {
+    adultCount() {
+      return this.adults;
+    },
+    kidCount() {
+      return this.kids;
+    },
+    disableAdultBtn() {
+      return { "disabled-btn": !this.adults };
+    },
+    disableKidBtn() {
+      return { "disabled-btn": !this.kids };
+    },
+    addGuest(){
+      if (this.form.guests === 0) return 'Add guests'
+      return this.form.guests + ' guests'
+    }
   },
   components: {
     Popper,
