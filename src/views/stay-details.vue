@@ -126,40 +126,48 @@
              {{ stay.numOfReviews}} reviews
               </h3>
           </div>
-          <section class="slider-rate flex">
+         <section class="slider-rate">
            <div class="left-side-rating">
-             <div class="flex">
-            Cleanliness  
-         <vue3-slider class="slider1" v-model="stay.reviewScores.cleanliness" color="#000000" track-color="#FEFEFE" />
-             {{rating}}
-             </div>
-             <div class="flex">
-            Communication 
-         <vue3-slider class="slider2" v-model="stay.reviewScores.communication" color="#000000" track-color="#FEFEFE" />
-            {{rating}}
-            </div>
-             <div class="flex">
-            Check-in    
-         <vue3-slider class="slider3" v-model="stay.reviewScores.checkin" color="#000000" track-color="#FEFEFE" />
-           {{rating}}
-           </div>
-           </div>
-           <div class="right-side-rating"> 
-           <div class="flex">
-            Accuracy          
-         <vue3-slider class="slider4" v-model="stay.reviewScores.accuracy" color="#000000" track-color="#FEFEFE" />
-          {{rating}}
-           </div>
-            <div class="flex">
-            Location         
-         <vue3-slider class="slider5" v-model="stay.reviewScores.location" color="#000000" track-color="#FEFEFE" />
-        {{rating}}
+             <div>
+             <div>Cleanliness</div>
+             <div>Communication </div>
+             <div>Check-in</div>
           </div>
-            <div class="flex">
-            Value             
-         <vue3-slider class="slider6" v-model="stay.reviewScores.value" color="#000000" track-color="#FEFEFE" />
-        {{rating}}
-           </div>
+           <div class="slider-left">
+             <div class="slider flex">
+            <vue3-slider class="slider1" v-model="stay.reviewScores.cleanliness" color="#fffff" track-color="#000000" />
+             <span>{{ratingReview}}</span> 
+             </div>
+          <div class="slider flex">
+            <vue3-slider class="slider2" v-model="stay.reviewScores.communication" color="#fffff" track-color="#000000" />
+            <span>{{ratingReview}}</span> 
+            </div>
+             <div class="slider flex">
+            <vue3-slider class="slider3" v-model="stay.reviewScores.checkin" color="#fffff" track-color="#000000" />
+             <span>{{ratingReview}}</span> 
+             </div>
+          </div>
+          </div>
+           <div class="right-side-rating"> 
+             <div>
+              <div>Accuracy</div>
+              <div>Location</div>
+              <div>Value</div>
+             </div>
+               <div class="slider-right">
+                 <div class="slider flex">
+           <vue3-slider class="slider4" v-model="stay.reviewScores.accuracy" color="#fffff" track-color="#000000" />
+           <span>{{ratingReview}}</span> 
+               </div>
+          <div class="slider flex">
+           <vue3-slider class="slider5" v-model="stay.reviewScores.location" color="#fffff" track-color="#000000" />
+           <span>{{ratingReview}}</span> 
+         </div>
+         <div class="slider flex">
+            <vue3-slider class="slider6" v-model="stay.reviewScores.value" color="#fffff" track-color="#000000" />
+           <span>{{ratingReview}}</span>
+            </div>
+              </div>
            </div>
           </section>
       </section>
@@ -239,6 +247,9 @@ export default {
     },
     rating() {
       return ((this.stay.reviewScores.rating)/20).toFixed(2)
+    },
+    ratingReview() {
+      return (this.stay.reviewScores.rating)/20
     }
   },
   methods: {

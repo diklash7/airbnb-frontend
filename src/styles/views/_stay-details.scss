@@ -198,18 +198,49 @@
                     }
                 }
                 .slider-rate {
-                    width: 100%;
-                    .right-side-rating {
-                        margin-left: 200px;
+                    display: flex;
+                    .left-side-rating {
+                        display: flex;
+                        .slider-left {
+                            margin-left: 100px;
+                        }
+                        div {
+                            margin-bottom: 15px;
+                            font-size: 15px;
+                            margin-top: 3px;
+                        }
                     }
-                    .slider1,
-                    .slider2,
-                    .slider3,
-                    .slider4,
-                    .slider5,
-                    .slider6 {
-                        width: 100px;
-                        margin-left: 20px;
+                    .right-side-rating {
+                        display: flex;
+                        margin-left: 150px;
+                        .slider-right {
+                            margin-left: 100px;
+                        }
+                        div {
+                            font-size: 15px;
+                            margin-bottom: 15px;
+                            margin-top: 3px;
+                        }
+                    }
+                    .slider {
+                        display: flex;
+                        width: 150px;
+                        margin-left: 100px;
+                        margin-top: 10px;
+                        .slider1,
+                        .slider2,
+                        .slider3,
+                        .slider4,
+                        .slider5,
+                        .slider6 {
+                            height: 4px;
+                        }
+                        span {
+                            font-size: 12px;
+                            margin-left: 10px;
+                            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                            margin-bottom: 6px;
+                        }
                     }
                 }
             }
