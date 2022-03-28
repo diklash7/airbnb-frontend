@@ -1,6 +1,7 @@
 .app-header {
   grid-template-rows: 1fr 1fr;
   height: 80px;
+  padding-top: 5px;
   position: fixed;
   top: 0;
   display: grid;
@@ -10,7 +11,12 @@
 }
 
 .full-header {
-  background: linear-gradient(180deg,rgba(0,0,0,.5) 50%,rgba(0,0,0,.05) 85%,transparent 90%);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0.05) 85%,
+    transparent 90%
+  );
   height: 160px;
 }
 
@@ -21,13 +27,13 @@
 
   a {
     color: $clr3;
-    font-family: Cereal-Bold;
+    font-family: Cereal-Medium;
   }
 }
 
 .explore-page {
   background-color: white;
-  background:white;
+  background: white;
 
   a {
     color: $clr5;
@@ -38,7 +44,7 @@
 .details {
   position: static;
   background-color: white;
-  background:white;
+  background: white;
   height: 80px;
 
   a {
@@ -47,17 +53,21 @@
   }
 
   .mini-filter {
-    top: 4.5%
+    top: 4.5%;
   }
 }
 
 .app-header:not(.full-header) {
   grid-template-rows: 1fr;
-  box-shadow: 0 1px 12px rgba(0, 0, 0, 0.08) ;
+  box-shadow: 0 1px 12px rgba(0, 0, 0, 0.08);
 }
 
 .logo-container {
   width: 130px;
+  a{
+    top: -5px;
+    padding: 0;
+  }
 }
 
 .main-nav {
@@ -80,6 +90,7 @@ a {
 .notification-icon {
   cursor: pointer;
   padding-right: 15px;
+  padding-top: 7px;
 }
 
 .main-nav .user-menu {
@@ -99,7 +110,6 @@ a {
 }
 
 .mini-filter {
-  font-family: "Cereal-Regular", sans-serif;
   position: absolute;
   margin-top: 0;
   top: 50%;
@@ -116,9 +126,11 @@ a {
   font-size: 14px;
   text-indent: 5px;
 
+p {
+  font-family: Cereal-Regular, sans-serif;
+}
+
   span {
-    // font-family: fas;
-    // content: "";
     color: #fff;
     background-color: $clr1;
     border-radius: 50%;
