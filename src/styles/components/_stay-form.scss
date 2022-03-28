@@ -1,4 +1,81 @@
     .stay-form {
+        .form-header-small {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: .01ms ease-out;
+            // display: grid;
+            border: none;
+            border-radius: 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 80px;
+            left: 0;
+            right: 0;
+            background-color: #fff;
+            margin: 0;
+            padding: 0;
+            .titles-small {
+                margin-left: 28vh;
+                a {
+                    font-size: 15px;
+                    font-family: 'Franklin Gothic';
+                }
+            }
+            .form-container {
+                display: flex;
+                margin-right: 30vh;
+                .form-title-small {
+                    display: flex;
+                    flex-direction: column;
+                    .form-price-small {
+                        margin-bottom: -14px;
+                        h3 {
+                            display: inline-block;
+                            font-size: 18px;
+                        }
+                        .word-night-small {
+                            font-size: 15px;
+                            opacity: 80%;
+                        }
+                    }
+                    .form-header-rate-small {
+                        display: block;
+                        svg {
+                            width: 10px;
+                            height: 10px;
+                        }
+                        span {
+                            font-size: 12px;
+                        }
+                        .reviews-form-small {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+            .btn-form-reserve-small {
+                background-image: radial-gradient(circle at center, #ff385c 0, #e61e4d 27.5%, #e31c5f 40%, #d70466 57.5%, #bd1e59 75%, #bd1e59 100%);
+                width: 23vh;
+                padding: 10px;
+                border: none;
+                margin-left: 20px;
+                color: #fff;
+                text-align: center;
+                letter-spacing: .05rem;
+                height: 48px;
+                min-width: 150px;
+                font-family: inherit;
+                font-weight: bold;
+                font-size: 15px;
+                border-radius: 8px;
+                transition: opacity 1.25s ease 0s!important;
+            }
+        }
+        // .hide {
+        //     display: none;
+        // }
         box-shadow: 0 6px 16px rgb(0 0 0 / 12%);
         margin-top: 40px;
         margin-right: 5px;
@@ -90,6 +167,7 @@
                     height: 23px;
                     border-style: none;
                     font-size: 14px;
+                    background-color: white;
                 }
             }
             .btn-form-reserve {
@@ -108,5 +186,28 @@
                 border-radius: 8px;
                 transition: opacity 1.25s ease 0s!important;
             }
+        }
+        .guests-modal .disabled-btn {
+            margin-right: 13px;
+        }
+        .guests-num {
+            margin-right: 13px;
+        }
+        .type-guest {
+            font-size: 17px;
+            margin-left: 10px;
+        }
+        .age-guest {
+            font-size: 14px;
+            margin-left: 10px;
+        }
+        .guests-modal {
+            // background-color: #d70466;
+            margin-left: 10px;
+        }
+        div.popper {
+            background: rgb(255, 255, 255);
+            border-radius: 4px;
+            padding: 12px;
         }
     }
