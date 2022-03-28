@@ -2,7 +2,7 @@
   <app-header />
   <section class="home-page main-layout" @scroll="checkScroll">
     <section class="main-hero main-layout full">
-      <h1>Not sure where to go? Perfect.</h1>
+      <h1>Let your curiosity do the booking</h1>
       <button @click="goToExplore()"><h3>Explore</h3></button>
     </section>
 

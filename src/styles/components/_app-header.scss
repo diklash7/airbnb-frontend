@@ -64,12 +64,13 @@
 
 .logo-container {
   width: 130px;
-  a{
+  a {
     top: -5px;
     padding: 0;
   }
 }
 
+//NAV
 .main-nav {
   flex-wrap: nowrap;
 }
@@ -87,12 +88,21 @@ a {
   padding: 0px 15px;
 }
 
+//NOTIFICATIONS
 .notification-icon {
   cursor: pointer;
   padding-right: 15px;
   padding-top: 7px;
 }
 
+.separator {
+  height: 2px;
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+  margin: 10px 0;
+}
+
+//MENU
 .main-nav .user-menu {
   border-radius: 200px;
   background-color: $clr3;
@@ -109,6 +119,7 @@ a {
   padding: 5px 5px 5px 10px;
 }
 
+//MINI FILTER
 .mini-filter {
   position: absolute;
   margin-top: 0;
@@ -126,9 +137,9 @@ a {
   font-size: 14px;
   text-indent: 5px;
 
-p {
-  font-family: Cereal-Regular, sans-serif;
-}
+  p {
+    font-family: Cereal-Regular, sans-serif;
+  }
 
   span {
     color: #fff;
@@ -147,4 +158,6 @@ p {
     stroke-width: 2;
     overflow: visible;
   }
+  
 }
+
