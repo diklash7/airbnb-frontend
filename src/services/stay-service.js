@@ -55,6 +55,10 @@ async function query(filterBy) {
         const regex = new RegExp(filterBy.propertyType, 'i')
         filteredStays = filteredStays.filter(stay => regex.test(stay.propertyType))
     }
+    if (filterBy.roomType) {
+        const regex = new RegExp(filterBy.roomType, 'i')
+        filteredStays = filteredStays.filter(stay => regex.test(stay.roomType))
+    }
 
     // // console.log('filterBy.amenities.WiFi:', filterBy.amenities['WiFi']);
     // if (filterBy.amenities?.WiFi) {

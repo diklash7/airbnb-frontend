@@ -1,7 +1,7 @@
 <template>
   <app-header v-if="stays" :stays="stays" />
   <section v-if="stays" class="explore-page stay-app main-layout">
-    <h4 class="num-stays">{{ stays.length }} stays in world</h4>
+    <!-- <h4 class="num-stays">{{ stays.length }} stays in world</h4> -->
     <stay-filter @setFilter="setFilter" :prices="prices" />
     <stay-list :stays="stays" />
   </section>
