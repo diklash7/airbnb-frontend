@@ -30,8 +30,9 @@ async function query(filterBy) {
         filteredStays = filteredStays.filter(stay => regex.test(stay.address.city))
     }
 
-    console.log('filterBy:', filterBy);
-
+    if (filterBy.capacity) {
+        filteredStays = filteredStays.filter(stay => stay.capacity >= filterBy.capacity)
+    }
 
     // const min = filterBy.price[0] || 0;
     // const max = filterBy.price[1] || Infinity;
@@ -62,7 +63,7 @@ async function query(filterBy) {
     //     filteredStays = filteredStays.filter(stay => regex.test(stay.amenities.WiFi))
     // }
 
-    console.log('filteredStays:', filteredStays);
+    // console.log('filteredStays:', filteredStays);
 
 
     return Promise.resolve(filteredStays)
