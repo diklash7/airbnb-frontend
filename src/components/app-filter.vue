@@ -28,10 +28,8 @@
         </div>
 
         <div class="check-in-out">
-          <div class="date-picker-title flex">
-            <el-form-item label="Check in"> </el-form-item>
-            <el-form-item label="Check out"> </el-form-item>
-          </div>
+            <label>Check out</label>
+            <label>Check in</label>
           <el-date-picker
             v-model="form.dates"
             type="daterange"
@@ -47,11 +45,29 @@
               >Guests
               <input
                 type="text"
-                v-model="form.city"
+                v-model="form.guests"
                 placeholder="Add guests"
                 disabled
               />
             </label>
+            <el-form-item>
+          <el-button class="submit-btn" type="primary" @click="onSubmit">
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="17"
+                fill="#ffffff"
+                stroke="#ffffff"
+                class="bi bi-search"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+                />
+              </svg> </span
+          ></el-button>
+        </el-form-item>
           </div>
           <template #content>
             <div class="guests-modal flex flex-column">
@@ -141,24 +157,6 @@
           </template>
         </Popper>
 
-        <el-form-item>
-          <el-button class="submit-btn" type="primary" @click="onSubmit">
-            <span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="32"
-                height="17"
-                fill="#ffffff"
-                stroke="#ffffff"
-                class="bi bi-search"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
-                />
-              </svg> </span
-          ></el-button>
-        </el-form-item>
       </el-form>
     </section>
   </section>
@@ -172,6 +170,7 @@ export default {
       form: {
         city: "",
         dates: [],
+        guests: '',
       },
     };
   },

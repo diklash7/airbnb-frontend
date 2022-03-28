@@ -1,7 +1,7 @@
 <template>
   <section class="app-footer main-layout flex align-center space-between">
     <div class="footer-nav flex align-center ">
-      <p>&copy; 2022 ein od milvado</p>
+      <p>&copy; 2022 Guesta</p>
 
       <a href="#/about">About</a>
       <span>•</span>
@@ -37,4 +37,8 @@
   </section>
 </template>
 
-<style></style>
+<style>
+p {
+  font-family: Cereal-Medium;
+}
+</style>
