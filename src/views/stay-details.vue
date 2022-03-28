@@ -32,58 +32,55 @@
                  <img  class="side-img3" :src="`src/assets/Images/${stay.imgUrls[3]}`" />
                  <img class="side-img4" :src="`src/assets/Images/${stay.imgUrls[4]}`" />
           </div>
-                <stay-form :stay="stay"/>
-             <section class="details-layout-for-form">
-               <section class="host-form">
-                   <div class="host-details">
-              <div class="host-title">
-               <h2> {{ stay.roomType }} by {{ stay.host.fullname }}</h2>  
+               
+      <section class="details-flex-form flex space-between">
+         <section class="host-form">
+                 <div class="host-details">
+                 <div class="host-title">
+                <h2> {{ stay.roomType }} by {{ stay.host.fullname }}</h2>  
                 <span>
                 {{ stay.capacity }} guests •
                 {{ stay.bedrooms }} bedroom •
                 {{ stay.beds }} bed •
                 {{ stay.bathrooms }} bath
-              </span>
-              </div>
+               </span>
+               </div>
                 <img class="img-host" :src="`${stay.host.pictureUrl}`" />
-             </div>
-          <hr class="hr-1">
-          <div class="info-check">
-            <section>
+               </div>
+                <hr>
+                <div class="info-check">
+           <section>
               <img src="../assets/Icons/Location.png">
             <div>
-              <h3>Great location</h3>
+              <h4>Great location</h4>
               <p>100% of recent guests gave the location a 5-star rating</p>
             </div>
             </section>
               <section>
               <img src="../assets/Icons/House-key.png">
              <div>
-              <h3>Great check-in experience</h3>
+              <h4>Great check-in experience</h4>
               <p>90% of recent guests gave the check-in process a 5-star rating</p>
-            </div>
-            </section>
+              </div>
+              </section>
               <section>
               <img src="../assets/Icons/Pool.png">
               <div>
-              <h3>Pool</h3>
+              <h4>Pool</h4>
               <p>Guests often search for this popular amenity</p>
-            </div>
-            </section>
-          </div>
-          </section>
-         
-           </section>
-          <hr>
-          <div class="stay-disc">
-               <h3> Info:</h3>
-             <p> 
+              </div>
+              </section>
+              </div>
+              <hr>
+              <div class="stay-disc">
+                <h3> Info:</h3>
+              <p> 
               {{ stay.summary }}
-             </p>
-          </div>
-         
+              </p>
+              </div>
+     
           <hr>
-             <h2> What this place offers</h2>
+             <h2 class="title-amenities"> What this place offers</h2>
             <section class="amenities-details">
               <div class="amenities-side">
             <div class="amenities-details-left" v-for="amenitie in stay.amenities.slice(0,5)" :key="amenitie">
@@ -98,10 +95,16 @@
             </div>
             </div>
               </section>
+
+        </section> 
+              <nav>
+          <stay-form :stay="stay"/>
+              </nav>
+      </section>
            
-          <hr>
+          <hr class="long-hr">
           <div class="title-reviews" >
-           <h2 class="title-reviews">
+           <h3 class="title-reviews">
                <span class="star">
                <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -116,8 +119,8 @@
                 />
               </svg>
             </span>
-            <span :rating="rating">{{rating}}</span>  •
-             {{ stay.numOfReviews}} reviews </h2>
+              <span class="rating-reviews" :rating="rating">{{rating}}</span>  •
+             {{ stay.numOfReviews}} reviews </h3>
           </div>
          
            <div class="left-side-rating">
@@ -130,15 +133,14 @@
             Location          {{stay.reviewScores.location}}
             Value             {{stay.reviewScores.value}}
            </div>
-        <!-- <stay-review></stay-review> -->
         <section class="list-reviews">
           <article v-for="review in stay.reviews.slice(0,8)" :key="review._id">
           <img class="img-user-review" :src="`${review.by.imgUrl}`" />
           <div>
-           <h2> {{review.by.fullname}}</h2>
-           <p>{{review.at.slice(0,10)}}</p>
+           <h4> {{review.by.fullname}}</h4>
+           <p class="date-review">{{review.at.slice(0,10)}}</p>
           </div>
-           <p>{{review.txt.slice(0,150)}}</p>
+           <p class="content-review">{{review.txt.slice(0,150)}}</p>
          </article>
        </section>
           <button class="btn-show-more">show all <span> {{stay.reviews.length}}</span> reviews</button>
@@ -201,7 +203,7 @@ export default {
       return (amenitie) => new URL(`../assets/Icons/${amenitie}.png`, import.meta.url)
     },
     rating() {
-      return (this.stay.reviewScores.rating)/20
+      return ((this.stay.reviewScores.rating)/20).toFixed(2)
     }
   },
   methods: {

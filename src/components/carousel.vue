@@ -5,7 +5,7 @@
       <el-carousel
         :trigger="click"
         :autoplay="false"
-        interval="600000"
+        :interval=600000
         height="262px"
       >
         <el-carousel-item v-for="item in stay.imgUrls" :key="item">

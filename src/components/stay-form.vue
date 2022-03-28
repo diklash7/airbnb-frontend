@@ -26,8 +26,8 @@
             </div>
 
 
-       <section class="form-container">
-          <el-form
+     <section class="form-container">
+       <el-form
         :model="form"
         label-width="80px"
       >
@@ -38,11 +38,12 @@
             <el-form-item label="Check out"> </el-form-item>
           </div>
           <el-date-picker
+            class="input-date"
             v-model="form.dates"
             type="daterange"
             start-placeholder="Add dates"
             end-placeholder="Add dates"
-            :default-value="[new Date(2022, 2, 1), new Date(2022, 3, 1)]"
+            :default-value="Check"
           />
         </div>
       </el-form>
@@ -180,7 +181,7 @@ data() {
       this.$router.push("/order");
     },
      rating() {
-      return (this.stay.reviewScores.rating)/20
+      return ((this.stay.reviewScores.rating)/20).toFixed(2)
     },
   }
 }
