@@ -28,8 +28,8 @@
         </div>
 
         <div class="check-in-out">
-            <label>Check out</label>
             <label>Check in</label>
+            <label>Check out</label>
           <el-date-picker
             v-model="form.dates"
             type="daterange"
@@ -40,7 +40,7 @@
         </div>
 
         <Popper>
-          <div class="guest-container">
+          <div class="guest-container flex align-center">
             <label class="guest-label flex flex-column"
               >Guests
               <input

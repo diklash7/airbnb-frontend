@@ -3,17 +3,21 @@
     <div class="app-header-container flex space-between">
       <div class="logo-container">
         <router-link to="/">
-          <img v-if="pagePos || stays || stay" class="logo-svg" src="../assets/guesta_pink.png" />
-          <img v-else class="logo-svg" src="../assets/guesta_white.png" />
+          <img
+            v-if="pagePos || stays || stay"
+            class="logo-svg"
+            src="../assets/Guesta_pink.svg"
+          />
+          <img v-else class="logo-svg" src="../assets/Guesta_pink.svg" />
         </router-link>
       </div>
 
       <button
-        v-if="stay && !isFullHeader || pagePos && !isFullHeader"
+        v-if="(stay && !isFullHeader) || (pagePos && !isFullHeader)"
         @click="openFilter"
         class="mini-filter flex space-between align-center"
       >
-        Start your search
+        <p>{{ searchTitle }}</p>
         <span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -97,7 +101,7 @@
         </nav>
       </div>
     </div>
-  <app-filter v-if="!pagePos && !stay || isFullHeader" />
+    <app-filter v-if="(!pagePos && !stay) || isFullHeader" />
   </section>
 </template>
 <script>
@@ -109,6 +113,7 @@ export default {
   },
   data() {
     return {
+      city: null,
       isScroll: false,
       isFullHeader: false,
       pagePos: null,
@@ -125,22 +130,27 @@ export default {
     scrollToggle() {
       this.isScroll = true;
       this.pagePos = window.scrollY;
+      console.log(this.pagePos)
       this.isFullHeader = false;
     },
     openFilter() {
-      this.isFullHeader = true      
+      this.isFullHeader = true;
     },
   },
   computed: {
     headerStyles() {
       return {
-        'full-header': this.isFullHeader || !this.pagePos,
+        "full-header": this.isFullHeader || !this.pagePos,
         top: !this.pagePos,
-        'explore-page': this.stays,
+        "explore-page": this.stays,
         details: this.stay,
-        'main-layout': !this.stay,
-        'details-layout': this.stay,
+        "main-layout": !this.stay,
+        "details-layout": this.stay,
       };
+    },
+    searchTitle() {
+      if (this.city) return this.city;
+      else return 'Start your Search'
     },
   },
   destroyed() {
