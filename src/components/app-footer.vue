@@ -38,7 +38,5 @@
 </template>
 
 <style>
-p {
-  font-family: Cereal-Medium;
-}
+
 </style>

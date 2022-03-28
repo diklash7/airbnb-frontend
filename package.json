@@ -25,6 +25,7 @@
     "vue3-google-map": "^0.10.0",
     "vue3-histogram-slider": "^0.4.16",
     "vue3-popper": "^1.4.2",
+    "vue3-slider": "^1.6.8",
     "vuex": "^4.0.2"
   },
   "devDependencies": {

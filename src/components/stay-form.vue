@@ -35,7 +35,7 @@
       <v-date-picker v-model="range" is-range>
           <template v-slot="{ inputValue, inputEvents }">
          <div class="flex">
-           <label> check-in 
+           <label class="label1"> CHECK-IN 
          <input
          :value="inputValue.start"
          v-on="inputEvents.start"
@@ -43,7 +43,7 @@
         placeholder="Add date"
         />
        </label>  
-      <label> check-in 
+      <label class="label2"> CHECK-OUT 
       <input
         :value="inputValue.end"
         v-on="inputEvents.end"
@@ -67,14 +67,16 @@
           </div> -->
         <Popper>
           <div class="guest-container">
-            <label class="guest-label flex flex-column">
+            <div class="flex">
+            <label> GUESTS
               <input
                 type="text"
                 v-model="form.city"
-                placeholder="Add guests"
+                placeholder="1 guest"
                 disabled
               />
             </label>
+            </div>
           </div>
           <template #content>
             <div class="guests-modal flex flex-column">
@@ -166,7 +168,7 @@
 
       
           <div class="input3">
-          <button class="btn-form-reserve" @click="goToOrder()">Reserve</button>
+          <button class="btn-form-reserve" @click="goToOrder()">Check availability</button>
           </div>
       </section>
       </section>

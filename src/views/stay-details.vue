@@ -104,8 +104,10 @@
       </section>
            
           <hr class="long-hr">
+       <section class="rating-Categories"> 
           <div class="title-reviews" >
-           <h3 class="title-reviews">
+         
+           <h3>
                <span class="star">
                <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -121,19 +123,47 @@
               </svg>
             </span>
               <span class="rating-reviews" :rating="rating">{{rating}}</span>  •
-             {{ stay.numOfReviews}} reviews </h3>
+             {{ stay.numOfReviews}} reviews
+              </h3>
           </div>
-         
+          <section class="slider-rate flex">
            <div class="left-side-rating">
-            Cleanliness       {{stay.reviewScores.cleanliness}}
-            Communication     {{stay.reviewScores.communication}}
-            Check-in          {{stay.reviewScores.checkin}}
+             <div class="flex">
+            Cleanliness  
+         <vue3-slider class="slider1" v-model="stay.reviewScores.cleanliness" color="#000000" track-color="#FEFEFE" />
+             {{rating}}
+             </div>
+             <div class="flex">
+            Communication 
+         <vue3-slider class="slider2" v-model="stay.reviewScores.communication" color="#000000" track-color="#FEFEFE" />
+            {{rating}}
+            </div>
+             <div class="flex">
+            Check-in    
+         <vue3-slider class="slider3" v-model="stay.reviewScores.checkin" color="#000000" track-color="#FEFEFE" />
+           {{rating}}
+           </div>
            </div>
            <div class="right-side-rating"> 
-            Accuracy          {{stay.reviewScores.accuracy}}
-            Location          {{stay.reviewScores.location}}
-            Value             {{stay.reviewScores.value}}
+           <div class="flex">
+            Accuracy          
+         <vue3-slider class="slider4" v-model="stay.reviewScores.accuracy" color="#000000" track-color="#FEFEFE" />
+          {{rating}}
            </div>
+            <div class="flex">
+            Location         
+         <vue3-slider class="slider5" v-model="stay.reviewScores.location" color="#000000" track-color="#FEFEFE" />
+        {{rating}}
+          </div>
+            <div class="flex">
+            Value             
+         <vue3-slider class="slider6" v-model="stay.reviewScores.value" color="#000000" track-color="#FEFEFE" />
+        {{rating}}
+           </div>
+           </div>
+          </section>
+      </section>
+           
         <section class="list-reviews">
           <article v-for="review in stay.reviews.slice(0,6)" :key="review._id">
           <img class="img-user-review" :src="`${review.by.imgUrl}`" />
@@ -160,6 +190,8 @@ import { reviewService } from '../services/review-service'
 import stayPreview from '../components/stay-preview.vue'
 import stayForm from '../components/stay-form.vue'
 import stayMaps from '../components/stay-maps.vue'
+import slider from "vue3-slider"
+
 // import stayReview from './stay-review.vue'
 export default {
   components: { 
@@ -167,6 +199,7 @@ export default {
       stayPreview ,
       stayForm,
       stayMaps,
+       "vue3-slider": slider,
     //   stayReview 
   },
   name: 'stay-details',
@@ -177,6 +210,7 @@ export default {
     return {
       stay: null,
       reviewToAdd: null,
+      myNumber:10,
     }
   },
   async created() {

@@ -187,19 +187,31 @@
             .long-hr {
                 width: 100%;
             }
-            .title-reviews {
-                display: inline-block;
-                h3 {
-                    font-size: 20px;
+            .rating-Categories {
+                .title-reviews {
+                    h3 {
+                        font-size: 20px;
+                    }
+                    .rating-reviews {
+                        margin-left: 6px;
+                        margin-right: 5px;
+                    }
                 }
-                .rating-reviews {
-                    margin-left: 6px;
-                    margin-right: 5px;
+                .slider-rate {
+                    width: 100%;
+                    .right-side-rating {
+                        margin-left: 200px;
+                    }
+                    .slider1,
+                    .slider2,
+                    .slider3,
+                    .slider4,
+                    .slider5,
+                    .slider6 {
+                        width: 100px;
+                        margin-left: 20px;
+                    }
                 }
-            }
-            pre {
-                display: flex;
-                flex-direction: column;
             }
             .list-reviews {
                 display: flex;
