@@ -13,6 +13,13 @@
       <option value="Bungalow">Bungalow</option>
       <option value="Condominium">Condominium</option>
     </select>
+    <button @click="isOpen = !isOpen" class="explore-btn">Type of place</button>
+
+<div v-if="isOpen">
+  <custom-type-filter v-model="section"/>
+</div>
+
+
     <span class="buffer">|</span>
     <button
       class="explore-btn"
@@ -26,17 +33,6 @@
     <button class="explore-btn">AC</button>
     <button class="explore-btn">Smoking Allowed</button>
 
-    <!-- <select @change="setFilter"  v-model="filterBy.city">
-      <option value="">All</option>
-      <option value="Barcelona">Barcelona</option>
-      <option value="Hong Kong">Hong Kong</option>
-      <option value="New York">New York</option> -->
-    <!-- <option value="House">House</option>
-      <option value="Apartment">Apartment</option>
-      <option value="Serviced apartment">Serviced apartment</option>
-      <option value="Bungalow">Bungalow</option>
-      <option value="Condominium">Condominium</option> -->
-    <!-- </select> -->
     <div v-if="isOpen" class="slider-demo-block">
       <!-- <el-slider @change="setFilter" v-model="filterBy.price" range :max="3000" /> -->
       <HistogramSlider
@@ -52,8 +48,10 @@
 
 <script>
 import { utilService } from "../services/util-service";
+import customTypeFilter from './custom-type-filter.vue';
 
 export default {
+  components: { customTypeFilter },
   name: "stay-filter",
   props: {
     prices: Array,
@@ -75,5 +73,8 @@ export default {
       this.$emit("set-filter", { ...this.filterBy });
     },
   },
+  // components:{
+  //   customTypeFilter
+  // }
 };
 </script>

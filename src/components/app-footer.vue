@@ -37,6 +37,4 @@
   </section>
 </template>
 
-<style>
-
-</style>
+<style></style>
