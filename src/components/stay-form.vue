@@ -207,19 +207,6 @@ data() {
 }
 </script>
 <style>
-label{
-  border: 1px black solid;
-  font-size: 14px;
-}
-.input1{
-  width: 150px;
-  height: 50px;
-  border-style: none;
-}
-.input2{
-  width: 150px;
-  height: 50px;
-  border-style: none;
-}
+
 
 </style>
