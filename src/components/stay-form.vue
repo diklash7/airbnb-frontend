@@ -97,7 +97,6 @@
             <label> GUESTS
               <input
                 type="text"
-                v-model="form.city"
                 :placeholder="addGuests"
                 disabled
               />
@@ -217,6 +216,7 @@ data() {
       form: {
         dates: [],
          guests: 1,
+         guest:0,
       },
        range: {
         start: '',
