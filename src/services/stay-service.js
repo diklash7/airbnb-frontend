@@ -30,8 +30,9 @@ async function query(filterBy) {
         filteredStays = filteredStays.filter(stay => regex.test(stay.address.city))
     }
 
-    console.log('filterBy:', filterBy);
-
+    if (filterBy.capacity) {
+        filteredStays = filteredStays.filter(stay => stay.capacity >= filterBy.capacity)
+    }
 
     // const min = filterBy.price[0] || 0;
     // const max = filterBy.price[1] || Infinity;
@@ -55,6 +56,10 @@ async function query(filterBy) {
         const regex = new RegExp(filterBy.propertyType, 'i')
         filteredStays = filteredStays.filter(stay => regex.test(stay.propertyType))
     }
+    if (filterBy.roomType) {
+        const regex = new RegExp(filterBy.roomType, 'i')
+        filteredStays = filteredStays.filter(stay => regex.test(stay.roomType))
+    }
 
     // // console.log('filterBy.amenities.WiFi:', filterBy.amenities['WiFi']);
     // if (filterBy.amenities?.WiFi) {
@@ -62,7 +67,7 @@ async function query(filterBy) {
     //     filteredStays = filteredStays.filter(stay => regex.test(stay.amenities.WiFi))
     // }
 
-    console.log('filteredStays:', filteredStays);
+    // console.log('filteredStays:', filteredStays);
 
 
     return Promise.resolve(filteredStays)

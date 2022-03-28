@@ -1,7 +1,7 @@
 <template>
-<section v-if="filterBy" class="stay-filter">
+  <section v-if="filterBy" class="stay-filter">
     <button @click="isOpen = !isOpen" class="explore-btn">Price</button>
-    <select class="explore-btn" @change="setFilter" v-model="filterBy.propertyType">
+    <!-- <select class="explore-btn" @change="setFilter" v-model="filterBy.propertyType">
         class="explore-btn"
       @change="setFilter"
       v-model="filterBy.propertyType"
@@ -12,13 +12,13 @@
       <option value="Serviced apartment">Serviced apartment</option>
       <option value="Bungalow">Bungalow</option>
       <option value="Condominium">Condominium</option>
-    </select>
+    </select> -->
+
     <button @click="isOpen = !isOpen" class="explore-btn">Type of place</button>
 
-<div v-if="isOpen">
-  <custom-type-filter v-model="section"/>
-</div>
-
+    <div v-if="isOpen">
+      <custom-type-filter v-model="filterBy.roomType" />
+    </div>
 
     <span class="buffer">|</span>
     <button
@@ -28,6 +28,7 @@
     >
       Wifi
     </button>
+    <!-- <custom-amenities-filter v-model="isOn"/> -->
     <button class="explore-btn">TV</button>
     <button class="explore-btn">Kitchen</button>
     <button class="explore-btn">AC</button>
@@ -48,10 +49,11 @@
 
 <script>
 import { utilService } from "../services/util-service";
-import customTypeFilter from './custom-type-filter.vue';
+import CustomAmenitiesFilter from "./custom-amenities-filter.vue";
+import customTypeFilter from "./custom-type-filter.vue";
 
 export default {
-  components: { customTypeFilter },
+  components: { customTypeFilter, CustomAmenitiesFilter },
   name: "stay-filter",
   props: {
     prices: Array,
@@ -60,6 +62,7 @@ export default {
     return {
       filterBy: null,
       isOpen: false,
+      isOn: false,
     };
   },
   created() {

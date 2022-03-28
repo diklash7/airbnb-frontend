@@ -39,7 +39,15 @@
                     <input
                       :value="inputValue.start"
                       v-on="inputEvents.start"
-                      class="input1 border px-2 py-1 w-32 rounded focus:outline-none focus:border-indigo-300"
+                      class="
+                        input1
+                        border
+                        px-2
+                        py-1
+                        w-32
+                        rounded
+                        focus:outline-none focus:border-indigo-300
+                      "
                       placeholder="Add date"
                     />
                   </label>
@@ -49,7 +57,15 @@
                     <input
                       :value="inputValue.end"
                       v-on="inputEvents.end"
-                      class="input2 border px-2 py-1 w-32 rounded focus:outline-none focus:border-indigo-300"
+                      class="
+                        input2
+                        border
+                        px-2
+                        py-1
+                        w-32
+                        rounded
+                        focus:outline-none focus:border-indigo-300
+                      "
                       placeholder="Add date"
                     />
                   </label>
@@ -67,7 +83,7 @@
                 <input
                   type="text"
                   v-model="form.guests"
-                  :placeholder="addGuests"
+                  :placeholder="addGuest"
                   disabled
                 />
               </label>
@@ -99,7 +115,7 @@
                     <p>Ages 13 or above</p>
                   </div>
                   <div class="guest-btns flex align-center space-between">
-                    <button :class="disableAdultBtn" @click="countAdults(-1)" >
+                    <button :class="disableAdultBtn" @click="countAdults(-1)">
                       <span class="material-icons-sharp"
                         ><svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -142,7 +158,7 @@
                     <p>Ages 2-12</p>
                   </div>
                   <div class="guest-btns flex align-center space-between">
-                    <button :class="disableKidBtn" @click="countKids(-1)" >
+                    <button :class="disableKidBtn" @click="countKids(-1)">
                       <span class="material-icons-sharp">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -196,22 +212,23 @@ export default {
       },
       adults: 0,
       kids: 0,
+      placeholder: "Add guests",
     };
   },
   methods: {
     onSubmit() {
+      if (!this.form.guests) this.form.guests = '';
       this.$router.push(
-        `/explore?${new URLSearchParams({
-          destination: this.form.city,
-        }).toString()}`
-      );
+        `/explore?${new URLSearchParams({destination: this.form.city, capacity: this.form.guests}).toString()}`);
     },
     countAdults(diff) {
+      this.placeholder = (this.form.guests) ? `${this.form.guests} Guests` : 'Add guests'
       if (!this.adults && diff < 0) return;
       this.form.guests += diff;
       this.adults += diff;
     },
     countKids(diff) {
+      this.placeholder = (this.form.guests) ? `${this.form.guests} Guests` : 'Add guests'
       if (!this.kids && diff < 0) return;
       this.form.guests += diff;
       this.kids += diff;
@@ -224,14 +241,15 @@ export default {
     kidCount() {
       return this.kids;
     },
-    disableAdultBtn(){
-      return {'disabled-btn': !this.adults}
+    disableAdultBtn() {
+      return { "disabled-btn": !this.adults };
     },
-    disableKidBtn(){
-      return {'disabled-btn': !this.kids}
+    disableKidBtn() {
+      return { "disabled-btn": !this.kids };
     },
-    addGuests(){
-      return (this.form.guests) ? `${this.form.guests} Guests` : 'Add guests'
+    addGuest(){
+      if (this.form.guests === 0) return 'Add guests'
+      return this.form.guests + ' guests'
     }
   },
   components: {
