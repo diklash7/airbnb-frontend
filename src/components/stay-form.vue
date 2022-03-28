@@ -26,17 +26,36 @@
             </div>
 
 
-     <section class="form-container">
-       <el-form
-        :model="form"
-        label-width="80px"
-      >
-     
-        <div class="form-add-dates">
-          <div class="date-picker-title flex space-between">
-            <el-form-item label="Check in"> </el-form-item>
-            <el-form-item label="Check out"> </el-form-item>
-          </div>
+ <section class="form-container">
+        <!-- <div class="form-add-dates"> -->
+            <!-- <label class="label1">CHECK-IN</label>
+          <label class="label2">CHECKOUT</label> -->
+      <!-- <date-picker/> -->
+   <section class="form-date-picker">
+      <v-date-picker v-model="range" is-range>
+          <template v-slot="{ inputValue, inputEvents }">
+         <div class="flex">
+           <label> check-in 
+         <input
+         :value="inputValue.start"
+         v-on="inputEvents.start"
+         class="input1 border px-2 py-1 w-32 rounded focus:outline-none focus:border-indigo-300"
+        placeholder="Add date"
+        />
+       </label>  
+      <label> check-in 
+      <input
+        :value="inputValue.end"
+        v-on="inputEvents.end"
+        class="input2 border px-2 py-1 w-32 rounded focus:outline-none focus:border-indigo-300"
+       placeholder="Add date"
+      />
+         </label>
+       </div>
+     </template>
+   </v-date-picker>
+</section>
+<!--         
           <el-date-picker
             class="input-date"
             v-model="form.dates"
@@ -45,9 +64,7 @@
             end-placeholder="Add dates"
             :default-value="Check"
           />
-        </div>
-      </el-form>
-
+          </div> -->
         <Popper>
           <div class="guest-container">
             <label class="guest-label flex flex-column">
@@ -158,7 +175,6 @@
 
 <script>
 import Popper from "vue3-popper";
-  
 
 export default {
 
@@ -174,6 +190,10 @@ data() {
         city: "",
         dates: [],
       },
+       range: {
+        start: '',
+        end:'',
+      },
     };
 },
   computed: {
@@ -187,5 +207,19 @@ data() {
 }
 </script>
 <style>
+label{
+  border: 1px black solid;
+  font-size: 14px;
+}
+.input1{
+  width: 150px;
+  height: 50px;
+  border-style: none;
+}
+.input2{
+  width: 150px;
+  height: 50px;
+  border-style: none;
+}
 
 </style>
