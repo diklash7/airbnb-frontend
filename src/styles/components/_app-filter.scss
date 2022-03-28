@@ -14,96 +14,77 @@
   max-width: 850px;
   align-self: center;
 
+  .input-container {
+    display: flex;
+    flex-direction: column;
+    border-radius: 40px;
+  }
+
+  .input-container:first-child {
+    text-indent: 15px;
+
+    input {
+      min-width: 200px;
+      text-indent: 15px;
+    }
+
+    input::-webkit-search-cancel-button{
+      position:relative;
+      right:0px;  
+  }
+  }
+
+  .input-container-dates {
+    display: flex;
+    flex-direction: column;
+    border-radius: 40px;
+    padding: 12.5px 12.5px 12.5px 25px;
+
+    input {
+      width: 154px;
+    }
+  }
+
+  .input-container:last-child {
+
+    input {
+      width: 154px;
+    }
+  }
+
+  .inline-block[data-v-5784ed69] {
+    display: inline-block;
+    width: 191px;
+    border: 0px solid transparent;
+  }
+
   label {
-    font-family: Cereal-Bold;
+    cursor: pointer;
     font-size: 12px;
+    font-weight: 800;
+    padding: 12.5px 12.5px 12.5px 25px;
+
+      &:hover {
+        background-color: #ebebeb;
+        border-radius: 40px;
+      }
   }
 
   input {
+    cursor: pointer;
     background-color: transparent;
     color: #606266;
     border: none;
     box-shadow: none;
-    margin: 0;
+    padding: 2px 2px;
+
+    &:focus{
+      outline: none;
+  }
   }
 
-  .submit-btn {
-    position: absolute;
-    right: 0;
-    top: -15px;
-    display: flex;
-    justify-content: center;
-    height: 48px;
-    align-items: center;
-    border-radius: 50%;
-    border: none;
-    background-color: $clr1;
-    margin-right: 8px;
-    padding: 0 8px;
-  }
-
-  //search input
-  .search-container {
-    cursor: pointer;
-    padding: 12.5px 12.5px 12.5px 25px;
-
-    &:hover {
-      background-color: #ebebeb;
-      border-radius: 40px;
-    }
-
-    label {
-      width: 220px;
-      padding-left: 20px;
-    }
-  }
-
-  //labels
-  .el-form-item__label {
-    text-align: left;
-    font-size: 12px;
-    margin-right: 10px;
-  }
-
-  //date-picker
-  .check-in-out {
-    height: 35px;
-    padding: 0px 55px 0px 25px;
-    margin-top: -5px;
-
-
-    label:first-child {
-      top: 20px;
-      font-size: 12px;
-      margin-right:130px;
-      margin-left: 8px;
-    }
-    .el-range-input {
-      text-align: left;
-      width: 130px;
-      height: 15px;
-      top: -3px;
-      padding: 8px;
-      justify-content: space-between;
-    }
-
-    .el-icon {
-      display: none;
-    }
-
-    .el-range-separator {
-      display: none;
-    }
-
-    .el-date-editor {
-      justify-content: space-between;
-      background-color: transparent;
-      border: none;
-      box-shadow: none;
-      height: 15px;
-      padding: 0;
-      width: 320px;
-    }
+  input::-webkit-calendar-picker-indicator {
+    background-color: inherit;
   }
 
   //guest
@@ -114,20 +95,19 @@
     text-align: left;
   }
 
-  .guest-container {
-    padding: 15px 15px 15px 25px;
-
-    &:hover {
-      background-color: #ebebeb;
-      border-radius: 40px;
-    }
-    label {
-      width: 154px;
-      cursor: pointer;
-    }
-    input {
-      cursor: pointer;
-    }
+  .submit-btn {
+    position: absolute;
+    left: -188px;
+    top: -15px;
+    display: flex;
+    justify-content: center;
+    height: 48px;
+    align-items: center;
+    border-radius: 50%;
+    border: none;
+    background-color: $clr1;
+    // margin-right: 8px;
+    padding: 0 8px;
   }
 }
 
@@ -141,23 +121,6 @@
   --popper-theme-border-radius: 20px;
   --popper-theme-padding: 32px;
   --popper-theme-box-shadow: 0 6px 30px -6px rgba(0, 0, 0, 0.25);
-
-  --el-date-editor-width: 220px;
-  --el-date-editor-monthrange-width: 300px;
-  --el-date-editor-daterange-width: 350px;
-  --el-date-editor-datetimerange-width: 400px;
-  --el-date-editor-placeholder-color: #606266;
-  --el-input-text-color: #606266;
-  --el-input-border: none;
-  --el-input-hover-border: none;
-  --el-input-focus-border: var(--el-color-primary);
-  --el-input-transparent-border: 0 0 0 1px transparent inset;
-  --el-input-border-color: none;
-  --el-input-bg-color: var(--el-fill-color-blank);
-  --el-input-placeholder-color: #606266;
-  --el-input-hover-border-color: none;
-  --el-input-clear-hover-color: none;
-  --el-input-focus-border-color: none;
 }
 
 .guests-modal {

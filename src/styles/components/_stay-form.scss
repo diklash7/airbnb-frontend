@@ -1,89 +1,83 @@
-.stay-form {
-    box-shadow: 0 6px 16px rgb(0 0 0 / 12%);
-    margin-top: 40px;
-    margin-right: 5px;
-    width: 45vh;
-    padding: 24px;
-    border-radius: 12px;
-    border: 1px solid #ddd;
-    position: sticky;
-    top: 1px;
-    .form-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 20px;
-        h2 {
-            display: inline-block;
-            font-size: 22px;
-        }
-        .star {
-            font-size: 15px;
-        }
-        svg {
-            width: 12px;
-            height: 12px;
-        }
-        .word-night {
-            font-size: 16px;
-            opacity: 80%;
-        }
-        .reviews-form {
-            text-decoration: underline;
-            font-family: 'Franklin Gothic';
-            font-size: 15px;
-        }
-        .rate-form {
-            font-size: 15px;
-            margin-left: 5px;
-            font-family: 'Franklin Gothic';
-        }
-    }
-    .form-container {
-        .form-add-dates {
-            border: 1px rgb(175, 165, 165) solid;
-            border-bottom-style: none;
-            width: 40vh;
-            label {
-                font-size: 13px;
-                font-weight: bold;
-            }
-            .date-picker-title {
-                height: 20px;
-                text-indent: 10px;
-            }
-        }
-        .btn-form-reserve {
-            background-color: #ff385c;
-            width: 40vh;
-            border: none;
-            color: #fff;
-            text-align: center;
-            letter-spacing: .05rem;
-            height: 48px;
-            min-width: 200px;
-            font-family: inherit;
-            font-size: 16px;
-            border-radius: 8px;
-            transition: opacity 1.25s ease 0s!important;
-        }
-    }
-    .guest-container {
-        width: 40vh;
-        input {
-            height: 45px;
-            border: 1px rgb(134, 126, 126) solid;
+    .stay-form {
+        box-shadow: 0 6px 16px rgb(0 0 0 / 12%);
+        margin-top: 40px;
+        margin-right: 5px;
+        width: 45vh;
+        padding: 24px;
+        border-radius: 12px;
+        border: 1px solid #ddd;
+        position: sticky;
+        top: 1px;
+        .form-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             margin-bottom: 20px;
-            padding: 10px;
+            h2 {
+                display: inline-block;
+                font-size: 22px;
+            }
+            .star {
+                font-size: 15px;
+            }
+            svg {
+                width: 12px;
+                height: 12px;
+            }
+            .word-night {
+                font-size: 16px;
+                opacity: 80%;
+            }
+            .reviews-form {
+                text-decoration: underline;
+                font-family: 'Franklin Gothic';
+                font-size: 15px;
+            }
+            .rate-form {
+                font-size: 15px;
+                margin-left: 5px;
+                font-family: 'Franklin Gothic';
+            }
+        }
+        .form-container {
+            .form-date-picker {
+                label {
+                    border: 1px black solid;
+                    font-size: 14px;
+                }
+                .input1 {
+                    width: 150px;
+                    height: 50px;
+                    border-style: none;
+                }
+                .input2 {
+                    width: 150px;
+                    height: 50px;
+                    border-style: none;
+                }
+            }
+            .guest-container {
+                width: 38vh;
+                input {
+                    height: 50px;
+                    border: 1px rgb(134, 126, 126) solid;
+                    margin-bottom: 20px;
+                    padding: 10px;
+                }
+            }
+            .btn-form-reserve {
+                background-color: #ff385c;
+                width: 40vh;
+                border: none;
+                color: #fff;
+                text-align: center;
+                letter-spacing: .05rem;
+                height: 48px;
+                min-width: 200px;
+                font-family: inherit;
+                font-size: 16px;
+                border-radius: 8px;
+                transition: opacity 1.25s ease 0s!important;
+            }
         }
     }
-}
-
-.el-date-editor--daterange.el-input,
-.el-date-editor--daterange.el-input__inner,
-.el-date-editor--timerange.el-input,
-.el-date-editor--timerange.el-input__inner {
-    width: 40vh;
-    margin-top: -60px;
-    height: 80px;
-}

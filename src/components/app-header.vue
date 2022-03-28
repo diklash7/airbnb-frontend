@@ -3,17 +3,21 @@
     <div class="app-header-container flex space-between">
       <div class="logo-container">
         <router-link to="/">
-          <img v-if="pagePos || stays || stay" class="logo-svg" src="../assets/guesta_pink.png" />
-          <img v-else class="logo-svg" src="../assets/guesta_white.png" />
+          <img
+            v-if="pagePos || stays || stay"
+            class="logo-svg"
+            src="../assets/Guesta_pink.svg"
+          />
+          <img v-else class="logo-svg" src="../assets/Guesta_pink.svg" />
         </router-link>
       </div>
 
       <button
-        v-if="stay && !isFullHeader || pagePos && !isFullHeader"
+        v-if="(stay && !isFullHeader) || (pagePos && !isFullHeader)"
         @click="openFilter"
         class="mini-filter flex space-between align-center"
       >
-        Start your search
+        <p>{{ searchTitle }}</p>
         <span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -34,34 +38,46 @@
         <nav class="main-nav flex align-center">
           <router-link to="/explore">Explore</router-link>
           <router-link to="/host">Become a Host</router-link>
-          <div class="notification-icon">
-            <svg
-              v-if="pagePos || stays || stay"
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="#222222"
-              class="bi bi-bell-fill"
-              viewBox="0 0 16 16"
-            >
-              <path
-                d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z"
-              />
-            </svg>
-            <svg
-              v-else
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="#ffffff"
-              class="bi bi-bell-fill"
-              viewBox="0 0 16 16"
-            >
-              <path
-                d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z"
-              />
-            </svg>
-          </div>
+
+          <Popper>
+            <div class="notification-icon">
+              <svg
+                v-if="pagePos || stays || stay"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="#222222"
+                class="bi bi-bell-fill"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z"
+                />
+              </svg>
+              <svg
+                v-else
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="#ffffff"
+                class="bi bi-bell-fill"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z"
+                />
+              </svg>
+            </div>
+            <template #content>
+              <div class="notifications-modal">
+                <h2>Notifications</h2>
+                <div class="no-notifications">
+                  <div class="separator"></div>
+                  <div>You have no new notifications</div>
+                </div>
+              </div>
+            </template>
+          </Popper>
           <button class="user-menu">
             <div class="btn-svg flex align-center space-evenly">
               <svg
@@ -97,11 +113,12 @@
         </nav>
       </div>
     </div>
-  <app-filter v-if="!pagePos && !stay || isFullHeader" />
+    <app-filter v-if="(!pagePos && !stay) || isFullHeader" />
   </section>
 </template>
 <script>
 import appFilter from "./app-filter.vue";
+import Popper from "vue3-popper";
 export default {
   props: {
     stays: Array,
@@ -109,6 +126,7 @@ export default {
   },
   data() {
     return {
+      city: null,
       isScroll: false,
       isFullHeader: false,
       pagePos: null,
@@ -120,27 +138,33 @@ export default {
   },
   components: {
     appFilter,
+    Popper,
   },
   methods: {
     scrollToggle() {
       this.isScroll = true;
       this.pagePos = window.scrollY;
+      console.log(this.pagePos);
       this.isFullHeader = false;
     },
     openFilter() {
-      this.isFullHeader = true      
+      this.isFullHeader = true;
     },
   },
   computed: {
     headerStyles() {
       return {
-        'full-header': this.isFullHeader || !this.pagePos,
+        "full-header": this.isFullHeader || !this.pagePos,
         top: !this.pagePos,
-        'explore-page': this.stays,
+        "explore-page": this.stays,
         details: this.stay,
-        'main-layout': !this.stay,
-        'details-layout': this.stay,
+        "main-layout": !this.stay,
+        "details-layout": this.stay,
       };
+    },
+    searchTitle() {
+      if (this.city) return this.city;
+      else return "Start your Search";
     },
   },
   destroyed() {

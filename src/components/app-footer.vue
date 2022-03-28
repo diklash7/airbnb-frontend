@@ -37,8 +37,4 @@
   </section>
 </template>
 
-<style>
-p {
-  font-family: Cereal-Medium;
-}
-</style>
+<style></style>
