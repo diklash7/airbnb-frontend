@@ -20,9 +20,10 @@
                   d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
                 />
               </svg>                  
-              </span> {{rating}}   • 
-             <span>{{stay.numOfReviews}} reviews </span>   •    
-             <span>{{ stay.address.street }}</span>
+              </span>
+              <span class="title-rate">{{rating}}</span>    • 
+             <span class="title-num-reviews">{{stay.numOfReviews}} reviews </span>   •    
+             <span class="title-address">{{ stay.address.street }}</span>
              </div>
           </div>
           <div class="gallery-details">
@@ -134,7 +135,7 @@
             Value             {{stay.reviewScores.value}}
            </div>
         <section class="list-reviews">
-          <article v-for="review in stay.reviews.slice(0,8)" :key="review._id">
+          <article v-for="review in stay.reviews.slice(0,6)" :key="review._id">
           <img class="img-user-review" :src="`${review.by.imgUrl}`" />
           <div>
            <h4> {{review.by.fullname}}</h4>

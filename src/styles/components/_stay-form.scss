@@ -1,6 +1,7 @@
 .stay-form {
     box-shadow: 0 6px 16px rgb(0 0 0 / 12%);
     margin-top: 40px;
+    margin-right: 5px;
     width: 45vh;
     padding: 24px;
     border-radius: 12px;
@@ -19,19 +20,23 @@
         .star {
             font-size: 15px;
         }
-        span {
-            font-size: 15px;
-        }
         svg {
             width: 12px;
             height: 12px;
         }
         .word-night {
             font-size: 16px;
-            opacity: 90%;
+            opacity: 80%;
         }
         .reviews-form {
             text-decoration: underline;
+            font-family: 'Franklin Gothic';
+            font-size: 15px;
+        }
+        .rate-form {
+            font-size: 15px;
+            margin-left: 5px;
+            font-family: 'Franklin Gothic';
         }
     }
     .form-container {

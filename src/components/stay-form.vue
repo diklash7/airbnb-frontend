@@ -20,7 +20,7 @@
                 />
               </svg>
               </span>
-              {{rating}} • 
+              <span class="rate-form">{{rating}} </span> • 
                <span class="reviews-form">{{ stay.numOfReviews }} reviews </span>
             </nav>
             </div>
