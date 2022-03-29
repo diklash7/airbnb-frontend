@@ -37,7 +37,7 @@
       <div class="main-nav-container">
         <nav class="main-nav flex align-center">
           <router-link to="/explore">Explore</router-link>
-          <router-link to="/host">Become a Host</router-link>
+          <router-link to="/dashboard">Become a Host</router-link>
 
           <Popper>
             <div class="notification-icon">
@@ -116,7 +116,7 @@
               <div class="user-nav flex flex-column">
                 <a href="#/login">Log in</a>
                 <div class="seperator"></div>
-                <a href="#/host">Host your home</a>
+                <a href="#/dashboard">Host your home</a>
                 <div class="seperator"></div>
                 <a href="#/about">About</a>
               </div>
