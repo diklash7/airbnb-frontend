@@ -3,8 +3,7 @@ import { utilService } from '../../services/util-service'
 
 export default {
   state: {
-    // loggedinUser: utilService.loadFromSessionStorage('user') || null,
-    loggedinUser: userServiceOld.getLoggedinUser(),
+    loggedinUser: utilService.loadFromSessionStorage('user') || null,
   },
   getters: {
     user(state) {

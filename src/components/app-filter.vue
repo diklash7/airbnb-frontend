@@ -206,7 +206,7 @@ export default {
     return {
       form: {
         city: "",
-        dates: [],
+        range: null,
         guests: 0,
       },
       adults: 0,
