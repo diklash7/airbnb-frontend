@@ -12,7 +12,6 @@ const store = createStore({
    modules: {
      stayStore,
      userStore,
-     userStoreTemp,
      reviewStore,
    },
  })

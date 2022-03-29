@@ -11,13 +11,10 @@ export const userServiceOld = {
     getLoggedinUser,
     getUsers,
     getById,
-    remove,
-    update,
-    changeScore
 }
 
 // Debug technique
-window.userService = userService
+// window.userService = userService
 
 
 function getUsers() {
