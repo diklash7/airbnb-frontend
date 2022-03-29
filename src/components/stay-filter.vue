@@ -29,7 +29,7 @@
       Wifi
     </button>
     <!-- <custom-amenities-filter v-model="isOn"/> -->
-    <button class="explore-btn">TV</button>
+    <button class="explore-btn" @click="toggleAmen">TV</button>
     <button class="explore-btn">Kitchen</button>
     <button class="explore-btn">AC</button>
     <button class="explore-btn">Smoking Allowed</button>
@@ -62,7 +62,7 @@ export default {
     return {
       filterBy: null,
       isOpen: false,
-      isOn: false,
+      isClicked: false,
     };
   },
   created() {
@@ -75,9 +75,22 @@ export default {
       this.filterBy.price[1] = ev.to;
       this.$emit("set-filter", { ...this.filterBy });
     },
+    toggleAmen(ev) {
+      if (!this.isClicked) {
+        console.log(ev.target.innerText, "ev");
+        this.isClicked = true;
+        this.filterBy.amenities.push(ev.target.innerText);
+        console.log("this.filterBy.amenities:", this.filterBy.amenities);
+      } else {
+        this.isClicked = false;
+        const idx = this.filterBy.amenities.findIndex(
+          (amenity) => ev.target.innerText === amenity
+        );
+        this.filterBy.amenities.splice(idx, 1);
+        console.log("this.filterBy.amenities:", this.filterBy.amenities);
+      }
+      this.$emit("set-filter", { ...this.filterBy });
+    },
   },
-  // components:{
-  //   customTypeFilter
-  // }
 };
 </script>
