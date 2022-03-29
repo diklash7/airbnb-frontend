@@ -1,4 +1,4 @@
-import { userServiceOld } from '../../services/user-service-old'
+import { userServiceOld } from '../../services/user-service'
 import { utilService } from '../../services/util-service'
 
 export default {
