@@ -30,9 +30,9 @@
     </button>
     <!-- <custom-amenities-filter v-model="isOn"/> -->
     <button class="explore-btn" @click="toggleAmen">TV</button>
-    <button class="explore-btn">Kitchen</button>
-    <button class="explore-btn">AC</button>
-    <button class="explore-btn">Smoking Allowed</button>
+    <button class="explore-btn" @click="toggleAmen">Kitchen</button>
+    <button class="explore-btn" @click="toggleAmen">AC</button>
+    <button class="explore-btn" @click="toggleAmen">Smoking Allowed</button>
 
     <div v-if="isOpen" class="slider-demo-block">
       <!-- <el-slider @change="setFilter" v-model="filterBy.price" range :max="3000" /> -->
