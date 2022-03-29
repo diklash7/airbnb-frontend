@@ -1,4 +1,4 @@
-import { storageService } from './async-storage.service'
+import { storageService } from './async-storage-service'
 // import { httpService } from './http.service'
 // import { socketService, SOCKET_EVENT_USER_UPDATED } from './socket.service'
 const STORAGE_KEY_LOGGEDIN_USER = 'loggedinUser'
@@ -11,9 +11,9 @@ export const userServiceOld = {
     getLoggedinUser,
     getUsers,
     getById,
-    remove,
-    update,
-    changeScore
+    // remove,
+    // update,
+    // changeScore
 }
 
 // Debug technique
