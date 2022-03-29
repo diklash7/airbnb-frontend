@@ -35,7 +35,11 @@
       </button>
     </form>
 
-    <form @submit.prevent="signup" v-if="isSignup" class="signup form px-3 py-2">
+    <form
+      @submit.prevent="signup"
+      v-if="isSignup"
+      class="signup form px-3 py-2"
+    >
       <div class="text-center my-2">
         <h2 class="clr-teal">We happy to see you here!</h2>
         <p>Lorem ipsum dolor sit amet consectetur.</p>
@@ -93,30 +97,31 @@
 
 <script>
 export default {
-  name: 'login',
+  name: "login",
   data() {
     return {
       isSignup: false,
-      newUser: { fullname: '', username: '', password: '' },
-    }
+      newUser: { fullname: "", username: "", password: "" },
+    };
   },
   computed: {
     user() {
-      return this.$store.getters.user
+      return this.$store.getters.user;
     },
   },
   methods: {
     async login() {
-      await this.$store.dispatch({ type: 'login', cred: this.newUser })
-      this.$router.push('/')
+      await this.$store.dispatch({ type: "login", cred: this.newUser });
+      this.$router.push("/");
     },
     async signup() {
-      await this.$store.dispatch({ type: 'signup', cred: this.newUser })
-      this.$router.push('/')
+      await this.$store.dispatch({ type: "signup", cred: this.newUser });
+      this.$router.push("/");
     },
     async logout() {
-      await this.$store.dispatch({ type: 'logout' })
+      await this.$store.dispatch({ type: "logout" });
+      this.$router.push("/");
     },
   },
-}
+};
 </script>
