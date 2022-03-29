@@ -1,14 +1,15 @@
 <template>
-       <section class="stay-form">
-           <section class="form-header-small hide">
+    <section class="stay-form">
+      <section :class="formForDisplay">
+         <section class="form-header-small" >
                   <div class="titles-small">  
                      <a>Photos</a>
                      <a>Amenities</a>
                      <a>Reviews</a>
                      <a href="">Location</a>
                    </div>
-               <nav>
-                  <div class="form-container">
+                <nav>
+                  <div class="form-container-small">
                     <div class="form-title-small">
                      <div class="form-price-small">
                        <h3>${{ stay.price}}</h3> 
@@ -36,8 +37,9 @@
                 <button class="btn-form-reserve-small" @click="goToOrder()">Check availability</button>
                 </div>
                </nav>
-           </section>
-
+             </section>
+         </section>
+     <section class="form-main">
             <div class="form-header">
                 <div class="form-price">
               <h2>${{ stay.price}}</h2> 
@@ -63,9 +65,7 @@
             </nav>
             </div>
 
-
      <section class="form-container">
-       
         <section class="form-date-picker">
           <v-date-picker v-model="range" is-range>
             <template v-slot="{ inputValue, inputEvents }">
@@ -196,6 +196,7 @@
           <button class="btn-form-reserve" @click="goToOrder()">Check availability</button>
           </div>
       </section>
+       </section>
       </section>
 </template>
 
@@ -225,7 +226,6 @@ data() {
       adults: 0,
       kids: 0,
       isScroll: false,
-      isFullHeader: false,
       pagePos: null,
       
     };
@@ -239,12 +239,9 @@ methods: {
     scrollToggle() {
       this.isScroll = true;
       this.pagePos = window.scrollY;
-      this.isFullHeader = false;
-      console.log(this.pagePos);
+      // console.log(this.pagePos);
     },
-    openHeader() {
-      this.isFullHeader = true;
-    },
+    
      countAdults(diff) {
       if (!this.adults && diff < 0) return;
       this.form.guests += diff;
@@ -277,7 +274,12 @@ methods: {
     },
     addGuests(){
       return this.form.guests + ' '+ 'guests'
-    } 
+    },
+    formForDisplay() {
+      return {
+        "hide-form-header-small": !this.pagePos,
+      };
+    },
   }
 }
 </script>
