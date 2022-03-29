@@ -50,9 +50,12 @@ async function query(filterBy) {
         filteredStays = filteredStays.filter(stay => regex.test(stay.roomType))
     }
 
-    // if (filterBy.amenities) {
-    //     filteredStays = filteredStays.filter((stay) => filterBy.amenities.every((filterAmenity) => stay.amenities.includes(filterAmenity))
-    //     }
+    if (filterBy.amenities) {
+        filteredStays = filteredStays.filter((stay) => {
+            return filterBy.amenities.every((amenity) => stay.amenities.includes(amenity))
+        })
+        console.log('filteredStays.length in amenities:', filteredStays.length);
+    }
 
     return Promise.resolve(filteredStays)
 }
