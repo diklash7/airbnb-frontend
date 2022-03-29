@@ -1,13 +1,8 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import homePage from '../views/home-page.vue'
 import aboutPage from '../views/about-page.vue'
-<<<<<<< HEAD
-import hostPage from '../views/host-page.vue'
 import login from '../views/login.vue'
-=======
 import dashboardPage from '../views/dashboard-page.vue'
-import loginPage from '../views/login-page.vue'
->>>>>>> 8d07fa8d3d5efb5aa18a866d98bb79568750a350
 import explorePage from '../views/explore-page.vue'
 import stayDetails from '../views/stay-details.vue'
 import orderDetails from '../views/order-details.vue'
