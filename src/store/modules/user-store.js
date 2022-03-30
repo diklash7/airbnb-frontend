@@ -1,4 +1,4 @@
-import { userServiceOld } from '../../services/user-service'
+import { userService } from '../../services/user-service'
 import { utilService } from '../../services/util-service'
 
 export default {
@@ -25,7 +25,7 @@ export default {
   actions: {
     async login({ commit }, { cred }) {
       try {
-        const user = await userServiceOld.login(cred)
+        const user = await userService.login(cred)
         commit({ type: 'setUser', user })
         utilService.saveToSessionStorage('user', user)
       } catch (err) {
@@ -34,7 +34,7 @@ export default {
     },
     async signup({ commit }, { cred }) {
       try {
-        const user = await userServiceOld.signup(cred)
+        const user = await userService.signup(cred)
         commit({ type: 'setUser', user })
         utilService.saveToSessionStorage('user', user)
       } catch (err) {
@@ -43,7 +43,7 @@ export default {
     },
     async logout({ commit }) {
       try {
-        await userServiceOld.logout()
+        await userService.logout()
         commit({ type: 'setUser', user: null })
         sessionStorage.removeItem('user')
       } catch (err) {

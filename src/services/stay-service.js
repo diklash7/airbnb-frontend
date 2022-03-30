@@ -1,6 +1,6 @@
 import { utilService } from './util-service'
 import { httpService } from './http-service'
-import { storageService } from './async-storage-service'
+// import { storageService } from './async-storage-service'
 
 const KEY = 'stay_db'
 const ENDPOINT = 'stay'
