@@ -53,6 +53,11 @@
             margin-right: 4px;
          }
       }
+
+      .total-revenue {
+         padding:20px;
+         font-size: 30px;
+      }
    }
 
    .info-container {
@@ -71,6 +76,7 @@
             align-items: center;
             text-align: center;
             font-family: Cereal-Medium;
+            border-bottom: 1px solid $clr5;
          }
       }
 

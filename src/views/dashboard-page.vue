@@ -58,23 +58,27 @@
                     >
                       <path
                         d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
-                      /></svg
-                    >NaN <small class="avg"> avg</small></span
+                      />
+                    </svg>
+                    4.65 <small class="avg">avg</small></span
                   >
                 </div>
                 <div class="flex space-between">
-                  <span>0 <small>reviews</small></span>
+                  <span>112<small> reviews</small></span>
                 </div>
               </div>
             </div>
             <div class="dash-stat">
               <h3>Total Revenues</h3>
+              <span class="total-revenue">{{ revenueSum }}</span>
             </div>
             <div class="dash-stat">
               <h3>Orders</h3>
+              <span>{{ orders.length }}<small> orders</small></span>
             </div>
             <div class="dash-stat">
               <h3>Guests</h3>
+            <span>{{guestSum}}<small> guests</small></span>
             </div>
           </div>
         </section>
@@ -95,25 +99,23 @@
               </div>
             </div>
             <div class="tbody">
-              <host-order-list />
+              <order-list :orders="orders" />
             </div>
           </section>
-            <section v-else class="host-stay-list">
-              <div class="stay-table">
-                <div class="thead">
-                  <div class="thead-container gray-box-shadow">
-                    <!-- <span class="guest-img"></span> -->
-                    <span>Name</span
-                    ><span>Price per night</span>
-                    <span>Address</span>
-                    <span class="stay-actions">Actions</span>
-                  </div>
-                </div>
-                <div class="tbody">
-                  <host-stay-list />
+          <section v-else class="host-stay-list">
+            <div class="stay-table">
+              <div class="thead">
+                <div class="thead-container gray-box-shadow">
+                  <span>Name</span><span>Price per night</span>
+                  <span>Address</span>
+                  <span class="stay-actions">Actions</span>
                 </div>
               </div>
-            </section>
+              <div class="tbody">
+                <stay-list />
+              </div>
+            </div>
+          </section>
         </section>
       </div>
     </section>
@@ -123,11 +125,144 @@
 <script>
 import appHeader from "../components/app-header.vue";
 import orderList from "../components/order-list.vue";
+// import stayList from "../components/stay-list.vue";
 
 export default {
   data() {
     return {
       isOpen: false,
+      orders: [
+        {
+          date: "03/13/22",
+          booker: "Leo",
+          stay: "Fresh and modern 1BR in Bed-Stuy",
+          tripDates: "03/14/22-03/18/22",
+          nights: 4,
+          guests: 3,
+          amount: 516,
+          status: ["✔️", "❌"],
+        },
+        {
+          date: "03/09/22",
+          booker: "Leo",
+          stay: "Fresh and modern 1BR in Bed-Stuy",
+          tripDates: "03/10/22-03/12/22",
+          nights: 2,
+          guests: 3,
+          amount: 313,
+          status: ["✔️", "❌"],
+        },
+        {
+          date: "02/11/22",
+          booker: "Leo",
+          stay: "Fresh and modern 1BR in Bed-Stuy",
+          tripDates: "02/16/22-02/17/22",
+          nights: 1,
+          guests: 2,
+          amount: 330,
+          status: ["✔️", "❌"],
+        },
+        {
+          date: "02/03/22",
+          booker: "Leo",
+          stay: "Fresh and modern 1BR in Bed-Stuy",
+          tripDates: "02/11/22-02/15/22",
+          nights: 4,
+          guests: 3,
+          amount: 889,
+          status: ["✔️", "❌"],
+        },
+        {
+          date: "01/13/22",
+          booker: "Leo",
+          stay: "Fresh and modern 1BR in Bed-Stuy",
+          tripDates: "01/14/22-01/18/22",
+          nights: 4,
+          guests: 5,
+          amount: 1200,
+          status: ["✔️", "❌"],
+        },
+        {
+          date: "01/08/22",
+          booker: "Leo",
+          stay: "Fresh and modern 1BR in Bed-Stuy",
+          tripDates: "01/15/22-01/18/22",
+          nights: 3,
+          guests: 2,
+          amount: 550,
+          status: ["✔️", "❌"],
+        },
+        {
+          date: "12/13/21",
+          booker: "Leo",
+          stay: "Fresh and modern 1BR in Bed-Stuy",
+          tripDates: "12/22/21-12/27/21",
+          nights: 5,
+          guests: 4,
+          amount: 1600,
+          status: ["✔️", "❌"],
+        },
+        {
+          date: "11/18/21",
+          booker: "Leo",
+          stay: "Fresh and modern 1BR in Bed-Stuy",
+          tripDates: "11/22/21-11/28/21",
+          nights: 6,
+          guests: 2,
+          amount: 2500,
+          status: ["✔️", "❌"],
+        },
+        {
+          date: "11/13/21",
+          booker: "Leo",
+          stay: "Fresh and modern 1BR in Bed-Stuy",
+          tripDates: "11/14/21-11/18/21",
+          nights: 4,
+          guests: 4,
+          amount: 3000,
+          status: ["✔️", "❌"],
+        },
+        {
+          date: "10/15/21",
+          booker: "Leo",
+          stay: "Fresh and modern 1BR in Bed-Stuy",
+          tripDates: "10/20/21-10/28/21",
+          nights: 8,
+          guests: 2,
+          amount: 3500,
+          status: ["✔️", "❌"],
+        },
+        {
+          date: "09/10/21",
+          booker: "Leo",
+          stay: "Fresh and modern 1BR in Bed-Stuy",
+          tripDates: "09/25/21-09/28/21",
+          nights: 3,
+          guests: 5,
+          amount: 2000,
+          status: ["✔️", "❌"],
+        },
+        {
+          date: "08/13/21",
+          booker: "Leo",
+          stay: "Fresh and modern 1BR in Bed-Stuy",
+          tripDates: "08/17/21-08/18/20",
+          nights: 1,
+          guests: 2,
+          amount: 516,
+          status: ["✔️", "❌"],
+        },
+        {
+          date: "08/17/21",
+          booker: "Leo",
+          stay: "Fresh and modern 1BR in Bed-Stuy",
+          tripDates: "08/19/21-08/22/21",
+          nights: 3,
+          guests: 4,
+          amount: 1750,
+          status: ["✔️", "❌"],
+        },
+      ],
     };
   },
   methods: {
@@ -144,10 +279,23 @@ export default {
     user() {
       return this.$store.getters.user;
     },
+    revenueSum() {
+      const revenue = this.orders.reduce((acc, order) => {
+        return acc + order.amount;
+      }, 0);
+      return "$" + new Intl.NumberFormat("en-US").format(revenue);
+    },
+    guestSum() {
+      const guests = this.orders.reduce((acc, order) => {
+        return acc + order.guests;
+      }, 0);
+      return guests;
+    },
   },
   components: {
     appHeader,
     orderList,
+    // stayList
   },
 };
 </script>
