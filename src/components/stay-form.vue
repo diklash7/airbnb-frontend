@@ -192,9 +192,26 @@
         </Popper>
 
       
-          <div class="input3">
-          <button class="btn-form-reserve" @click="goToOrder()">Check availability</button>
-          </div>
+          <button @click="isClicked = !isClicked" class="btn-form-reserve" >
+             {{ isClicked ? 'Check availability' : 'Reserve' }}
+            <!-- Check availability -->
+            </button>
+            <div v-if="!isClicked" class="total-price-order">
+              <div class="msg-charged"> You won't be charged yet </div>
+             <div class="type-price">
+             <div class="type-pay">{{stay.price}} x 3 nights </div><span class="price">${{totalPrice}} </span>
+             </div>
+              <div class="type-price">
+              <div class="type-pay">Cleaning fee</div><span class="price">$150</span>
+              </div>
+              <div class="type-price">
+              <div class="type-pay">Service fee</div><span class="price">$200</span>
+              </div>
+              <hr>
+              <div class="type-price">
+              <div class="pay-total">Total</div><span class="price-total">${{totalPay}}</span>
+              </div>
+            </div>
       </section>
        </section>
       </section>
@@ -227,6 +244,7 @@ data() {
       kids: 0,
       isScroll: false,
       pagePos: null,
+       isClicked: true,
       
     };
 },
@@ -254,9 +272,9 @@ methods: {
     },
   },
   computed: {
-     goToOrder() {
-      this.$router.push("/order");
-    },
+    //  goToOrder() {
+    //   this.$router.push("/order");
+    // },
      rating() {
       return ((this.stay.reviewScores.rating)/20).toFixed(2)
     },
@@ -280,10 +298,16 @@ methods: {
         "hide-form-header-small": !this.pagePos,
       };
     },
+    totalPrice() {
+      return (this.stay.price)*3
+    },
+    totalPay() {
+        return (((this.stay.price)*3) + 150+200)
+    }
+    
   }
 }
 </script>
 <style>
-
 
 </style>

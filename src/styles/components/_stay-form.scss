@@ -217,6 +217,28 @@
                 padding: 12px;
             }
         }
+        .total-price-order {
+            margin-top: 30px;
+            .msg-charged {
+                font-size: 14px;
+                text-align: center;
+            }
+            .type-pay {
+                text-decoration: underline;
+                font-size: 17px;
+            }
+            .type-price {
+                margin-top: 10px;
+                display: flex;
+                justify-content: space-between;
+            }
+            .pay-total {
+                font-weight: bold;
+            }
+            .price-total {
+                font-weight: bold;
+            }
+        }
         // .hide {
         //     display: none;
         // }
