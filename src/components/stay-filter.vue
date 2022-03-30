@@ -1,6 +1,20 @@
 <template>
-  <section v-if="filterBy" class="stay-filter">
-    <button @click="isOpen = !isOpen" class="explore-btn">Price</button>
+  <section v-if="filterBy" class="stay-filter flex">
+    <div class="price-filter-container">
+    <button @click="isPriceOpen = !isPriceOpen" class="explore-btn">
+      Price
+    </button>
+    <div v-if="isPriceOpen" class="slider-demo-block">
+      <!-- <el-slider @change="setFilter" v-model="filterBy.price" range :max="3000" /> -->
+      <HistogramSlider
+        v-model="filterBy.price"
+        @change="setFilter"
+        :width="400"
+        :bar-height="100"
+        :data="prices"
+      />
+    </div>
+    </div>
     <!-- <select class="explore-btn" @change="setFilter" v-model="filterBy.propertyType">
         class="explore-btn"
       @change="setFilter"
@@ -14,10 +28,13 @@
       <option value="Condominium">Condominium</option>
     </select> -->
 
-    <button @click="isOpen = !isOpen" class="explore-btn">Type of place</button>
+    <div class="room-filter-container">
+      <button @click="isTypeOpen = !isTypeOpen" class="explore-btn">
+        Type of place
+      </button>
 
-    <div v-if="isOpen">
-      <custom-type-filter v-model="filterBy.roomType" />
+        <custom-type-filter v-if="isTypeOpen" v-model="filterBy.roomType" />
+  
     </div>
 
     <span class="buffer">|</span>
@@ -34,16 +51,6 @@
     <button class="explore-btn" @click="toggleAmen">AC</button>
     <button class="explore-btn" @click="toggleAmen">Smoking Allowed</button>
 
-    <div v-if="isOpen" class="slider-demo-block">
-      <!-- <el-slider @change="setFilter" v-model="filterBy.price" range :max="3000" /> -->
-      <HistogramSlider
-        v-model="filterBy.price"
-        @change="setFilter"
-        :width="400"
-        :bar-height="100"
-        :data="prices"
-      />
-    </div>
   </section>
 </template>
 
@@ -53,7 +60,7 @@ import CustomAmenitiesFilter from "./custom-amenities-filter.vue";
 import customTypeFilter from "./custom-type-filter.vue";
 
 export default {
-  components: { customTypeFilter, CustomAmenitiesFilter },
+  components: { customTypeFilter, CustomAmenitiesFilter},
   name: "stay-filter",
   props: {
     prices: Array,
@@ -61,7 +68,8 @@ export default {
   data() {
     return {
       filterBy: null,
-      isOpen: false,
+      isTypeOpen: false,
+      isPriceOpen: false,
       isClicked: false,
     };
   },
@@ -70,10 +78,13 @@ export default {
     this.filterBy = JSON.parse(JSON.stringify(this.$store.getters.getFilterBy));
   },
   methods: {
+    setFilter() {
+      this.$emit("set-filter", { ...this.filterBy });
+    },
     setFilter(ev) {
       this.filterBy.price[0] = ev.from;
       this.filterBy.price[1] = ev.to;
-      this.$emit("set-filter", { ...this.filterBy });
+      this.setFilter();
     },
     toggleAmen(ev) {
       if (!this.isClicked) {

@@ -6,9 +6,9 @@
           <img
             v-if="pagePos || stays || stay"
             class="logo-svg"
-            src="../assets/Guesta_pink.svg"
+            src="../assets/logo-pink.png"
           />
-          <img v-else class="logo-svg" src="../assets/Guesta_pink.svg" />
+          <img v-else class="logo-svg" src="../assets/logo-white.png" />
         </router-link>
       </div>
 
@@ -135,6 +135,7 @@ export default {
   props: {
     stays: Array,
     stay: Object,
+    user: String,
   },
   data() {
     return {
@@ -170,7 +171,7 @@ export default {
         "explore-page": this.stays,
         details: this.stay,
         "main-layout": !this.stay,
-        "details-layout": this.stay,
+        "details-layout": this.stay
       };
     },
     searchTitle() {

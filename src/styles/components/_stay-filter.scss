@@ -2,6 +2,32 @@
 // .stay-filter {
 //   margin-top: 20px;
 // }
+
+.room-filter-container {
+position: relative;
+height: auto;
+
+.type-filter-container {
+  margin-top: -20px;
+  left: 10px;
+}
+}
+
+.price-filter-container {
+position: relative;
+
+.slider-demo-block {
+  position: absolute;
+  background-color: #fff;
+  border: 0.5px solid rgba(118, 118, 118, 0.28);
+  border-radius: 12px;
+  box-shadow: 0 10px 37px rgb(0 0 0 / 15%);
+  z-index:10;
+  margin: 0;
+}
+}
+
+
 .explore-btn {
   height: 38px;
   cursor: pointer !important;

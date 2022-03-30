@@ -187,6 +187,7 @@
         </stay-preview>
       <hr>
       <stay-maps :stay="stay"/>
+      <reserve-modal />
      </section>
 
 </template>
