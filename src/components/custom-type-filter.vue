@@ -1,6 +1,6 @@
 <template>
-
   <div class="type-filter-container">
+    <span>Type of place</span>
     <div class="type-filter">
     <!-- <input class="dropdown-input" id="toggle" type="checkbox" checked /> -->
     <div class="type-of-place">
