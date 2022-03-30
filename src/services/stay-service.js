@@ -1,11 +1,11 @@
 // import axios from 'axios'
 import { utilService } from './util-service'
-// import { httpService } from './http-service'
+import { httpService } from './http-service'
 import { storageService } from './async-storage-service'
 
 const KEY = 'stay_db'
 // const labels = ['On wheels', 'Box game', 'Art', 'Baby', 'Doll', 'Puzzle', 'Outdoor']
-// const ENDPOINT = 'stay'
+const ENDPOINT = 'stay'
 // const BASE_URL =
 //   process.env.NODE_ENV !== 'development' ? '/api/stay' : '//localhost:3030/api/stay/'
 
@@ -21,43 +21,45 @@ export const stayService = {
 _createStays()
 
 async function query(filterBy) {
+  return await httpService.get(ENDPOINT, filterBy)
 
-    const stays = await storageService.query(KEY)
-    let filteredStays = JSON.parse(JSON.stringify(stays))
+    // const stays = await storageService.query(KEY)
+    // let filteredStays = JSON.parse(JSON.stringify(stays))
 
-    if (filterBy.city) {
-        const regex = new RegExp(filterBy.city, 'i')
-        filteredStays = filteredStays.filter(stay => regex.test(stay.address.city))
-    }
+    // if (filterBy.city) {
+    //     const regex = new RegExp(filterBy.city, 'i')
+    //     filteredStays = filteredStays.filter(stay => regex.test(stay.address.city))
+    // }
 
-    if (filterBy.capacity) {
-        filteredStays = filteredStays.filter(stay => stay.capacity >= filterBy.capacity)
-    }
+    // if (filterBy.capacity) {
+    //     filteredStays = filteredStays.filter(stay => stay.capacity >= filterBy.capacity)
+    // }
 
-    if (filterBy.price) {
-        filteredStays = filteredStays.filter(
-            (stay) => filterBy.price[0] < stay.price && stay.price < filterBy.price[1]
-        )
-    }
+    // if (filterBy.price) {
+    //     filteredStays = filteredStays.filter(
+    //         (stay) => filterBy.price[0] < stay.price && stay.price < filterBy.price[1]
+    //     )
+    // }
 
-    if (filterBy.propertyType) {
-        const regex = new RegExp(filterBy.propertyType, 'i')
-        filteredStays = filteredStays.filter(stay => regex.test(stay.propertyType))
-    }
+    // if (filterBy.propertyType) {
+    //     const regex = new RegExp(filterBy.propertyType, 'i')
+    //     filteredStays = filteredStays.filter(stay => regex.test(stay.propertyType))
+    // }
 
-    if (filterBy.roomType) {
-        const regex = new RegExp(filterBy.roomType, 'i')
-        filteredStays = filteredStays.filter(stay => regex.test(stay.roomType))
-    }
+    // if (filterBy.roomType) {
+    //     const regex = new RegExp(filterBy.roomType, 'i')
+    //     filteredStays = filteredStays.filter(stay => regex.test(stay.roomType))
+    // }
 
-    if (filterBy.amenities) {
-        filteredStays = filteredStays.filter((stay) => {
-            return filterBy.amenities.every((amenity) => stay.amenities.includes(amenity))
-        })
-        console.log('filteredStays.length in amenities:', filteredStays.length);
-    }
+    // console.log('filterBy SERVICE:', filterBy);
+    // if (filterBy.amenities) {
+    //     filteredStays = filteredStays.filter((stay) => {
+    //         return filterBy.amenities.every((amenity) => stay.amenities.includes(amenity))
+    //     })
+    //     console.log('filteredStays.length in amenities:', filteredStays.length);
+    // }
 
-    return Promise.resolve(filteredStays)
+    // return Promise.resolve(filteredStays)
 }
 // // console.log('filterBy.amenities.WiFi:', filterBy.amenities['WiFi']);
 // if (filterBy.amenities?.WiFi) {

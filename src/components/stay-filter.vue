@@ -21,24 +21,13 @@
     </div>
 
     <span class="buffer">|</span>
-    <button
-      class="explore-btn"
-      @click="setFilter"
-      :v-model="filterBy.amenities.WiFi"
-    >
-      Wifi
-    </button>
-    <!-- <custom-amenities-filter v-model="isOn"/> -->
-    <button class="explore-btn" @click="toggleAmen">TV</button>
-    <button class="explore-btn" @click="toggleAmen">Kitchen</button>
-    <button class="explore-btn" @click="toggleAmen">AC</button>
-    <button class="explore-btn" @click="toggleAmen">Smoking Allowed</button>
+    <amenities v-model="filterBy.amenities" @setFilter="setFilter"/>
 
     <div v-if="isOpen" class="slider-demo-block">
       <!-- <el-slider @change="setFilter" v-model="filterBy.price" range :max="3000" /> -->
       <HistogramSlider
         v-model="filterBy.price"
-        @change="setFilter"
+        @change="setFilterPrice"
         :width="400"
         :bar-height="100"
         :data="prices"
@@ -51,9 +40,10 @@
 import { utilService } from "../services/util-service";
 import CustomAmenitiesFilter from "./custom-amenities-filter.vue";
 import customTypeFilter from "./custom-type-filter.vue";
+import Amenities from "./amenities.vue";
 
 export default {
-  components: { customTypeFilter, CustomAmenitiesFilter },
+  components: { customTypeFilter, CustomAmenitiesFilter, Amenities },
   name: "stay-filter",
   props: {
     prices: Array,
@@ -70,27 +60,15 @@ export default {
     this.filterBy = JSON.parse(JSON.stringify(this.$store.getters.getFilterBy));
   },
   methods: {
-    setFilter(ev) {
+    setFilter() {  
+      this.$emit("set-filter", { ...this.filterBy });
+    },
+    setFilterPrice(ev) {
       this.filterBy.price[0] = ev.from;
       this.filterBy.price[1] = ev.to;
-      this.$emit("set-filter", { ...this.filterBy });
+      this.setFilter()
     },
-    toggleAmen(ev) {
-      if (!this.isClicked) {
-        console.log(ev.target.innerText, "ev");
-        this.isClicked = true;
-        this.filterBy.amenities.push(ev.target.innerText);
-        console.log("this.filterBy.amenities:", this.filterBy.amenities);
-      } else {
-        this.isClicked = false;
-        const idx = this.filterBy.amenities.findIndex(
-          (amenity) => ev.target.innerText === amenity
-        );
-        this.filterBy.amenities.splice(idx, 1);
-        console.log("this.filterBy.amenities:", this.filterBy.amenities);
-      }
-      this.$emit("set-filter", { ...this.filterBy });
-    },
+    
   },
 };
 </script>
