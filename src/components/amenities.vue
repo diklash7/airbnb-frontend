@@ -17,8 +17,9 @@ export default {
   name: "amenities",
   data() {
     return {
+      // isClicked: false,
       amenities: [],
-      dataset: ["Wifi", "TV", "Kitchen", "AC", "Smoking Allowed"],
+      dataset: ["Internet", "TV", "Kitchen", "Air conditioning", "Iron"],
     };
   },
   methods: {
@@ -34,6 +35,11 @@ export default {
       this.$emit("setFilter");
     },
   },
+  computed: {
+    // clickedBtn() {
+    //   return 'clicked': this.isClicked;
+    // }
+  }
 };
 </script>
 

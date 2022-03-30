@@ -1,72 +1,97 @@
-
 // .stay-filter {
 //   margin-top: 20px;
 // }
-.explore-btn {
-  height: 38px;
-  cursor: pointer !important;
-  border: 1px solid #ddd !important;
-  background-color: $clr3 !important;
-  outline: none !important;
-  margin: 0 !important;
-  border-radius: 30px !important;
-  color: #222 !important;
-  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
-    Helvetica Neue, sans-serif !important;
-  padding: 10px 16px !important;
-  font-size: 14px !important;
-  font-weight: 400 !important;
-  line-height: 18px !important;
-  margin-right: 8px !important;
-  margin-top: 210px !important;
-  //added 50px to margin top
-  margin-bottom: 20px !important;
-}
 
-.buffer{
-  margin-right: 8px!important;
-  margin-top: 4px!important;
-  margin-bottom: 4px!important;
-  font-size: 20px;
-  color: #ddd;
-}
-
-// .slider-demo-block {
-//   display: flex;
-//   align-items: center;
-// }
-// .slider-demo-block .el-slider {
-//   margin-top: 0;
-//   margin-left: 12px;
-// }
-
-.slider-demo-block {
-  width: 500px !important;
-  display: flex;
-  justify-content: flex-start;
-  padding: 2em;
-  margin-block: 1em;
-  border: 2px solid #333;
-  border-radius: 8px;
-  color: #222;
-}
-
-.vue-histogram-slider-wrapper{
-  width: 400px;
-  // --primary-color: #0091ff;
-  // --label-color: #0091ff;
-  --holder-color: #dee4ec;
-  --handle-color: #ffffff;
-  --grid-text-color: silver;
-  --line-height: 6px;
-  --font-family: Arial, sans-serif;
-  --font-size: 12;
-  --hist-slider-gap: -30px;
-  --handle-size: 26px;
-}
-
-.irs--round .irs-bar {
-  top: 36px;
-  height: var(--line-height);
-  background-color: 'var(--primary-color)';
-}
+.room-filter-container {
+  position: relative;
+  height: auto;
+  
+  .type-filter-container {
+    margin-top: -20px;
+    left: 10px;
+  }
+  }
+  
+  .price-filter-container {
+  position: relative;
+  
+  .slider-demo-block {
+    position: absolute;
+    background-color: #fff;
+    border: 0.5px solid rgba(118, 118, 118, 0.28);
+    border-radius: 12px;
+    box-shadow: 0 10px 37px rgb(0 0 0 / 15%);
+    z-index:10;
+    margin: 0;
+  }
+  }
+  
+  
+  .explore-btn {
+    height: 38px;
+    cursor: pointer !important;
+    border: 1px solid #ddd !important;
+    background-color: $clr3 !important;
+    outline: none !important;
+    margin: 0 !important;
+    border-radius: 30px !important;
+    color: #222 !important;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
+      Helvetica Neue, sans-serif !important;
+    padding: 10px 16px !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    line-height: 18px !important;
+    margin-right: 8px !important;
+    margin-top: 210px !important;
+    //added 50px to margin top
+    margin-bottom: 20px !important;
+  }
+  
+  .buffer{
+    margin-right: 8px!important;
+    margin-top: 4px!important;
+    margin-bottom: 4px!important;
+    font-size: 20px;
+    color: #ddd;
+  }
+  
+  // .slider-demo-block {
+  //   display: flex;
+  //   align-items: center;
+  // }
+  // .slider-demo-block .el-slider {
+  //   margin-top: 0;
+  //   margin-left: 12px;
+  // }
+  
+  .slider-demo-block {
+    width: 500px !important;
+    display: flex;
+    justify-content: flex-start;
+    padding: 2em;
+    margin-block: 1em;
+    border: 2px solid #333;
+    border-radius: 8px;
+    color: #222;
+  }
+  
+  .vue-histogram-slider-wrapper{
+    width: 400px;
+    // --primary-color: #0091ff;
+    // --label-color: #0091ff;
+    --holder-color: #dee4ec;
+    --handle-color: #ffffff;
+    --grid-text-color: silver;
+    --line-height: 6px;
+    --font-family: Arial, sans-serif;
+    --font-size: 12;
+    --hist-slider-gap: -30px;
+    --handle-size: 26px;
+  }
+  
+  .irs--round .irs-bar {
+    top: 36px;
+    height: var(--line-height);
+    background-color: 'var(--primary-color)';
+  }
