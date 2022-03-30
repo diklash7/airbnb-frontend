@@ -40,6 +40,7 @@ const stays = await storageService.query(KEY)
 
     if (filterBy.roomType) {
         const regex = new RegExp(filterBy.roomType, 'i')
+        console.log('roomType:', filterBy.roomType);
         filteredStays = filteredStays.filter(stay => regex.test(stay.roomType))
     }
 
@@ -4097,7 +4098,7 @@ function _createStays() {
 //     "tripDates":"02/16/22-02/17/22",
 //     "nights":1,
 //     "guests":2,
-//     "amount":210,
+//     "amount":330,
 //     "status":["✔️","❌"]
 //    },
 //    {
@@ -4107,97 +4108,97 @@ function _createStays() {
 //     "tripDates":"02/11/22-02/15/22",
 //     "nights":4,
 //     "guests":3,
-//     "amount":516,
+//     "amount":889,
+//     "status":["✔️","❌"]
+//    },
+//    {
+//     "date":"01/13/22",
+//     "booker":"Leo",
+//     "stay": "Fresh and modern 1BR in Bed-Stuy",
+//     "tripDates":"01/14/22-01/18/22",
+//     "nights":4,
+//     "guests":5,
+//     "amount":1200,
+//     "status":["✔️","❌"]
+//    },
+//    {
+//     "date":"01/08/22",
+//     "booker":"Leo",
+//     "stay": "Fresh and modern 1BR in Bed-Stuy",
+//     "tripDates":"01/15/22-01/18/22",
+//     "nights":3,
+//     "guests":2,
+//     "amount":550,
+//     "status":["✔️","❌"]
+//    },
+//    {
+//     "date":"12/13/21",
+//     "booker":"Leo",
+//     "stay": "Fresh and modern 1BR in Bed-Stuy",
+//     "tripDates":"12/22/21-12/27/21",
+//     "nights":5,
+//     "guests":4,
+//     "amount":1600,
+//     "status":["✔️","❌"]
+//    },
+//    {
+//     "date":"11/18/21",
+//     "booker":"Leo",
+//     "stay": "Fresh and modern 1BR in Bed-Stuy",
+//     "tripDates":"11/22/21-11/28/21",
+//     "nights":6,
+//     "guests":2,
+//     "amount":2500,
 //     "status":["✔️","❌"]
 //    },
 //    {
 //     "date":"11/13/21",
 //     "booker":"Leo",
 //     "stay": "Fresh and modern 1BR in Bed-Stuy",
-//     "tripDates":"11/14/20-11/18/20",
+//     "tripDates":"11/14/21-11/18/21",
 //     "nights":4,
-//     "guests":3,
+//     "guests":4,
+//     "amount":3000,
+//     "status":["✔️","❌"]
+//    },
+//    {
+//     "date":"10/15/21",
+//     "booker":"Leo",
+//     "stay": "Fresh and modern 1BR in Bed-Stuy",
+//     "tripDates":"10/20/21-10/28/21",
+//     "nights":8,
+//     "guests":2,
+//     "amount":3500,
+//     "status":["✔️","❌"]
+//    },
+//    {
+//     "date":"09/10/21",
+//     "booker":"Leo",
+//     "stay": "Fresh and modern 1BR in Bed-Stuy",
+//     "tripDates":"09/25/21-09/28/21",
+//     "nights":3,
+//     "guests":5,
+//     "amount":2000,
+//     "status":["✔️","❌"]
+//    },
+//    {
+//     "date":"08/13/21",
+//     "booker":"Leo",
+//     "stay": "Fresh and modern 1BR in Bed-Stuy",
+//     "tripDates":"08/17/21-08/18/20",
+//     "nights":1,
+//     "guests":2,
 //     "amount":516,
 //     "status":["✔️","❌"]
 //    },
 //    {
-//     "date":"11/13/21",
+//     "date":"08/17/21",
 //     "booker":"Leo",
 //     "stay": "Fresh and modern 1BR in Bed-Stuy",
-//     "tripDates":"11/14/20-11/18/20",
-//     "nights":4,
-//     "guests":3,
-//     "amount":516,
-//     "status":["✔️","❌"]
-//    },
-//    {
-//     "date":"11/13/20",
-//     "booker":"Leo",
-//     "stay": "Fresh and modern 1BR in Bed-Stuy",
-//     "tripDates":"11/14/20-11/18/20",
-//     "nights":4,
-//     "guests":3,
-//     "amount":516,
-//     "status":["✔️","❌"]
-//    },
-//    {
-//     "date":"11/13/20",
-//     "booker":"Leo",
-//     "stay": "Fresh and modern 1BR in Bed-Stuy",
-//     "tripDates":"11/14/20-11/18/20",
-//     "nights":4,
-//     "guests":3,
-//     "amount":516,
-//     "status":["✔️","❌"]
-//    },
-//    {
-//     "date":"11/13/20",
-//     "booker":"Leo",
-//     "stay": "Fresh and modern 1BR in Bed-Stuy",
-//     "tripDates":"11/14/20-11/18/20",
-//     "nights":4,
-//     "guests":3,
-//     "amount":516,
-//     "status":["✔️","❌"]
-//    },
-//    {
-//     "date":"11/13/20",
-//     "booker":"Leo",
-//     "stay": "Fresh and modern 1BR in Bed-Stuy",
-//     "tripDates":"11/14/20-11/18/20",
-//     "nights":4,
-//     "guests":3,
-//     "amount":516,
-//     "status":["✔️","❌"]
-//    },
-//    {
-//     "date":"11/13/20",
-//     "booker":"Leo",
-//     "stay": "Fresh and modern 1BR in Bed-Stuy",
-//     "tripDates":"11/14/20-11/18/20",
-//     "nights":4,
-//     "guests":3,
-//     "amount":516,
-//     "status":["✔️","❌"]
-//    },
-//    {
-//     "date":"11/13/20",
-//     "booker":"Leo",
-//     "stay": "Fresh and modern 1BR in Bed-Stuy",
-//     "tripDates":"11/14/20-11/18/20",
-//     "nights":4,
-//     "guests":3,
-//     "amount":516,
-//     "status":["✔️","❌"]
-//    },
-//    {
-//     "date":"11/13/20",
-//     "booker":"Leo",
-//     "stay": "Fresh and modern 1BR in Bed-Stuy",
-//     "tripDates":"11/14/20-11/18/20",
-//     "nights":4,
-//     "guests":3,
-//     "amount":516,
+//     "tripDates":"08/19/21-08/22/21",
+//     "nights":3,
+//     "guests":4,
+//     "amount":1750,
 //     "status":["✔️","❌"]
 //    }
 // ]

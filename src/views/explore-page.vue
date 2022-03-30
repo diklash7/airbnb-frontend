@@ -1,6 +1,6 @@
 <template>
-  <app-header v-if="stays" :stays="stays" />
   <section v-if="stays" class="explore-page stay-app main-layout">
+  <app-header v-if="stays" :stays="stays" />
     <stay-filter @setFilter="setFilter" :prices="prices" />
     <stay-list :stays="stays" />
   </section>

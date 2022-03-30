@@ -1,8 +1,9 @@
 <template>
-  <section v-if="filterBy" class="stay-filter">
+  <section v-if="filterBy" class="stay-filter flex">
 
-    <button @click="isOpen = !isOpen" class="explore-btn">Price</button>
-     <div v-if="isOpen" class="slider-demo-block">
+<div class="price-filter-container">
+    <button @click="isPriceOpen = !isPriceOpen" class="explore-btn">Price</button>
+     <div v-if="isPriceOpen" class="slider-demo-block">
       <HistogramSlider
         v-model="filterBy.price"
         @change="setFilterPrice"
@@ -11,13 +12,17 @@
         :data="prices"
       />
     </div>
+    </div>
    
-    <button @click="isOpen = !isOpen" class="explore-btn">Type of place</button>
-    <div v-if="isOpen">
-      <custom-type-filter v-model="filterBy.roomType" />
+   <div class="room-filter-container">
+    <button @click="isTypeOpen = !isTypeOpen" class="explore-btn">Type of place</button>
+    <div v-if="isTypeOpen">
+      <custom-type-filter v-model="filterBy.roomType" @setFilter="setFilter" />
+    </div>
     </div>
 
     <span class="buffer">|</span>
+
     <amenities v-model="filterBy.amenities" @setFilter="setFilter"/>
 
      </section>
@@ -37,7 +42,8 @@ export default {
   data() {
     return {
       filterBy: null,
-      isOpen: false,
+      isTypeOpen: false,
+      isPriceOpen: false,
       isClicked: false,
     };
   },
