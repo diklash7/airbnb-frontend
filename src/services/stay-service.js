@@ -1,10 +1,8 @@
-// import axios from 'axios'
 import { utilService } from './util-service'
 import { httpService } from './http-service'
 import { storageService } from './async-storage-service'
 
 const KEY = 'stay_db'
-// const labels = ['On wheels', 'Box game', 'Art', 'Baby', 'Doll', 'Puzzle', 'Outdoor']
 const ENDPOINT = 'stay'
 // const BASE_URL =
 //   process.env.NODE_ENV !== 'development' ? '/api/stay' : '//localhost:3030/api/stay/'
@@ -15,110 +13,43 @@ export const stayService = {
     remove,
     save,
     //   getEmptyStay,
-    //   getlabels,
 }
 
 _createStays()
 
-async function query(filterBy) {
-  return await httpService.get(ENDPOINT, filterBy)
-
-    // const stays = await storageService.query(KEY)
-    // let filteredStays = JSON.parse(JSON.stringify(stays))
-
-    // if (filterBy.city) {
-    //     const regex = new RegExp(filterBy.city, 'i')
-    //     filteredStays = filteredStays.filter(stay => regex.test(stay.address.city))
-    // }
-
-    // if (filterBy.capacity) {
-    //     filteredStays = filteredStays.filter(stay => stay.capacity >= filterBy.capacity)
-    // }
-
-    // if (filterBy.price) {
-    //     filteredStays = filteredStays.filter(
-    //         (stay) => filterBy.price[0] < stay.price && stay.price < filterBy.price[1]
-    //     )
-    // }
-
-    // if (filterBy.propertyType) {
-    //     const regex = new RegExp(filterBy.propertyType, 'i')
-    //     filteredStays = filteredStays.filter(stay => regex.test(stay.propertyType))
-    // }
-
-    // if (filterBy.roomType) {
-    //     const regex = new RegExp(filterBy.roomType, 'i')
-    //     filteredStays = filteredStays.filter(stay => regex.test(stay.roomType))
-    // }
-
-    // console.log('filterBy SERVICE:', filterBy);
-    // if (filterBy.amenities) {
-    //     filteredStays = filteredStays.filter((stay) => {
-    //         return filterBy.amenities.every((amenity) => stay.amenities.includes(amenity))
-    //     })
-    //     console.log('filteredStays.length in amenities:', filteredStays.length);
-    // }
-
-    // return Promise.resolve(filteredStays)
+function query(filterBy) {
+    return await httpService.get(ENDPOINT, filterBy)
+    //   return Promise.resolve(filteredStays)
 }
-// // console.log('filterBy.amenities.WiFi:', filterBy.amenities['WiFi']);
-// if (filterBy.amenities?.WiFi) {
-//     const regex = new RegExp(filterBy.amenities.WiFi[0], 'i')
-//     filteredStays = filteredStays.filter(stay => regex.test(stay.amenities.WiFi))
-// }
 
-// console.log('filteredStays:', filteredStays);
-
-
-
-
-// async function query(filterBy = {}) {
-//     const stays = await storageService.query(KEY)
-//     const filteredStays = []
-//      console.log(filterBy.city);
-//     if (filterBy.city) {
-//         const regex = new RegExp(filterBy.city,'i'); 
-//      return stays.filter(stay => regex.test(stay.city))
-//     }
-// //   return await httpService.get(ENDPOINT, filterBy)
-//   // return axios.get(BASE_URL, { params: { filterBy } }).then((res) => res.data)
-// //   return storageService.query(KEY,filterBy)
-// return Promise.resolve(filteredStays)
-// }
-
-function getById(id) {
-    //   return await httpService.get(`${ENDPOINT}/${id}`)
+async function getById(id) {
+    return await httpService.get(`${ENDPOINT}/${id}`)
     // return axios.get(BASE_URL + id).then((res) => res.data)
-    return storageService.getById(KEY, id)
+    // return storageService.getById(KEY, id)
 }
 
-function remove(id) {
-    //   return await httpService.delete(`${ENDPOINT}/${id}`)
+async function remove(id) {
+    return await httpService.delete(`${ENDPOINT}/${id}`)
     // return axios.delete(BASE_URL + id).then((res) => res.data)
-    return storageService.remove(KEY, id)
+    // return storageService.remove(KEY, id)
 }
 
-function save(stay) {
-    //   return stay._id
-    // ? await httpService.put(`${ENDPOINT}/${stay._id}`, stay)
-    // : await httpService.post(ENDPOINT, stay)
-    return stay._id ? storageService.put(KEY, stay) : storageService.post(KEY, stay)
+async function save(stay) {
+    return stay._id
+        ? await httpService.put(`${ENDPOINT}/${stay._id}`, stay)
+        : await httpService.post(ENDPOINT, stay)
+    // return stay._id ? storageService.put(KEY, stay) : storageService.post(KEY, stay)
 }
 
 // function getEmptyStay() {
 //   return Promise.resolve({
 //     name: '',
 //     price: 0,
-//     labels: [],
 //     createdAt: new Date(),
-//     inStock: true,
 //     reviews: [],
 //   })
 // }
 
-// function getlabels() {
-//   return labels
-// }
 
 function _createStays() {
     let stays = utilService.loadFromStorage(KEY)
