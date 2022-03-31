@@ -79,7 +79,7 @@
             box-shadow: 0 6px 16px rgb(0 0 0 / 12%);
             margin-top: 40px;
             margin-right: 5px;
-            width: 45vh;
+            width: 380px;
             padding: 20px;
             border-radius: 12px;
             border: 1px solid #ddd;
@@ -130,8 +130,10 @@
                         border-top-left-radius: 10px;
                         border-bottom-style: none;
                         border-right-style: none;
+                        width: 170px;
                     }
                     .label2 {
+                        width: 170px;
                         border: 1px rgb(148, 141, 141) solid;
                         font-size: 10px;
                         font-weight: bolder;
@@ -155,16 +157,17 @@
                 .guest-container {
                     margin-bottom: 20px;
                     label {
+                        width: 338px;
                         padding: 10px;
                         border: 1px rgb(148, 141, 141) solid;
                         font-size: 10px;
                         font-weight: bold;
                         border-bottom-left-radius: 10px;
                         border-bottom-right-radius: 10px;
+                        height: 58px;
                     }
                     input {
-                        width: 280px;
-                        height: 23px;
+                        width: 277px;
                         border-style: none;
                         font-size: 14px;
                         background-color: white;
@@ -173,13 +176,13 @@
                 .btn-form-reserve {
                     // background-color: #ff385c;
                     background-image: radial-gradient(circle at center, #ff385c 0, #e61e4d 27.5%, #e31c5f 40%, #d70466 57.5%, #bd1e59 75%, #bd1e59 100%);
-                    width: 315px;
+                    // width: 315px;
                     border: none;
                     color: #fff;
                     text-align: center;
                     letter-spacing: .05rem;
                     height: 6.5vh;
-                    min-width: 200px;
+                    min-width: 340px;
                     font-family: inherit;
                     font-weight: bold;
                     font-size: 16px;
