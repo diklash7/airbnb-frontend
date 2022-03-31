@@ -4,7 +4,7 @@
 <div class="price-filter-container">
     <button @click="isPriceOpen = !isPriceOpen" class="explore-btn">Price</button>
      <div v-if="isPriceOpen" class="slider-demo-block">
-     <p>The average nightly price is </p>
+     <!-- <p>The average nightly price is </p> -->
       <HistogramSlider
         v-model="filterBy.price"
         @change="setFilterPrice"
@@ -12,11 +12,11 @@
         :bar-height="120"
         :data="prices"
       />
-       <hr />
+       <!-- <hr />
           <div class="type-save">
       <button class="clear">Clear</button>
-      <button class="save">Save</button>
-    </div>
+      <button class="save">Save</button> -->
+    <!-- </div> -->
     </div>
  
     </div>
