@@ -133,6 +133,16 @@ export default {
       isOpen: false,
       orders: [
         {
+          date: "03/31/22",
+          booker: "Elana",
+          stay: "Spacious and quiet apartment in Poble Sec",
+          tripDates: "03/14/22-03/18/22",
+          nights: 4,
+          guests: 3,
+          amount: 516,
+          status: 'pending',
+        },
+        {
           date: "03/13/22",
           booker: "Leo",
           stay: "Spacious and quiet apartment in Poble Sec",
