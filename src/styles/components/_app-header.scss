@@ -110,6 +110,12 @@ a {
   border: 1px solid #ddd;
   line-height: 20px;
 
+  img {
+    margin-left: 10px;
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+  }
   svg:nth-child(2) {
     margin-left: 10px;
   }
