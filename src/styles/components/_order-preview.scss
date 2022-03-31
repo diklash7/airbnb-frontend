@@ -10,6 +10,10 @@
     button {
        border: 1px solid #fff;
        background-color: #dad8d8;
-       padding: 2px;
+       padding: 5px;
+       border-radius: 14px;
+       &:hover {
+         background-color: #e4e2e2; 
+      }
     }
 }

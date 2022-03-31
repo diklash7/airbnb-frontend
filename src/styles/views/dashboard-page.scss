@@ -9,7 +9,6 @@
 
       .dash-header {
          border-radius: 13px;
-         padding: 0 20px 0 20px;
          width: 100%;
          align-self: center;
          min-height: 135px;
@@ -39,7 +38,7 @@
 
    .stats-container {
       .dash-stat {
-         margin: 0 7.5px;
+         margin-left: 7.5px;
          padding: 15px;
          border-radius: 12px;
          border: 1px solid #ddd;
@@ -70,13 +69,7 @@
          margin-top: 20px;
 
          .thead-container {
-            display: grid;
             grid-template-columns: repeat(8, 1fr);
-            gap: 10px;
-            align-items: center;
-            text-align: center;
-            font-family: Cereal-Medium;
-            border-bottom: 1px solid $clr5;
          }
       }
 
@@ -86,13 +79,18 @@
          margin-top: 20px;
 
          .thead-container {
-            display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
-            align-items: center;
-            text-align: center;
-            font-family: Cereal-Medium;
          }
       }
+   }
+
+   //combining both theads
+   .thead-container {
+      display: grid;
+      gap: 10px;
+      align-items: center;
+      text-align: center;
+      font-family: Cereal-Medium;
+      border-bottom: 1px solid $clr5;
    }
 }

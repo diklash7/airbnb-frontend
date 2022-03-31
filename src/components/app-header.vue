@@ -13,7 +13,7 @@
       </div>
 
       <button
-        v-if="(stay && !isFullHeader) && (pagePos && !isFullHeader) && (orders && !isFullHeader)"
+        v-if="(stay && !isFullHeader) || (pagePos && !isFullHeader) || (orders && !isFullHeader)"
         @click="openFilter"
         class="mini-filter flex space-between align-center"
       >
@@ -96,7 +96,7 @@
                   />
                 </svg>
 
-                <svg
+                <svg v-if="!user"
                   xmlns="http://www.w3.org/2000/svg"
                   width="30"
                   height="30"
@@ -110,15 +110,23 @@
                     d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"
                   />
                 </svg>
+                <img v-else src="https://a0.muscache.com/im/users/118676/profile_pic/1417000371/original.jpg?aki_policy=profile_small" />
               </div>
             </button>
             <template #content>
-              <div class="user-nav flex flex-column">
+              <div v-if="!user" class="user-nav flex flex-column">
                 <a href="#/login">Log in</a>
                 <div class="seperator"></div>
                 <a href="#/dashboard">Host your home</a>
                 <div class="seperator"></div>
                 <a href="#/about">About</a>
+              </div>
+              <div v-else class="user-nav flex flex-column">
+                <a href="#/dashboard">Dashboard</a>
+                <div class="seperator"></div>
+                <a href="#/about">About</a>
+                <div class="seperator"></div>
+                <a>Logout</a>
               </div>
             </template>
           </Popper>
@@ -167,7 +175,7 @@ export default {
   computed: {
     headerStyles() {
       return {
-        "full-header": this.isFullHeader || !this.pagePos && !this.orders,
+        "full-header": this.isFullHeader && !this.orders || !this.pagePos && !this.orders,
         top: !this.pagePos,
         "explore-page": this.stays,
         details: this.stay || this.orders,
