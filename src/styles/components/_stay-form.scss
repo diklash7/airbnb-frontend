@@ -141,13 +141,13 @@
                     }
                     .input1 {
                         width: 16vh;
-                        height: 23px;
+                        height: 3vh;
                         border-style: none;
                         font-size: 14px;
                     }
                     .input2 {
                         width: 16vh;
-                        height: 23px;
+                        height: 3vh;
                         border-style: none;
                         font-size: 15px;
                     }
@@ -164,7 +164,7 @@
                     }
                     input {
                         width: 32.2vh;
-                        height: 23px;
+                        height: 3vh;
                         border-style: none;
                         font-size: 14px;
                         background-color: white;
@@ -178,7 +178,7 @@
                     color: #fff;
                     text-align: center;
                     letter-spacing: .05rem;
-                    height: 48px;
+                    height: 6.5vh;
                     min-width: 200px;
                     font-family: inherit;
                     font-weight: bold;
@@ -237,6 +237,10 @@
             }
             .price-total {
                 font-weight: bold;
+            }
+            hr {
+                margin-top: 15px;
+                margin-bottom: 15px;
             }
         }
         // .hide {

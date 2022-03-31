@@ -192,10 +192,14 @@
         </Popper>
 
       
-          <button @click="isClicked = !isClicked" class="btn-form-reserve" >
-             {{ isClicked ? 'Check availability' : 'Reserve' }}
-            <!-- Check availability -->
+          <button v-if="isClicked" @click="isClicked = !isClicked" class="btn-form-reserve" >
+             {{'Check availability' }}
             </button>
+
+          <button v-else  @click="goToOrder()" class="btn-form-reserve" >
+             {{'Reserve'}}
+            </button>
+
             <div v-if="!isClicked" class="total-price-order">
               <div class="msg-charged"> You won't be charged yet </div>
              <div class="type-price">
@@ -272,9 +276,9 @@ methods: {
     },
   },
   computed: {
-    //  goToOrder() {
-    //   this.$router.push("/order");
-    // },
+     goToOrder() {
+      this.$router.push("/order");
+    },
      rating() {
       return ((this.stay.reviewScores.rating)/20).toFixed(2)
     },
