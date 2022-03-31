@@ -3,21 +3,20 @@ import { stayService } from '@/services/stay-service.js'
 export default {
     state: {
         stays: null,
-        filterBy: { roomType: '', city: '', price: [0,3000], amenities: [], capacity: 0 },
-        // labels: stayService.getlabels(),
+        filterBy: { roomType: '', city: '', price: [0, 3000], amenities: [], capacity: 0 },
     },
     getters: {
         stays({ stays }) {
-          return stays
+            return stays
         },
         staysToShow({ stays }) {
-          const copyStays = JSON.parse(JSON.stringify(stays))
-          return copyStays
+            const copyStays = JSON.parse(JSON.stringify(stays))
+            return copyStays
         },
         getFilterBy({ filterBy }) {
-          return filterBy
+            return filterBy
         },
-      },
+    },
     mutations: {
         setStays(state, { stays }) {
             state.stays = stays
@@ -34,9 +33,6 @@ export default {
         setFilter(state, { filterBy }) {
             state.filterBy = filterBy
         },
-        // setFilterByKey(state, { filterBy }) {
-        //     state.filterBy[filterBy[0]] = filterBy[1]
-        // },
         setSort(state, { sortBy }) {
             state.sortBy = sortBy
         },
@@ -44,11 +40,10 @@ export default {
     actions: {
         loadStays({ commit, state }) {
             stayService.query(state.filterBy).then((stays) => {
-                console.log('stays STORE:', stays);
                 commit({ type: 'setStays', stays })
             })
         },
-      
+
         saveStay({ commit }, { stay }) {
             stayService.save(stay).then((savedStay) => {
                 commit({ type: 'saveStay', stay: savedStay })
@@ -60,7 +55,6 @@ export default {
             })
         },
         setFilter({ dispatch, commit }, { filterBy }) {
-            console.log('filterBy:', filterBy);
             commit({ type: 'setFilter', filterBy })
             dispatch({ type: 'loadStays' })
         },
