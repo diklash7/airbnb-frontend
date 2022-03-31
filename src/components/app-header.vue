@@ -4,7 +4,7 @@
       <div class="logo-container">
         <router-link to="/">
           <img
-            v-if="pagePos || stays || stay"
+            v-if="pagePos || stays || stay || orders"
             class="logo-svg"
             src="../assets/logo-pink.png"
           />
@@ -13,7 +13,7 @@
       </div>
 
       <button
-        v-if="(stay && !isFullHeader) || (pagePos && !isFullHeader)"
+        v-if="(stay && !isFullHeader) && (pagePos && !isFullHeader) && (orders && !isFullHeader)"
         @click="openFilter"
         class="mini-filter flex space-between align-center"
       >
@@ -42,7 +42,7 @@
           <Popper>
             <div class="notification-icon">
               <svg
-                v-if="pagePos || stays || stay"
+                v-if="pagePos || stays || stay || orders"
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
                 height="16"
@@ -125,7 +125,7 @@
         </nav>
       </div>
     </div>
-    <app-filter v-if="(!pagePos && !stay) || isFullHeader" />
+    <app-filter v-if="(!pagePos && !stay && !orders) || isFullHeader" />
   </section>
 </template>
 <script>
@@ -136,6 +136,7 @@ export default {
     stays: Array,
     stay: Object,
     user: String,
+    orders: Array,
   },
   data() {
     return {
@@ -166,12 +167,13 @@ export default {
   computed: {
     headerStyles() {
       return {
-        "full-header": this.isFullHeader || !this.pagePos,
+        "full-header": this.isFullHeader || !this.pagePos && !this.orders,
         top: !this.pagePos,
         "explore-page": this.stays,
-        details: this.stay,
-        "main-layout": !this.stay,
-        "details-layout": this.stay
+        details: this.stay || this.orders,
+        "main-layout": !this.stay && !this.orders, 
+        "details-layout": this.stay,
+        "orders-layout": this.orders
       };
     },
     searchTitle() {

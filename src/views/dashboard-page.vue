@@ -1,5 +1,5 @@
 <template>
-  <!-- <app-header :user="user"/> -->
+  <app-header class="order-layout" :orders="orders"/>
   <section class="dashboard-page main-layout">
     <section class="dashboard-container">
       <div class="main-container flex flex-column">
@@ -125,7 +125,7 @@
 <script>
 import appHeader from "../components/app-header.vue";
 import orderList from "../components/order-list.vue";
-// import stayList from "../components/stay-list.vue";
+import stayList from "../components/stay-list.vue";
 
 export default {
   data() {
@@ -295,7 +295,7 @@ export default {
   components: {
     appHeader,
     orderList,
-    // stayList
+    stayList
   },
 };
 </script>
