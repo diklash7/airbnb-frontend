@@ -66,10 +66,12 @@
   // }
   
   .slider-demo-block {
-    width: 500px !important;
-    display: flex;
-    justify-content: flex-start;
+    width: 440px !important;
+    height: 353px ;
+    // display: flex;
+    // justify-content: flex-start;
     padding: 2em;
+    padding-top: 1em;
     margin-block: 1em;
     border: 2px solid #333;
     border-radius: 8px;
@@ -93,5 +95,15 @@
   .irs--round .irs-bar {
     top: 36px;
     height: var(--line-height);
-    background-color: 'var(--primary-color)';
+    background-color: #b0b0b0;
+    --line-height: 2px;
+
   }
+
+  .irs--round .irs-line {
+    top: 36px;
+    height: var(--line-height);
+    background-color: var(--holder-color);
+    border-radius: 6px;
+    --line-height: 2px;
+}
