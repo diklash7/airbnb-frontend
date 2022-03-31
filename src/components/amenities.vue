@@ -3,11 +3,12 @@
     <button
       class="explore-btn"
       v-for="amenity in dataset"
-      :key="amenity"
-      :value="amenity"
-      @click="toggleAmenity"
+      :key="amenity.value"
+      :value="amenity.value"
+      @click="toggleAmenity(amenity)"
+      :class="{active: amenity.isActive}"
     >
-      {{ amenity }}
+      {{ amenity.value }}
     </button>
   </span>
 </template>
@@ -19,33 +20,32 @@ export default {
     return {
       isClicked: false,
       amenities: [],
-      dataset: ["Internet", "TV", "Kitchen", "Air conditioning", "Iron","Pool"],
+      // dataset: ["Internet", "TV", "Kitchen", "Air conditioning", "Iron","Pool"],
+      dataset: [
+        {value: 'Internet', isActive: false},
+        {value: 'TV', isActive: false},
+        {value: 'Kitchen', isActive: false},
+        {value: 'Air conditioning', isActive: false},
+        {value: 'Iron', isActive: false},
+        {value: 'Pool', isActive: false},
+      ]
     };
   },
 
   methods: {
-    toggleAmenity(ev) {
-      const amenity = ev.target.value;
-      if (this.amenities.includes(amenity)) {
-        const idx = this.amenities.findIndex((a) => a === amenity);
+    toggleAmenity(amenity) {
+     amenity.isActive = !amenity.isActive
+      if (this.amenities.includes(amenity.value)) {
+        const idx = this.amenities.findIndex((a) => a.value === amenity.value);
         this.amenities.splice(idx, 1);
-        this.isClicked=false
       } else {
-        this.amenities.push(amenity);
-        this.isClicked=true
-
+        this.amenities.push(amenity.value);
       }
       this.$emit("update:modelValue", this.amenities);
       this.$emit("setFilter");
     },
   },
-  computed: {
-    clickedBtn() {
-      console.log('vvv',this.isClicked);
-      return {active: this.isClicked};
-    }
-  }
+  
 };
 </script>
 
- 
