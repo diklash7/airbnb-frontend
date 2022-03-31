@@ -1,7 +1,7 @@
 <template>
     <section class="stay-form">
       <section :class="formForDisplay">
-         <section class="form-header-small" >
+         <section class="form-header-small details-layout">
                   <div class="titles-small">  
                      <a>Photos</a>
                      <a>Amenities</a>
@@ -244,7 +244,7 @@ data() {
         start: '',
         end:'',
       },
-      adults: 0,
+      adults: 1,
       kids: 0,
       isScroll: false,
       pagePos: null,
@@ -289,7 +289,7 @@ methods: {
       return this.kids;
     },
     disableAdultBtn(){
-      return {'disabled-btn': !this.adults}
+      return {'disabled-btn': !this.adults || this.adults === 1 }
     },
     disableKidBtn(){
       return {'disabled-btn': !this.kids}
