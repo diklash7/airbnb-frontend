@@ -1,4 +1,6 @@
     .stay-form {
+        position: sticky;
+        top: 150px;
         .form-header-small {
             border-bottom: 1px rgb(226, 220, 220) solid;
             display: flex;
@@ -72,7 +74,7 @@
                 font-weight: bold;
                 font-size: 15px;
                 border-radius: 8px;
-                transition: opacity 1.25s ease 0s!important;
+                transition: opacity 1.25s ease 0s;
             }
         }
         .form-main {
@@ -83,8 +85,6 @@
             padding: 20px;
             border-radius: 12px;
             border: 1px solid #ddd;
-            position: sticky;
-            top: 114px;
             .form-header {
                 display: flex;
                 justify-content: space-between;
@@ -187,7 +187,7 @@
                     font-weight: bold;
                     font-size: 16px;
                     border-radius: 8px;
-                    transition: opacity 1.25s ease 0s!important;
+                    transition: opacity 1.25s ease 0s;
                 }
             }
             .guests-modal .disabled-btn {
