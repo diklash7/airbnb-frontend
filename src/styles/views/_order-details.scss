@@ -7,10 +7,7 @@
         border-radius: 10px;
 
         .order-date-guest {
-            width: 20vw;
-        }
-        .order-title {
-            margin-bottom: 40px;
+            width: 23vw;
         }
         h1 {
             padding: 10px;
@@ -23,11 +20,25 @@
             border-radius: 50px;
             border: none;
         }
+
+        .rare-stay {
+            padding: 20px 30px;
+            border: 1px solid #b4b4b4;
+            border-radius: 10px;
+            margin: 25px 0;
+
+            h4{
+                margin: 0;
+            }
+        }
+
+        .dates-order-container {
+            margin-top: 80px;
         .dates-order {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 60px;
-            margin-top: 60px;
+            margin-bottom: 20px;
+
             div {
                 h3 {
                     margin-top: -20px;
@@ -38,10 +49,12 @@
                 }
             }
         }
+
+    }
         .guests-order {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 30px;
+            margin-bottom: 15px;
             div {
                 h3 {
                     margin-top: -20px;

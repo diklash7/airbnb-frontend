@@ -7,23 +7,25 @@
           <button @click="$router.back()">{{ "◀" }}</button>
           <h1>Your trip</h1>
         </div>
-        <div class="dates-order">
           <div class="rare-stay">
-            This is a rare find.
-            <p>{{stay.host.fullname}}'s </p>
+            <h4>This is a rare find.</h4>
+            <p>{{ stay.host.fullname }}'s place is usually booked</p>
           </div>
+        <div class="dates-order-container flex flex-column space-between">
+        <div class="dates-order">
           <div>
             <h3>Dates:</h3>
             <span>May 1 – 4</span>
           </div>
           <router-link class="btn-edit" to="/">Edit</router-link>
-        </div>
-        <div class="guests-order">
-          <div>
-            <h3>Guests:</h3>
-            <span>2 guest</span>
           </div>
-          <router-link class="btn-edit" to="/">Edit</router-link>
+          <div class="guests-order">
+            <div>
+              <h3>Guests:</h3>
+              <span>2 guest</span>
+            </div>
+            <router-link class="btn-edit" to="/">Edit</router-link>
+          </div>
         </div>
         <hr />
       </div>

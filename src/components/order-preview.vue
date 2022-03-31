@@ -1,6 +1,6 @@
 <template>
   <section class="order-preview">
-    <tr class="order-info">
+    <tr class="order-info" :class="pendingColor">
       <td>{{ order.date }}</td>
       <td>{{ order.booker }}</td>
       <td>{{ order.stay }}</td>
@@ -12,7 +12,7 @@
         <button v-if="isApproved || isPending" @click="changeApproveStatus">
           {{ "✔️" }}
         </button>
-        <button v-if="!isApproved || isPending" @click="changeRejectStatus">
+        <button v-if="isRejected || isPending" @click="changeRejectStatus">
           {{ "❌" }}
         </button>
       </td>
@@ -27,31 +27,40 @@ export default {
   },
   data() {
     return {
-      isApproved: null,
-      isPending: null,
+      isApproved: false,
+      isRejected: false,
+      isPending: true,
     };
   },
   created(){
     console.log("this.order.status:", this.order.status);
-    if (this.order.status === 'approved') {
+    switch (this.order.status) {
+      case 'approved':
       this.isApproved = true;
-      this.isPending = false;
-    }
-    else if (this.order.status === 'rejected') {
-      this.isApproved = false;
-      this.isPending = false;
-    } else {
-     this.isPending = true; 
+      this.isPending = false;        
+        break;
+      case 'rejected':
+      this.isRejected = true;
+      this.isPending = false;        
+        break;
+      case 'pending':
+      this.isPending = true;        
+        break;
     }
   },
   methods: {
     changeApproveStatus(){
-      this.isRejected = false;
+      this.isApproved = true;
       this.isPending = false;
     },
     changeRejectStatus(){
-      this.isApproved = false;
+      this.isRejected = true;
       this.isPending = false;
+    }
+  },
+  computed: {
+    pendingColor() {
+      return {pending: this.isPending}
     }
   }
 };
