@@ -5,6 +5,7 @@
         class="max-filter flex space-between align-center"
         :model="form"
         label-width="120px"
+        @submit.prevent
       >
         <section class="input-container">
           <div class="search-container">
@@ -80,11 +81,7 @@
             <div class="guest-container flex align-center">
               <label
                 >Guests
-                <input
-                  type="text"
-                  :placeholder="addGuest"
-                  disabled
-                />
+                <input type="text" :placeholder="addGuest" disabled />
               </label>
               <el-form-item>
                 <button class="submit-btn" type="primary" @click="onSubmit">
@@ -216,18 +213,26 @@ export default {
   },
   methods: {
     onSubmit() {
-      if (!this.form.guests) this.form.guests = '';
+      if (!this.form.guests) this.form.guests = "";
       this.$router.push(
-        `/explore?${new URLSearchParams({destination: this.form.city, capacity: this.form.guests}).toString()}`);
+        `/explore?${new URLSearchParams({
+          destination: this.form.city,
+          capacity: this.form.guests,
+        }).toString()}`
+      );
     },
     countAdults(diff) {
-      this.placeholder = (this.form.guests) ? `${this.form.guests} Guests` : 'Add guests'
+      this.placeholder = this.form.guests
+        ? `${this.form.guests} Guests`
+        : "Add guests";
       if (!this.adults && diff < 0) return;
       this.form.guests += diff;
       this.adults += diff;
     },
     countKids(diff) {
-      this.placeholder = (this.form.guests) ? `${this.form.guests} Guests` : 'Add guests'
+      this.placeholder = this.form.guests
+        ? `${this.form.guests} Guests`
+        : "Add guests";
       if (!this.kids && diff < 0) return;
       this.form.guests += diff;
       this.kids += diff;
@@ -246,10 +251,10 @@ export default {
     disableKidBtn() {
       return { "disabled-btn": !this.kids };
     },
-    addGuest(){
-      if (this.form.guests === 0) return 'Add guests'
-      return this.form.guests + ' guests'
-    }
+    addGuest() {
+      if (this.form.guests === 0) return "Add guests";
+      return this.form.guests + " guests";
+    },
   },
   components: {
     Popper,

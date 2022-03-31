@@ -10,10 +10,10 @@
       <td>{{ $filters.currencyUSD(new Intl.NumberFormat('en-US').format(order.amount)) }}</td>
       <td class="flex justify-center">
         <button v-if="isApproved || isPending" @click="changeApproveStatus">
-          {{ order.status[0] }}
+          {{ "✔️" }}
         </button>
         <button v-if="isRejected || isPending" @click="changeRejectStatus">
-          {{ order.status[1] }}
+          {{ "❌" }}
         </button>
       </td>
     </tr>
@@ -34,6 +34,9 @@ export default {
   },
   created() {
     console.log("this.order:", this.order);
+    if (this.order.status === 'approved') {
+      this.isRejected = false;
+    }
   },
   methods: {
     changeApproveStatus(){
