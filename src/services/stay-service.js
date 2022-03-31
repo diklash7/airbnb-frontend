@@ -18,7 +18,7 @@ export const stayService = {
 _createStays()
 
 async function query(filterBy) {
-    console.log('filterBy', filterBy)
+    console.log('filterBy', filterBy.amenities)
     return await httpService.get(ENDPOINT, filterBy)
         // const stays = await storageService.query(KEY)
         // let filteredStays = JSON.parse(JSON.stringify(stays))
