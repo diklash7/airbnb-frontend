@@ -140,7 +140,7 @@ export default {
           nights: 4,
           guests: 3,
           amount: 516,
-          status: ["✔️", "❌"],
+          status: 'approved',
         },
         {
           date: "03/09/22",
@@ -150,7 +150,7 @@ export default {
           nights: 2,
           guests: 3,
           amount: 313,
-          status: ["✔️", "❌"],
+          status: 'rejected',
         },
         {
           date: "02/11/22",
@@ -160,7 +160,7 @@ export default {
           nights: 1,
           guests: 2,
           amount: 330,
-          status: ["✔️", "❌"],
+          status: 'approved',
         },
         {
           date: "02/03/22",
@@ -170,7 +170,7 @@ export default {
           nights: 4,
           guests: 3,
           amount: 889,
-          status: ["✔️", "❌"],
+          status: 'approved',
         },
         {
           date: "01/13/22",
@@ -190,7 +190,7 @@ export default {
           nights: 3,
           guests: 2,
           amount: 550,
-          status: ["✔️", "❌"],
+          status: 'rejected',
         },
         {
           date: "12/13/21",
@@ -200,7 +200,7 @@ export default {
           nights: 5,
           guests: 4,
           amount: 1600,
-          status: ["✔️", "❌"],
+          status: 'approved' ,
         },
         {
           date: "11/18/21",
@@ -210,7 +210,7 @@ export default {
           nights: 6,
           guests: 2,
           amount: 2500,
-          status: ["✔️", "❌"],
+          status: 'approved',
         },
         {
           date: "11/13/21",
@@ -220,7 +220,7 @@ export default {
           nights: 4,
           guests: 4,
           amount: 3000,
-          status: ["✔️", "❌"],
+          status: 'approved',
         },
       ],
       hostStays: [

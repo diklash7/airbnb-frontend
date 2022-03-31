@@ -1,49 +1,92 @@
 <template>
- 
-<section class="order-details details-layout">
-    <section class="order-details-container">
-    <h1>Your trip:</h1>
-    <div class="dates-order">
-         <div>
-          <h3>Dates:</h3>
-          <span>Apr 22 – 24</span>
-         </div>
-       <router-link class="btn-edit" to="/">Edit</router-link>
-
-     </div>
-     <div class="guests-order">
+  <app-header :stay="stay" />
+  <section v-if="stay" class="order-details details-layout">
+    <section class="order-details-container flex space-between">
+      <div class="order-date-guest">
+        <div class="order-title flex">
+          <button @click="$router.back()">{{ "◀" }}</button>
+          <h1>Your trip</h1>
+        </div>
+        <div class="dates-order">
+          <div class="rare-stay">
+            This is a rare find.
+            <p>{{stay.host.fullname}}'s </p>
+          </div>
+          <div>
+            <h3>Dates:</h3>
+            <span>May 1 – 4</span>
+          </div>
+          <router-link class="btn-edit" to="/">Edit</router-link>
+        </div>
+        <div class="guests-order">
           <div>
             <h3>Guests:</h3>
-             <span>1 guest</span>
+            <span>2 guest</span>
           </div>
-        <router-link class="btn-edit" to="/">Edit</router-link>
-       </div>
+          <router-link class="btn-edit" to="/">Edit</router-link>
+        </div>
+        <hr />
+      </div>
 
-       <hr>
-          <h2>Choose how to pay</h2>
-          <h3> Pay in full</h3>
-        <pre>
-  Pay the total now and you're all set.
-           </pre>
-        <h3> Pay part now, part later </h3>
-        <pre>
-   Pay ₪342.36 now, and the rest (₪1,369.41)
-   will be automatically charged to 
-   the same payment method on Apr 13,
-   2022. No extra fees.
-        </pre>
-
-      </section>
-
-   </section>
-    <hr>
+      <div class="total-price-order">
+        <div class="order-img-rate flex">
+          <img :src="'src/assets/Images/' + stay.imgUrls[0]" />
+          <div class="order-rate-container flex flex-column space-between">
+            <div class="order-rate">
+              <small>{{ stay.roomType }}</small>
+              <p class="stay-name">{{ stay.name }}</p>
+            </div>
+          </div>
+        </div>
+        <div class="type-price">
+          <div class="type-pay">
+            {{ $filters.currencyUSD(this.stay.price) }} x 3 nights
+          </div>
+          <span class="price">${{ totalPrice }}</span>
+        </div>
+        <div class="type-price">
+          <div class="type-pay">Cleaning fee</div>
+          <span class="price">$150</span>
+        </div>
+        <div class="type-price">
+          <div class="type-pay">Service fee</div>
+          <span class="price">$200</span>
+        </div>
+        <hr />
+        <div class="type-price">
+          <div class="pay-total">Total</div>
+          <span class="price-total">${{ totalPay }}</span>
+        </div>
+      </div>
+    </section>
+  </section>
+  <hr />
 </template>
 
 <script>
+import { stayService } from "../services/stay-service";
+import appHeader from "../components/app-header.vue";
+
 export default {
- 
-methods: {
-  
-}
-}
+  data() {
+    return {
+      stay: null,
+    };
+  },
+  async created() {
+    const { id } = this.$route.params;
+    this.stay = await stayService.getById(id);
+  },
+  computed: {
+    totalPrice() {
+      return this.stay.price * 3;
+    },
+    totalPay() {
+      return this.stay.price * 3 + 150 + 200;
+    },
+  },
+  components: {
+    appHeader,
+  },
+};
 </script>

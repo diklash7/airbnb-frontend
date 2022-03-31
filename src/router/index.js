@@ -25,7 +25,7 @@ const router = createRouter({
             component: explorePage
         },
         {
-            path: '/order',
+            path: '/order/:id',
             name: 'order',
             component: orderDetails
         },

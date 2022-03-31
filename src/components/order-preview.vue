@@ -12,7 +12,7 @@
         <button v-if="isApproved || isPending" @click="changeApproveStatus">
           {{ "✔️" }}
         </button>
-        <button v-if="isRejected || isPending" @click="changeRejectStatus">
+        <button v-if="!isApproved || isPending" @click="changeRejectStatus">
           {{ "❌" }}
         </button>
       </td>
@@ -27,15 +27,21 @@ export default {
   },
   data() {
     return {
-      isApproved: true,
-      isRejected: true,
-      isPending: true,
+      isApproved: null,
+      isPending: null,
     };
   },
-  created() {
-    console.log("this.order:", this.order);
+  created(){
+    console.log("this.order.status:", this.order.status);
     if (this.order.status === 'approved') {
-      this.isRejected = false;
+      this.isApproved = true;
+      this.isPending = false;
+    }
+    else if (this.order.status === 'rejected') {
+      this.isApproved = false;
+      this.isPending = false;
+    } else {
+     this.isPending = true; 
     }
   },
   methods: {
