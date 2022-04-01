@@ -9,8 +9,9 @@
         v-model="filterBy.price"
         @change="setFilterPrice"
         :width="400"
-        :bar-height="120"
+        :bar-height="120"   
         :data="prices"
+        :update-color-on-change="true"
       />
        <!-- <hr />
           <div class="type-save">
