@@ -60,20 +60,20 @@
           <div class="type-pay">
             {{ $filters.currencyUSD(this.stay.price) }} x 3 nights
           </div>
-          <span class="price">${{ totalPrice }}</span>
+          <span class="price">{{ $filters.currencyUSD(totalPrice) }}</span>
         </div>
         <div class="type-price">
           <div class="type-pay">Cleaning fee</div>
-          <span class="price">$150</span>
+          <span class="price">{{ $filters.currencyUSD(150)}}</span>
         </div>
         <div class="type-price">
           <div class="type-pay">Service fee</div>
-          <span class="price">$200</span>
+          <span class="price">{{ $filters.currencyUSD(200)}}</span>
         </div>
         <hr />
         <div class="type-price">
           <div class="pay-total">Total</div>
-          <span class="price-total">${{ totalPay }}</span>
+          <span class="price-total">{{ $filters.currencyUSD(toalPay)}}</span>
         </div>
       </div>
     </section>
@@ -86,6 +86,7 @@ import { stayService } from "../services/stay-service";
 import appHeader from "../components/app-header.vue";
 
 export default {
+  name: "order-details",
   data() {
     return {
       stay: null,

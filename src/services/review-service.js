@@ -24,7 +24,7 @@ async function removeReview(reviewId) {
 function getEmptyReview() {
   return Promise.resolve({
     userId: '',
-    // toyId: '',
+    stayId: '',
     content: '',
     rate: 0,
   })
