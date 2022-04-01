@@ -6,13 +6,23 @@
         width: 100%;
         border-radius: 10px;
 
-        .order-date-guest {
-            width: 23vw;
+        svg {
+            margin: 5px 10px 5px 0;
         }
+
+        .order-date-guest {
+            width: 29vw;
+        }
+
         h1 {
-            padding: 10px;
-            font-size: 25px;
+            font-size: 30px;
             margin: 0;
+            color: #3c9e3c;
+        }
+
+        p {
+            font-size: 20px;
+            font-family: Cereal-Medium;
         }
 
         button {
@@ -22,63 +32,59 @@
         }
 
         .rare-stay {
-            padding: 20px 30px;
+            padding: 22px 26px;
             border: 1px solid #b4b4b4;
             border-radius: 10px;
-            margin: 25px 0;
+            margin: 38px 0 20px 0;
 
-            h4{
-                margin: 0;
+            h4 {
+                margin-bottom: 8px;
+            }
+
+            p {
+                font-size: inherit;
+                font-family: Cereal-Regular;
             }
         }
 
         .dates-order-container {
-            margin-top: 80px;
-        .dates-order {
+            .dates-order {
+                display: flex;
+                justify-content: space-between;
+
+                h3 {
+                    padding: 0;
+                    margin-top: 20px;
+                    margin-bottom: 5px;
+                }
+
+                span {
+                    margin-top: -5px;
+                }
+            }
+        }
+        .guests-order {
             display: flex;
             justify-content: space-between;
             margin-bottom: 20px;
 
-            div {
-                h3 {
-                    margin-top: -20px;
-                    margin-bottom: -10px;
-                }
-                span {
-                    margin-left: 10px;
-                }
+            h3 {
+                padding: 0;
+                margin-top: 20px;
+                margin-bottom: 5px;
             }
-        }
-
-    }
-        .guests-order {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 15px;
-            div {
-                h3 {
-                    margin-top: -20px;
-                    margin-bottom: -10px;
-                }
-                span {
-                    margin-left: 10px;
-                }
+            span {
+                margin-top: -5px;
             }
         }
         .btn-edit {
-            margin-right: 10px;
-            width: 60px;
-            height: 25px;
+            padding: 0;
+            margin-top: -10px;
             font-size: 15px;
             font-weight: bold;
             text-decoration: underline;
         }
-        h2 {
-            padding: 10px;
-        }
-        h3 {
-            padding: 10px;
-        }
+
         pre {
             font-size: 15px;
             width: 200px;
@@ -86,27 +92,31 @@
         }
     }
 
+    hr {
+        border: 0.5px solid #e7e7e7;
+    }
+
     .total-price-order {
-        width: 30vw;
+        width: 24vw;
         height: 40vh;
-        padding: 40px;
+        padding: 20px;
         margin-top: 80px;
         border: 1px solid #b4b4b4;
-        border-radius: 30px;
+        border-radius: 15px;
 
         .order-img-rate {
-            margin-bottom: 20px;
+            margin-bottom: 40px;
         }
         .order-rate {
-            margin-left: 20px;
+            margin-left: 8px;
             .stay-name {
-                font-family: Cereal-Medium;
+                font-size: 14px;
             }
         }
 
         img {
-            max-height: 200px;
-            max-width: 200px;
+            max-height: 120px;
+            max-width: 130px;
             border-radius: 10px;
             object-fit: cover;
         }
@@ -116,13 +126,17 @@
             text-align: center;
         }
         .type-pay {
-            text-decoration: underline;
             font-size: 17px;
         }
         .type-price {
             margin-top: 10px;
             display: flex;
             justify-content: space-between;
+            text-decoration: underline;
+        }
+
+        .type-price:nth-child(5) {
+            margin-bottom: 15px;
         }
         .pay-total {
             font-weight: bold;

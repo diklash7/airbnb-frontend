@@ -136,11 +136,11 @@ export default {
           date: "03/31/22",
           booker: "Elana",
           stay: "Spacious and quiet apartment in Poble Sec",
-          tripDates: "03/14/22-03/18/22",
-          nights: 4,
-          guests: 3,
-          amount: 516,
-          status: 'pending',
+          tripDates: "05/01/22-05/04/22",
+          nights: 3,
+          guests: 2,
+          amount: 1100,
+          status: "pending",
         },
         {
           date: "03/13/22",
@@ -150,7 +150,7 @@ export default {
           nights: 4,
           guests: 3,
           amount: 516,
-          status: 'approved',
+          status: "approved",
         },
         {
           date: "03/09/22",
@@ -160,7 +160,7 @@ export default {
           nights: 2,
           guests: 3,
           amount: 313,
-          status: 'rejected',
+          status: "rejected",
         },
         {
           date: "02/11/22",
@@ -170,7 +170,7 @@ export default {
           nights: 1,
           guests: 2,
           amount: 330,
-          status: 'approved',
+          status: "approved",
         },
         {
           date: "02/03/22",
@@ -180,7 +180,7 @@ export default {
           nights: 4,
           guests: 3,
           amount: 889,
-          status: 'approved',
+          status: "approved",
         },
         {
           date: "01/13/22",
@@ -190,7 +190,7 @@ export default {
           nights: 4,
           guests: 5,
           amount: 1200,
-          status: 'approved',
+          status: "approved",
         },
         {
           date: "01/08/22",
@@ -200,7 +200,7 @@ export default {
           nights: 3,
           guests: 2,
           amount: 550,
-          status: 'rejected',
+          status: "rejected",
         },
         {
           date: "12/13/21",
@@ -210,7 +210,7 @@ export default {
           nights: 5,
           guests: 4,
           amount: 1600,
-          status: 'approved' ,
+          status: "approved",
         },
         {
           date: "11/18/21",
@@ -220,7 +220,7 @@ export default {
           nights: 6,
           guests: 2,
           amount: 2500,
-          status: 'approved',
+          status: "approved",
         },
         {
           date: "11/13/21",
@@ -230,7 +230,7 @@ export default {
           nights: 4,
           guests: 4,
           amount: 3000,
-          status: 'approved',
+          status: "approved",
         },
       ],
       hostStays: [

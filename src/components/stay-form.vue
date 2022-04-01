@@ -46,7 +46,7 @@
     <section class="form-main">
       <div class="form-header">
         <div class="form-price">
-          <h2>${{ stay.price }}</h2>
+          <h2>{{$filters.currencyUSD(stay.price)}} </h2>
           <span class="word-night"> / night</span>
         </div>
         <nav class="form-header-rate">
@@ -234,15 +234,16 @@
           <div class="msg-charged">You won't be charged yet</div>
           <div class="type-price">
             <div class="type-pay">{{ stay.price }} x 3 nights</div>
-            <span class="price">${{ totalPrice }} </span>
+            <span class="price">  {{$filters.currencyUSD(totalPrice)}}</span>
+          
           </div>
           <div class="type-price">
             <div class="type-pay">Cleaning fee</div>
-            <span class="price">$150</span>
+            <span class="price">{{$filters.currencyUSD(150)}}</span>
           </div>
           <div class="type-price">
             <div class="type-pay">Service fee</div>
-            <span class="price">$200</span>
+            <span class="price">{{$filters.currencyUSD(200)}}</span>
           </div>
           <hr />
           <div class="type-price">
