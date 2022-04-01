@@ -86,6 +86,7 @@ import { stayService } from "../services/stay-service";
 import appHeader from "../components/app-header.vue";
 
 export default {
+  name: "order-details",
   data() {
     return {
       stay: null,
