@@ -202,7 +202,7 @@
                     .left-side-rating {
                         display: flex;
                         .slider-left {
-                            margin-left: 100px;
+                            margin-left: 80px;
                         }
                         div {
                             margin-bottom: 15px;
@@ -212,9 +212,9 @@
                     }
                     .right-side-rating {
                         display: flex;
-                        margin-left: 150px;
+                        margin-left: 90px;
                         .slider-right {
-                            margin-left: 100px;
+                            margin-left: 140px;
                         }
                         div {
                             font-size: 15px;
@@ -225,7 +225,7 @@
                     .slider {
                         display: flex;
                         width: 150px;
-                        margin-left: 100px;
+                        margin-left: 80px;
                         margin-top: 10px;
                         .slider1,
                         .slider2,
@@ -249,6 +249,8 @@
                 flex-wrap: wrap;
                 gap: 40px;
                 margin-top: 40px;
+                justify-content: space-between;
+                margin-right: 200px;
                 .img-user-review {
                     height: 50px;
                     width: 50px;
@@ -267,7 +269,7 @@
                     color: rgb(113, 113, 113) !important;
                 }
                 .content-review {
-                    max-width: 450px;
+                    max-width: 412px;
                     margin-bottom: 20px;
                     font-size: 16px;
                 }
