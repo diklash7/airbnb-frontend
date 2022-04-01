@@ -111,6 +111,12 @@
 
   }
 
+  .vue-histogram-slider-bar-vue-histogram-5946068d-dfee-48f7-a1eb-5e6ab6cdd8d0{
+    fill:rgb(176,176,176)
+    
+  }
+
+
   .irs--round .irs-line {
     top: 36px;
     height: var(--line-height);
@@ -119,4 +125,90 @@
     --line-height: 2px;
 }
 
+.price-filter-container .price-select-container .price-select {
+  height: 56px;
+  width: 168px;
+  background: #fff;
+  border: 0.5px solid hsla(0,0%,46.3%,.28);
+  border-radius: 9px;
+}
 
+.price-filter-container .price-select-container .price-select .price-label {
+  text-align: start;
+  // -webkit-margin-start: 12px;
+  margin-inline-start: 12px;
+  margin-top: 8px;
+  font-size: 11px;
+  line-height: 20px;
+  color: #717171;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+}
+
+.price-filter-container .price-select-container .price-select .price-change {
+  display: flex;
+  align-items: flex-end;
+  -webkit-margin-start: 12px;
+  margin-inline-start: 12px;
+  font-size: 15px;
+}
+
+input{
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  color: #606266;
+  border: none;
+  box-shadow: none;
+  padding: 2px 2px;
+}
+
+.price-filter-container .price-save {
+   padding: 12px 14px;
+  border-top: 1px solid #ebebeb;
+}
+
+.price-filter-container .price-save .clear {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 600;
+  color: #222;
+  text-decoration: underline;
+}
+
+.price-filter-container .price-save .save {
+  cursor: pointer;
+  margin: 0;
+  text-align: center;
+  text-decoration: none;
+  width: auto;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif!important;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 600;
+  border-radius: 8px;
+  outline: none;
+  padding: 8px 16px;
+  border: none;
+  background: #222;
+  color: #fff;
+}
+
+.price-filter-container {
+  position: absolute;
+  top: 285px;
+  left: 80px;
+  height: 353px;
+  width: 440px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  // background: #fff;
+  border: 0.5px solid hsla(0,0%,46.3%,.28);
+  border-radius: 12px;
+  box-shadow: 0 10px 37px rgb(0 0 0 / 15%);
+  // padding: 20px;
+}
