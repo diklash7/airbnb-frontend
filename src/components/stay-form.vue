@@ -12,7 +12,7 @@
           <div class="form-container-small">
             <div class="form-title-small">
               <div class="form-price-small">
-                <h3>${{ stay.price }}</h3>
+                <h3>{{$filters.currencyUSD(stay.price)}}</h3>
                 <span class="word-night-small"> / night</span>
               </div>
               <div class="form-header-rate-small">
@@ -71,7 +71,7 @@
 
       <section class="form-container">
         <section class="form-date-picker">
-          <v-date-picker v-model="range" is-range>
+          <v-date-picker v-model="order.range" is-range>
             <template v-slot="{ inputValue, inputEvents }">
               <div class="flex">
                 <label class="label1">
@@ -81,12 +81,12 @@
                     v-on="inputEvents.start"
                     class="
                       input1
-                      border
+                       border
                       px-2
                       py-1
                       w-32
                       rounded
-                      focus:outline-none focus:border-indigo-300
+                      focus:outline-none focus:border-indigo-300   
                     "
                     placeholder="Add date"
                   />
@@ -104,7 +104,7 @@
                       w-32
                       rounded
                       focus:outline-none focus:border-indigo-300
-                    "
+                      "                    
                     placeholder="Add date"
                   />
                 </label>
@@ -233,7 +233,7 @@
         <div v-if="!isClicked" class="total-price-order">
           <div class="msg-charged">You won't be charged yet</div>
           <div class="type-price">
-            <div class="type-pay">{{ stay.price }} x 3 nights</div>
+            <div class="type-pay">{{ stay.price }} x {{numberOfNights}} nights</div>
             <span class="price">  {{$filters.currencyUSD(totalPrice)}}</span>
           
           </div>
@@ -248,7 +248,7 @@
           <hr />
           <div class="type-price">
             <div class="pay-total">Total</div>
-            <span class="price-total">${{ totalPay }}</span>
+            <span class="price-total">{{$filters.currencyUSD(totalPay)}}</span>
           </div>
         </div>
       </section>
@@ -274,9 +274,12 @@ export default {
         guests: 1,
         guest: 0,
       },
-      range: {
-        start: "",
-        end: "",
+      order: {
+        range: {
+          start: "",
+          end: "",
+        numOfNights:0,
+      }
       },
       adults: 1,
       kids: 0,
@@ -335,11 +338,17 @@ export default {
         "hide-form-header-small": !this.pagePos,
       };
     },
-    totalPrice() {
-      return this.stay.price * 3;
+    numberOfNights() {
+       let dayStart = this.order.range.start
+       let dayEnd = this.order.range.end
+       this.order.numOfNights = dayEnd.getDate() - dayStart.getDate()
+       return this.order.numOfNights
     },
-    totalPay() {
-      return this.stay.price * 3 + 150 + 200;
+       totalPrice() {
+      return new Intl.NumberFormat('en-US').format(this.stay.price * this.order.numOfNights);
+    },
+     totalPay() {
+      return new Intl.NumberFormat('en-US').format(this.stay.price * this.order.numOfNights + 150 + 200);
     },
   },
 };
