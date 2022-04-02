@@ -18,9 +18,7 @@ export const stayService = {
 _createStays()
 
 async function query(filterBy) {
-    console.log('filterBy', filterBy.amenities)
     return await httpService.get(ENDPOINT, filterBy)
-
 }
 
 async function getById(id) {
