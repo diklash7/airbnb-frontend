@@ -33,3 +33,13 @@
 .space-star{
   margin-left: 6px;
 }
+
+.like-stay{
+  position: relative;
+  top: 30px;
+  right: -380px;
+  z-index: 9;
+  color: rgba(0,0,0,.5019607843137255);
+  fill: rgba(0, 0, 0, 0.5);
+cursor: pointer;
+}
