@@ -62,10 +62,14 @@ export default {
     changeApproveStatus() {
       this.isApproved = true;
       this.isPending = false;
+      this.order.status === 'approved'
+      this.$emit('updateOrder', this.order)
     },
     changeRejectStatus() {
-      this.isRejected = true;
+      this.isDeclined = true;
       this.isPending = false;
+      this.order.status === 'rejected'
+      this.$emit('updateOrder', this.order)
     },
   },
   computed: {

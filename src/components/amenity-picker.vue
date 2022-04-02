@@ -1,5 +1,5 @@
 <template>
-  <span class="amenity">
+  <span class="amenity-picker">
     <button
       class="explore-btn"
       v-for="amenity in dataset"
@@ -20,7 +20,6 @@ export default {
     return {
       isClicked: false,
       amenities: [],
-      // dataset: ["Internet", "TV", "Kitchen", "Air conditioning", "Iron","Pool"],
       dataset: [
         {value: 'Internet', isActive: false},
         {value: 'TV', isActive: false},
