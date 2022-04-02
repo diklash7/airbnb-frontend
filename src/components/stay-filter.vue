@@ -75,17 +75,17 @@
 
     <span class="buffer">|</span>
 
-    <amenities v-model="filterBy.amenities" @setFilter="setFilter" />
+    <amenity-picker v-model="filterBy.amenities" @setFilter="setFilter" />
   </section>
 </template>
 
 <script>
 import { utilService } from "../services/util-service";
 import customTypeFilter from "./custom-type-filter.vue";
-import Amenities from "./amenities.vue";
+import amenityPicker from "./amenity-picker.vue";
 
 export default {
-  components: { customTypeFilter, Amenities },
+  components: { customTypeFilter, amenityPicker },
   name: "stay-filter",
   props: {
     prices: Array,

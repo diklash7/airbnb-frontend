@@ -13,8 +13,10 @@ export default {
         setOrders(state, { orders }) {
             state.orders = orders
         },
-        addOrder(state, { order }) {
-            state.orders.unshift(order)
+        saveOrder(state, { order }) {
+            const idx = state.orders.findIndex((o) => o._id === order._id)
+            if (idx !== -1) state.orders.splice(idx, 1, order)
+            else state.orders.unshift(order)
         },
     },
     actions: {
@@ -25,13 +27,21 @@ export default {
                 console.log('orders from Store:', orders);
                 return orders
             } catch (err) {
-                // console.log('err :>> ', err)
+                console.log('err :>> ', err)
             }
         },
-        async addOrder({ commit }, { order }) {
+        // async addOrder({ commit }, { order }) {
+        //     try {
+        //         const addedOrder = await orderService.addOrder(order)
+        //         commit({ type: 'addOrder', order: addedOrder })
+        //     } catch (err) {
+        //         console.log('err :>> ', err)
+        //     }
+        // },
+        async saveOrder({ commit }, { order }) {
             try {
-                const addedOrder = await orderService.addOrder(order)
-                commit({ type: 'addOrder', order: addedOrder })
+                const savedOrder = await orderService.saveOrder(order)
+                commit({ type: 'saveOrder', order: savedOrder })
             } catch (err) {
                 console.log('err :>> ', err)
             }
