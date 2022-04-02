@@ -29,7 +29,7 @@
     </button>
     <div class="price-filter-container">
       <div v-if="isPriceOpen" class="slider-demo-block">
-        <p>The average nightly price is {{ priceAvg }}</p>
+        <p class="avg">The average nightly price is {{ priceAvg }}</p>
         <HistogramSlider
           v-model="filterBy.price"
           @change="setFilterPrice"

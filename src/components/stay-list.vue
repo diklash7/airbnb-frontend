@@ -1,6 +1,6 @@
 <template>
   <section class="home-cities">
-    <stay-preview v-for="stay in stays" :key="stay._id" :stay="stay">
+        <stay-preview v-for="stay in stays" :key="stay._id" :stay="stay">
           
       <article @click="$router.push(`/stay/${stay._id}`)" >
         <div>

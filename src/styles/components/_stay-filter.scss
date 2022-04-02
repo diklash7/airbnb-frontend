@@ -2,6 +2,7 @@
 //   margin-top: 20px;
 // }
 
+
 .room-filter-container {
   position: relative;
   height: auto;
@@ -82,8 +83,8 @@
     // display: flex;
     // justify-content: flex-start;
     padding: 2em;
-    padding-top: 1em;
-    margin-block: 1em;
+    padding-top: 1.5em;
+    margin-block: 1.5em;
     border: 2px solid #333;
     border-radius: 8px;
     color: #222;
@@ -164,7 +165,8 @@ input{
 
 .price-filter-container .price-save {
    padding: 12px 14px;
-  border-top: 1px solid #ebebeb;
+  border-top: 0.5px solid #ebebeb;
+  
 }
 
 .price-filter-container .price-save .clear {
@@ -198,8 +200,8 @@ input{
 
 .price-filter-container {
   position: absolute;
-  top: 285px;
-  left: 80px;
+  top: 260px;
+  left: 50px;
   height: 353px;
   width: 440px;
   z-index: 10;
@@ -210,5 +212,54 @@ input{
   border: 0.5px solid hsla(0,0%,46.3%,.28);
   border-radius: 12px;
   box-shadow: 0 10px 37px rgb(0 0 0 / 15%);
-  // padding: 20px;
+  padding: 20px;
+}
+
+.price-filter-container .price-save {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 14px;
+  border-top: 1px solid #ebebeb;
+  margin-bottom: -27px;
+}
+
+.price-filter-container .price-filter {
+  padding: 20px;
+}
+
+.price-filter-container .price-select-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 15px;
+  margin-top:-14px;
+}
+
+.price-filter-container .avg {
+  text-align: start;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #222;
+  padding-top: 14px;
+  padding-bottom: 20px;
+}
+
+.vue-histogram-view {
+  z-index: 9;
+}
+
+.irs, .irs-line {
+  position: relative;
+  display: block;
+}
+
+.irs-grid{
+  visibility: hidden;
+}
+
+.irs--round .irs-grid-text{
+  visibility: hidden;
+  font-size: 0px;
 }

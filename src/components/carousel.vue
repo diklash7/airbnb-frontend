@@ -10,6 +10,7 @@
       >
         <el-carousel-item v-for="item in stay.imgUrls" :key="item">
           <img class="stay-img" :src="`src/assets/Images/${item}`" />
+       
         </el-carousel-item>
       </el-carousel>
     </div>
