@@ -1,7 +1,3 @@
-// .stay-filter {
-//   margin-top: 20px;
-// }
-
 
 .room-filter-container {
   position: relative;
@@ -15,7 +11,7 @@
   
   .price-filter-container {
   position: relative;
-  
+  }
   .slider-demo-block {
     position: absolute;
     background-color: #fff;
@@ -25,7 +21,7 @@
     z-index:10;
     margin: 0;
   }
-  }
+
   
   
   .explore-btn {
@@ -51,7 +47,6 @@
     line-height: 18px ;
     margin-right: 8px ;
     margin-top: 210px ;
-    //added 50px to margin top
     margin-bottom: 20px ;
   }
   
@@ -63,25 +58,8 @@
     color: #ddd;
   }
 
-//   .clicked {
-//     border: 2px solid #222!important;
-//     background-color: #f7f7f7!important;
-// }
-  
-  // .slider-demo-block {
-  //   display: flex;
-  //   align-items: center;
-  // }
-  // .slider-demo-block .el-slider {
-  //   margin-top: 0;
-  //   margin-left: 12px;
-  // }
-  
   .slider-demo-block {
     width: 440px !important;
-    // height: 353px ;
-    // display: flex;
-    // justify-content: flex-start;
     padding: 2em;
     padding-top: 1.5em;
     margin-block: 1.5em;
@@ -109,14 +87,12 @@
     height: var(--line-height);
     background-color: #b0b0b0;
     --line-height: 2px;
-
   }
 
   .vue-histogram-slider-bar-vue-histogram-5946068d-dfee-48f7-a1eb-5e6ab6cdd8d0{
     fill:rgb(176,176,176)
     
   }
-
 
   .irs--round .irs-line {
     top: 36px;
@@ -136,7 +112,6 @@
 
 .price-filter-container .price-select-container .price-select .price-label {
   text-align: start;
-  // -webkit-margin-start: 12px;
   margin-inline-start: 12px;
   margin-top: 8px;
   font-size: 11px;
@@ -211,7 +186,7 @@ input{
   // background: #fff;
   border: 0.5px solid hsla(0,0%,46.3%,.28);
   border-radius: 12px;
-  box-shadow: 0 10px 37px rgb(0 0 0 / 15%);
+  // box-shadow: 0 10px 37px rgb(0 0 0 / 15%);
   padding: 20px;
 }
 
@@ -263,3 +238,5 @@ input{
   visibility: hidden;
   font-size: 0px;
 }
+
+

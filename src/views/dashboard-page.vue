@@ -71,7 +71,7 @@
             </div>
             <div class="dash-stat">
               <h3>Total Revenues</h3>
-              <span class="total-revenue">{{ reviewSum }}</span>
+              <span class="total-revenue">{{ $filters.currencyUSD(revenueSum) }}</span>
             </div>
             <div class="dash-stat">
               <h3>Total orders</h3>
@@ -154,12 +154,18 @@ export default {
       return this.$store.getters.orders;
     },
     revenueSum() {
-      console.log('order amount: ', this.order.amount);
       const revenue = this.orders.reduce((acc, order) => {
         acc += order.amount;
         return acc;
       }, 0);
-      return new Intl.NumberFormat("en-US").format(revenue);
+      return revenue;
+    },
+    orderCount() {
+      const orders = this.orders.reduce((acc, order) => {
+        if (order.status === 'approved') acc++;
+        return acc;
+      }, 0);
+      return orders;
     },
     guestSum() {
       const guests = this.orders.reduce((acc, order) => {

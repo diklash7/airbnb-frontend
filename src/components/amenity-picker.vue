@@ -1,5 +1,5 @@
 <template>
-  <span class="amenity">
+  <span class="amenity-picker">
     <button
       class="explore-btn"
       v-for="amenity in dataset"
