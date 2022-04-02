@@ -32,7 +32,7 @@
 
         <section class="input-container-dates">
           <div class="check-in-out">
-            <v-date-picker v-model="range" is-range>
+            <v-date-picker v-model="form.range" is-range>
               <template v-slot="{ inputValue, inputEvents }">
                 <div class="flex">
                   <label>
@@ -203,7 +203,10 @@ export default {
     return {
       form: {
         city: "",
-        range: null,
+        range: {
+          start: new Date(2022, 4, 1),
+          end: new Date(2022, 4, 6),
+        },
         guests: 0,
       },
       adults: 0,
