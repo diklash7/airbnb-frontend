@@ -268,9 +268,9 @@ export default {
     //   stayReview
   },
   name: "stay-details",
-  props: {
-    stay: Object,
-  },
+  // props: {
+  //   stay: Object,
+  // },
   data() {
     return {
       stay: null,

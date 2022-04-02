@@ -1,22 +1,52 @@
 .order-info {
    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    gap: 10px;
-    align-items: center;
-    text-align: center;
-    padding: 10px 0;
-    border-bottom: 1px solid #e7e6e6;
-    
-    button {
-       border: none;
-       margin: 2px;
-       background-color: #dad8d8;
-       padding: 5px;
-       border-radius: 14px;
-       &:hover {
-         background-color: #e4e2e2; 
+   grid-template-columns: repeat(7, 1fr);
+   gap: 10px;
+   align-items: center;
+   text-align: center;
+   padding: 10px 0;
+   border-bottom: 1px solid #e7e6e6;
+
+   .avatar {
+      height: 50px;
+      width: 50px;
+      border-radius: 25px;
+   }
+
+   .stay-name {
+      text-align: left;
+      width: 350px;
+   }
+
+   .status {
+      width: 200px;
+   }
+
+   button {
+      border: none;
+      margin: 2px;
+      border-radius: 30px;
+      &.approve-btn {
+         padding: 10px;
+         background-color: #a5f3d5;
+         color: #1d7452;
+         font-family: Cereal-Bold;
+         font-size: 0.9rem;
+         &:hover {
+            background-color: #6df3bf;
+         }
       }
-    }
+      &.decline-btn {
+         padding: 10px 14px;
+         background-color: #f0afb2;
+         color: #8d2f34;
+         font-family: Cereal-Bold;
+         font-size: 0.9rem;
+         &:hover {
+            background-color: #f1979c;
+         }
+      }
+   }
 }
 
 .pending {

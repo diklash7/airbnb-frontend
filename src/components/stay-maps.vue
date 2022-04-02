@@ -23,14 +23,12 @@
   size="large"
     :clickable="true"
     @click="loc.func(loc.pos)"
-    :icon="Search"
     round>{{loc.name}}
   </el-button>
 </section>
 </template>
 
 <script>
-import { Search } from "@element-plus/icons-vue";
 export default {
   name: "app",
   props: {
@@ -39,13 +37,23 @@ export default {
   data() {
     return {
       center: { lat: 32.088179, lng: 34.790144 },
+      locs: [{name: 'Tel Aviv', func: this.updateLoc, pos: {lat: 32.088179, lng: 34.790144}},
+      {name: 'Ramat Gan', func: this.updateLoc, pos: {  lat: 32.066278,lng: 34.830301}},
+    ],
       markers: [
         {
           position: {
             lat: 32.088179,
             lng: 34.790144,
           },
-        }
+        }, // Along list of clusters
+        {
+          position: {
+            lat: 32.066278,
+            lng: 34.830301,
+          },
+        }, // Along list of clusters
+       // Along list of clusters
       ],
     };
   },
