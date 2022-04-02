@@ -60,24 +60,25 @@
                         d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
                       />
                     </svg>
-                    4.65 <small class="avg">avg</small></span
+                    4.65</span
                   >
-                </div>
-                <div class="flex space-between">
-                  <span>112<small> reviews</small></span>
                 </div>
               </div>
             </div>
             <div class="dash-stat">
-              <h3>Total Revenues</h3>
-              <span class="total-revenue">{{ revenueSum }}</span>
+              <h3>Total Reviews</h3>
+              <span class="total-review">112<small> reviews</small></span>
             </div>
             <div class="dash-stat">
-              <h3>Orders</h3>
+              <h3>Total Revenues</h3>
+              <span class="total-revenue">{{ reviewSum }}</span>
+            </div>
+            <div class="dash-stat">
+              <h3>Total orders</h3>
               <span>{{ orderCount }}<small> orders</small></span>
             </div>
             <div class="dash-stat">
-              <h3>Guests</h3>
+              <h3>Total guests</h3>
               <span>{{ guestSum }}<small> guests</small></span>
             </div>
           </div>
@@ -87,14 +88,13 @@
             <div class="order-table">
               <div class="thead">
                 <div class="thead-container gray-box-shadow">
-                  <span>Date</span>
                   <span>Booker</span>
-                  <span>Place</span>
+                  <span class="stay-title">Place</span>
                   <span>Trip Dates</span>
                   <span>Nights</span>
                   <span>Guests</span>
                   <span>Amount</span>
-                  <span>Status</span>
+                  <span class="status-title">Status</span>
                 </div>
               </div>
             </div>
@@ -154,6 +154,7 @@ export default {
       return this.$store.getters.orders;
     },
     revenueSum() {
+      console.log('order amount: ', this.order.amount);
       const revenue = this.orders.reduce((acc, order) => {
         acc += order.amount;
         return acc;

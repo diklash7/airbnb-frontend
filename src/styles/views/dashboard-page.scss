@@ -38,8 +38,8 @@
 
    .stats-container {
       .dash-stat {
-         margin-left: 7.5px;
-         padding: 15px;
+         margin-left: 26px;
+         padding: 30px 60px;
          border-radius: 12px;
          border: 1px solid #ddd;
          box-shadow: 0 3px 10px rgb(0 0 0 / 10%);
@@ -54,7 +54,7 @@
       }
 
       .total-revenue {
-         padding:20px;
+         padding: 20px;
          font-size: 30px;
       }
    }
@@ -69,7 +69,13 @@
          margin-top: 20px;
 
          .thead-container {
-            grid-template-columns: repeat(8, 1fr);
+            grid-template-columns: repeat(7, 1fr);
+            .stay-title {
+               width: 350px;
+            }
+            .status-title {
+               width: 200px;
+            }
          }
       }
 
@@ -91,6 +97,6 @@
       align-items: center;
       text-align: center;
       font-family: Cereal-Medium;
-      border-bottom: 1px solid $clr5;
+      border-bottom: 1px solid #999999;
    }
 }

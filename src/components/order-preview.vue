@@ -1,19 +1,30 @@
 <template>
   <section class="order-preview">
     <tr class="order-info" :class="pendingColor">
-      <td>{{ order.date }}</td>
-      <td>{{ order.booker }}</td>
-      <td>{{ order.stay }}</td>
+      <td class="flex align-center space-evenly">
+        <img class="avatar" :src="order.imgUrl" />{{ order.booker }}
+      </td>
+      <td class="stay-name">{{ order.stay }}</td>
       <td>{{ order.tripDates }}</td>
-      <td>{{ order.nights }}</td>
-      <td>{{ order.guests }}</td>
-      <td>{{ $filters.currencyUSD(new Intl.NumberFormat('en-US').format(order.amount)) }}</td>
-      <td class="flex justify-center">
-        <button v-if="isApproved || isPending" @click="changeApproveStatus">
-          {{ 'Approved' }}
+      <td>
+        <span>{{ order.nights }}</span> nights
+      </td>
+      <td>
+        <span>{{ order.guests }}</span> guests
+      </td>
+      <td>
+        {{
+          $filters.currencyUSD(
+            new Intl.NumberFormat("en-US").format(order.amount)
+          )
+        }}
+      </td>
+      <td class="status flex justify-center">
+        <button class="approve-btn" v-if="isApproved || isPending" @click="changeApproveStatus">
+          {{ approveStatus }}
         </button>
-        <button v-if="isRejected || isPending" @click="changeRejectStatus">
-          {{ "Declined" }}
+        <button class="decline-btn" v-if="isDeclined || isPending" @click="changeRejectStatus">
+          {{ declineStatus }}
         </button>
       </td>
     </tr>
@@ -28,39 +39,45 @@ export default {
   data() {
     return {
       isApproved: false,
-      isRejected: false,
+      isDeclined: false,
       isPending: true,
     };
   },
-  created(){
+  created() {
     switch (this.order.status) {
-      case 'approved':
-      this.isApproved = true;
-      this.isPending = false;        
+      case "approved":
+        this.isApproved = true;
+        this.isPending = false;
         break;
-      case 'rejected':
-      this.isRejected = true;
-      this.isPending = false;        
+      case "rejected":
+        this.isDeclined = true;
+        this.isPending = false;
         break;
-      case 'pending':
-      this.isPending = true;        
+      case "pending":
+        this.isPending = true;
         break;
     }
   },
   methods: {
-    changeApproveStatus(){
+    changeApproveStatus() {
       this.isApproved = true;
       this.isPending = false;
     },
-    changeRejectStatus(){
+    changeRejectStatus() {
       this.isRejected = true;
       this.isPending = false;
-    }
+    },
   },
   computed: {
     pendingColor() {
-      return {pending: this.isPending}
+      return { pending: this.isPending };
+    },
+    approveStatus() {
+      return this.isPending ? 'Approve' : 'Approved'
+    },
+    declineStatus() {
+      return this.isPending ? 'Decline' : 'Declined'
     }
-  }
+  },
 };
 </script>
