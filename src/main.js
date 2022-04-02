@@ -31,5 +31,6 @@ app.use(VueGoogleMaps, {
     }
 })
 app.component(HistogramSlider.name, HistogramSlider)
+  
 
 app.mount('#app')

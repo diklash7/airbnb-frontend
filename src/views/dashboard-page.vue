@@ -1,6 +1,6 @@
 <template>
-  <app-header class="order-layout" :orders="orders" />
   <section class="dashboard-page main-layout">
+  <app-header class="order-layout" :orders="orders" />
     <section class="dashboard-container">
       <div class="main-container flex flex-column">
         <section class="dash-header flex space-between">

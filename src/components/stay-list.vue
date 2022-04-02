@@ -28,7 +28,8 @@
 
           <div>{{ stay.name }}</div>
           <div class="stay-price">
-            <span class="bold">${{ stay.price }}</span> / night
+            <span class="bold">{{$filters.currencyUSD(stay.price)}}
+</span> / night
           </div>
         </div>
         <div>
