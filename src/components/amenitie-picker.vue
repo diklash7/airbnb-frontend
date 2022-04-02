@@ -15,12 +15,11 @@
 
 <script>
 export default {
-  name: "amenities",
+  name: "amenitie-picker",
   data() {
     return {
       isClicked: false,
       amenities: [],
-      // dataset: ["Internet", "TV", "Kitchen", "Air conditioning", "Iron","Pool"],
       dataset: [
         {value: 'Internet', isActive: false},
         {value: 'TV', isActive: false},
