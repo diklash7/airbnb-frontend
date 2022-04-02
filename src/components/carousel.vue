@@ -3,7 +3,6 @@
     <div class="block">
       <span class="demonstration"></span>
       <el-carousel
-        :trigger="click"
         :autoplay="false"
         :interval=600000
         height="262px"
