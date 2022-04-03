@@ -56,8 +56,8 @@
           </div>
         </div>
         <div class="price-save flex align-center space-between">
-          <button @click="clearPrice" class="clear">Clear</button>
-          <button @click="savePrice" class="save">Save</button>
+          <button class="clear">Clear</button>
+          <button class="save" @click="isPriceOpen = false">Save</button>
         </div>
       </div>
     </div>

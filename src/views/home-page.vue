@@ -10,7 +10,7 @@
     <div class="home-page-gallery">
       <article class="dest-card" v-for="(city, idx) in cities" :key="city">
         <img
-          :src="`src/assets/Images/${idx + 1}.jpg`"
+          :src="getImageJpg(idx + 1)"
           @click="goToExploreCity(city)"
         />
         <h3>{{ city }}</h3>
@@ -22,7 +22,7 @@
       <article class="top-rated-card" v-for="stay in topStays" :key="stay._id">
         <custom-card @click="goToStay(stay._id)">
           <template #default>
-            <img :src="`src/assets/Images/${stay.imgUrls[0]}`" />
+            <img :src="getImage(stay.imgUrls[0])" />
           </template>
 
           <template #footer>
@@ -68,6 +68,12 @@ export default {
       });
       return topStays.slice(0, 4);
     },
+    getImageJpg() {
+      return (imgName) => new URL(`../assets/Images/${imgName}.jpg`, import.meta.url).href
+    },
+    getImage() {
+      return (imgName) => new URL(`../assets/Images/${imgName}`, import.meta.url).href
+    }
   },
   methods: {
     goToStay(stayId) {

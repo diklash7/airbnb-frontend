@@ -81,7 +81,10 @@ export default {
     },
     declineStatus() {
       return this.isPending ? 'Decline' : 'Declined'
-    }
+    },
+    // getImage() {
+    //   return (path) => new URL(`${path}`, import.meta.url).href
+    // }
   },
 };
 </script>
