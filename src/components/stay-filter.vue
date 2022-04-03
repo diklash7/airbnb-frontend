@@ -34,7 +34,7 @@
           v-model="filterBy.price"
           @change="setFilterPrice"
           primaryColor="rgb(176,176,176)"
-          hideFromTo="false"
+          hideFromTo="true"
           :width="400"
           :bar-height="120"
           :data="prices"
