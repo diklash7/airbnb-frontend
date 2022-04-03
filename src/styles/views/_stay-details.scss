@@ -166,6 +166,7 @@
                 }
                 .amenities-details-left {
                     display: flex;
+                    margin-top: 10px;
                     img {
                         width: 25px;
                         height: 25px;
@@ -178,6 +179,7 @@
                 }
                 .amenities-details-right {
                     display: flex;
+                    margin-top: 10px;
                     img {
                         width: 25px;
                         height: 25px;
@@ -292,10 +294,4 @@
                 background-color: white;
                 font-family: Cereal-Bold;
             }
-        }
-        
-        .vue3-slider {
-            width: 100%;
-            cursor: pointer;
-            position: static;
         }

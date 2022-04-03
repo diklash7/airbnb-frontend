@@ -183,6 +183,7 @@
                     v-model="stay.reviewScores.checkin"
                     color="#fffff"
                     track-color="#000000"
+                    position="static"
                   />
                   <span>{{ ratingReview }}</span>
                 </div>
