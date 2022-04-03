@@ -190,7 +190,7 @@ export default {
     },
     getImage() {
       return (path) =>
-        new URL(`../assets/${path}`, import.meta.url);
+        new URL(`../assets/${path}`, import.meta.url).href;
     },
     searchTitle() {
       if (this.city) return this.city;

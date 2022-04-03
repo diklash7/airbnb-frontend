@@ -303,7 +303,7 @@ export default {
     },
     getImage() {
       return (amenitie) =>
-        new URL(`../assets/Icons/${amenitie}.png`, import.meta.url);
+        new URL(`../assets/Icons/${amenitie}.png`, import.meta.url).href;
     },
     rating() {
       return (this.stay.reviewScores.rating / 20).toFixed(2);
