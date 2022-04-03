@@ -1,7 +1,7 @@
 <template>
   <section class="stay-form">
     <section :class="formForDisplay">
-      <section class="form-header-small details-layout">
+      <section class="form-header-small header-details-layout">
         <div class="titles-small">
           <a>Photos</a>
           <a>Amenities</a>
