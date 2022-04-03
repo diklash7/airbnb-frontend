@@ -32,7 +32,7 @@
 
         <section class="input-container-dates">
           <div class="check-in-out">
-            <v-date-picker v-model="form.range" is-range>
+            <v-date-picker v-model="form.range" color="gray" is-range>
               <template v-slot="{ inputValue, inputEvents }">
                 <div class="flex">
                   <label>
@@ -47,7 +47,7 @@
                         py-1
                         w-32
                         rounded
-                        focus:outline-none focus:border-indigo-300
+                        focus:outline-none focus:border-gray-500
                       "
                       placeholder="Add date"
                     />
@@ -65,7 +65,7 @@
                         py-1
                         w-32
                         rounded
-                        focus:outline-none focus:border-indigo-300
+                        focus:outline-none focus:border-gray-500
                       "
                       placeholder="Add date"
                     />

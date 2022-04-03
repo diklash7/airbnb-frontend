@@ -33,6 +33,7 @@
         <HistogramSlider
           v-model="filterBy.price"
           @change="setFilterPrice"
+          primaryColor="#222222"
           :width="400"
           :bar-height="120"
           :data="prices"
