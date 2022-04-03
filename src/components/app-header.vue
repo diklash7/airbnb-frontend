@@ -6,9 +6,9 @@
           <img
             v-if="pagePos || stays || stay || orders"
             class="logo-svg"
-            src="../assets/logo-pink.png"
+            :src="getImage('../assets/logo-pink.png')"
           />
-          <img v-else class="logo-svg" src="../assets/logo-white.png" />
+          <img v-else class="logo-svg" :src="getImage('../assets/logo-white.png')" />
         </router-link>
       </div>
 
@@ -110,7 +110,7 @@
                     d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"
                   />
                 </svg>
-                <!-- <img src="https://a0.muscache.com/im/users/118676/profile_pic/1417000371/original.jpg?aki_policy=profile_small" /> -->
+                <!-- <img :src="getImage(https://a0.muscache.com/im/users/118676/profile_pic/1417000371/original.jpg?aki_policy=profile_small)" /> -->
               </div>
             </button>
             <template #content>
@@ -157,6 +157,10 @@ export default {
   created() {
     this.isScroll = false;
     window.addEventListener("scroll", this.scrollToggle);
+    if (this.$route.query.destination) {
+        const { destination } = this.$route.query;
+        this.city = destination;
+      }
   },
   components: {
     appFilter,
@@ -184,6 +188,10 @@ export default {
         "orders-layout": this.orders
       };
     },
+    getImage() {
+      return (path) =>
+        new URL(`${path}`, import.meta.url);
+    },
     searchTitle() {
       if (this.city) return this.city;
       else return "Start your Search";
@@ -192,6 +200,6 @@ export default {
   destroyed() {
     window.removeEventListener("scroll", this.scrollToggle);
   },
-};
+}
 </script>
 <style></style>

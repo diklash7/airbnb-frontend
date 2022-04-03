@@ -15,7 +15,7 @@
 
 <script>
 export default {
-  name: "amenitie-picker",
+  name: "amenity-picker",
   data() {
     return {
       isClicked: false,

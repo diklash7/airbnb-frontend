@@ -22,6 +22,9 @@
 
   .input-container:first-child {
     text-indent: 15px;
+    label {
+      padding-top: 13.5px;
+    }
 
     input {
       min-width: 200px;

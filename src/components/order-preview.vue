@@ -2,7 +2,7 @@
   <section class="order-preview">
     <tr class="order-info" :class="pendingColor">
       <td class="flex align-center space-evenly">
-        <img class="avatar" :src="order.imgUrl" /><span class="user-info">{{ order.booker }}</span>
+        <img class="avatar" :src="getImage(order.imgUrl)" /><span class="user-info">{{ order.booker }}</span>
       </td>
       <td class="stay-name">{{ order.stay }}</td>
       <td>{{ order.tripDates }}</td>
@@ -81,6 +81,9 @@ export default {
     },
     declineStatus() {
       return this.isPending ? 'Decline' : 'Declined'
+    },
+    getImage() {
+      return (path) => new URL(`${path}`, import.meta.url).href
     }
   },
 };

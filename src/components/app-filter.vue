@@ -204,8 +204,8 @@ export default {
       form: {
         city: "",
         range: {
-          start: new Date(2022, 4, 1),
-          end: new Date(2022, 4, 6),
+          start: new Date(2022, 3, 1),
+          end: new Date(2022, 3, 6),
         },
         guests: 0,
       },
@@ -214,6 +214,16 @@ export default {
       placeholder: "Add guests",
     };
   },
+  created() {
+    if (this.$route.query.destination) {
+      const { destination } = this.$route.query;
+      this.form.city = destination;
+    }
+    if (this.$route.query.capacity) {
+      const {capacity} = this.$route.query;
+      this.form.guests = capacity
+    }
+  },
   methods: {
     onSubmit() {
       if (!this.form.guests) this.form.guests = "";
@@ -221,6 +231,8 @@ export default {
         `/explore?${new URLSearchParams({
           destination: this.form.city,
           capacity: this.form.guests,
+          start_date: this.form.range.start,
+          end_date: this.form.range.end
         }).toString()}`
       );
     },
