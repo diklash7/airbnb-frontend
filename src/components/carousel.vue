@@ -14,7 +14,7 @@
 
  
 <script>
-import { computed } from "@vue/runtime-core";
+// import { computed } from "@vue/runtime-core";
 export default {
   name: "carousel",
   props: {
@@ -22,7 +22,7 @@ export default {
   },
   computed: {
     getImage() {
-      return (path) => new URL(`../assets/${path}`, import.meta.url).href
+      return (path) => new URL(`../assets/Images/${path}`, import.meta.url).href
     }
   }
 };

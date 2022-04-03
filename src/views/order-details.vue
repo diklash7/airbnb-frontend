@@ -52,7 +52,7 @@
 
       <div class="total-price-order">
         <div class="order-img-rate flex">
-          <img :src="'src/assets/Images/' + stay.imgUrls[0]" />
+          <img :src="getImage(stay.imgUrls[0])" />
           <div class="order-rate-container flex flex-column space-between">
             <div class="order-rate">
               <small>{{ stay.roomType }}</small>
@@ -108,6 +108,9 @@ export default {
     totalPay() {
       return new Intl.NumberFormat('en-US').format((this.stay.price * 3 + 150 + 200));
     },
+    getImage() {
+       return (img) => new URL(`../assets/Images/${img}`, import.meta.url).href
+    }
   },
   components: {
     appHeader,
