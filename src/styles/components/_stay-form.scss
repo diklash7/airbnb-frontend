@@ -19,7 +19,7 @@
         margin: 0;
         padding: 0;
         .titles-small {
-            margin-left: 18vh;
+            margin-left: 210px;
             a {
                 font-size: 15px;
                 font-family: 'Franklin Gothic';
@@ -27,8 +27,7 @@
         }
         .form-container-small {
             display: flex;
-            // margin-top: 20px;
-            margin-right: 155px;
+            margin-right: 220px;
             background: none;
             .form-title-small {
                 display: flex;
@@ -53,11 +52,11 @@
                     }
                     span {
                         font-size: 12px;
-                        font-family: Cereal-Bold;
+                        font-family: Cereal-Medium;
                     }
                     .reviews-form-small {
                         text-decoration: underline;
-                        font-family: Cereal-Bold;
+                        font-family: Cereal-Medium;
                     }
                 }
             }
@@ -99,6 +98,7 @@
                 h2 {
                     display: inline-block;
                     font-size: 22px;
+                    font-weight: bold;
                 }
                 .word-night {
                     font-size: 16px;
@@ -114,7 +114,7 @@
             }
             .reviews-form {
                 text-decoration: underline;
-                font-family: 'Franklin Gothic';
+                font-family: Cereal-Regular;
                 font-size: 15px;
             }
             .rate-form {
@@ -267,14 +267,8 @@
             margin-bottom: 15px;
         }
     }
-    // .hide {
-    //     display: none;
-    // }
 }
 
-// .hide-header {
-//     display: none;
-// }
 .hide-form-header-small {
     display: none;
 }
@@ -282,7 +276,3 @@
 .hide-form-small {
     display: none;
 }
-
-// .hide-form {
-//     display: none;
-// }

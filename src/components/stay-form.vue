@@ -1,7 +1,7 @@
 <template>
   <section class="stay-form">
     <section :class="formForDisplay">
-      <section class="form-header-small details-layout">
+      <section class="form-header-small header-details-layout">
         <div class="titles-small">
           <a>Photos</a>
           <a>Amenities</a>
@@ -71,7 +71,7 @@
 
       <section class="form-container">
         <section class="form-date-picker">
-          <v-date-picker v-model="order.range" is-range>
+          <v-date-picker v-model="order.range" color="gray" is-range>
             <template v-slot="{ inputValue, inputEvents }">
               <div class="flex">
                 <label class="label1">

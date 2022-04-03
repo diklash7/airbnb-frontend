@@ -184,7 +184,7 @@ export default {
         "explore-page": this.stays,
         details: this.stay || this.orders,
         "main-layout": !this.stay && !this.orders, 
-        // "details-layout": this.stay,
+        "details-layout": this.stay,
         "orders-layout": this.orders
       };
     },
