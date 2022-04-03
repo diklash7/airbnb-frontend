@@ -165,24 +165,24 @@
                     margin-bottom: 30px;
                 }
                 .amenities-details-left {
+                    display: flex;
                     img {
                         width: 25px;
                         height: 25px;
                         display: inline-block;
                         margin-right: 10px;
-                        display: flex;
                     }
                     span {
                         font-size: 16px;
                     }
                 }
                 .amenities-details-right {
+                    display: flex;
                     img {
                         width: 25px;
                         height: 25px;
                         display: inline-block;
                         margin-right: 10px;
-                        display: flex;
                     }
                     span {
                         font-size: 16px;
@@ -204,10 +204,6 @@
                     }
                 }
                 .slider-rate {
-                    .vue3-slider {
-                        width: 100%;
-                        cursor: pointer;
-                    }
                     display: flex;
                     .left-side-rating {
                         display: flex;
@@ -296,4 +292,10 @@
                 background-color: white;
                 font-family: Cereal-Bold;
             }
+        }
+        
+        .vue3-slider {
+            width: 100%;
+            cursor: pointer;
+            position: static;
         }
