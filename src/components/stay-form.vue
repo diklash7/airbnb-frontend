@@ -71,7 +71,7 @@
 
       <section class="form-container">
         <section class="form-date-picker">
-          <v-date-picker v-model="order.range" is-range>
+          <v-date-picker v-model="order.range" color="gray" is-range>
             <template v-slot="{ inputValue, inputEvents }">
               <div class="flex">
                 <label class="label1">
