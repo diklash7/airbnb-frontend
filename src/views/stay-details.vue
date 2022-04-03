@@ -108,7 +108,7 @@
                   v-for="amenitie in stay.amenities.slice(0, 5)"
                   :key="amenitie"
                 >
-                  <img :src="getImage(amenitie)" alt="" />
+                  <img :src="getIcon(amenitie)" alt="" />
                   <span> {{ amenitie }}</span>
                 </div>
               </div>
@@ -118,7 +118,7 @@
                   v-for="amenitie in stay.amenities.slice(5, 10)"
                   :key="amenitie"
                 >
-                  <img :src="getImage(amenitie)" alt="" />
+                  <img :src="getIcon(amenitie)" alt="" />
                   <span> {{ amenitie }}</span>
                 </div>
               </div>
@@ -301,7 +301,7 @@ export default {
     reviews() {
       return this.$store.getters.reviews;
     },
-    getImage() {
+    getIcon() {
       return (amenitie) =>
         new URL(`../assets/Icons/${amenitie}.png`, import.meta.url).href;
     },
