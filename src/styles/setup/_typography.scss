@@ -1,19 +1,19 @@
 @font-face {
     font-family: 'Circular-Book';
-    src: asset-url('circular-book.otf');
+    src: url('@/assets/fonts/Circular/circular-book.otf');
 }
 
 @font-face {
     font-family: 'Cereal-Regular';
-    src: asset-url('Airbnb_Cereal-Regular.ttf');
+    src: url('@/assets/fonts/Cereal/Airbnb_Cereal-Regular.ttf');
 }
 
 @font-face {
     font-family: 'Cereal-Medium';
-    src: asset-url('Airbnb_Cereal-Medium.ttf');
+    src: url('@/assets/fonts/Cereal/Airbnb_Cereal-Medium.ttf');
 }
 
 @font-face {
     font-family: 'Cereal-Bold';
-    src: asset-url('Airbnb_Cereal-Bold.ttf');
+    src: url('@/assets/fonts/Cereal/Airbnb_Cereal-Bold.ttf');
 }
