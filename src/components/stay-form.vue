@@ -9,7 +9,7 @@
           <a href="">Location</a>
         </div>
         <nav>
-          <div class="form-container-small">
+          <div v-if="isSeen" class="form-container-small">
             <div class="form-title-small">
               <div class="form-price-small">
                 <h3>{{$filters.currencyUSD(stay.price)}}</h3>
@@ -286,11 +286,19 @@ export default {
       isScroll: false,
       pagePos: null,
       isClicked: true,
+      isSeen: false
     };
   },
   created() {
     this.isScroll = false;
     window.addEventListener("scroll", this.scrollToggle);
+  },
+   mounted() {
+    let observer = new IntersectionObserver((entries) => {
+      this.isSeen = entries[0].isIntersecting ? false : true
+    })
+
+    observer.observe(document.querySelector('.form-main'))
   },
 
   methods: {

@@ -12,5 +12,9 @@ export default defineConfig({
                 import.meta.url))
         }
     },
-    chunkSizeWarningLimit: 1500,
+    build: {
+        outDir: '../backend/public',
+        emptyOutDir: true,
+        chunkSizeWarningLimit: 1600,
+    },
 })

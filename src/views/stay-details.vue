@@ -32,23 +32,23 @@
         <div class="gallery-details">
           <img
             class="center-img"
-            :src="`src/assets/Images/${stay.imgUrls[0]}`"
+            :src="getImage(stay.imgUrls[0])"
           />
           <img
             class="side-img1"
-            :src="`src/assets/Images/${stay.imgUrls[1]}`"
+             :src="getImage(stay.imgUrls[1])"
           />
           <img
             class="side-img2"
-            :src="`src/assets/Images/${stay.imgUrls[2]}`"
+             :src="getImage(stay.imgUrls[2])"
           />
           <img
             class="side-img3"
-            :src="`src/assets/Images/${stay.imgUrls[3]}`"
+              :src="getImage(stay.imgUrls[3])"
           />
           <img
             class="side-img4"
-            :src="`src/assets/Images/${stay.imgUrls[4]}`"
+              :src="getImage(stay.imgUrls[4])"
           />
         </div>
 
@@ -311,6 +311,9 @@ export default {
     ratingReview() {
       return this.stay.reviewScores.rating / 20;
     },
+     getImage() {
+      return (img) => new URL(`../assets/Images/${img}`, import.meta.url).href
+     }
   },
   methods: {
     async addReview() {
