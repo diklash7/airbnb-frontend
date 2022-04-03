@@ -3,15 +3,15 @@
    min-height: 75vh;
 
    .main-container {
-      gap: 30px;
-      padding: 0 20px 20px 20px;
+      gap: 50px;
+      padding: 0 0 20px 0;
       border-radius: 13px;
 
       .dash-header {
          border-radius: 13px;
          width: 100%;
          align-self: center;
-         min-height: 135px;
+         max-height: 140px;
 
          .dash-nav {
             padding: 0px 20px;
@@ -45,7 +45,7 @@
          box-shadow: 0 3px 10px rgb(0 0 0 / 10%);
       }
       span {
-         font-size: 24px;
+         font-size: 32px;
          padding: 0 0 10px;
 
          svg {
@@ -55,7 +55,6 @@
 
       .total-revenue {
          padding: 20px;
-         font-size: 30px;
       }
    }
 

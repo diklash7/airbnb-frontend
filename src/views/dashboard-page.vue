@@ -1,6 +1,6 @@
 <template>
-  <section class="dashboard-page main-layout">
-  <app-header class="order-layout" :orders="orders" />
+  <app-header :orders="orders" />
+  <section class="dashboard-page orders-layout">
     <section class="dashboard-container">
       <div class="main-container flex flex-column">
         <section class="dash-header flex space-between">
@@ -71,7 +71,7 @@
             </div>
             <div class="dash-stat">
               <h3>Total Revenues</h3>
-              <span class="total-revenue">{{ $filters.currencyUSD(revenueSum) }}</span>
+              <span class="total-revenue">{{ $filters.currencyUSD(new Intl.NumberFormat("en-US").format(revenueSum)) }}</span>
             </div>
             <div class="dash-stat">
               <h3>Total orders</h3>
@@ -99,7 +99,7 @@
               </div>
             </div>
             <div class="tbody">
-              <order-list :orders="orders" />
+              <order-list :orders="orders" :updateOrder="updateOrder"/>
             </div>
           </section>
           <section v-else class="host-stay-list">
@@ -145,6 +145,9 @@ export default {
     openOrders() {
       this.isOpen = false;
     },
+    updateOrder(order) {
+      this.$store.dispatch({ type: "saveOrder" , order  })
+    }
   },
   computed: {
     user() {

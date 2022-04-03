@@ -13,7 +13,7 @@
       </div>
 
       <button
-        v-if="(stay && !isFullHeader) || (pagePos && !isFullHeader) || (orders && !isFullHeader)"
+        v-if="(stay && !isFullHeader) || (pagePos && !isFullHeader)"
         @click="openFilter"
         class="mini-filter flex space-between align-center"
       >
@@ -133,7 +133,7 @@
         </nav>
       </div>
     </div>
-    <app-filter v-if="(!pagePos && !stay && !orders) || isFullHeader" />
+    <app-filter v-if="(!pagePos && !stay && !orders) || isFullHeader"/>
   </section>
 </template>
 <script>
