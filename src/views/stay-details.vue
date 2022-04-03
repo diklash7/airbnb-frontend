@@ -339,4 +339,10 @@ export default {
 };
 </script>
 <style>
+.vue3-slider {
+    margin: 3px 0;
+    position: static;
+    cursor: pointer;
+    font-family: inherit;
+}
 </style>
