@@ -39,7 +39,7 @@ export default {
         acc.push(stay.price);
         return acc;
       }, []);
-      console.log("prices :>> ", prices);
+      // console.log("prices :>> ", prices);
       return prices;
     },
   },
