@@ -34,7 +34,7 @@
           v-model="filterBy.price"
           @change="setFilterPrice"
           primaryColor="rgb(176,176,176)"
-          hideFromTo="true"
+          hideFromTo=true
           :width="400"
           :bar-height="120"
           :data="prices"
@@ -145,7 +145,7 @@ export default {
         acc += stay.price;
         return acc;
       }, 0);
-      console.log("pricesSum:", pricesSum);
+      // console.log("pricesSum:", pricesSum);
       return (
         "$" +
         new Intl.NumberFormat("en-US").format(pricesSum / this.stays.length)
