@@ -36,25 +36,19 @@ export default {
   },
   data() {
     return {
-      center: { lat: 32.088179, lng: 34.790144 },
-      locs: [{name: 'Tel Aviv', func: this.updateLoc, pos: {lat: 32.088179, lng: 34.790144}},
-      {name: 'Ramat Gan', func: this.updateLoc, pos: {  lat: 32.066278,lng: 34.830301}},
+      center: { lat: 41.37479, lng: 2.15566 },
+      locs: [{name: 'Barcelona', func: this.updateLoc, pos: {lat:  41.37479, lng: 2.15566 }},
+  
     ],
-      markers: [
+      markers: 
         {
           position: {
-            lat: 32.088179,
-            lng: 34.790144,
+            lat:  41.37479,
+            lng: 2.15566 ,
           },
         }, // Along list of clusters
-        {
-          position: {
-            lat: 32.066278,
-            lng: 34.830301,
-          },
-        }, // Along list of clusters
+         // Along list of clusters
        // Along list of clusters
-      ],
     };
   },
   methods: {
