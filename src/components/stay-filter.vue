@@ -36,6 +36,7 @@
           :width="400"
           :bar-height="120"
           :data="prices"
+          primaryColor="rgb(176,176,176)"
         />
         <div class="price-select-container flex align-items space-evenly">
           <div class="price-select">
