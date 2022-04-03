@@ -55,7 +55,7 @@ export default {
         const filterBy = {
           propertyType: "",
           city: "",
-          price: [0, 3000],
+          price: [0, 595],
           amenities: [],
           WiFi: "",
           capacity: 0,
