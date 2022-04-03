@@ -37,8 +37,6 @@
           :width="400"
           :bar-height="120"
           :data="prices"
-               
-
         />
         <div class="price-select-container flex align-items space-evenly">
           <div class="price-select">
@@ -120,13 +118,21 @@ export default {
     priceAvg() {
       const pricesSum = this.stays.reduce((acc, stay) => {
         acc += stay.price;
-        return acc
+        return acc;
       }, 0);
       console.log("pricesSum:", pricesSum);
       return (
-        "$" + new Intl.NumberFormat("en-US").format(pricesSum / this.stays.length)
+        "$" +
+        new Intl.NumberFormat("en-US").format(pricesSum / this.stays.length)
       );
     },
+  },
+  clearPrice() {
+    ev.from = this.filterBy.price[0];
+    this.filterBy.price[1];
+  },
+  savePrice() {
+    !this.isPriceOpen;
   },
 };
 </script>
