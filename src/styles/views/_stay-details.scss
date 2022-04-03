@@ -156,7 +156,6 @@
                 color: rgb(56, 52, 52);
             }
             .amenities-details {
-                display: flex;
                 .amenities-side {
                     display: inline-block;
                     margin-right: 80px;
@@ -172,7 +171,7 @@
                         margin-right: 10px;
                     }
                     span {
-                        font-size: 14px;
+                        font-size: 16px;
                     }
                 }
                 .amenities-details-right {
