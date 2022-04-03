@@ -43,11 +43,13 @@
           </div>
         </div>
         <hr />
-        <!-- <div class="payment-logos-container">
+        <div class="payment-logos-container flex space-between align-center">
         <img class="payment-logo" src="https://res.cloudinary.com/lanzi/image/upload/v1648985077/visa_uzipid.png" />
-        <img class="payment-logo" src="https://res.cloudinary.com/lanzi/image/upload/v1648985293/master-card_kugman.png" />
+        <img class="payment-logo" src="https://res.cloudinary.com/lanzi/image/upload/v1648999379/masterCard_icgvum.png" />
         <img class="payment-logo" src="https://res.cloudinary.com/lanzi/image/upload/v1648985726/AE_barp6g.png" />
-        </div> -->
+        <img class="payment-logo" src="https://res.cloudinary.com/lanzi/image/upload/v1649000954/1614983543481-Isracard_x9ktns.png" />
+        <img class="payment-logo" src="https://res.cloudinary.com/lanzi/image/upload/v1649000671/cal_ciiy9m.png" />
+        </div>
       </div>
 
       <div class="total-price-order">

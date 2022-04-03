@@ -134,6 +134,7 @@
         }
         .type-price {
             margin-top: 10px;
+            margin-bottom: 16px;
             display: flex;
             justify-content: space-between;
             text-decoration: underline;
@@ -151,6 +152,22 @@
         }
         .price-total {
             font-weight: bold;
+        }
+    }
+    .payment-logo {
+        max-width: 90px;
+        gap: 10px;
+        object-fit: contain;
+        margin: 20px 0;
+
+        &:first-child {
+            max-height: 30px; 
+        }
+        &:nth-child(4) {
+            max-height: 50px; 
+        }
+        &:last-child {
+            max-height: 30px; 
         }
     }
 }
