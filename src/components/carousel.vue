@@ -4,7 +4,7 @@
       <span class="demonstration"></span>
       <el-carousel :autoplay="false" :interval="600000" height="262px">
         <el-carousel-item v-for="item in stay.imgUrls" :key="item">
-          <img class="stay-img" :src="getImages(item)" />
+          <img class="stay-img" :src="getImage(item)" />
        
         </el-carousel-item>
       </el-carousel>
