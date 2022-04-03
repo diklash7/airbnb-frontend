@@ -170,6 +170,7 @@
                         height: 25px;
                         display: inline-block;
                         margin-right: 10px;
+                        display: flex;
                     }
                     span {
                         font-size: 16px;
@@ -181,6 +182,7 @@
                         height: 25px;
                         display: inline-block;
                         margin-right: 10px;
+                        display: flex;
                     }
                     span {
                         font-size: 16px;
@@ -202,6 +204,11 @@
                     }
                 }
                 .slider-rate {
+                    vue3-slider {
+                        width: 100%;
+                        margin: 3px 0;
+                        cursor: pointer;
+                    }
                     display: flex;
                     .left-side-rating {
                         display: flex;
