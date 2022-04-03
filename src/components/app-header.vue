@@ -6,9 +6,9 @@
           <img
             v-if="pagePos || stays || stay || orders"
             class="logo-svg"
-            :src="getImage('../assets/logo-pink.png')"
+            :src="getImage('logo-pink.png')"
           />
-          <img v-else class="logo-svg" :src="getImage('../assets/logo-white.png')" />
+          <img v-else class="logo-svg" :src="getImage('logo-white.png')" />
         </router-link>
       </div>
 
@@ -190,7 +190,7 @@ export default {
     },
     getImage() {
       return (path) =>
-        new URL(`${path}`, import.meta.url);
+        new URL(`../assets/${path}`, import.meta.url);
     },
     searchTitle() {
       if (this.city) return this.city;

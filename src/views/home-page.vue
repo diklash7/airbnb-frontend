@@ -69,10 +69,10 @@ export default {
       return topStays.slice(0, 4);
     },
     getImageJpg() {
-      return (imgName) => new URL(`src/assets/Images/${imgName}.jpg`, import.meta.url).href
+      return (imgName) => new URL(`../assets/Images/${imgName}.jpg`, import.meta.url).href
     },
     getImage() {
-      return (imgName) => new URL(`src/assets/Images/${imgName}`, import.meta.url).href
+      return (imgName) => new URL(`../assets/Images/${imgName}`, import.meta.url).href
     }
   },
   methods: {
