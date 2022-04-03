@@ -43,6 +43,11 @@
           </div>
         </div>
         <hr />
+        <!-- <div class="payment-logos-container">
+        <img class="payment-logo" src="https://res.cloudinary.com/lanzi/image/upload/v1648985077/visa_uzipid.png" />
+        <img class="payment-logo" src="https://res.cloudinary.com/lanzi/image/upload/v1648985293/master-card_kugman.png" />
+        <img class="payment-logo" src="https://res.cloudinary.com/lanzi/image/upload/v1648985726/AE_barp6g.png" />
+        </div> -->
       </div>
 
       <div class="total-price-order">
@@ -73,7 +78,7 @@
         <hr />
         <div class="type-price">
           <div class="pay-total">Total</div>
-          <span class="price-total">{{ $filters.currencyUSD(toalPay)}}</span>
+          <span class="price-total">{{ $filters.currencyUSD(totalPay)}}</span>
         </div>
       </div>
     </section>

@@ -90,6 +90,10 @@
             width: 200px;
             margin-top: -20px;
         }
+
+        // .payment-logos-container {
+
+        // }
     }
 
     hr {
@@ -98,7 +102,7 @@
 
     .total-price-order {
         width: 24vw;
-        height: 40vh;
+        height: 400px;
         padding: 20px;
         margin-top: 80px;
         border: 1px solid #b4b4b4;
@@ -133,6 +137,10 @@
             display: flex;
             justify-content: space-between;
             text-decoration: underline;
+
+            &:last-child {
+                margin-top: 20px;
+            }
         }
 
         .type-price:nth-child(5) {
