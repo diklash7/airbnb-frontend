@@ -204,8 +204,8 @@ export default {
       form: {
         city: "",
         range: {
-          start: new Date(2022, 3, 1),
-          end: new Date(2022, 3, 6),
+          start: '',
+          end: '',
         },
         guests: 0,
       },

@@ -46,6 +46,7 @@
   background-color: white;
   background: white;
   height: 80px;
+  box-shadow: 0 1px 12px rgba(0, 0, 0, 0.08);
 
   a {
     color: $clr5;
@@ -53,7 +54,7 @@
   }
 
   .mini-filter {
-    top: 60px;
+    top: 40px;
   }
 }
 

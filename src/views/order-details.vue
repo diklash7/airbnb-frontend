@@ -26,7 +26,7 @@
           <p>{{ stay.host.fullname }}'s place is usually booked</p>
         </div>
         <div class="dates-order-container flex flex-column space-between">
-          <p>Your trip</p>
+          <h2>Your trip</h2>
           <div class="dates-order">
             <div>
               <h3>Dates:</h3>
@@ -100,7 +100,6 @@
       </div>
     </section>
   </section>
-  <hr />
 </template>
 
 <script>

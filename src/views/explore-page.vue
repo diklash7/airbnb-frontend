@@ -15,12 +15,15 @@ import carousel from "../components/carousel.vue";
 export default {
   name: "stay-app",
   data() {
-    return {};
+    return {  
+    };
   },
   created() {
-    if (this.$route.query.destination || this.$route.query.capacity) {
+    if (this.$route.query.destination || this.$route.query.capacity  || this.$route.query.start_date || this.$route.query.end_date) {
       const { destination } = this.$route.query;
       const { capacity } = this.$route.query;
+      const { start_date } = this.$route.query;
+      const { end_date } = this.$route.query;
       const copyFilter = JSON.parse(
         JSON.stringify(this.$store.getters.getFilterBy)
       );

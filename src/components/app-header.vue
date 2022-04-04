@@ -149,6 +149,7 @@ export default {
   data() {
     return {
       city: null,
+      dates: [],
       isScroll: false,
       isFullHeader: false,
       pagePos: null,
@@ -160,6 +161,11 @@ export default {
     if (this.$route.query.destination) {
         const { destination } = this.$route.query;
         this.city = destination;
+      }
+    if (this.$route.query.start_date && this.$route.query.end_date) {
+        const { start_date} = this.$route.query;
+        const { end_date} = this.$route.query;
+        this.dates = [ start_date , end_date ]
       }
   },
   components: {

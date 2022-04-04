@@ -274,7 +274,7 @@ export default {
     return {
       form: {
         dates: [],
-        guests: 1,
+        guests: 2,
         order: {
           range: {
             start: "",
@@ -320,7 +320,7 @@ export default {
       this.form.guests += diff;
       this.kids += diff;
     },
-    goToOrder(id) {      
+    goToOrder(id) {
       // this.$emit("set-order", { ...this.form });
       this.$router.push("/order/" + id);
     },

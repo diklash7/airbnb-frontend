@@ -2,7 +2,7 @@
     margin-top: 80px;
 
     .order-details-container {
-        min-height: 69vh;
+        min-height: 70.5vh;
         width: 100%;
         border-radius: 10px;
 
@@ -48,6 +48,9 @@
         }
 
         .dates-order-container {
+            h2 {
+                margin-bottom: 8px;
+            }
             .dates-order {
                 display: flex;
                 justify-content: space-between;
