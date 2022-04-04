@@ -2,8 +2,9 @@
   <section v-if="filterBy" class="stay-filter flex">
     <button @click="isPriceOpen = !isPriceOpen" class="explore-btn">
       <span class="filter-arrow flex align-center">
-      Price
+        Price
         <svg
+          :class="isPriceOpen ? 'rotate' : ''"
           viewBox="0 0 32 32"
           xmlns="http://www.w3.org/2000/svg"
           aria-hidden="true"
@@ -19,8 +20,7 @@
             overflow: visible;
           "
         >
-          <g fill="none"
->
+          <g fill="none">
             <path
               d="m28 12-11.2928932 11.2928932c-.3905243.3905243-1.0236893.3905243-1.4142136 0l-11.2928932-11.2928932"
             ></path>
@@ -35,7 +35,7 @@
           v-model="filterBy.price"
           @change="setFilterPrice"
           primaryColor="rgb(176,176,176)"
-          hide-from-to=true
+          hide-from-to="true"
           barRadius="1"
           :width="400"
           :bar-height="120"
@@ -68,29 +68,30 @@
     <div class="room-filter-container">
       <button @click="isTypeOpen = !isTypeOpen" class="explore-btn">
         <span class="filter-arrow flex align-center">
-        Type of place
-        <svg
-          viewBox="0 0 32 32"
-          xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true"
-          role="presentation"
-          focusable="false"
-          style="
-            display: block;
-            fill: none;
-            height: 12px;
-            width: 12px;
-            stroke: currentcolor;
-            stroke-width: 5.33333;
-            overflow: visible;
-          "
-        >
-          <g fill="none">
-            <path
-              d="m28 12-11.2928932 11.2928932c-.3905243.3905243-1.0236893.3905243-1.4142136 0l-11.2928932-11.2928932"
-            ></path>
-          </g>
-        </svg>
+          Type of place
+          <svg
+            :class="isTypeOpen ? 'rotate' : ''"
+            viewBox="0 0 32 32"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+            role="presentation"
+            focusable="false"
+            style="
+              display: block;
+              fill: none;
+              height: 12px;
+              width: 12px;
+              stroke: currentcolor;
+              stroke-width: 5.33333;
+              overflow: visible;
+            "
+          >
+            <g fill="none">
+              <path
+                d="m28 12-11.2928932 11.2928932c-.3905243.3905243-1.0236893.3905243-1.4142136 0l-11.2928932-11.2928932"
+              ></path>
+            </g>
+          </svg>
         </span>
       </button>
       <div v-if="isTypeOpen">
@@ -153,13 +154,6 @@ export default {
         new Intl.NumberFormat("en-US").format(pricesSum / this.stays.length)
       );
     },
-  },
-  clearPrice() {
-    ev.from = this.filterBy.price[0];
-    this.filterBy.price[1];
-  },
-  savePrice() {
-    !this.isPriceOpen;
   },
 };
 </script>
