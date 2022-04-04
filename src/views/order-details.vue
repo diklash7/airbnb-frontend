@@ -112,18 +112,13 @@ export default {
   data() {
     return {
       stay: null,
-      order: null,
     };
   },
   async created() {
     const { id } = this.$route.params;
     this.stay = await stayService.getById(id);
+    const user = this.$store.getters.user;
 
-    if (user) {
-      this.orderToAdd = await orderService.getEmptyOrder();
-      this.orderToAdd.booker = user._id;
-      this.orderToAdd.stay = this.stay.name;
-    }
   },
   computed: {
     totalPrice() {

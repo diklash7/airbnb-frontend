@@ -30,15 +30,8 @@ export default {
                 console.log('err :>> ', err)
             }
         },
-        // async addOrder({ commit }, { order }) {
-        //     try {
-        //         const addedOrder = await orderService.addOrder(order)
-        //         commit({ type: 'addOrder', order: addedOrder })
-        //     } catch (err) {
-        //         console.log('err :>> ', err)
-        //     }
-        // },
         async saveOrder({ commit }, { order }) {
+            console.log('saving order...');
             try {
                 const savedOrder = await orderService.saveOrder(order)
                 commit({ type: 'saveOrder', order: savedOrder })

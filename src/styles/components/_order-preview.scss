@@ -9,11 +9,13 @@
 
 .user-info {
 text-align: left;
+gap: 15px;
 }
    .avatar {
-      height: 50px;
-      width: 50px;
+      height: 40px;
+      width: 40px;
       border-radius: 25px;
+      margin-left: 34px;
    }
 
    .stay-name {

@@ -1,7 +1,7 @@
 <template>
   <section class="order-preview">
     <tr class="order-info" :class="pendingColor">
-      <td class="flex align-center space-evenly">
+      <td class="user-info flex align-center">
         <img class="avatar" :src="order.imgUrl" /><span class="user-info">{{ order.booker }}</span>
       </td>
       <td class="stay-name">{{ order.stay }}</td>

@@ -23,10 +23,10 @@ export default {
     },
   },
   actions: {
-    async loadUsers({ commit, state }) {
+    async loadUser({ commit, state }) {
       try {
-       const users = userService.query(state.filterBy)
-       commit({ type: 'setUsers', users })
+       const user = userService.query(state.filterBy)
+       commit({ type: 'setUser', user })
       } catch (err) {
         console.log(err)
       }

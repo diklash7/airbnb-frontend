@@ -96,7 +96,7 @@
                   />
                 </svg>
 
-                <svg
+                <svg v-if="!user"
                   xmlns="http://www.w3.org/2000/svg"
                   width="30"
                   height="30"
@@ -110,22 +110,23 @@
                     d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"
                   />
                 </svg>
-                <!-- <img :src="getImage(https://a0.muscache.com/im/users/118676/profile_pic/1417000371/original.jpg?aki_policy=profile_small)" /> -->
+                <img v-else :src="user.imgUrl" />
               </div>
             </button>
             <template #content>
               <div v-if="!user" class="user-nav flex flex-column">
                 <a href="#/login">Log in</a>
-                <div class="seperator"></div>
+                <hr />
                 <a href="#/dashboard">Host your home</a>
-                <div class="seperator"></div>
+                <hr />
                 <a href="#/about">About</a>
               </div>
               <div v-else class="user-nav flex flex-column">
-                <a href="#/dashboard">Dashboard</a>
-                <div class="seperator"></div>
+                <a v-if="user.isHost" href="#/dashboard">Dashboard</a>
+                <a v-else href="#/dashboard">Trips</a>
+                <hr />
                 <a href="#/about">About</a>
-                <div class="seperator"></div>
+                <hr />
                 <a>Logout</a>
               </div>
             </template>
@@ -143,7 +144,6 @@ export default {
   props: {
     stays: Array,
     stay: Object,
-    user: String,
     orders: Array,
   },
   data() {
@@ -177,9 +177,12 @@ export default {
     },
   },
   computed: {
+    user() {
+      return this.$store.getters.user;
+    },
     headerStyles() {
       return {
-        "full-header": this.isFullHeader && !this.orders || !this.pagePos && !this.orders,
+        "full-header": this.isFullHeader && !this.orders || !this.pagePos && !this.orders ,
         top: !this.pagePos,
         "explore-page": this.stays,
         details: this.stay || this.orders,
