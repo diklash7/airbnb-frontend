@@ -274,7 +274,7 @@ export default {
     return {
       form: {
         dates: [],
-        guests: 2,
+        guests: 1,
         order: {
           range: {
             start: "",
