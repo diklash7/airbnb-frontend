@@ -183,6 +183,7 @@
                     v-model="stay.reviewScores.checkin"
                     color="#fffff"
                     track-color="#000000"
+                    position="static"
                   />
                   <span>{{ ratingReview }}</span>
                 </div>
@@ -338,4 +339,10 @@ export default {
 };
 </script>
 <style>
+.vue3-slider {
+    margin: 3px 0;
+    position: static;
+    cursor: pointer;
+    font-family: inherit;
+}
 </style>

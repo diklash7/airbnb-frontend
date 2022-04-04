@@ -5,7 +5,7 @@
             .titles-details {
                 h1 {
                     font-size: 26px;
-                    font-family: Cereal-Medium;
+                    font-family: Cereal-Regular;
                     margin-bottom: 10px;
                 }
                 div {
@@ -97,7 +97,6 @@
                 }
                 h2 {
                     margin-bottom: 5px;
-                    font-family: Cereal-Medium;
                     font-size: 1.4em;
                 }
                 img {
@@ -117,7 +116,6 @@
             .info-check {
                 h4 {
                     color: rgb(34, 34, 34);
-                    font-family: Cereal-Medium;
                     font-size: 16px;
                     line-height: 20px;
                     margin-bottom: 4px;
@@ -156,7 +154,6 @@
             .title-amenities {
                 font-size: 22px;
                 color: rgb(56, 52, 52);
-                font-family: Cereal-Medium;
             }
             .amenities-details {
                 .amenities-side {
@@ -166,9 +163,10 @@
                 }
                 .amenities-details-left {
                     display: flex;
+                    margin-top: 12px;
                     img {
-                        width: 25px;
-                        height: 25px;
+                        width: 21px;
+                        height: 21px;
                         display: inline-block;
                         margin-right: 10px;
                     }
@@ -178,9 +176,10 @@
                 }
                 .amenities-details-right {
                     display: flex;
+                    margin-top: 12px;
                     img {
-                        width: 25px;
-                        height: 25px;
+                        width: 21px;
+                        height: 21px;
                         display: inline-block;
                         margin-right: 10px;
                     }
@@ -196,7 +195,6 @@
                 .title-reviews {
                     h3 {
                         font-size: 20px;
-                        font-family: Cereal-Medium;
                     }
                     .rating-reviews {
                         margin-left: 6px;
@@ -292,10 +290,4 @@
                 background-color: white;
                 font-family: Cereal-Bold;
             }
-        }
-        
-        .vue3-slider {
-            width: 100%;
-            cursor: pointer;
-            position: static;
         }
