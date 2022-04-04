@@ -1,7 +1,7 @@
 
 <template>
+  <app-header :stay="stay" />
   <section v-if="stay" class="stay-details details-layout">
-    <app-header :stay="stay" />
     <stay-preview :stay="stay">
       <section class="main-details">
         <div class="titles-details">
@@ -30,26 +30,11 @@
           </div>
         </div>
         <div class="gallery-details">
-          <img
-            class="center-img"
-            :src="getImage(stay.imgUrls[0])"
-          />
-          <img
-            class="side-img1"
-             :src="getImage(stay.imgUrls[1])"
-          />
-          <img
-            class="side-img2"
-             :src="getImage(stay.imgUrls[2])"
-          />
-          <img
-            class="side-img3"
-              :src="getImage(stay.imgUrls[3])"
-          />
-          <img
-            class="side-img4"
-              :src="getImage(stay.imgUrls[4])"
-          />
+          <img class="center-img" :src="getImage(stay.imgUrls[0])" />
+          <img class="side-img1" :src="getImage(stay.imgUrls[1])" />
+          <img class="side-img2" :src="getImage(stay.imgUrls[2])" />
+          <img class="side-img3" :src="getImage(stay.imgUrls[3])" />
+          <img class="side-img4" :src="getImage(stay.imgUrls[4])" />
         </div>
 
         <section class="details-flex-form flex space-between">
@@ -125,7 +110,7 @@
             </section>
           </section>
           <nav>
-            <stay-form :stay="stay" />
+            <stay-form :stay="stay" @setOrder="setOrder" />
           </nav>
         </section>
 
@@ -252,6 +237,7 @@
 import appHeader from "../components/app-header.vue";
 import { stayService } from "../services/stay-service";
 import { reviewService } from "../services/review-service";
+import { orderService } from "../services/order-service";
 import stayPreview from "../components/stay-preview.vue";
 import stayForm from "../components/stay-form.vue";
 import stayMaps from "../components/stay-maps.vue";
@@ -294,6 +280,14 @@ export default {
       this.reviewToAdd.userId = user._id;
       this.reviewToAdd.stayId = this.stay._id;
     }
+
+    if (user) {
+      this.orderToAdd = await orderService.getEmptyOrder();
+      this.orderToAdd.booker = user.username;
+      this.orderToAdd.imgUrl = user.imgUrl;
+      this.orderToAdd.hostId = this.stay.host._id;
+      this.orderToAdd.stay = this.stay.name;
+    }
   },
   computed: {
     user() {
@@ -312,11 +306,23 @@ export default {
     ratingReview() {
       return this.stay.reviewScores.rating / 20;
     },
-     getImage() {
-      return (img) => new URL(`../assets/Images/${img}`, import.meta.url).href
-     }
+    getImage() {
+      return (img) => new URL(`../assets/Images/${img}`, import.meta.url).href;
+    },
   },
   methods: {
+    setOrder(form) {
+      const copyForm = JSON.parse(JSON.stringify(form))
+      // this.orderToAdd.tripDates = copyForm.order.range;
+      this.orderToAdd.tripDates = '05/01/22-05/04/22';
+      this.orderToAdd.nights = copyForm.order.numOfNights;
+      this.orderToAdd.guests = copyForm.guests;
+
+      this.$store.dispatch({
+        type: "saveOrder",
+        order: this.orderToAdd,
+      });
+    },
     async addReview() {
       if (!this.reviewToAdd.content) return;
       await this.$store.dispatch({
@@ -340,9 +346,9 @@ export default {
 </script>
 <style>
 .vue3-slider {
-    margin: 3px 0;
-    position: static;
-    cursor: pointer;
-    font-family: inherit;
+  margin: 3px 0;
+  position: static;
+  cursor: pointer;
+  font-family: inherit;
 }
 </style>

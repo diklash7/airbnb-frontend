@@ -23,11 +23,12 @@ function getEmptyOrder() {
     date: Date.now(),
     booker: '',
     imgUrl: '',
+    hostId: '',
     stay: '',
-    tripDates: [],
+    tripDates: '',
     nights: 0,
     guests: 0,
     amount: 0,
-    status: 'pending'
+    status: 'pending',
   })
 }

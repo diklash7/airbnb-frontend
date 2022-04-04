@@ -88,9 +88,9 @@
             <div class="order-table">
               <div class="thead">
                 <div class="thead-container gray-box-shadow">
-                  <span>Booker</span>
+                  <span class="guest-title">Guest</span>
                   <span class="stay-title">Place</span>
-                  <span>Trip Dates</span>
+                  <span class="dates-title">Trip Dates</span>
                   <span>Nights</span>
                   <span>Guests</span>
                   <span>Amount</span>
@@ -137,6 +137,8 @@ export default {
   },
   created() {
     this.$store.dispatch({ type: "getOrders" });
+    console.log('this.orders:', this.orders);
+    
   },
   methods: {
     openStays() {

@@ -12,7 +12,7 @@
           <div v-if="isSeen" class="form-container-small">
             <div class="form-title-small">
               <div class="form-price-small">
-                <h3>{{$filters.currencyUSD(stay.price)}}</h3>
+                <h3>{{ $filters.currencyUSD(stay.price) }}</h3>
                 <span class="word-night-small"> / night</span>
               </div>
               <div class="form-header-rate-small">
@@ -46,7 +46,7 @@
     <section class="form-main">
       <div class="form-header">
         <div class="form-price">
-          <h2>{{$filters.currencyUSD(stay.price)}} </h2>
+          <h2>{{ $filters.currencyUSD(stay.price) }}</h2>
           <span class="word-night"> / night</span>
         </div>
         <nav class="form-header-rate">
@@ -71,7 +71,7 @@
 
       <section class="form-container">
         <section class="form-date-picker">
-          <v-date-picker v-model="order.range" color="gray" is-range>
+          <v-date-picker v-model="form.order.range" color="gray" is-range>
             <template v-slot="{ inputValue, inputEvents }">
               <div class="flex">
                 <label class="label1">
@@ -81,12 +81,12 @@
                     v-on="inputEvents.start"
                     class="
                       input1
-                       border
+                      border
                       px-2
                       py-1
                       w-32
                       rounded
-                      focus:outline-none focus:border-indigo-300   
+                      focus:outline-none focus:border-indigo-300
                     "
                     placeholder="Add date"
                   />
@@ -104,7 +104,7 @@
                       w-32
                       rounded
                       focus:outline-none focus:border-indigo-300
-                      "                    
+                    "
                     placeholder="Add date"
                   />
                 </label>
@@ -233,22 +233,25 @@
         <div v-if="!isClicked" class="total-price-order">
           <div class="msg-charged">You won't be charged yet</div>
           <div class="type-price">
-            <div class="type-pay">{{ stay.price }} x {{numberOfNights}} nights</div>
-            <span class="price">  {{$filters.currencyUSD(totalPrice)}}</span>
-          
+            <div class="type-pay">
+              {{ stay.price }} x {{ numberOfNights }} nights
+            </div>
+            <span class="price"> {{ $filters.currencyUSD(totalPrice) }}</span>
           </div>
           <div class="type-price">
             <div class="type-pay">Cleaning fee</div>
-            <span class="price">{{$filters.currencyUSD(150)}}</span>
+            <span class="price">{{ $filters.currencyUSD(150) }}</span>
           </div>
           <div class="type-price">
             <div class="type-pay">Service fee</div>
-            <span class="price">{{$filters.currencyUSD(200)}}</span>
+            <span class="price">{{ $filters.currencyUSD(200) }}</span>
           </div>
           <hr />
           <div class="type-price">
             <div class="pay-total">Total</div>
-            <span class="price-total">{{$filters.currencyUSD(totalPay)}}</span>
+            <span class="price-total">{{
+              $filters.currencyUSD(totalPay)
+            }}</span>
           </div>
         </div>
       </section>
@@ -272,32 +275,32 @@ export default {
       form: {
         dates: [],
         guests: 1,
-        guest: 0,
+        order: {
+          range: {
+            start: "",
+            end: "",
+            numOfNights: 0,
+          },
+        },
       },
-      order: {
-        range: {
-          start: "",
-          end: "",
-        numOfNights:0,
-      }
-      }, 
+      adults: 1,
       kids: 0,
       isScroll: false,
       pagePos: null,
       isClicked: true,
-      isSeen: false
+      isSeen: false,
     };
   },
   created() {
     this.isScroll = false;
     window.addEventListener("scroll", this.scrollToggle);
   },
-   mounted() {
+  mounted() {
     let observer = new IntersectionObserver((entries) => {
-      this.isSeen = entries[0].isIntersecting ? false : true
-    })
+      this.isSeen = entries[0].isIntersecting ? false : true;
+    });
 
-    observer.observe(document.querySelector('.form-main'))
+    observer.observe(document.querySelector(".form-main"));
   },
 
   methods: {
@@ -317,7 +320,8 @@ export default {
       this.form.guests += diff;
       this.kids += diff;
     },
-    goToOrder(id) {
+    goToOrder(id) {      
+      // this.$emit("set-order", { ...this.form });
       this.$router.push("/order/" + id);
     },
   },
@@ -338,7 +342,7 @@ export default {
       return { "disabled-btn": !this.kids };
     },
     addGuests() {
-      return this.form.guests + " " + "guests";
+      return this.form.guests + " guests";
     },
     formForDisplay() {
       return {
@@ -346,16 +350,20 @@ export default {
       };
     },
     numberOfNights() {
-       let dayStart = this.order.range.start
-       let dayEnd = this.order.range.end
-       this.order.numOfNights = dayEnd.getDate() - dayStart.getDate()
-       return this.order.numOfNights
+      let dayStart = this.form.order.range.start;
+      let dayEnd = this.form.order.range.end;
+      this.form.order.numOfNights = dayEnd.getDate() - dayStart.getDate();
+      return this.form.order.numOfNights;
     },
-       totalPrice() {
-      return new Intl.NumberFormat('en-US').format(this.stay.price * this.order.numOfNights);
+    totalPrice() {
+      return new Intl.NumberFormat("en-US").format(
+        this.stay.price * this.form.order.numOfNights
+      );
     },
-     totalPay() {
-      return new Intl.NumberFormat('en-US').format(this.stay.price * this.order.numOfNights + 150 + 200);
+    totalPay() {
+      return new Intl.NumberFormat("en-US").format(
+        this.stay.price * this.form.order.numOfNights + 150 + 200
+      );
     },
   },
 };
