@@ -280,8 +280,7 @@ export default {
           end: "",
         numOfNights:0,
       }
-      },
-      adults: 1,
+      }, 
       kids: 0,
       isScroll: false,
       pagePos: null,

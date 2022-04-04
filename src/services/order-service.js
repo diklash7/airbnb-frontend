@@ -20,7 +20,7 @@ async function saveOrder(order) {
 
 function getEmptyOrder() {
   return Promise.resolve({
-    date: `${Date.now().getDay()}/${Date.now().getMonth()}/${Date.now().getFullYear()}`,
+    date: Date.now(),
     booker: '',
     imgUrl: '',
     stay: '',

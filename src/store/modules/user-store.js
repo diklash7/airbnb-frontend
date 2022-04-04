@@ -23,9 +23,18 @@ export default {
     },
   },
   actions: {
+    async loadUsers({ commit, state }) {
+      try {
+       const users = userService.query(state.filterBy)
+       commit({ type: 'setUsers', users })
+      } catch (err) {
+        console.log(err)
+      }
+    },
     async login({ commit }, { cred }) {
       try {
         const user = await userService.login(cred)
+        console.log('loggedin (store)...', user);
         commit({ type: 'setUser', user })
         utilService.saveToSessionStorage('user', user)
       } catch (err) {
@@ -35,6 +44,7 @@ export default {
     async signup({ commit }, { cred }) {
       try {
         const user = await userService.signup(cred)
+        console.log('signed up (store)...', user);
         commit({ type: 'setUser', user })
         utilService.saveToSessionStorage('user', user)
       } catch (err) {

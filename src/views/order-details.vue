@@ -4,21 +4,21 @@
     <section class="order-details-container flex space-between">
       <div class="order-date-guest">
         <div class="order-title flex">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="32"
-              height="32"
-              fill="green"
-              class="bi bi-check-circle"
-              viewBox="0 0 16 16"
-            >
-              <path
-                d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
-              />
-              <path
-                d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"
-              />
-            </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            fill="green"
+            class="bi bi-check-circle"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+            />
+            <path
+              d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"
+            />
+          </svg>
           <h1>Reserved successfully!</h1>
         </div>
         <div class="rare-stay">
@@ -44,11 +44,26 @@
         </div>
         <hr />
         <div class="payment-logos-container flex space-between align-center">
-        <img class="payment-logo" src="https://res.cloudinary.com/lanzi/image/upload/v1648985077/visa_uzipid.png" />
-        <img class="payment-logo" src="https://res.cloudinary.com/lanzi/image/upload/v1648999379/masterCard_icgvum.png" />
-        <img class="payment-logo" src="https://res.cloudinary.com/lanzi/image/upload/v1648985726/AE_barp6g.png" />
-        <img class="payment-logo" src="https://res.cloudinary.com/lanzi/image/upload/v1649000954/1614983543481-Isracard_x9ktns.png" />
-        <img class="payment-logo" src="https://res.cloudinary.com/lanzi/image/upload/v1649000671/cal_ciiy9m.png" />
+          <img
+            class="payment-logo"
+            src="https://res.cloudinary.com/lanzi/image/upload/v1648985077/visa_uzipid.png"
+          />
+          <img
+            class="payment-logo"
+            src="https://res.cloudinary.com/lanzi/image/upload/v1648999379/masterCard_icgvum.png"
+          />
+          <img
+            class="payment-logo"
+            src="https://res.cloudinary.com/lanzi/image/upload/v1648985726/AE_barp6g.png"
+          />
+          <img
+            class="payment-logo"
+            src="https://res.cloudinary.com/lanzi/image/upload/v1649000954/1614983543481-Isracard_x9ktns.png"
+          />
+          <img
+            class="payment-logo"
+            src="https://res.cloudinary.com/lanzi/image/upload/v1649000671/cal_ciiy9m.png"
+          />
         </div>
       </div>
 
@@ -62,7 +77,7 @@
             </div>
           </div>
         </div>
-          <h2>Price Details</h2>
+        <h2>Price Details</h2>
         <div class="type-price">
           <div class="type-pay">
             {{ $filters.currencyUSD(this.stay.price) }} x 3 nights
@@ -71,16 +86,16 @@
         </div>
         <div class="type-price">
           <div class="type-pay">Cleaning fee</div>
-          <span class="price">{{ $filters.currencyUSD(150)}}</span>
+          <span class="price">{{ $filters.currencyUSD(150) }}</span>
         </div>
         <div class="type-price">
           <div class="type-pay">Service fee</div>
-          <span class="price">{{ $filters.currencyUSD(200)}}</span>
+          <span class="price">{{ $filters.currencyUSD(200) }}</span>
         </div>
         <hr />
         <div class="type-price">
           <div class="pay-total">Total</div>
-          <span class="price-total">{{ $filters.currencyUSD(totalPay)}}</span>
+          <span class="price-total">{{ $filters.currencyUSD(totalPay) }}</span>
         </div>
       </div>
     </section>
@@ -97,22 +112,31 @@ export default {
   data() {
     return {
       stay: null,
+      order: null,
     };
   },
   async created() {
     const { id } = this.$route.params;
     this.stay = await stayService.getById(id);
+
+    if (user) {
+      this.orderToAdd = await orderService.getEmptyOrder();
+      this.orderToAdd.booker = user._id;
+      this.orderToAdd.stay = this.stay.name;
+    }
   },
   computed: {
     totalPrice() {
       return this.stay.price * 3;
     },
     totalPay() {
-      return new Intl.NumberFormat('en-US').format((this.stay.price * 3 + 150 + 200));
+      return new Intl.NumberFormat("en-US").format(
+        this.stay.price * 3 + 150 + 200
+      );
     },
     getImage() {
-       return (img) => new URL(`../assets/Images/${img}`, import.meta.url).href
-    }
+      return (img) => new URL(`../assets/Images/${img}`, import.meta.url).href;
+    },
   },
   components: {
     appHeader,

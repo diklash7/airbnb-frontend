@@ -27,7 +27,7 @@ app.component("Popper", Popper);
 
 app.use(VueGoogleMaps, {
     load: {
-        key: '',
+        key: 'AIzaSyBywa1co0r0B4Etra4c-McqtPtIuNNICgU',
     }
 })
 app.component(HistogramSlider.name, HistogramSlider)

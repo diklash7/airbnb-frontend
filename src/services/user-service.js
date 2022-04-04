@@ -9,10 +9,12 @@ export const userService = {
 }
 
 async function login(cred) {
+  console.log('login', cred);
   return await httpService.post(ENDPOINT + '/login', cred)
 }
 
 async function signup(cred) {
+  console.log('signed up', cred);
   return await httpService.post(ENDPOINT + '/signup', cred)
 }
 

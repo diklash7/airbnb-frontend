@@ -19,12 +19,6 @@
     </GMapCluster>
   </GMapMap>
   
-  <el-button v-for="loc in locs" :key="loc.name"
-  size="large"
-    :clickable="true"
-    @click="loc.func(loc.pos)"
-    round>{{loc.name}}
-  </el-button>
 </section>
 </template>
 
@@ -37,7 +31,7 @@ export default {
   data() {
     return {
       center: { lat: 41.37479, lng: 2.15566 },
-      locs: [{name: 'Barcelona', func: this.updateLoc, pos: {lat:  41.37479, lng: 2.15566 }},
+      locs: [{name: 'Barcelona', pos: {lat:  41.37479, lng: 2.15566 }},
   
     ],
       markers: 
@@ -51,19 +45,13 @@ export default {
        // Along list of clusters
     };
   },
-  methods: {
-    updateLoc({lat, lng}) {
-      console.log(lat, lng);
-      this.center = {lat: lat, lng: lng}
-    },
-  },
 };
 </script>
 
 <style>
 .vue-map-container {
   height: 300px;
-  width: 70vw;
+  width: 58.5vw;
 }
 
 /* .stay-maps{
